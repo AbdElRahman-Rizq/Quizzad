@@ -14,6 +14,7 @@ function About() {
         color: 'white',
         height: '370px',
       }}
+      id='aboutUs'
     >
       <Container className='h-100 pt-5'>
         <Row className='h-100 w-100 flex-column text-center align-items-center '>

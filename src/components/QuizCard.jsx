@@ -4,14 +4,11 @@ import ThemedButton from "./ThemedButton";
 function QuizCard() {
   return (
     <div
-      className="p-0 w-25"
+      className="p-0 w-25 quizCard"
       style={{
         borderRadius: "15px",
         border: "3px solid initial",
-        background: " #FFF",
-        // width:"30%",
-        /* Shadow for cards */
-        boxShadow: "0px 4px 4px 0px rgba(180, 172, 172, 0.20)",
+        boxShadow:"0px 0px 15px 3px rgba(0,0,0,0.45)"
       }}
     >
       <img
@@ -23,9 +20,9 @@ function QuizCard() {
             borderRadius: "15px 13px 0 0",}}
       />
       <section className="p-4">
-      <h3>Interactive Flashcards</h3>
+      <h5>Interactive Flashcards</h5>
       <p>Master key concepts and boost retention with .</p>
-      <ThemedButton content={"Take Quiz"} propWidth={"50%"}/>
+      <ThemedButton content={"Take Quiz"} propWidth={"50%"} propPadding={"1.5% 0"}/>
       </section>
     </div>
   );

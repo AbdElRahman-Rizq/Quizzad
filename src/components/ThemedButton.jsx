@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ThemedButton({content,propWidth}) {
+function ThemedButton({content,propWidth,propPadding}) {
   return (
     <button
     className='themedButton'
@@ -9,11 +9,7 @@ function ThemedButton({content,propWidth}) {
         borderRadius: "100px",
         // background: "var(--primary-color, #872991)",
         width:propWidth,
-        color:"white",
-        padding:"1.5% 0",
-    }}
-    onMouseEnter={()=>{
-    
+        padding:propPadding,
     }}
     >{content}</button>
   )

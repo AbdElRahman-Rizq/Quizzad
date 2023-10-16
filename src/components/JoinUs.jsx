@@ -10,7 +10,7 @@ function JoinUs() {
         height:"350px",
         position:"relative",
     }}
-    id='contactUs'
+   
     >
         <Container>
             <Row 

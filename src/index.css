@@ -16,9 +16,32 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Themed Button component */
 .themedButton{
   background-color: #872991;
+  color: #fff;
 }
 .themedButton:hover{
   background-color: #933f9c;
+}
+
+/* Quiz Card component */
+.quizCard{
+  background-color: #fff;
+}
+.quizCard:hover{
+  background-color:#933f9c;
+  color: #e6e1e1;
+}
+.quizCard:hover button{
+background-color: #fff;
+color: #933f9c;
+}
+.navbar-nav a:hover{
+  color: #933f9c !important;
+  font-weight: 600;
+}
+
+.navLink:hover{
+  color: rgb(224, 216, 216);
 }

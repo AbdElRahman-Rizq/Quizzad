@@ -12,6 +12,7 @@ function Hero() {
         height:'calc(100vh - 150px)',
         color:"white"
     }}
+    id='home'
     >
         <Container className='h-100'>
             <Row className='h-100'>
@@ -22,7 +23,7 @@ function Hero() {
                     <p className=' pb-4' style={{fontSize:"1.25 rem",width:"85%"}}>
                     Choose from thousands of Quizzes and a vast collection of study materials to fuel your educational journey
                     </p>
-                   <ThemedButton content={'Explore Our Quizzes'} propWidth={"30%"}/>
+                   <ThemedButton content={'Explore Our Quizzes'} propWidth={"30%"} propPadding={"1.5% 0"}/>
                 </Col>
                 <Col lg={4} md={0}></Col>
             </Row>
