@@ -10,9 +10,9 @@ function About() {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%',
         backgroundImage:
-          "linear-gradient(180deg, rgba(0, 0, 0, .76) 0%, rgba(0, 0, 0, 0.10) 100%),url('../src/assets/about.jpg')",
+          "linear-gradient(180deg, rgba(0, 0, 0, .76) 0%, rgba(0, 0, 0, 0.10) 100%),url('../src/assets/images/about.jpg')",
         color: 'white',
-        height: '370px',
+        height: '500px',
       }}
       id='aboutUs'
     >

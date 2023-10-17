@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import logo from "../assets/logo.png";
+import logo from "../assets/images/logo.png";
 function Footer() {
   return (
     <div className='mt-4'>
@@ -36,8 +36,8 @@ function Footer() {
             <Row>
                 <div className='w-50 bg-dark' style={{height:"1.8px", margin:"1% auto"}}></div>
             </Row>
-            <Row className='text-center w-100'>
-            <div>@2023 MOhamed basyoni Inc. All Rights Reserved.</div>
+            <Row className='text-center w-100 '>
+            <div className='mb-4'>@2023 MOhamed basyoni Inc. All Rights Reserved.</div>
             </Row>
         </Container>
     </div>

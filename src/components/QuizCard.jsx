@@ -12,7 +12,7 @@ function QuizCard() {
       }}
     >
       <img
-        src="../src/assets/card1.jpeg"
+        src="../src/assets/images/card1.jpeg"
         alt="img-card"
         height={"150px"}
         width={"100%"}

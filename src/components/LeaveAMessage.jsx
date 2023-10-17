@@ -5,8 +5,8 @@ import Row from "react-bootstrap/esm/Row";
 
 function LeaveAMessage() {
   return (
-    <Container className="py-4" id='contactUs'>
-      <Row>
+    <Container className="py-5" id='contactUs'>
+      <Row className="my-5">
         <h1>LET’S ANSWER YOUR QUERIES</h1>
       </Row>
       <Row>
@@ -20,7 +20,7 @@ function LeaveAMessage() {
               border: "1px solid rgba(171, 152, 186, 0.50)",
               background: "#FFF",
               padding: "1.5% 0",
-              marginBottom: "1%",
+              marginBottom: "3%",
               width: "90%",
             }}
           />
@@ -33,8 +33,9 @@ function LeaveAMessage() {
               border: "1px solid rgba(171, 152, 186, 0.50)",
               background: "#FFF",
               padding: "1.5% 0",
-              marginBottom: "1%",
+              marginBottom: "3%",
               width: "90%",
+              
             }}
           />
 
@@ -47,7 +48,7 @@ function LeaveAMessage() {
               border: "1px solid rgba(171, 152, 186, 0.50)",
               background: "#FFF",
               padding: "1.5% 0",
-              marginBottom: "1%",
+              marginBottom: "3%",
               width: "90%",
             }}
           />
@@ -56,21 +57,21 @@ function LeaveAMessage() {
         <Col>
           <textarea
             id="message"
-            rows="7"
+            rows="8"
             placeholder="LEAVE A MESSAGE FOR US"
             style={{
               width: "80%",
               borderRadius: "10px",
               border: " 1px solid rgba(171, 152, 186, 0.50)",
               background: " #FFF",
-              padding:"1%",
+              padding:"2.1%",
               marginLeft:"5%",
               marginTop:"4%"
             }}
           />
         </Col>
       </Row>
-      <Row className="d-flex justify-content-end pt-2" style={{paddingRight:"8.5%"}}>
+      <Row className="d-flex justify-content-end" style={{paddingRight:"8.5%"}}>
   <button  className='themedButton'
     style={{
         border:"none",

@@ -7,7 +7,7 @@ function JoinUs() {
   return (
     <div style={{
         background:"#872991",
-        height:"350px",
+        height:"390px",
         position:"relative",
     }}
    
@@ -15,13 +15,13 @@ function JoinUs() {
         <Container>
             <Row 
             style={{
-                paddingTop:"4%",
+                paddingTop:"5%",                
                 paddingLeft:"1%",
                 color:"white"
             }}>
                 <Col>
-                <h1>Your pathway to smarter learning</h1>
-                <h3>Engage, learn, and grow with our Quizzes platform</h3>
+                <h1 style={{paddingBottom:"3%",}}>Your pathway to smarter learning</h1>
+                <h3 style={{paddingBottom:"3%",}}>Engage, learn, and grow with our Quizzes platform</h3>
                 <Col>
                 <button style={{
                     borderRadius: "100px",
@@ -46,7 +46,7 @@ function JoinUs() {
                 </Col>
                 </Col>
                 <Col>
-                <img src="../src/assets/lap.png" alt="img" style={{
+                <img src="../src/assets/images/lap.png" alt="img" style={{
                     position:"absolute",
                     bottom:"-70px",
                     right:"10px",

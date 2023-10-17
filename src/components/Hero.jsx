@@ -8,8 +8,8 @@ function Hero() {
     <div style={{
         backgroundRepeat:" no-repeat",
         backgroundSize: "100% 100%",
-        backgroundImage:"linear-gradient(180deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, 0.00) 100%),url('../src/assets/background.jpg')",
-        height:'calc(100vh - 150px)',
+        backgroundImage:"linear-gradient(180deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, 0.00) 100%),url('../src/assets/images/background.jpg')",
+        height:'calc(100vh - 10px)',
         color:"white"
     }}
     id='home'

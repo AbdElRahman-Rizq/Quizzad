@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavBar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import logo from "../assets/logo.png";
+import logo from "../assets/images/logo.png";
 import { Link } from 'react-router-dom';
 function SmoothScrollLink({ targetId, children }) {
   const handleClick = (e) => {
@@ -41,7 +41,7 @@ function Navbar() {
           </Nav>
             </Col>
             <Col lg={2} style={{paddingTop:"30px",fontSize:"1.2rem", paddingLeft:"8%"}}> {/*SignIn */}
-              <Link href="#" className='text-decoration-none text-dark'>Sign in</Link>
+              <Link href="#" className='text-decoration-none text-dark' id='signinLink'>Sign in</Link>
             </Col>
           </Row>
         </Container>
