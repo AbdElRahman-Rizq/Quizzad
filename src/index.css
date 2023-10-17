@@ -38,10 +38,6 @@ background-color: #fff;
 color: #933f9c;
 }
 .navbar-nav a:hover{
-  color: #933f9c !important;
-  font-weight: 600;
-}
-
-.navLink:hover{
-  color: rgb(224, 216, 216);
+  font-weight:600;
+  transition:font-weight .5s ease-in-out 0.5s;
 }
