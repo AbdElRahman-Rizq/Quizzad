@@ -6,7 +6,7 @@ import ThemedButton from "./ThemedButton";
 
 function LeaveAMessage() {
   return (
-    <Container className="py-4" id="r"  id='contactUs'>
+    <Container className="py-4" id='contactUs'>
       <Row>
         <h1>LET’S ANSWER YOUR QUERIES</h1>
       </Row>
