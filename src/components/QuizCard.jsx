@@ -3,7 +3,7 @@ import ThemedButton from "./ThemedButton";
 
 function QuizCard() {
   return (
-    <div
+    <div 
       className="p-0 w-25 quizCard"
       style={{
         borderRadius: "15px",
