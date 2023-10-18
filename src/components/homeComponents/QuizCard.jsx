@@ -1,5 +1,5 @@
 import React from "react";
-import ThemedButton from "./ThemedButton";
+import ThemedButton from "../ThemedButton";
 
 function QuizCard() {
   return (

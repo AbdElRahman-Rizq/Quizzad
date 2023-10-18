@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import Quizzes from '../components/Quizzes'
-import About from '../components/about'
-import LeaveAMessage from '../components/LeaveAMessage'
-import JoinUs from '../components/JoinUs'
-import Footer from '../components/Footer'
+import Navbar from '../components/homeComponents/Navbar'
+import Hero from '../components/homeComponents/Hero'
+import Quizzes from '../components/homeComponents/Quizzes'
+import About from '../components/homeComponents/about'
+import LeaveAMessage from '../components/homeComponents/LeaveAMessage'
+import JoinUs from '../components/homeComponents/JoinUs'
+import Footer from '../components/homeComponents/Footer'
 
 function Home() {
   return (

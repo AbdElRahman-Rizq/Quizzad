@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavBar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import logo from "../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { Link } from 'react-router-dom';
 function SmoothScrollLink({ targetId, children }) {
   const handleClick = (e) => {
