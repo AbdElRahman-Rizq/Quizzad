@@ -3,9 +3,6 @@ import '../style/Notfound.css'
 
 export default function Notfound() {
 
-
-    
-    
     return (<>
     <div id='notFound' className="text">
             <div>ERROR</div>
