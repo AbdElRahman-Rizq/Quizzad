@@ -60,7 +60,7 @@ function LeaveAMessage() {
             placeholder="LEAVE A MESSAGE FOR US"
             style={{
               width: "80%",
-              borderRadius: "10px",
+              borderRadius: "20px",
               border: " 1px solid rgba(171, 152, 186, 0.50)",
               background: " #FFF",
               padding:"2.1%",
