@@ -23,7 +23,7 @@ function SmoothScrollLink({ targetId, children }) {
 }
 function Navbar() {
   return (
-    <div className="fixed-top">
+    <div>
     <NavBar bg="light" expand="lg" style={{marginTop:"-10px"}}>
         <Container style={{paddingTop:"-10px"}}> {/*Container */}
           <Row className='w-100'>

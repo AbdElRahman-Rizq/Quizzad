@@ -5,8 +5,8 @@ import Row from "react-bootstrap/esm/Row";
 
 function LeaveAMessage() {
   return (
-    <Container className="py-5" id='contactUs'>
-      <Row className="my-5">
+    <Container className="p-5" id='contactUs'>
+      <Row className="my-5 text-center">
         <h1>LET’S ANSWER YOUR QUERIES</h1>
       </Row>
       <Row>
@@ -38,7 +38,6 @@ function LeaveAMessage() {
               
             }}
           />
-
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -75,7 +74,7 @@ function LeaveAMessage() {
   <button  className='themedButton'
     style={{
         border:"none",
-        borderRadius: "7px",
+        borderRadius: "100px",
         width:"11%",
         padding:".7%",
     }}> SUBMIT</button>
