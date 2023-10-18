@@ -41,7 +41,7 @@ function Navbar() {
           </Nav>
             </Col>
             <Col lg={2} style={{paddingTop:"30px",fontSize:"1.2rem", paddingLeft:"8%"}}> {/*SignIn */}
-              <Link href="#" className='text-decoration-none text-dark' id='signinLink'>Sign in</Link>
+              <Link to={"/login"} className='text-decoration-none text-dark' id='signinLink'>Sign in</Link>
             </Col>
           </Row>
         </Container>
