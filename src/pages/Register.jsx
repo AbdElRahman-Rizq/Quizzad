@@ -4,7 +4,7 @@ import Logo from '../assets/images/logo.png'
 import Exam from '../assets/images/Exams-bro.png'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -135,7 +135,7 @@ return (
                     </div>
                 </div>
                 <div className='py-2'>
-                    <span>You have an account? <a className='text-dark'>Sign in</a></span>
+                    <span>You have an account? <Link to={"/login"} className='text-dark'>Sign in</Link ></span>
                 </div>
                 <div  className='signupBtn'>
                     <button disabled={!formik.isValid} className='btn rounded-5 col-12 text-white'>Sign Up</button>
