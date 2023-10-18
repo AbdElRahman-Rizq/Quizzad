@@ -2,6 +2,7 @@ import React from 'react'
 import '../style/Login.css'
 import Logo from '../assets/images/logo.png'
 import Exam from '../assets/images/Exams-bro.png'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     return (
@@ -29,7 +30,7 @@ export default function Login() {
                         </div>
                     </div>
                     <div className='my-2'>
-                        <span>You don't have an account? <a className='text-dark'>Sign up</a></span>
+                        <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
                     </div>
                     <div  className='signupBtn'>
                         <button className='btn rounded-5 col-12 text-white'>Login</button>
