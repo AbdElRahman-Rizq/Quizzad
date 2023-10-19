@@ -1,0 +1,23 @@
+.navbar-expand-lg{
+    background-color: #420462 !important;
+    border-radius: 20px;
+    width: 100%;
+}
+.navbar-expand-lg a{
+    color: white;
+    transition: background-color .5 ease-in-out;
+    font-size: 20px;
+    font-weight: 100;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+.navbar-expand-lg a:hover{
+    color: #420462;
+    border: 10px 20px ;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+.admin img{
+    width: 60px;
+    margin: auto;
+}
