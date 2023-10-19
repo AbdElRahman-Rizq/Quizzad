@@ -1,0 +1,27 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.buttonForSidebar{
+    color: rgb(15, 15, 15);
+    border-radius:17px;
+    /* padding: 2%; */
+    cursor: pointer;
+    max-width: 92% !important;
+    margin-left: 6%;
+}
+.buttonForSidebar .row{
+    width:30vw;
+    text-align: center;
+}
+.buttonForSidebar h6{
+font-weight: 500 !important;
+font-size: .85rem;
+padding-top: .76rem;
+padding-right: .8rem;
+}
+
+.buttonForSidebar:hover{
+    background-color: #89288F !important;
+    color: white;
+}
