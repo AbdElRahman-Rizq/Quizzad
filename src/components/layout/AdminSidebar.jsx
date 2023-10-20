@@ -40,8 +40,8 @@ function AdminSidebar() {
                     <ButtonForSide content={"Quizzes"} icon={"fa fa-book-open"}/>
                     <ButtonForSide content={"Users"} icon={"fa fa-list-check"}/>
                 </Row>
-                <Row style={{marginTop:"45%"}}>
-                <ButtonForSide content={"Classes"} icon={"fa fa-gear"}/>
+                <Row style={{marginTop:"65%"}}>
+                <ButtonForSide content={"logout"} icon={"fa fa-gear"}/>
                 </Row>
             </Container>
         </div>
