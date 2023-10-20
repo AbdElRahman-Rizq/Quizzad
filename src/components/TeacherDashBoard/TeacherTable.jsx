@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
-import '../style/TeacherTable.css';
+import '../../style/TeacherTable.css';
 
 export default function TeacherTable() {
     const [teachers, setTeachers] = useState([]);
@@ -31,8 +31,8 @@ export default function TeacherTable() {
             </div>
         );
     return (
-        <div className="container">
-            <table className="table table-striped table-hover table-sm my-5 border rounded-5 shadow m-5">
+        <div className="container tableContainer">
+            <table className="table table-striped table-hover table-sm my-5 border rounded-5 shadow ms-4">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -45,11 +45,11 @@ export default function TeacherTable() {
                 <tbody>
                     {teachers.map((teacher) => (
                         <tr key={teacher.id}>
-                            <td>{teacher.id}</td>
-                            <td>{teacher.name}</td>
-                            <td>{teacher.email}</td>
-                            <td>{teacher.phone}</td>
-                            <td>
+                            <td className="pb-2">{teacher.id}</td>
+                            <td className="pb-2">{teacher.name}</td>
+                            <td className="pb-2">{teacher.email}</td>
+                            <td className="pb-2">{teacher.phone}</td>
+                            <td className="pb-2">
                                 <div className="cradIcon">
                                     <i className="fa-solid fa-eye mx-2"></i>
                                     <i className="fa-regular fa-pen-to-square fs-6 mx-2 text-success"></i>

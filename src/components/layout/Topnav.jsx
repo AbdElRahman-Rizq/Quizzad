@@ -1,6 +1,6 @@
 import React from 'react'
-import vector from '../assets/images/teacher.png'
-import '../style/Topnav.css'
+import vector from '../../assets/images/teacher.png'
+import '../../style/Topnav.css'
 
 
 export default function Topnav() {

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
- {/* logo */}
 import "../../style/AdminDash.css"
 function ButtonForSide({content,icon}) {
   return (
@@ -9,7 +8,7 @@ function ButtonForSide({content,icon}) {
             <Col className='ms-2 my-2'>
             <i class={icon}></i>
             </Col>
-            <Col lg={10} className='text-center flex-start d-flex'>
+            <Col lg={10} className='ps-4 d-flex'>
             <h6>{content}</h6>
             </Col>
         </Row>

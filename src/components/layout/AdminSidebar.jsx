@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import logo from "../../assets/images/logo.png";
+import "../../style/AdminDash.css"
 import ButtonForSide from './ButtonForSide';
  {/* logo */}
 function AdminSidebar() {
@@ -18,8 +19,8 @@ function AdminSidebar() {
                 <Col lg={5} className='mt-2 ms-0'>
         <img src={logo} alt="" width={"150%"}/>
                 </Col>
-                <Col lg={6} className='pt-4 d-flex justify-content-start'>
-        <p>QuizZAD</p>
+                <Col lg={6} className='d-flex justify-content-start'>
+        <p id='quizZad'>QuizZAD</p>
                 </Col>
             </Row>
             <Row>

@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminSidebar from '../components/adminComponents/adminSidebar'
+import AdminSidebar from '../components/layout/AdminSidebar'
 import { Col, Container, Row } from 'react-bootstrap'
 
 

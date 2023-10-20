@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner"
-import '../style/StudentTable.css'
+import '../../style/StudentTable.css'
 
 
 
