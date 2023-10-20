@@ -10,7 +10,7 @@ import Navbar from './components/layout/Navbar'
 import Topnav from './components/layout/Topnav'
 import TeacherTable from './components/TeacherDashBoard/TeacherTable'
 import StudentTable from './components/studentComponents/StudentTable'
-import NewRequest from './components/layout/NewRequest'
+import NewRequest from './components/adminComponents/NewRequest'
 import TecherDashBoard from './pages/TecherDashBoard'
 function App() {
 

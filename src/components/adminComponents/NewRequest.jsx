@@ -32,27 +32,27 @@ export default function NewRequest() {
     }
 
     return (
-        <div className="container">
-            <table className="table table-striped table-hover table-sm my-5   shadow m-5 p-3 bg-info bg-opacity-10 border border-info border-0 rounded">
-                <thead className="">
+        <div className="container m-0">
+            <table className="table table-striped text-center table-hover table-sm my-4 shadow m-0 bg-info bg-opacity-10 border border-0 rounded">
+                <thead>
                     <tr>
-                        <th className="ps-5">Id</th>
-                        <th className="ps-5">Name</th>
-                        <th>Role</th>
-                        <th>Grade</th>
-                        <th>Email</th>
-                        <th>Action</th>
+                        <th className="px-4 py-2">Id</th>
+                        <th className="px-4 py-2">Name</th>
+                        <th className="px-4 py-2">Role</th>
+                        <th className="px-4 py-2">Grade</th>
+                        <th className="px-4 py-2">Email</th>
+                        <th className="px-4 py-2 ">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {requests.map((request) => (
                         <tr key={request.id}>
-                            <td className="ps-5">{request.id}</td>
-                            <td>{request.name}</td>
-                            <td>{request.address.suite}</td>
-                            <td>{request.email}</td>
-                            <td>{request.phone}</td>
-                            <td>
+                            <td className="px-4 py-2">{request.id}</td>
+                            <td className="px-4 py-2">{request.name}</td>
+                            <td className="px-4 py-2">{request.address.suite}</td>
+                            <td className="px-4 py-2">20</td>
+                            <td className="px-4 py-2">{request.email}</td>
+                            <td className="px-4 py-2">
                                 <div className="cradIcon">
                                     <i className="fa-solid fa-circle-check mx-2 fs-5 text-success"></i>
                                     <i className="fa-solid fa-circle-xmark fs-5 text-danger"></i>

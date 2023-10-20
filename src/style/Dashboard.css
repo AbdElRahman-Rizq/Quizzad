@@ -4,3 +4,8 @@
 .rightSideDashboard .tableContainer{
     padding-right: 4rem !important;
 }
+/* For admin dashboard */
+.rightSideAdmin{
+    padding-right: 2.9rem !important;
+
+}
