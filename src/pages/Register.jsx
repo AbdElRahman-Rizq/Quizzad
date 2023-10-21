@@ -141,7 +141,7 @@ export default function Register() {
                         </div>
                     </div>
                     <div className='py-2'>
-                        <span>You have an account? <Link to={'./Login'} className='text-dark'>Sign in</Link></span>
+                        <span>You have an account? <Link to={'/Login'} className='text-dark'>Sign in</Link></span>
                     </div>
                     <div  className='signupBtn'>
                         <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn rounded-5 col-12 text-white'>Sign Up</button>

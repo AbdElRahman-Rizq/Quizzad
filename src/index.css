@@ -44,7 +44,7 @@
 background-color: #fff;
 color: #933f9c;
 }
-.navbar-nav a:hover,#signinLink:hover{
-  /* font-weight:600; */
-  /* transition:font-weight 0s ease-in-out 0.5s; */
-}
+/* .navbar-nav a:hover,#signinLink:hover{
+  font-weight:600; 
+   transition:font-weight 0s ease-in-out 0.5s;
+} */
