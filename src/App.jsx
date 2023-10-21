@@ -8,10 +8,12 @@ import ForgetPassword from './pages/ForgetPassword'
 import Checkcode from './pages/Checkcode'
 import Navbar from './components/adminComponents/users/Navbar'
 import Topnav from './components/layout/Topnav'
-import TeacherTable from './components/adminComponents/users/TeacherTable'
 import StudentTable from './components/adminComponents/users/StudentTable'
 import NewRequest from './components/adminComponents/users/NewRequest'
-import TecherDashBoard from './pages/TecherDashBoard'
+import TeacherDashBoard from './pages/TeacherDashBoard'
+import { QuizList } from './components/adminComponents/Quiz/quizList'
+import { SearchBar } from './components/adminComponents/Quiz/searchBar'
+
 function App() {
 
   return (
@@ -27,7 +29,9 @@ function App() {
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<Navbar/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>
-      <Route path='/teacherDashboard' element={<TecherDashBoard/>}/>
+      <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
+      <Route path='/quizList' element={<QuizList/>}/>
+      <Route path='/searchBar' element={<SearchBar/>}/>
       <Route path='*' element={<Notfound/>}/>
     </Routes>
     </BrowserRouter>

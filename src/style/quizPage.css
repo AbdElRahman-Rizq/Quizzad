@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../assets/font/Century Gothic/CenturyGothic.ttf') format('truetype');
+    /* If you have other font formats (OTF, WOFF, WOFF2), add them here too. */
+  }
+* {
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.background{
+    background-color: #E9E2EE;
+}
+
+.imageBackground{
+    background-image: url(https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.quizButton{
+    background-color: #89288F;
+    width: 100%;
+
+}
