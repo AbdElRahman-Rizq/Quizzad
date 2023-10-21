@@ -66,7 +66,7 @@ export default function Register() {
                 <div className="container">
                 <form onSubmit={formik.handleSubmit } className="form  w-50 bg-light rounded-5 px-5 py-3">
                     <div className='main-img'>
-                        <img src={Logo} className="w-75" alt=''/>  
+                        <img src={Logo} className="ms-5" width={"60%"} alt=''/>  
                     </div>
                     <div className='main-header text-center pb-3'>
                         <h1>Sign up Your Account</h1>
@@ -87,7 +87,7 @@ export default function Register() {
                                 </select>
                             </div>                
                             <div className='grade py-2'>
-                                <label htmlFor="grade" class="form-label">Grade Level | Specialization</label>
+                                <label htmlFor="grade" class="form-label w-100">Grade Level | Specialization</label>
                                 <select class="form-select rounded-5" name="grade" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.grade}>
                                     <option value="0">Select your grade</option>
                                     <option value="1">Grade 1</option>

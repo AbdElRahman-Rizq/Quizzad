@@ -11,7 +11,10 @@
     max-height: 100%;
 
   }
-  
+  .register .form label{
+    font-size: .9rem;
+    margin-left: .5rem;
+  }
   .register .exam img{
     position: absolute;
     bottom: 0;
