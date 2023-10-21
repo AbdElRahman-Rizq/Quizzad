@@ -1,8 +1,8 @@
 import React from 'react'
 import AdminSidebar from '../components/layout/AdminSidebar'
 import { Col, Container, Row } from 'react-bootstrap'
-import Navbar from '../components/layout/Navbar'
-import NewRequest from '../components/adminComponents/NewRequest'
+import Navbar from '../components/adminComponents/users/Navbar'
+import NewRequest from '../components/adminComponents/users/NewRequest'
 import "../style/Dashboard.css"
 
 

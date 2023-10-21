@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
-import '../../style/TeacherTable.css';
+import '../../../style/TeacherTable.css';
 
 export default function TeacherTable() {
     const [teachers, setTeachers] = useState([]);
