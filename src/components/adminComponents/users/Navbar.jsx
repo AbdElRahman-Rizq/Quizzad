@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../style/Navbar.css'
-import vector from '../../assets/images/admin.png'
+import '../../../style/Navbar.css'
+import vector from '../../../assets/images/admin.png'
 
 export default function Navbar() {
     return (

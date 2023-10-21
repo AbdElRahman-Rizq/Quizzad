@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../components/layout/Navbar'
-import TeacherTable from '../components/TeacherDashBoard/TeacherTable'
+import Navbar from '../components/adminComponents/users/Navbar'
+import TeacherTable from '../components/adminComponents/users/TeacherTable'
 import AdminSidebar from '../components/layout/AdminSidebar'
 import "../style/Dashboard.css"
 
