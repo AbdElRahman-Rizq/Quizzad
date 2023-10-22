@@ -1,4 +1,3 @@
-import React from "react";
 import ThemedButton from "../layout/ThemedButton";
 
 function QuizCard() {

@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from '../components/adminComponents/users/Navbar'
+import UserNav from '../components/adminComponents/users/UserNav'
 import TeacherTable from '../components/adminComponents/users/TeacherTable'
 import AdminSidebar from '../components/layout/AdminSidebar'
 import "../style/Dashboard.css"
@@ -13,7 +12,7 @@ export default function TeacherDashBoard() {
                         <AdminSidebar/>
                         </div>
                         <div className="col-md-8 pt-4 rightSideDashboard ps-2">
-                            <Navbar/>
+                            <UserNav/>
                             <TeacherTable/>
                         </div>
                     </div>

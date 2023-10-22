@@ -8,8 +8,9 @@ import JoinUs from '../components/homeComponents/JoinUs'
 import Footer from '../components/homeComponents/Footer'
 
 function Home() {
+  
   return (
-    <div style={{background: "#E9E2EE", height:"100%"}}>
+    <div style={{background: "#E9E2EE"}}>
     <Navbar/>
     <Hero/>
     <Quizzes/>

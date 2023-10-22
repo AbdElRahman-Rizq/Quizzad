@@ -1,0 +1,29 @@
+.background{
+    background-color: #E9E2EE;
+}
+
+.imageBackground{
+    background-image: url(https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.quizButton{
+    background-color: #89288F;
+    width: 100%;
+
+}
+
+.QuizDash{
+    background-color: #E9E2EE;
+}
+
+.QuizNav{
+    background-color: #52057B;
+}
+
+.quizlist{
+    max-width: max-content;
+}
