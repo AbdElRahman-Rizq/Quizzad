@@ -8,11 +8,14 @@ export function QuizPage() {
       <section className='QuizDash'>
                     <div className="row ps-2">
                         <div className="col-md-3">
-                        <AdminSidebar/>
+                          <div className='d-none d-md-block'>
+                            <AdminSidebar/>
+                          </div>
                         </div>
+
                         <div className="col-md-9 pt-4 rightSideDashboard ps-2">
-                            <QuizNav/>
-                            <QuizList/>
+                            <QuizNav />
+                            <QuizList />
                         </div>
                     </div>
             </section>

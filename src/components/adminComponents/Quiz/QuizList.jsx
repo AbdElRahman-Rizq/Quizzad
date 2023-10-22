@@ -9,6 +9,7 @@ export  function QuizList() {
                  <div className="col-md-8 col-xl-6 text-center mx-auto">
                     <h2 className="fw-bold">Explore Quizzes</h2>
                 </div>
+                
             </div>
       <div className="d-flex row row-cols-1 row-cols-md-3 mx-auto quizlist">
         <div className="col mb-4 p-2 ">
