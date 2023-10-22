@@ -3,7 +3,7 @@
     src: url('../assets/font/Century Gothic/CenturyGothic.ttf') format('truetype');
     /* If you have other font formats (OTF, WOFF, WOFF2), add them here too. */
   }
-* {
+*{
     font-family: 'Century Gothic', sans-serif;
 }
 

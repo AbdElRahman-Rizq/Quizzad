@@ -8,7 +8,6 @@ export default function TeacherDashBoard() {
     return (
         <div>
             <section className='TecherDash'>
-               
                     <div className="row ps-2">
                         <div className="col-md-4">
                         <AdminSidebar/>
@@ -18,7 +17,6 @@ export default function TeacherDashBoard() {
                             <TeacherTable/>
                         </div>
                     </div>
-
             </section>
         </div>
     )

@@ -20,8 +20,8 @@ export default function ForgetPassword() {
                     </div>
                     <div className='row'>                        
                         <div className='email my-2'>
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control rounded-5" id="email" placeholder=""/> 
+                            <label type="email" className="form-label">Email</label>
+                            <input type="email" className="form-control rounded-5" id="email" placeholder=""/> 
                         </div>
                     </div>
                     <div className='my-2'>
