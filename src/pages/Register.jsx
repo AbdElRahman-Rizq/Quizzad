@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import  '../style/Register.css'
+import  '../assets/css/authentication.css'
 import Logo from '../assets/images/logo.png'
 import Exam from '../assets/images/Exams-bro.png'
 import { FormikConsumer, useFormik } from 'formik'
@@ -59,12 +59,12 @@ export default function Register() {
 
     return (
         <div>
-            <section className='register sec-gap'>
+            <section className='register'>
                 <div className='exam '>
-                    <img src={Exam} className="w-25" alt=''/>  
+                    <img  src={Exam} className="w-25" alt=''/>  
                 </div>
                 <div className="container">
-                <form onSubmit={formik.handleSubmit } className="form  w-50 bg-light rounded-5 px-5 py-3">
+                <form onSubmit={formik.handleSubmit } className="form  bg-light rounded-5 px-5 py-3">
                     <div className='main-img'>
                         <img src={Logo} className="ms-4" width={"60%"} alt=''/>  
                     </div>
