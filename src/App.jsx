@@ -4,15 +4,24 @@ import Register from './components/authenticationComponents/Register'
 import Login from './pages/Login'
 import Notfound from './pages/Notfound'
 import AdminDashboard from './pages/AdminDashboard'
+<<<<<<< HEAD
 import ForgetPassword from './components/authenticationComponents/ForgetPassword'
 import Checkcode from './components/authenticationComponents/Checkcode'
 import Navbar from './components/adminComponents/users/Navbar'
+=======
+import ForgetPassword from './pages/ForgetPassword'
+import Checkcode from './pages/Checkcode'
+import Navbar from './components/adminComponents/users/UserNav'
+>>>>>>> d6fe877b572ca3c1f0773e4d9ddfa08e123af85b
 import Topnav from './components/layout/Topnav'
 import StudentTable from './components/adminComponents/users/StudentTable'
 import NewRequest from './components/adminComponents/users/NewRequest'
 import TeacherDashBoard from './pages/TeacherDashBoard'
 import { QuizList } from './components/adminComponents/Quiz/quizList'
 import { SearchBar } from './components/adminComponents/Quiz/searchBar'
+import { QuizNav } from './components/adminComponents/Quiz/QuizNav'
+import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
+import { AdminSideNav } from './components/layout/AdminSideNav'
 
 function App() {
 
@@ -32,6 +41,9 @@ function App() {
       <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
       <Route path='/quizList' element={<QuizList/>}/>
       <Route path='/searchBar' element={<SearchBar/>}/>
+      <Route path='/quiznav' element={<QuizNav/>}/>
+      <Route path='/quizpage' element={<QuizPage/>}/>
+      <Route path='/sidenav' element={<AdminSideNav/>}/>
       <Route path='*' element={<Notfound/>}/>
     </Routes>
     </BrowserRouter>

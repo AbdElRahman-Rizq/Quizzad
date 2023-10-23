@@ -21,11 +21,13 @@ function SmoothScrollLink({ targetId, children }) {
     </Link>
   );
 }
+
+
 function Navbar() {
   return (
     <div>
-    <NavBar bg="light" expand="lg" style={{marginTop:"-10px"}}>
-        <Container style={{paddingTop:"-10px"}}> {/*Container */}
+    <NavBar bg="light" expand="lg" >
+        <Container > {/*Container */}
           <Row className='w-100'>
             <Col lg={2}>
               <div>

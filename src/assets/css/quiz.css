@@ -1,12 +1,3 @@
-@font-face {
-    font-family: 'Century Gothic';
-    src: url('../assets/font/Century Gothic/CenturyGothic.ttf') format('truetype');
-    /* If you have other font formats (OTF, WOFF, WOFF2), add them here too. */
-  }
-*{
-    font-family: 'Century Gothic', sans-serif;
-}
-
 .background{
     background-color: #E9E2EE;
 }
@@ -23,4 +14,16 @@
     background-color: #89288F;
     width: 100%;
 
+}
+
+.QuizDash{
+    background-color: #E9E2EE;
+}
+
+.QuizNav{
+    background-color: #52057B;
+}
+
+.quizlist{
+    max-width: max-content;
 }

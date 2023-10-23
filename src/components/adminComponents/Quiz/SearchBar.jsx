@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../style/quizPage.css'
+import '../../../assets/css/quiz.css'
 
 export function SearchBar() {
   return (
