@@ -1,7 +1,7 @@
 import React from 'react'
-import '../style/Forgetpassword.css'
-import Logo from '../assets/images/logo.png'
-import Exam from '../assets/images/Exams-bro.png'
+import '../../style/Forgetpassword.css'
+import Logo from '../../assets/images/logo.png'
+import Exam from '../../assets/images/Exams-bro.png'
 
 export default function ForgetPassword() {
     return (

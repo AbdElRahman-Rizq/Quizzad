@@ -2,48 +2,52 @@ import React from 'react'
 import '../style/Login.css'
 import Logo from '../assets/images/logo.png'
 import Exam from '../assets/images/Exams-bro.png'
-import { Link , useNavigate} from 'react-router-dom'
-import { FormikConsumer, useFormik } from 'formik'
+import { Link,useNavigate } from 'react-router-dom'
+import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 
-export default function Login() {
 
+export default function Login() {
     let validationLoginSchema=Yup.object({
         email : Yup.string()
         .required('Email is required')
         .email('Enter a valid email address'),
         password :Yup.string()
-        .required('First Name is required')
-        .min(2, 'First Name must be at least 2 characters')
-        .max(10, 'First Name must be at most 10 characters'),
+        .required('Password is required')
+        .min(2, 'Password must be at least 2 characters')
+        .max(15, 'Password must be at most 8 characters'),
     })
+    
+    function loginSubmit(values) {
+    const navigate = useNavigate();
+        fetch('http://localhost:5000/api/v1/users/auth', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        })
+          .then(response => response.json())
+          .then(() => {
+            // Handle the API response data
+                    
+              console.log('Login successful');
+              navigate.push('/');
+          })
+          .catch(error => {
+            // Handle any errors
+            console.error('Error:', error);
+          });
+      }
 
-
-    function loginSubmit(values){
-        console.log(values);
-    }
-
-    let formik = useFormik({
-        initialValues:{
-            email:"",
-            password:"",
+      const formik = useFormik({
+        initialValues: {
+          email: '',
+          password: '',
         },
-        onSubmit:loginSubmit ,
-        validationSchema : validationLoginSchema        
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
+        validationSchema: validationLoginSchema,
+        onSubmit: loginSubmit,
+      });
 
     return (
         <div>
