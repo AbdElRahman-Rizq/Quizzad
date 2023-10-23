@@ -41,7 +41,7 @@ export function AdminSideNav() {
         </nav>
       ) : (
         // Render the sidebar for larger screens here
-        <nav className="navbar align-items-start sidebar accordion sideBar p-0 border rounded-5">
+        <nav className="navbar align-items-start sidebar accordion">
           <div className="container-fluid d-flex flex-column p-0 py-5">
           <a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
             <div className="sidebar-brand-icon">
@@ -52,37 +52,39 @@ export function AdminSideNav() {
             </div>
           </a>
           <hr className="sidebar-divider" />
-          <ul className="navbar-nav text-light py-1" id="accordionSidebar">
-            <li className="nav-item my-3 SBphase">
+          <ul className="navbar-nav text-light py-1 reverse-color-on-hover" id="accordionSidebar">
+            <li className="nav-item my-2 SBphase">
               <a className="nav-link p-3" href="profile.html">
-                <i className="fa fa-light fa-house-user fs-4" style={{color: "#89288F",}}></i>
-                <span className='fs-5 px-3 text-dark'>Dashboard</span>
+                <i className="fa fa-light fa-house-user fs-4"></i>
+                <span className='fs-6 px-3 textSB'>Dashboard</span>
               </a>
             </li>
-            <li className="nav-item my-3 SBphase">
+            <li className="nav-item my-2 SBphase">
               <a className="nav-link p-3" href="table.html">
-                <i className="fa fa-solid fa-landmark fs-4" style={{color: "#89288F",}} />
-                <span className='fs-5 px-3 text-dark'>Class</span>
+                <i className="fa fa-solid fa-landmark fs-4" />
+                <span className='fs-6 px-3 textSB'>Class</span>
               </a>
             </li>
-            <li className="nav-item my-3 SBphase">
+            <li className="nav-item my-2 SBphase">
               <a className="nav-link p-3" href="login.html">
-                <i className="fa-solid fa-book fs-4 " style={{color: "#89288F",}} />
-                <span className='fs-5 px-3 text-dark'>Quiz</span>
+                <i className="fa-solid fa-book fs-4" />
+                <span className='fs-6 px-3 textSB'>Quiz</span>
+              </a>
+            </li>
+            <li className="nav-item my-2 SBphase">
+              <a className="nav-link p-3" href="register.html">
+                <i className="fa fa-solid fa-user fs-4"/>
+                <span className='fs-6 px-3 textSB'>User</span>
               </a>
             </li>
             <li className="nav-item my-3 SBphase">
               <a className="nav-link p-3" href="register.html">
-                <i className="fa fa-solid fa-user fs-4 " style={{color: "#89288F",}} />
-                <span className='fs-5 px-3 text-dark'>User</span>
+              <i className="fa-solid fa-door-open fs-4"></i>
+                <span className='fs-6 px-3 textSB'>Log out</span>
               </a>
             </li>
           </ul>
-          <div className="text-center d-none d-md-inline">
-            <button className="btn rounded-circle border-0" id="sidebarToggle" type="button" />
-          </div>
         </div>
-          
         </nav>
       )}
     </div>
