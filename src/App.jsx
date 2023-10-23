@@ -15,8 +15,7 @@ import { QuizList } from './components/adminComponents/Quiz/quizList'
 import { SearchBar } from './components/adminComponents/Quiz/searchBar'
 import { QuizNav } from './components/adminComponents/Quiz/QuizNav'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
-import { AdminSideNav } from './components/layout/AdminSideNav'
-
+import { SideNav } from './components/layout/SideNav'
 function App() {
 
   return (
@@ -37,7 +36,7 @@ function App() {
       <Route path='/searchBar' element={<SearchBar/>}/>
       <Route path='/quiznav' element={<QuizNav/>}/>
       <Route path='/quizpage' element={<QuizPage/>}/>
-      <Route path='/sidenav' element={<AdminSideNav/>}/>
+      <Route path='/sidenav' element={<SideNav/>}/>
       <Route path='*' element={<Notfound/>}/>
     </Routes>
     </BrowserRouter>
