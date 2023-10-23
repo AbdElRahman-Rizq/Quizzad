@@ -8,6 +8,7 @@ import * as Yup from 'yup'
 
 
 export default function Login() {
+    const navigate = useNavigate();
     let validationLoginSchema=Yup.object({
         email : Yup.string()
         .required('Email is required')
@@ -19,7 +20,6 @@ export default function Login() {
     })
     
     function loginSubmit(values) {
-    const navigate = useNavigate();
         fetch('http://localhost:5000/api/v1/users/auth', {
           method: 'POST',
           headers: {
@@ -32,7 +32,7 @@ export default function Login() {
             // Handle the API response data
                     
               console.log('Login successful');
-              navigate.push('/');
+              navigate('/');
           })
           .catch(error => {
             // Handle any errors
