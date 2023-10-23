@@ -29,21 +29,30 @@ function Navbar() {
     <NavBar bg="light" expand="lg" >
         <Container > {/*Container */}
           <Row className='w-100'>
-            <Col lg={2}>
-              <div>
-                <img src={logo} alt="logo" width={"90px"} height={"80px"} /> {/*Logo */}
+            <Col lg={2} className='d-flex justify-content-between'>  {/*Logo */}
+            <NavBar.Brand >
+              <div className='my-2'>
+                <img src={logo} alt="logo" width={"60px"}/>
               </div>
+            </NavBar.Brand>
+            <NavBar.Toggle aria-controls="basic-navbar-nav" style={{border:"none"}}/>
             </Col>
-            <Col lg={8} style={{paddingTop:"30px",fontSize:"1.2rem" ,  paddingLeft:"6%"}}>
-            <Nav className="d-flex justify-content-between w-75 ps-5">           {/*Links */}
+            <Col
+            className='pt-4'
+            style={{fontSize:"1.2rem" , textAlign:"center"}}>
+            <NavBar.Collapse>
+            <Col lg={8}>
+            <Nav className="d-flex justify-content-between ps-5">           {/*Links */}
             <SmoothScrollLink className="navLink" targetId="#home">Home</SmoothScrollLink>
             <SmoothScrollLink className="navLink" targetId="#quizzes">Quizzes</SmoothScrollLink>
             <SmoothScrollLink className="navLink" targetId="#aboutUs">About Us</SmoothScrollLink>
             <SmoothScrollLink className="navLink" targetId="#contactUs">Contact Us</SmoothScrollLink>
-          </Nav>
+            </Nav>
             </Col>
-            <Col lg={2} style={{paddingTop:"30px",fontSize:"1.2rem", paddingLeft:"8%"}}> {/*SignIn */}
+            <Col lg={4} style={{height:"40px"}}> {/*SignIn */}
               <Link to={"/login"} className='text-decoration-none text-dark' id='signinLink'>Sign in</Link>
+            </Col>
+          </NavBar.Collapse>
             </Col>
           </Row>
         </Container>

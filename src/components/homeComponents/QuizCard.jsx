@@ -1,9 +1,14 @@
+import { Col } from "react-bootstrap";
 import ThemedButton from "../layout/ThemedButton";
 
 function QuizCard() {
   return (
-    <div 
-      className="p-0 w-25 quizCard"
+  
+    <Col 
+      className="p-0 m-4  quizCard"
+      md={5} 
+      xs={10}
+      lg={3}
       style={{
         borderRadius: "15px",
         border: "3px solid initial",
@@ -23,7 +28,7 @@ function QuizCard() {
       <p>Master key concepts and boost retention with .</p>
       <ThemedButton content={"Take Quiz"} propWidth={"50%"} propPadding={"1.5% 0"}/>
       </section>
-    </div>
+    </Col>
   );
 }
 
