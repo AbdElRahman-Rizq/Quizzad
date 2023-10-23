@@ -4,15 +4,9 @@ import Register from './components/authenticationComponents/Register'
 import Login from './pages/Login'
 import Notfound from './pages/Notfound'
 import AdminDashboard from './pages/AdminDashboard'
-<<<<<<< HEAD
 import ForgetPassword from './components/authenticationComponents/ForgetPassword'
 import Checkcode from './components/authenticationComponents/Checkcode'
-import Navbar from './components/adminComponents/users/Navbar'
-=======
-import ForgetPassword from './pages/ForgetPassword'
-import Checkcode from './pages/Checkcode'
-import Navbar from './components/adminComponents/users/UserNav'
->>>>>>> d6fe877b572ca3c1f0773e4d9ddfa08e123af85b
+import UserNav from './components/adminComponents/users/UserNav'
 import Topnav from './components/layout/Topnav'
 import StudentTable from './components/adminComponents/users/StudentTable'
 import NewRequest from './components/adminComponents/users/NewRequest'
@@ -36,7 +30,7 @@ function App() {
       <Route path='/studenttable' element={<StudentTable/>}/>
       <Route path='/newrequest' element={<NewRequest/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
-      <Route path='/navbar' element={<Navbar/>}/>
+      <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>
       <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
       <Route path='/quizList' element={<QuizList/>}/>
