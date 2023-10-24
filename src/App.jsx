@@ -1,12 +1,12 @@
 import Home from './pages/Home'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import Register from './pages/Register'
+import Register from './components/authenticationComponents/Register'
 import Login from './pages/Login'
 import Notfound from './pages/Notfound'
 import AdminDashboard from './pages/AdminDashboard'
-import ForgetPassword from './pages/ForgetPassword'
-import Checkcode from './pages/Checkcode'
-import Navbar from './components/adminComponents/users/UserNav'
+import ForgetPassword from './components/authenticationComponents/ForgetPassword'
+import Checkcode from './components/authenticationComponents/Checkcode'
+import UserNav from './components/adminComponents/users/UserNav'
 import Topnav from './components/layout/Topnav'
 import StudentTable from './components/adminComponents/users/StudentTable'
 import NewRequest from './components/adminComponents/users/NewRequest'
@@ -15,8 +15,7 @@ import { QuizList } from './components/adminComponents/Quiz/quizList'
 import { SearchBar } from './components/adminComponents/Quiz/searchBar'
 import { QuizNav } from './components/adminComponents/Quiz/QuizNav'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
-import { AdminSideNav } from './components/layout/AdminSideNav'
-
+import { SideNav } from './components/layout/SideNav'
 function App() {
 
   return (
@@ -30,14 +29,14 @@ function App() {
       <Route path='/studenttable' element={<StudentTable/>}/>
       <Route path='/newrequest' element={<NewRequest/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
-      <Route path='/navbar' element={<Navbar/>}/>
+      <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>
       <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
       <Route path='/quizList' element={<QuizList/>}/>
       <Route path='/searchBar' element={<SearchBar/>}/>
       <Route path='/quiznav' element={<QuizNav/>}/>
       <Route path='/quizpage' element={<QuizPage/>}/>
-      <Route path='/sidenav' element={<AdminSideNav/>}/>
+      <Route path='/sidenav' element={<SideNav/>}/>
       <Route path='*' element={<Notfound/>}/>
     </Routes>
     </BrowserRouter>

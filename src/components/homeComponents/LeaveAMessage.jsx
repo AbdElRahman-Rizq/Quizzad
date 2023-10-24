@@ -10,8 +10,8 @@ function LeaveAMessage() {
         <h1>LET’S ANSWER YOUR QUERIES</h1>
       </Row>
       <Row>
-        <Col lg={6} className="d-flex flex-column pe-4">
-          <label htmlFor="firstName">First Name</label>
+        <Col lg={5} className="d-flex flex-column me-5">
+          <label className="ms-2" htmlFor="firstName">First Name</label>
           <input
             type="text"
             id="firstName"
@@ -21,10 +21,10 @@ function LeaveAMessage() {
               background: "#FFF",
               padding: "1.5% 0",
               marginBottom: "3%",
-              width: "90%",
+              width: "100%",
             }}
           />
-          <label htmlFor="lastName">Last Name</label>
+          <label className="ms-2" htmlFor="lastName">Last Name</label>
           <input
             type="text"
             id="lastName"
@@ -34,11 +34,11 @@ function LeaveAMessage() {
               background: "#FFF",
               padding: "1.5% 0",
               marginBottom: "3%",
-              width: "90%",
+              width: "100%",
               
             }}
           />
-          <label htmlFor="email">Email</label>
+          <label className="ms-2" htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -48,7 +48,7 @@ function LeaveAMessage() {
               background: "#FFF",
               padding: "1.5% 0",
               marginBottom: "3%",
-              width: "90%",
+              width: "100%",
             }}
           />
         </Col>
@@ -56,27 +56,31 @@ function LeaveAMessage() {
         <Col>
           <textarea
             id="message"
-            rows="8"
+            rows="7 "
             placeholder="LEAVE A MESSAGE FOR US"
             style={{
-              width: "80%",
+              width: "100%",
               borderRadius: "20px",
               border: " 1px solid rgba(171, 152, 186, 0.50)",
               background: " #FFF",
               padding:"2.1%",
-              marginLeft:"5%",
+              // marginLeft:"1rem",
               marginTop:"4%"
             }}
           />
         </Col>
       </Row>
-      <Row className="d-flex justify-content-end" style={{paddingRight:"8.5%"}}>
-  <button  className='themedButton'
+      <Row 
+      lg={4}
+      sm={12}
+      className="d-flex ms-2 mt-4" style={{paddingRight:"8.5%"}}>
+  <button 
+   className='themedButton'
     style={{
         border:"none",
         borderRadius: "100px",
-        width:"11%",
-        padding:".7%",
+        width:"9rem",
+        padding:"1% 0",
     }}> SUBMIT</button>
 </Row>
     </Container>

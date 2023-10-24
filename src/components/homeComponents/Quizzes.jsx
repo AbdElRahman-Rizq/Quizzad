@@ -12,17 +12,15 @@ function Quizzes() {
             <h1> Explore Our Quizzes</h1>
             <p>Quizzes provide an opportunity for real-time engagement and interactive learning experiences for all grades</p> 
         </Row>
-        <Row className='d-flex flex-column'>
-          <Col className='d-flex justify-content-between align-items-center pb-5' >
+        <Row className='justify-content-center align-items-center'>
+          
           <QuizCard/>
           <QuizCard/>
           <QuizCard/>
-          </Col>
-          <Col className='d-flex justify-content-between align-items-center'>
           <QuizCard/>
           <QuizCard/>
           <QuizCard/>
-          </Col>
+      
         </Row>
         
     </Container>

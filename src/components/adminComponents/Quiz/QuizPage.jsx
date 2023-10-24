@@ -1,4 +1,4 @@
-import AdminSidebar from '../../layout/AdminSidebar'
+import { SideNav } from '../../layout/SideNav'
 import { QuizNav } from './QuizNav'
 import { QuizList } from './quizList'
 
@@ -8,8 +8,8 @@ export function QuizPage() {
       <section className='QuizDash'>
                     <div className="row ps-2">
                         <div className="col-md-3">
-                          <div className='d-none d-md-block'>
-                            <AdminSidebar/>
+                          <div className='d-md-block p-3'>
+                            <SideNav/>
                           </div>
                         </div>
 

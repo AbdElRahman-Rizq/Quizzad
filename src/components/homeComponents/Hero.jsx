@@ -16,14 +16,16 @@ function Hero() {
     >
         <Container className='h-100'>
             <Row className='h-100'>
-                <Col lg={8} md={12} className='d-flex flex-column justify-content-center'>
-                    <h1 className='pb-4' style={{fontSize:"2.7rem"}}>
+                <Col lg={8} md={12} className='d-flex flex-column justify-content-center pt-5'>
+                    <h1 className='pb-4 mt-5' style={{fontSize:"2.7rem"}}>
                     Unlock your learning potential 
                     </h1>
                     <p className=' pb-4' style={{fontSize:"1.25 rem",width:"85%"}}>
                     Choose from thousands of Quizzes and a vast collection of study materials to fuel your educational journey
                     </p>
-                   <ThemedButton content={'Explore Our Quizzes'} propWidth={"30%"} propPadding={"1.5% 0"}/>
+                    <Col >
+                   <ThemedButton content={'Explore Our Quizzes'} propWidth={"16rem"} propPadding={"1.8% 0"}/>
+                    </Col>
                 </Col>
                 <Col lg={4} md={0}></Col>
             </Row>

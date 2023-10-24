@@ -7,13 +7,16 @@
 
 
 /* Common styles for both sidebar and navbar */
-.sidebar,
-.navbar {
-    background-color:#B08EC9; 
-  color: white;
+.sidebar{
+    background-color:#B08EC9 ;
+  color:white;
   padding: 0;
 }
 
+.navbar{
+  background-color:#B08EC9;
+  border-radius: 0px;
+}
 /* Styles for the sidebar */
 .sidebar {
   height: 100%;
@@ -23,17 +26,14 @@
   left: 0;
   transition: left 0.3s;
   z-index: 999;
+  border-radius: 30px;
+  height: 100vh;
 }
 
 .SBphase{
     background-color: #ffffff;
-    border-radius: 50px;
+    border-radius: 30px;
 }
-
-.IconSB{
-    
-}
-
 
 
 /* Media query for smaller screens */
@@ -107,3 +107,27 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;} 
+
+
+
+  .reverse-color-on-hover li:hover {
+    background-color: #89288F; /* Background color */
+    color: #fff; /* Text color */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect for smooth color change */
+  }
+  
+  /* Define the hover effect to reverse the color */
+  .reverse-color-on-hover li{
+    background-color: #fff; /* Background color on hover */
+    color: #89288F; /* Text color on hover */
+  }
+  .reverse-color-on-hover i{
+    color: #89288F; /* Text color on hover */
+  }
+  .reverse-color-on-hover li:hover i {
+    color: #ffffff; /* Reversed color when hovered */
+  }
+  
+  .reverse-color-on-hover li:hover span {
+    color: #fff; /* Reversed color when hovered */
+  }
