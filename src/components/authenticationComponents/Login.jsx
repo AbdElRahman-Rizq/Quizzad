@@ -65,13 +65,13 @@ export default function Login() {
                     </div>
                     <div className='row'>                        
                         <div className='email my-2'>
-                            <label htmlFor="email" class="form-label">Email</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" class="form-control rounded-5" id="email" placeholder=""/>
+                            <label htmlFor="email" className="form-label">Email</label>
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control rounded-5" id="email" placeholder=""/>
                             {formik.errors.email && formik.touched.email && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.email}</div>)}
                         </div>
                         <div className='password my-2'>
-                            <label htmlFor="password" class="form-label">Password</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" class="form-control rounded-5" id="password" placeholder=""/> 
+                            <label htmlFor="password" className="form-label">Password</label>
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" placeholder=""/> 
                             {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
                         </div>
                     </div>

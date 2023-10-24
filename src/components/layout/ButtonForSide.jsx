@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import "../../style/AdminDash.css"
+import "../../assets/css/AdminDash.css"
 function ButtonForSide({content,icon}) {
   return (
     <div className='me-4 my-2 bg-light buttonForSidebar text-center w-100'>

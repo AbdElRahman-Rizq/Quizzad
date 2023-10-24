@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../style/Checkcode.css'
+import '../../assets/css/Checkcode.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
 

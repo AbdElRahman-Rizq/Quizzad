@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import logo from "../../assets/images/logo.png";
-import "../../style/AdminDash.css"
+import "../../assets/css/AdminDash.css"
 import ButtonForSide from './ButtonForSide';
  {/* logo */}
 function AdminSidebar() {
