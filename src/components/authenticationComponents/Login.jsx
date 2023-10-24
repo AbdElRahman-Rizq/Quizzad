@@ -1,7 +1,7 @@
 import React from 'react'
-import '../style/Login.css'
-import Logo from '../assets/images/logo.png'
-import Exam from '../assets/images/Exams-bro.png'
+import '../../style/Login.css'
+import Logo from '../../assets/images/logo.png'
+import Exam from '../../assets/images/Exams-bro.png'
 import { Link,useNavigate } from 'react-router-dom'
 import {  useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -57,10 +57,10 @@ export default function Login() {
             </div>
             <div className="container">
                 <form onSubmit={formik.handleSubmit } className="form  w-50 bg-light rounded-5 px-5 py-3">
-                    <div className='main-img'>
-                        <img src={Logo} className="w-75" alt=''/>  
+                    <div className='formLogo'>
+                        <img src={Logo} className="w-100" alt=''/>  
                     </div>
-                    <div className='main-header text-center mb-3'>
+                    <div className='formHeader text-center mb-3'>
                         <h1>Login</h1>
                     </div>
                     <div className='row'>                        
@@ -75,10 +75,10 @@ export default function Login() {
                             {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
                         </div>
                     </div>
-                    <div className='my-2'>
+                    <div className='my-2 haventAccount'>
                         <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
                     </div>
-                    <div  className='signupBtn'>
+                    <div  className='formBtn'>
                         <button  disabled={!(formik.isValid && formik.dirty)} type="submit" className='btn rounded-5 col-12 text-white'>Login</button>
                     </div>
                 </form>           

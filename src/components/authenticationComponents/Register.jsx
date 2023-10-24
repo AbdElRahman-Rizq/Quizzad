@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import  '../../assets/css/authentication.css'
-import Logo from '../assets/images/logo.png'
-import Exam from '../assets/images/Exams-bro.png'
-import { FormikConsumer, useFormik } from 'formik'
+import Logo from '../../assets/images/logo.png'
+import Exam from '../../assets/images/Exams-bro.png'
+import {useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 
@@ -65,10 +65,10 @@ export default function Register() {
                 </div>
                 <div className="container">
                 <form onSubmit={formik.handleSubmit } className="form  bg-light rounded-5 px-5 py-3">
-                    <div className='main-img'>
-                        <img src={Logo} className="ms-4" width={"60%"} alt=''/>  
+                    <div className='formLogo'>
+                        <img src={Logo} width={"100%"} alt=''/>  
                     </div>
-                    <div className='main-header text-center pb-3'>
+                    <div className='formHeader text-center py-3'>
                         <h1>Sign up Your Account</h1>
                     </div>
                     <div className='row'>
@@ -140,10 +140,10 @@ export default function Register() {
                             {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
                         </div>
                     </div>
-                    <div className='py-2'>
+                    <div className='py-2 haveAccount'>
                         <span>You have an account? <Link to={'/Login'} className='text-dark'>Sign in</Link></span>
                     </div>
-                    <div  className='signupBtn'>
+                    <div  className='formBtn'>
                         <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn rounded-5 col-12 text-white'>Sign Up</button>
                     </div>
                     </form>

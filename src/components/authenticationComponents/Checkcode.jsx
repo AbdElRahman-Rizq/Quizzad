@@ -12,10 +12,10 @@ export default function Checkcode() {
                 </div>
                 <div className="container d-flex">
                     <form className="form w-50 bg-light rounded-5 px-5 py-3">
-                        <div className='main-img'>
-                            <img src={Logo} className="w-75" alt=''/>  
+                        <div className='formLogo'>
+                            <img src={Logo} className="w-100" alt=''/>  
                         </div>
-                        <div className='main-header text-center mb-3'>
+                        <div className='formHeader text-center py-3'>
                             <h1 className='h4'>Check your OTP code via email</h1>
                         </div>
                         <div className='row  mx-auto text-center'>                        
@@ -31,7 +31,7 @@ export default function Checkcode() {
                                 <span>Didn't receive OTP ? <a className='text-dark'>resend OTP again</a></span>
                             </div>
                         </div>
-                        <div  className='signupBtn '>
+                        <div  className='formBtn '>
                             <button className='btn rounded-5 col-12 text-white'>Sunbmit</button>
                         </div>
                     </form>           
