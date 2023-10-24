@@ -132,3 +132,17 @@
   .reverse-color-on-hover li:hover span {
     color: #fff; /* Reversed color when hovered */
   }
+
+
+
+  /* .rightSideDashboard{
+    padding-right: 6rem !important;
+}
+.rightSideDashboard .tableContainer{
+    padding-right: 4rem !important;
+} */
+/* For admin dashboard */
+/* .rightSideAdmin{
+    padding-right: 2.9rem !important;
+
+} */

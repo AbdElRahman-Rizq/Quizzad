@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/Notfound.css'
+import '../assets/css/authentication.css'
 
 export default function Notfound() {
 

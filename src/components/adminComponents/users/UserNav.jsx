@@ -1,4 +1,4 @@
-import '../../../style/Navbar.css'
+import '../../../assets/css/Navbar.css'
 import vector from '../../../assets/images/admin.png'
 
 export default function UserNav() {

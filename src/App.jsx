@@ -1,9 +1,9 @@
 import Home from './pages/Home'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import Register from './components/authenticationComponents/Register'
-import Login from './pages/Login'
 import Notfound from './pages/Notfound'
 import AdminDashboard from './pages/AdminDashboard'
+import Register from './components/authenticationComponents/Register'
+import Login from './components/authenticationComponents/Login'
 import ForgetPassword from './components/authenticationComponents/ForgetPassword'
 import Checkcode from './components/authenticationComponents/Checkcode'
 import UserNav from './components/adminComponents/users/UserNav'
@@ -26,8 +26,6 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/forgetpassword' element={<ForgetPassword/>}/>
       <Route path='/checkcode' element={<Checkcode/>}/>
-      <Route path='/studenttable' element={<StudentTable/>}/>
-      <Route path='/newrequest' element={<NewRequest/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>

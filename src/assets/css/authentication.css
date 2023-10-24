@@ -1,8 +1,129 @@
 /* 
-login page
-register page
+register
 forget password
+login page
 OTP
 
 */
+/* ----------- shared styles ---------------- */
+.register , .forgetPassword , .login{
+  background-image: linear-gradient(#C89ACB, #F2E5F3);
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+.sec-gap{
+  padding: 60px 0 ;
+}
+.formBtn{
+  background-color:#8A288E;
+  border-radius: 20px;
+}
+.btn{
+  color: #fff;
+}
+.formLogo{
+  max-width: 5.2rem;
+  margin: auto;
+}
+.formHeader h1{
+    font-size: 1.4rem;
+}
+.haveAccount,.haventAccount{
+  font-size: .9rem;
+}
+.exam img{
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  }
+  .form label{
+    font-size: .9rem;
+    margin-left: .5rem;
+  }
+ /* login */
+ .login{
+  padding: 6.5rem 0;
+}
+  /* //Media Query */
+  @media (min-width:900.99999px) and (max-width:1500px){
+    .form{
+      width: 50%;
+      padding: 1rem auto;
+    }
+    .forgetPassword{
+      padding: 6.5rem 0 ;
+    }
+    
+      /* ---------------register**----------- */
+      .register{
+        padding: 52px 0;
+      }
+  }
+  @media (min-width:700.99999px) and (max-width:900px){
+      /* ---------------register**----------- */
+
+      .register{
+        padding: 20px 0 90px 0;
+      }
+      /* forgetpassword */
+    .forgetPassword{
+      padding: 80px 0 0px 0;
+      height: 100vh;
+    }
+    .forgetPassword .form{
+      margin: auto;
+      width: 75%;
+    }
+     .exam{
+      display: none;
+    }
+  }
+  @media (min-width:567.99999px) and (max-width:700px)
+    /* ---------------register**----------- */
+  {
+      .register{
+        padding: 20px 0;
+      }
+      /* forgetpassword */
+    .forgetPassword{
+      padding: 80px 0 0px 0;
+      height: 100vh;
+    }
+    .forgetPassword .form{
+      margin: auto;
+      width: 75%;
+    }
+    .exam{
+      display: none;
+    }
+  }
+
+  @media (max-width:567px)
+    /* ---------------register**----------- */
+  {
+    .register{
+      padding: 20px 0;
+    }
+    /*---------------- forgetpassword -----------*/
+    .forgetPassword{
+      padding: 80px 0 0px 0;
+    }
+    .form{
+      margin:auto ;
+      width: 90%;
+    }
+    .forgetPassword .formHeader h1{
+      font-size: 1.2rem;
+  }
+    .exam{
+      display: none;
+    }
+          /*---------------- login -----------*/
+    .login{
+      padding:5rem 0;
+    }
+  }
+  
+  
 
