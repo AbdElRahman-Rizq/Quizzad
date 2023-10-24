@@ -16,6 +16,7 @@
 .navbar{
   background-color:#B08EC9;
   border-radius: 0px;
+  max-width: 100%;
 }
 /* Styles for the sidebar */
 .sidebar {

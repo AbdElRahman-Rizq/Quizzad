@@ -1,14 +1,13 @@
 import  { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.svg';
 import '../../assets/css/dashboard.css'; // Import your custom CSS
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export function SideNav() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 992);
     };
 
     window.addEventListener('resize', handleResize);
@@ -20,32 +19,14 @@ export function SideNav() {
   return (
     <div>
       {isMobile ? (
-        // Render a mobile navbar here
-        // <nav className="navbar navbar-expand-lg">
-        //   <a className="navbar-brand mx-3" href="#">
-        //     <img className="ZADlogo" src={logo} alt="quizZAD" />
-        //     <span className=' mx-2 align-iteams-center'>QuizZAD</span> 
-        //   </a>
-        //   <div className='dropdown'>
-        //   <button className="navbar-toggler dropbtn mx-3  bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        //     <span className="navbar-toggler-icon " />
-
-        //   </button>
-        //   <div className="dropdown-content">
-        //     <a href="#">Link 1</a>
-        //     <a href="#">Link 2</a>
-        //     <a href="#">Link 3</a>
-        //   </div>
-        //   </div>
-
-        // </nav>
-        <nav className="navbar navbar-expand-lg m-0">
-        <div className="container-fluid">
+        
+        <nav className="navbar navbar-expand-lg ">
+        <div className="container-fluid ">
         <a className="navbar-brand mx-3" href="#">
         <img className="ZADlogo" src={logo} alt="quizZAD" />
-        <span className=' mx-2 align-iteams-center text-light'>QuizZAD</span> 
+        <span className=' mx-2 align-iteams-center '>QuizZAD</span> 
         </a>
-          <button className="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler mx-3 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i className=" fa fa-solid fa-bars-staggered text-light"></i>
           </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -67,12 +48,12 @@ export function SideNav() {
           </ul>
         </div>
       </div>        
-    </nav>
+        </nav>
 
       ) : (
         // Render the sidebar for larger screens here
-        <nav className="navbar align-items-start sidebar accordion">
-          <div className="container-fluid d-flex flex-column p-0 py-5">
+        <nav className="navbar align-items-start sidebar accordion m-3">
+          <div className="container-fluid d-flex flex-column py-5">
           <a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
             <div className="sidebar-brand-icon">
               <img className='ZADlogo' src={logo} alt="quizZAD" />

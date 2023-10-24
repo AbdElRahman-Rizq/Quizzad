@@ -27,3 +27,18 @@
 .quizlist{
     max-width: max-content;
 }
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+/* Define the media query breakpoints */
+@media (max-width: 767px) { /* Hide SideNav on screens less than 768px wide (sm and xs screens) */
+    .col-md-3.d-md-block.d-none {
+      display: none;
+    }
+  }
+
+.Test{
+    width: 50vw;
+}
+  
