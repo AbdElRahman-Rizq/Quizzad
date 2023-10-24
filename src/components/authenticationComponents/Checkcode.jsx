@@ -5,7 +5,7 @@ import Exam from '../../assets/images/Exams-bro.png'
 
 export default function Checkcode() {
     return (
-        <div>
+        <div className='Form'>
             <section className='checkcode sec-gap'>
                 <div className='exam'>
                     <img src={Exam} className="w-25" alt=''/>  

@@ -1,18 +1,17 @@
 import React from 'react'
 import '../../assets/css/authentication.css'
-import '../../style/Forgetpassword.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
 
 export default function ForgetPassword() {
     return (
-        <div>
+        <div className='Form'>
             <section className='forgetPassword'>
             <div className='exam'>
                 <img src={Exam} className="w-25" alt=''/>  
             </div>
             <div className="container">
-                <form className="form bg-light rounded-5 px-5 py-3">
+                <form className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
@@ -25,10 +24,8 @@ export default function ForgetPassword() {
                             <input type="email" className="form-control rounded-5" id="email" placeholder=""/> 
                         </div>
                     </div>
-                    <div className='my-2'>
-                        <span>You don't have an account? <a className='text-dark'>Sign up</a></span>
-                    </div>
-                    <div  className='formBtn'>
+                    
+                    <div  className='formBtn mt-2'>
                         <button className='btn rounded-5 col-12 text-white'>Submit</button>
                     </div>
                 </form>           

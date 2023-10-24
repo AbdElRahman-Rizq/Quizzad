@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../style/Login.css'
+import  '../../assets/css/authentication.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
 import { Link,useNavigate } from 'react-router-dom'
@@ -51,12 +51,12 @@ export default function Login() {
 
     return (
         <div>
-        <section className='login sec-gap'>
+        <section className='login'>
             <div className='exam'>
                 <img src={Exam} className="w-25" alt=''/>  
             </div>
             <div className="container">
-                <form onSubmit={formik.handleSubmit } className="form  w-50 bg-light rounded-5 px-5 py-3">
+                <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
