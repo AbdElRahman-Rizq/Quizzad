@@ -1,8 +1,8 @@
 import  { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.svg';
-import '../../assets/css/dashboard.css'; // Import your custom CSS
+import '../../assets/css/layout.css'; // Import your custom CSS
 
-export function SideNav() {
+export function SideBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function SideNav() {
     <div>
       {isMobile ? (
         
-        <nav className="navbar navbar-expand-lg ">
+        <nav className="navbar navbar-expand-lg">
         <div className="container-fluid ">
         <a className="navbar-brand mx-3" href="#">
         <img className="ZADlogo" src={logo} alt="quizZAD" />

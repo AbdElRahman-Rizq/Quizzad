@@ -8,14 +8,11 @@ import ForgetPassword from './components/authenticationComponents/ForgetPassword
 import Checkcode from './components/authenticationComponents/Checkcode'
 import UserNav from './components/adminComponents/users/UserNav'
 import Topnav from './components/layout/Topnav'
-import StudentTable from './components/adminComponents/users/StudentTable'
-import NewRequest from './components/adminComponents/users/NewRequest'
 import TeacherDashBoard from './pages/TeacherDashBoard'
-import { QuizList } from './components/adminComponents/Quiz/quizList'
-import { SearchBar } from './components/adminComponents/Quiz/searchBar'
 import { QuizNav } from './components/adminComponents/Quiz/QuizNav'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
-import { SideNav } from './components/layout/SideNav'
+import { SideBar } from './components/layout/SideBar'
+import { QuizList } from './components/adminComponents/Quiz/QuizList'
 function App() {
 
   return (
@@ -31,10 +28,9 @@ function App() {
       <Route path='/admin' element={<AdminDashboard/>}/>
       <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
       <Route path='/quizList' element={<QuizList/>}/>
-      <Route path='/searchBar' element={<SearchBar/>}/>
       <Route path='/quiznav' element={<QuizNav/>}/>
       <Route path='/quizpage' element={<QuizPage/>}/>
-      <Route path='/sidenav' element={<SideNav/>}/>
+      <Route path='/sidebar' element={<SideBar/>}/>
       <Route path='*' element={<Notfound/>}/>
     </Routes>
     </BrowserRouter>
