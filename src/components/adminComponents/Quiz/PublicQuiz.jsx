@@ -1,7 +1,6 @@
-import React from 'react';
 import '../../../assets/css/quiz.css';
 
-export function QuizList() {
+export function PublicQuiz() {
   return (
     <div className='background'>
       <section className="py-3">
@@ -11,14 +10,14 @@ export function QuizList() {
               <h3 className="fw-bold py-2">Explore Quizzes</h3>
               <nav className="navbar bg-light p-3">
                 <div className="container-fluid">
-                    <div className="row">
-                    <div className="col-md-6">
+                    <div className="row w-100">
+                    <div className="col-md-7">
                         <form className="d-flex">
                         <input className="form-control me-1 rounded-5" type="search" placeholder="Search" aria-label="Search" />
                         <button className="rounded-5 p-2 searchBtn" type="submit">Search</button>
                         </form>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-5">
                         <div className="row">
                         <div className="col-md-4">
                             <div className="dropdown">

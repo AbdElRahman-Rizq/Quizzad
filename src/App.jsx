@@ -9,10 +9,8 @@ import Checkcode from './components/authenticationComponents/Checkcode'
 import UserNav from './components/adminComponents/users/UserNav'
 import Topnav from './components/layout/Topnav'
 import TeacherDashBoard from './pages/TeacherDashBoard'
-import { QuizNav } from './components/adminComponents/Quiz/QuizNav'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
-import { SideBar } from './components/layout/SideBar'
-import { QuizList } from './components/adminComponents/Quiz/QuizList'
+import { QuizView } from './components/adminComponents/Quiz/QuizView'
 function App() {
 
   return (
@@ -27,10 +25,8 @@ function App() {
       <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>
       <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
-      <Route path='/quizList' element={<QuizList/>}/>
-      <Route path='/quiznav' element={<QuizNav/>}/>
-      <Route path='/quizpage' element={<QuizPage/>}/>
-      <Route path='/sidebar' element={<SideBar/>}/>
+      <Route path='/quiz/*' element={<QuizPage/>}/>
+      <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
     </Routes>
     </BrowserRouter>

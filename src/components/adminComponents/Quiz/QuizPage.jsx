@@ -1,7 +1,10 @@
 import { QuizNav } from './QuizNav';
 import '../../../assets/css/quiz.css'; // Create a CSS file for styling
-import { QuizList } from './quizList';
 import { SideBar } from '../../layout/SideBar';
+import { PublicQuiz } from './PublicQuiz';
+import { Route, Routes } from 'react-router-dom';
+import { MyQuiz } from './MyQuiz';
+import { NewQuiz } from './NewQuiz';
 
 export function QuizPage() {
   return (
@@ -14,7 +17,11 @@ export function QuizPage() {
 
           <div className="col-lg-9 py-3">
             <QuizNav/>
-            <QuizList />
+            <Routes>
+              <Route path='/' element={<PublicQuiz/>}/>
+              <Route path='myquiz' element={<MyQuiz/>}/>
+              <Route path='newquiz' element={<NewQuiz/>}/>
+            </Routes>
           </div>
         </div>
       </section>

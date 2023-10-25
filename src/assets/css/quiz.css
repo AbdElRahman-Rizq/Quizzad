@@ -67,3 +67,24 @@
 .QuizCard{
     height: 500px;
 }
+
+/*------------------------------------*/
+/*------------------ quiz nav------------------*/
+.QuizNavBtn.active,
+.QuizNavBtn:hover {
+  background-color: white;
+  border-radius: 25px;
+  /* Add any other styles you want for the active link on hover */
+}
+
+
+/* Style for non-active links */
+.QuizNavBtn:not(.active) {
+    /* Reset the background and text color for non-active links */
+    background-color: transparent;
+  }
+  
+  /* Style for the hover effect on non-active links */
+  .QuizNavBtn:not(.active):hover {
+    background-color: lightgray; /* Add any hover effect styles for non-active links here */
+  }

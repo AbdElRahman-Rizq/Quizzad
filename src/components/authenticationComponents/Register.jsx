@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import  '../../assets/css/authentication.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
