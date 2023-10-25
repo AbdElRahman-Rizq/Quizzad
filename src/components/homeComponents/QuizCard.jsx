@@ -5,10 +5,10 @@ function QuizCard() {
   return (
   
     <Col 
-      className="p-0 m-4  quizCard"
+      className="p-0 my-3 mx-2 quizCard"
       md={5} 
-      xs={10}
-      lg={3}
+      xs={9}
+      lg={4}
       style={{
         borderRadius: "15px",
         border: "3px solid initial",

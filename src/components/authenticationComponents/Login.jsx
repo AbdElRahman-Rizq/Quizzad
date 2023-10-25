@@ -15,7 +15,7 @@ export default function Login() {
         .email('Enter a valid email address'),
         password :Yup.string()
         .required('Password is required')
-        .min(2, 'Password must be at least 2 characters')
+        .min(8, 'Password must be at least 2 characters')
         .max(15, 'Password must be at most 8 characters'),
     })
     
@@ -27,10 +27,8 @@ export default function Login() {
           },
           body: JSON.stringify(values),
         })
-          .then(response => response.json())
           .then(() => {
-            // Handle the API response data
-                    
+            // Handle the API response data                    
               console.log('Login successful');
               navigate('/');
           })
