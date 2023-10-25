@@ -11,6 +11,9 @@ import TeacherDashBoard from './pages/TeacherDashBoard'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
 import { QuizView } from './components/adminComponents/Quiz/QuizView'
 import Otp from './components/authenticationComponents/Checkcode'
+import AdminProfile from './components/adminComponents/users/AdminProfile'
+import Prooo from './components/adminComponents/users/Prooo'
+
 function App() {
 
   return (
@@ -21,6 +24,9 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/forgetpassword' element={<ForgetPassword/>}/>
       <Route path='/otp' element={<Otp/>}/>
+      <Route path='/pro' element={<Prooo/>}/>
+
+      <Route path='/profile' element={<AdminProfile/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>
@@ -28,6 +34,7 @@ function App() {
       <Route path='/quiz/*' element={<QuizPage/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
+
     </Routes>
     </BrowserRouter>
   )
