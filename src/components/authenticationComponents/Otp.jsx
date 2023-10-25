@@ -1,22 +1,24 @@
+
 import React from 'react'
 import '../../assets/css/authentication.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
 
-export default function Checkcode() {
+
+export default function Otp() {
     return (
-        <div className='Form'>
-            <section className='checkcode sec-gap'>
+            <>
+            <section className='otp'>
                 <div className='exam'>
                     <img src={Exam} className="w-25" alt=''/>  
                 </div>
                 <div className="container d-flex">
-                    <form className="form bg-light rounded-5 px-5 py-3">
+                    <form className="form w-100 bg-light rounded-5 px-5 py-3">
                         <div className='formLogo'>
                             <img src={Logo} className="w-100" alt=''/>  
                         </div>
                         <div className='formHeader text-center py-3'>
-                            <h1 className='h4'>Check your OTP code via email</h1>
+                            <h1 className='h4'>Check yfffour OTP code via email</h1>
                         </div>
                         <div className='row  mx-auto text-center'>                        
                             <div className='checkbox my-4 d-flex col-md-12 mx-auto'>
@@ -37,6 +39,6 @@ export default function Checkcode() {
                     </form>           
                 </div>
             </section>
-        </div>
+        </>
     )
 }
