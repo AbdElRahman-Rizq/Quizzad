@@ -11,9 +11,7 @@
   color: #fff;
   padding: 0.9rem 0.9rem;
 }
-.userBodyTable tr td {
-  /*tbody*/
-}
+
 
 .userTable td {
   /*every cell*/
@@ -45,19 +43,22 @@
   border-top: solid 0.1rem #b08ec9 !important;
   padding: 0.5rem;
 }
-/* Small screens */
+/* ------------------ Small screens ------------------------- */
 @media (max-width: 995px) {
   .userBodyTable tr td {
+    /* Every cell */
     font-size: 0.95rem;
-    padding: 0.5rem 0;
+    padding: 0.2rem 0;
   }
   .userTable tr td:first-child,
   .custom-thead th:first-child {
     /* first cell in all rows*/
-
     padding-left: 1.3rem !important;
+    padding-top: .7rem;
   }
   .userTable tr td:last-child div {
+    /* last cell in all rows*/
     width: 10rem !important;
+    margin-top: .5rem;
   }
 }

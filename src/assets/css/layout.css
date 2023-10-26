@@ -68,8 +68,9 @@
     left: -250px;
   }
   .mainBar{
-    border-radius: 30px;
+    border-radius: 3rem;
     border: #000 1px solid;
+    margin-top: .9rem;
   }
   /* Show the toggle button */
   .sidebar-toggle {
