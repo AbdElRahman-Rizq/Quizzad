@@ -39,7 +39,7 @@ export default function UserNav() {
               </li>
             </ul>
             <div className="admin text-center">
-              <img src={vector} alt="Admin" />
+              <img className='profileImage' src={vector} alt="Admin" />
             </div>
           </div>
         </div>

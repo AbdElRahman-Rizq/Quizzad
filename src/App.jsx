@@ -5,8 +5,8 @@ import Register from './components/authenticationComponents/Register'
 import Login from './components/authenticationComponents/Login'
 import ForgetPassword from './components/authenticationComponents/ForgetPassword'
 import Topnav from './components/layout/Topnav'
-
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
+import { ClassPage } from './components/adminComponents/class/ClassPage'
 import { QuizView } from './components/adminComponents/Quiz/QuizView'
 import Otp from './components/authenticationComponents/Checkcode'
 import MiniDash from './components/layout/MiniDash'
@@ -35,6 +35,7 @@ function App() {
       <Route path='/admin' element={<DashBoardPage/>}/>
       {/* waraki */}
       <Route path='/quiz/*' element={<QuizPage/>}/>
+      <Route path='/class/*' element={<ClassPage/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
 

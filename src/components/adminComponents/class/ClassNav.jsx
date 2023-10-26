@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 export function ClassNav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg rounded-5">
+      <nav className="navbar navbar-expand-lg rounded-4">
         <div className="container">
           <h1 className="navbar-brand text-light fs-4 px-4 fw-bold">Class</h1>
           <button className="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@ export function ClassNav() {
               </li>
             </ul>
             <div className="admin text-center">
-              <img src={vector} alt="Admin" />
+              <img className='profileImage' src={vector} alt="Admin" />
             </div>
           </div>
         </div>

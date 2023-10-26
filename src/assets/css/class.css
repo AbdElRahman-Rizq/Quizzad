@@ -1,3 +1,47 @@
 /* 
 class dashboard
 */
+/* ----------------class table--------------- */
+
+
+    /* Add padding to the table */
+    .table {
+        padding: 10px;
+    }
+
+    /* Add margin to the table */
+    .table {
+        margin: 10px;
+    }
+
+    /* Add padding to table rows (tr) */
+    .table tr {
+        padding: 10px;
+    }
+
+    /* Add margin to table rows (tr) */
+    .table tr {
+        margin: 10px;
+    }
+
+    /* Add padding to the table header (thead) */
+    .table thead {
+        padding: 10px;
+    }
+
+    /* Add margin to the table header (thead) */
+    .table thead {
+        margin: 10px;
+    }
+
+    /* Add padding to the table body (tbody) */
+    .table tbody {
+        padding: 10px;
+    }
+
+    /* Add margin to the table body (tbody) */
+    .table tbody {
+        margin: 10px;
+    }
+
+
