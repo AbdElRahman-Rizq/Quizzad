@@ -7,7 +7,7 @@ import vector from '../../../assets/images/vector.png'
 
 
 
-export function Prooo() {
+export default function Prooo() {
     const twoColors = { '0%': '#8A288E', '100%': '#fff' };
     return (<>
         <div className='Form'>

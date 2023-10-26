@@ -7,7 +7,7 @@ export default function Topnav() {
     return (
         <div>
             <div className='container '>
-                <div className="hstack gap-3 bg-lihgt">
+                <div class="hstack gap-3 bg-lihgt">
                     <div className="ps-5 title">Administrator</div>
                     <div className="pe-5 ms-auto"><img className="adminVector" src={vector}></img></div>
                 </div>

@@ -1,0 +1,75 @@
+.Form{
+width: 35%; 
+margin: auto;
+
+}
+.profile{
+    padding-top: 50px;
+}
+form{
+    background-color: #fcf8ff;
+}
+.profile-img{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    outline: 10px solid #bfc7cfcb;
+    transition: all .5s ease-in-out;
+}
+.profile-img img{
+    width: 90px;
+    z-index: 10;
+}
+/* .profile-img:hover{
+    color: #fff;
+    outline: 10px solid #69156294;
+} */
+
+.profile-header h1{
+    /* font-weight: 900; */
+    margin: 0 0 20px 0;
+}
+
+/* .profile  i{
+    position: absolute;
+    z-index: 20;
+    font-size:16px;
+    color: #64055c;
+    top: 70px;
+    right: 0;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+/*------------------------------ Media Query----------------------------------- */
+@media (min-width:900.99999px) and (max-width:1500px){
+    .Form{
+        width: 100%;
+        margin: auto;
+    }
+}
+@media (min-width:700.99999px) and (max-width:900px){
+    .Form{
+        width: 100%;
+        margin: auto;
+    }
+}
+@media (min-width:567.99999px) and (max-width:700px){
+    .Form{
+        width: 100%;
+    }
+}
+@media (max-width:567px){
+    .Form{
+        width: 100%;
+    } 
+}

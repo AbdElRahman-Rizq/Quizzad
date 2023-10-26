@@ -1,30 +1,63 @@
-.userTable{  /*Table*/
-    text-align: center;
-    border-collapse: inherit;
-    border-spacing: 0;
+.userTable {
+  /*Table*/
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  line-height: 1.5rem;
 }
-.custom-thead tr th{ /*Thead*/
-    background-color: #b08ec9 ;
-    color: #fff;
-   padding: .9rem .9rem;
+.custom-thead tr th {
+  /*Thead*/
+  background-color: #b08ec9;
+  color: #fff;
+  padding: 0.9rem 0.9rem;
+}
+.userBodyTable tr td {
+  /*tbody*/
+}
 
+.userTable td {
+  /*every cell*/
+  border-style: none solid solid none !important;
 }
-.userBodyTable tr td{/*tbody*/
-   padding: .9rem 0;
-   /* margin-top: 1rem; */
+.userTable tr td:first-child,
+.custom-thead th:first-child {
+  /* first cell in all rows*/
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  border-left: solid 0.1rem #b08ec9 !important;
+  padding-left: 1rem;
+  width: 0 !important;
 }
-  
-  td {
-    border: solid 1px #000;
-    border-style: none solid solid none;
-    padding: .8rem;
+.userTable tr td:last-child,
+.custom-thead th:last-child {
+  /* last cell in all rows*/
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  border-right: solid 0.1rem #b08ec9 !important;
+}
+.userTable tr td:last-child {
+    padding: 0.5rem 0;
+    padding-right: .4rem;
+}
+.userBodyTable tr td {
+  /* Every Row */
+  border-bottom: solid 0.1rem #b08ec9 !important;
+  border-top: solid 0.1rem #b08ec9 !important;
+  padding: 0.5rem;
+}
+/* Small screens */
+@media (max-width: 995px) {
+  .userBodyTable tr td {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
   }
-  
-  tr td:first-child,.custom-thead th:first-child { border-top-left-radius: 3rem;  border-bottom-left-radius: 3rem; }
-  tr td:last-child,.custom-thead th:last-child { border-top-right-radius: 3rem; border-bottom-right-radius: 3rem; }
-  
-  /* tr:last-child td:first-child { border-bottom-left-radius: 10px; }
-  tr:last-child td:last-child { border-bottom-right-radius: 10px; } */
-  
-  tr:first-child td { border-top-style: solid; }
-  tr td:first-child { border-left-style: solid; }
+  .userTable tr td:first-child,
+  .custom-thead th:first-child {
+    /* first cell in all rows*/
+
+    padding-left: 1.3rem !important;
+  }
+  .userTable tr td:last-child div {
+    width: 10rem !important;
+  }
+}

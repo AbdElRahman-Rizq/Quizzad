@@ -1,20 +1,21 @@
 import React from "react";
-import AdminSidebar from "../components/layout/AdminSidebar";
 import { Col, Container, Row } from "react-bootstrap";
 import Navbar from "../components/adminComponents/users/UserNav";
 import NewRequest from "../components/adminComponents/users/NewRequest";
 import "../assets/css/AdminDash.css";
 import { SideBar } from "../components/layout/SideBar";
+import WelcomeSide from "../components/layout/WelcomeSide";
+import MiniDash from "../components/layout/MiniDash";
 
-function AdminDashboard() {
+function AdminUsers() {
     return (
         <>
             <Row className="m-0">
-                <Col lg={3}>
+                <Col lg={3} className="py-2">
                     <SideBar/>
                 </Col>
                 <Col lg={9} className="col-md-8 pt-4 rightSideAdmin">
-                    <Navbar />
+                    <Navbar />                    
                     <NewRequest />
                 </Col>
             </Row>
@@ -22,4 +23,4 @@ function AdminDashboard() {
     );
 }
 
-export default AdminDashboard;
+export default AdminUsers;

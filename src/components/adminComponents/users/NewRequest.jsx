@@ -38,25 +38,33 @@ export default function NewRequest() {
       <Table hover responsive
       className="mt-4 userTable"
       >
-        <thead className="custom-thead mb-5">
+        <thead className="custom-thead">
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Username</th>
+            <th>Role</th>
+            <th>Specific</th>
             <th>Email</th>
-            <th>Phone</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody className="userBodyTable">
-          {requests.map((request) => (
-            <tr key={request.id} style={{ borderRadius: '10px' }}>
+          {requests.map((request) => ( request.id<8 ?<tr key={request.id}>
               <td>{request.id}</td>
               <td>{request.name}</td>
               <td>{request.username}</td>
-              <td>{request.email}</td>
               <td>{request.phone}</td>
-             
+              <td>{request.email}</td>
+              <td>
+                                <div className="p-0">
+                                    <i className="fa-solid fa-eye mx-2"></i>
+                                    <i className="fa-regular fa-pen-to-square fs-6 mx-2 text-success"></i>
+                                    <i className="fa-regular fa-trash-can fs-6 mx-2 text-danger"></i>
+                                </div>
+                            </td>
             </tr>
+            : null
+            
           ))}
         </tbody>
       </Table>
