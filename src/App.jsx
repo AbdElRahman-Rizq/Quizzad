@@ -13,6 +13,8 @@ import { QuizView } from './components/adminComponents/Quiz/QuizView'
 import Otp from './components/authenticationComponents/Checkcode'
 import AdminProfile from './components/adminComponents/users/AdminProfile'
 import Prooo from './components/adminComponents/users/Prooo'
+import MiniDash from './components/layout/MiniDash'
+import WelcomeSide from './components/layout/WelcomeSide'
 
 function App() {
 
@@ -25,8 +27,9 @@ function App() {
       <Route path='/forgetpassword' element={<ForgetPassword/>}/>
       <Route path='/otp' element={<Otp/>}/>
       <Route path='/pro' element={<Prooo/>}/>
-
-      <Route path='/profile' element={<AdminProfile/>}/>
+      <Route path='/mini' element={<MiniDash/>}/>
+      <Route path='/welcome' element={<WelcomeSide/>}/>
+      <Route path='/profilee' element={<AdminProfile/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>

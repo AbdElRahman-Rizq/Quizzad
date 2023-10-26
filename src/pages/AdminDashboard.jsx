@@ -5,6 +5,8 @@ import Navbar from "../components/adminComponents/users/UserNav";
 import NewRequest from "../components/adminComponents/users/NewRequest";
 import "../assets/css/dashboard.css";
 import { SideBar } from "../components/layout/SideBar";
+import WelcomeSide from "../components/layout/WelcomeSide";
+import MiniDash from "../components/layout/MiniDash";
 
 function AdminDashboard() {
     return (
@@ -15,7 +17,19 @@ function AdminDashboard() {
                 </Col>
                 <Col lg={9} className="col-md-8 pt-4 rightSideAdmin">
                     <Navbar />
-                    <NewRequest />
+                    <WelcomeSide></WelcomeSide>
+                    <div className="row">
+                        <div className="col-md-4">
+                            <MiniDash/>
+                        </div>
+                        <div className="col-md-4">
+                            <MiniDash/>
+                        </div>
+                        <div className="col-md-4">
+                            <MiniDash/>
+                        </div>
+                    </div>
+                    {/* <NewRequest /> */}
                 </Col>
             </Row>
         </>

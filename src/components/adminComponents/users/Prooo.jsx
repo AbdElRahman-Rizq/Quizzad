@@ -13,7 +13,7 @@ export default function Prooo() {
         <div className='Form'>
             <section className='profile'>
                 <div className="container">
-                    <form  className="form  rounded-3 px-5 py-4">
+                    <form  className="form rounded-3 px-5 py-4">
                         <div className='profile-header text-center'>
                             <h1 className='fs-5'>Edit Profile</h1>
                         </div>
@@ -80,8 +80,8 @@ export default function Prooo() {
             <div className="dash rounded-4 w-25 shadow d-flex justify-content-between px-4 my-1">
 
                 <div className="icon">
-                    <i class="fa-solid fa-person-chalkboard"></i>
-                    <h6 className=''>Teacher</h6>
+                    <i  class="fa-solid fa-person-chalkboard"></i>
+                    <h6 className='person'>Teacher</h6>
                 </div>
 
                 <div className=" rate p-2 ">

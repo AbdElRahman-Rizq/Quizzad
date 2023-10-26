@@ -7,7 +7,7 @@ margin: auto;
     padding-top: 50px;
 }
 form{
-    background-color: #e4bae48c;
+    background-color: #fcf8ff;
 }
 .profile-img{
     width: 100px;
@@ -30,13 +30,53 @@ form{
     /* font-weight: 900; */
     margin: 0 0 20px 0;
 }
+/*------------------------------ Media Query----------------------------------- */
+@media (min-width:900.99999px) and (max-width:1500px){
+    .Form{
+        width: 100%;
+        margin: auto;
+    }
+}
+@media (min-width:700.99999px) and (max-width:900px){
+    .Form{
+        width: 100%;
+        margin: auto;
+    }
+}
+@media (min-width:567.99999px) and (max-width:700px){
+    .Form{
+        width: 100%;
+    }
+}
+@media (max-width:567px){
+    .Form{
+        width: 100%;
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ********** */
 
 .dash{
     font-size: 60px ;
     border-bottom: 5px solid #8A288E;
-    background-color: #e4bae48c;
+    background-color: #fcf8ff;
 
 }
 .dash .icon i{
