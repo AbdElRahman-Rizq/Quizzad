@@ -1,0 +1,14 @@
+#welcome{
+    position: relative;
+}
+.weclome{
+    background-image: linear-gradient(#c065c7, #6a1070);
+    width: 100%;
+    height: 250px;
+}
+#welcome .vector img{
+    margin-top: 8px;
+    /* كارثه  */
+    margin-left: -80px;   
+    width: 550px;
+}

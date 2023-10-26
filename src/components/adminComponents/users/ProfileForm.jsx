@@ -1,14 +1,8 @@
 import React from 'react'
 import Profile from '../../../assets/images/profile.png'
-import '../../../assets/css/Proo.css'
-import { Progress, Space } from 'antd';
-import vector from '../../../assets/images/vector.png'
+import '../../../assets/css/Profile.css'
 
-
-
-
-export default function Prooo() {
-    const twoColors = { '0%': '#8A288E', '100%': '#fff' };
+export default function ProfileForm() {
     return (<>
         <div className='Form'>
             <section className='profile'>
@@ -18,8 +12,12 @@ export default function Prooo() {
                             <h1 className='fs-5'>Edit Profile</h1>
                         </div>
                         <div className='profile-img  d-flex justify-content-center align-items-center rounded-circle'>
-                            <img src={Profile} className='' alt=''/>  
+                                <img src={Profile} className='' alt=''/>                  
                         </div>
+                        {/* <div className="upload-img rounded-circle d-flex justify-content-center align-items-center m-auto">
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div> */}
+                        
                         <div className='row'>
                             
                             <div className='firstName py-2'>
@@ -74,51 +72,7 @@ export default function Prooo() {
             </section>
         </div>
 
-        <div className='Dash py-5 '>
-            <div className="container">
-
-            <div className="dash rounded-4 w-25 shadow d-flex justify-content-between px-4 my-1">
-
-                <div className="icon">
-                    <i  class="fa-solid fa-person-chalkboard"></i>
-                    <h6 className='person'>Teacher</h6>
-                </div>
-
-                <div className=" rate p-2 ">
-                    <div style={{ display: 'flex', flexDirection: 'column', rowGap: 14}}>
-                        {/* <Progress percent={99.9} strokeColor={twoColors} /> */}
-                        <Space wrap>
-                        <Progress type="circle" percent={75} strokeColor={twoColors} />
-                        </Space>
-                    </div>
-                </div>
-
-            </div>
-            </div>
-        </div>
-
-        <div id='welcome' className='text-white p-5'>
-            <div className="container">
-                <div className="row weclome rounded-5">
-                    <div className="col-md-6 ">
-                        <div className="p-5">
-                            <p>September 4 , 2023</p>
-                            <h2 className='mt-5'>Welcome back , Mohamed</h2>
-                            <p>Always stay update in your student portal</p>
-                        </div>
-                    </div>
-
-                    <div className="col-md-6">
-                        <div className="vector">
-                            <img src={vector} className=''></img>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-
+       
 
 
         </>

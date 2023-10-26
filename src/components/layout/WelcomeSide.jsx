@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../assets/css/WelcomeSide.css'
 import vector from '../../assets/images/vector.png'
 
 

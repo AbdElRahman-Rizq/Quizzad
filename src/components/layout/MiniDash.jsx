@@ -1,5 +1,6 @@
 import React from 'react'
 import { Progress, Space } from 'antd';
+import '../../assets/css/MiniDash.css'
 
 // Waraki
 export default function MiniDash() {
@@ -17,9 +18,10 @@ export default function MiniDash() {
 
                     <div className=" rate p-2 ">
                         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 14}}>
-                            {/* <Progress percent={99.9} strokeColor={twoColors} /> */}
                             <Space wrap>
-                            <Progress type="circle" percent={75} strokeColor={twoColors} />
+                            <Progress type="circle" percent={75}  
+                                format={percent => (<span style={{ color: '#A153A5' ,fontFamily: 'Arial', fontSize: '30px'  }}>{percent}%</span>)} 
+                                strokeColor={twoColors} strokeWidth={10} width={100}/>
                             </Space>
                         </div>
                     </div>
