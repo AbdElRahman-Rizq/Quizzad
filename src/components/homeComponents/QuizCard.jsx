@@ -1,14 +1,14 @@
 import { Col } from "react-bootstrap";
 import ThemedButton from "../layout/ThemedButton";
 
-function QuizCard() {
+function QuizCard({imgSrc}) {
   return (
   
     <Col 
-      className="p-0 my-3 mx-2 quizCard"
+      className="p-0 my-3 mx-3 quizCard"
       md={5} 
-      xs={9}
-      lg={4}
+      xs={8}
+      lg={3}
       style={{
         borderRadius: "15px",
         border: "3px solid initial",
@@ -16,7 +16,7 @@ function QuizCard() {
       }}
     >
       <img
-        src="../src/assets/images/card1.jpeg"
+        src={imgSrc}
         alt="img-card"
         height={"150px"}
         width={"100%"}
