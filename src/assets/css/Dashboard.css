@@ -1,3 +1,14 @@
+/* ----- Top Nav ----- */
+.adminVector{
+    width: 60px;
+  }
+  .hstack{
+    color:black;
+  }
+  .title{
+    font-size: 20px;
+  }
+/* -------- Welcome Back --------- */
 #welcome{
     position: relative;
 }
@@ -28,5 +39,21 @@
     #welcome .vector img{
        display: none;
     }
+}
+
+
+/* ------ Mini Dash ------ */
+.dash{
+    font-size: 60px ;
+    border-bottom: 5px solid #8A288E;
+    background-color: #fcf8ff;
+
+}
+.dash .icon i{
+    color: #8A288E;
+}
+.dash .icon h6{
+    color: #8A288E;
+    font-size: 20px;
 }
 

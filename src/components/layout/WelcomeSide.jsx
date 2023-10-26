@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../assets/css/WelcomeSide.css'
+import '../../assets/css/Dashboard.css'
 import vector from '../../assets/images/vector.png'
 
 

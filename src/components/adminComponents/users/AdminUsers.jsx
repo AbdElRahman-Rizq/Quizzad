@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import "../../../assets/css/AdminDash.css";
 import { SideBar } from "../../layout/SideBar";
-import NewRequest from "./NewRequest";
-import UserNav from "./UserNav";
+import AdminTable from "./AdminTable";
+import  UserNav  from "./userNav";
+
 
 
 
@@ -16,7 +16,7 @@ function AdminUsers() {
                 </Col>
                 <Col lg={9} className="col-md-8 pt-3 rightSideAdmin">
                     <UserNav/>                    
-                    <NewRequest/>
+                    <AdminTable/>
                 </Col>
             </Row>
         </>
