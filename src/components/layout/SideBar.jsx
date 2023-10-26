@@ -56,7 +56,7 @@ export function SideBar() {
       ) : (
         // Render the sidebar for larger screens here
         <nav className="navbar align-items-start sidebar accordion m-3">
-          <div className="container-fluid d-flex flex-column py-4">
+          <div className="container-fluid d-flex flex-column py-2">
           <a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
             <div className="sidebar-brand-icon">
               <img className='ZADlogo' src={logo} alt="quizZAD" />

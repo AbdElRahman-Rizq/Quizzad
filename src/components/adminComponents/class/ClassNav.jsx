@@ -2,12 +2,12 @@ import '../../../assets/css/quiz.css';
 import vector from '../../../assets/images/admin.png';
 import { NavLink } from 'react-router-dom';
 
-export function QuizNav() {
+export function ClassNav() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg rounded-5">
         <div className="container">
-          <h1 className="navbar-brand text-light fs-4 px-4 fw-bold">Quizzes</h1>
+          <h1 className="navbar-brand text-light fs-4 px-4 fw-bold">Class</h1>
           <button className="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i className="fa fa-bars-staggered text-light"></i>
           </button>
@@ -16,25 +16,25 @@ export function QuizNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/quiz" 
+                  to="/class" 
                 >
-                  Public Quizzes
+                  All Classes
                 </NavLink>
               </li>
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/quiz/myquiz"
+                  to="/class/myclass"
                 >
-                  My Quizzes
+                  My Classes
                 </NavLink>
               </li>
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/quiz/newquiz"
+                  to="/class/newclass"
                 >
-                  New Quiz
+                  New Class
                 </NavLink>
               </li>
             </ul>

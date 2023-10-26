@@ -1,6 +1,6 @@
-/* ------------------------------- */
+/* ------------- quiz nav ------------------ */
 .QuizNav{
-    background-color: #52057B;
+    background-color: #b954f0;
 }
 /* ------------- quiz list ------------------ */
 
@@ -43,9 +43,6 @@
     background-color: #E9E2EE;
 }
 
-.QuizNav{
-    background-color: #52057B;
-}
 
 .quizlist{
     max-width: max-content;
@@ -86,10 +83,12 @@
 .QuizNavBtn:not(.active) {
     /* Reset the background and text color for non-active links */
     background-color: transparent;
+    color:#ffffff;
+    border-radius: 25px;
+
   }
   
   /* Style for the hover effect on non-active links */
   .QuizNavBtn:not(.active):hover {
-    background-color: rgb(255, 255, 255); /* Add any hover effect styles for non-active links here */
-  }
+    background-color: rgb(255, 255, 255); /* Add any hover effect styles for non-active links here */}
   /*-----------------------------------------------*/

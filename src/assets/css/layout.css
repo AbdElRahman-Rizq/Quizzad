@@ -30,7 +30,9 @@
 
 .navbar-nav .nav-item:hover,
 .navbar-nav .nav-item.active {
-  background-color: white;
+  background-color: #89288F;
+  border-radius: 25px;
+
 }
 
 /* Set the text color to black on hover and when active */

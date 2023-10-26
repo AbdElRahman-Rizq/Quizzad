@@ -18,6 +18,7 @@ import WelcomeSide from './components/layout/WelcomeSide'
 import ProfileForm from './components/adminComponents/users/ProfileForm'
 import AdminUsers from './pages/AdminUsers'
 import DashBoardPage from './components/adminComponents/DashBoard/DashBoardPage'
+import { ClassPage } from './components/adminComponents/class/ClassPage'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
       <Route path='/admin' element={<DashBoardPage/>}/>
       {/* waraki */}
       <Route path='/quiz/*' element={<QuizPage/>}/>
+      <Route path='/class/*' element={<ClassPage/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='/sidebar/*' element={<SideBar/>}/>
       <Route path='*' element={<Notfound/>}/>
