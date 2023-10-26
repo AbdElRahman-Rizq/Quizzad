@@ -15,7 +15,7 @@ import { SideBar } from './components/layout/SideBar'
 // import Prooo from './components/adminComponents/users/Prooo'
 import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
-import ProfileForm from './components/adminComponents/users/ProfileForm'
+import ProfileForm from './components/adminComponents/profile/ProfileForm'
 import DashBoardPage from './components/adminComponents/DashBoard/DashBoardPage'
 import AdminUsers from './components/adminComponents/users/AdminUsers'
 
