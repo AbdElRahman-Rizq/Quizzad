@@ -63,88 +63,97 @@ export default function Register() {
                     <img  src={Exam} className="w-25" alt=''/>  
                 </div>
                 <div className="container">
-                <form onSubmit={formik.handleSubmit } className="form  bg-light rounded-5 px-5 py-4">
-                    <div className='formLogo'>
-                        <img src={Logo} width={"100%"} alt=''/>  
-                    </div>
-                    <div className='formHeader text-center py-3'>
-                        <h1>Sign up Your Account</h1>
-                    </div>
-                    <div className='row'>
-                        <div className="col-md-6">
-                            <div className='firstName py-2'>
-                                <label htmlFor="firstName" className="form-label">First Name</label>
-                                <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.firstName} type="text" className="form-control rounded-5 " id="firstName" name="firstName"/>
-                                {formik.errors.firstName && formik.touched.firstName && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.firstName}</div>)}               
-                            </div>                          
-                            <div className='gender py-2'>
-                                <label htmlFor="gender" className="form-label">Gender</label>
-                                <select className="form-select rounded-5" name="gender" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.gender}>
-                                    <option value="0">Select your gender</option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
-                                </select>
-                            </div>                
-                            <div className='grade py-2'>
-                                <label htmlFor="grade" className="form-label w-100">Grade Level | Specialization</label>
-                                <select className="form-select rounded-5" name="grade" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.grade}>
-                                    <option value="0">Select your grade</option>
-                                    <option value="1">Grade 1</option>
-                                    <option value="2">Grade 2</option>
-                                    <option value="2">Grade 3</option>
-                                    <option value="2">Grade 4</option>
-                                    <option value="2">Grade 5</option>
-                                    <option value="2">Grade 6</option>
-                                    <option value="2">Grade 7</option>
-                                    <option value="2">Grade 8</option>
-                                    <option value="2">Grade 9</option>
-                                </select>
-                            </div>                
+                    <form onSubmit={formik.handleSubmit } className="form  bg-light rounded-5 px-5 py-4">
+                        <div className='formLogo'>
+                            <img src={Logo} width={"100%"} alt=''/>  
                         </div>
+                        <div className='formHeader text-center py-3'>
+                            <h1>Sign up Your Account</h1>
+                        </div>
+                        <div className='row'>
+                            <div className="col-md-6">
+                                <div className='firstName py-2'>
+                                    <label htmlFor="firstName" className="form-label">First Name</label>
+                                    <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.firstName} type="text" className="form-control rounded-5 " id="firstName" name="firstName"/>
+                                    {formik.errors.firstName && formik.touched.firstName && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.firstName}</div>)}               
+                                </div>
+                            </div>
 
-                        <div className="col-md-6">
-                            <div className='lastName py-2'>
-                                <label htmlFor="lastName" className="form-label">Last Name</label>
-                                <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.lastName} type="text" className="form-control rounded-5" id="lastName" name="lastName"/>
-                                {formik.errors.lastName && formik.touched.lastName &&(<div className='alert mt-2 p-2 alert-danger'>{formik.errors.lastName}</div>)}                        
-                            </div>     
-                            <div className='type py-2'>
-                                <label htmlFor="type" className="form-label">Type</label>
-                                <select onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.type} className="form-select rounded-5" name="type">
-                                    <option value="0">Select you type</option>
-                                    <option value="1">Teacher</option>
-                                    <option value="2">Student</option>
-                                </select>
-                            </div>  
-                            <div className='birthdata py-2'>
-                                <label htmlFor="birthdata" className="form-label">Birthdate</label>
-                                <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.birthdata} type="date" className="form-control rounded-5" id="birthdata" name="birthdata"/>
-                            </div>     
-                        </div>
+                            <div className="col-md-6">
+                                <div className='lastName py-2'>
+                                    <label htmlFor="lastName" className="form-label">Last Name</label>
+                                    <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.lastName} type="text" className="form-control rounded-5" id="lastName" name="lastName"/>
+                                    {formik.errors.lastName && formik.touched.lastName &&(<div className='alert mt-2 p-2 alert-danger'>{formik.errors.lastName}</div>)}                        
+                                </div>
+                            </div>
 
-                        <div className='phoneNumber py-2'>
-                            <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phoneNumber} type="tel" className="form-control rounded-5" id="phoneNumber" name="phoneNumber"/> 
-                            {formik.errors.phoneNumber && formik.touched.phoneNumber && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.phoneNumber}</div>)}
-                        </div>
+                            <div className="col-md-6">
+                                <div className='gender py-2'>
+                                    <label htmlFor="gender" className="form-label">Gender</label>
+                                    <select className="form-select rounded-5" name="gender" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.gender}>
+                                        <option value="0">Select your gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>    
+                            </div>
 
-                        <div className='email py-2'>
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control rounded-5" id="email" name="email" />
-                            {formik.errors.email && formik.touched.email && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.email}</div>)}
+                            <div className="col-md-6">
+                                <div className='birthdata py-2'>
+                                    <label htmlFor="birthdata" className="form-label">Birthdate</label>
+                                    <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.birthdata} type="date" className="form-control rounded-5" id="birthdata" name="birthdata"/>
+                                </div>
+                            </div>
+
+                            <div className="col-md-6">
+                                <div className='type py-2'>
+                                    <label htmlFor="type" className="form-label">Type</label>
+                                    <select onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.type} className="form-select rounded-5" name="type">
+                                        <option value="0">Select you type</option>
+                                        <option value="1">Teacher</option>
+                                        <option value="2">Student</option>
+                                    </select>
+                                </div>  
+                            </div>
+                            <div className="col-md-6">
+                                    <div className='grade py-2'>
+                                        <label htmlFor="grade" className="form-label w-100">Grade Level | Specialization</label>
+                                        <select className="form-select rounded-5" name="grade" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.grade}>
+                                            <option value="0">Select your grade</option>
+                                            <option value="1">Grade 1</option>
+                                            <option value="2">Grade 2</option>
+                                            <option value="2">Grade 3</option>
+                                            <option value="2">Grade 4</option>
+                                            <option value="2">Grade 5</option>
+                                            <option value="2">Grade 6</option>
+                                            <option value="2">Grade 7</option>
+                                            <option value="2">Grade 8</option>
+                                            <option value="2">Grade 9</option>
+                                        </select>
+                                    </div>
+                            </div>
+                            <div className='phoneNumber py-2'>
+                                <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
+                                <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phoneNumber} type="tel" className="form-control rounded-5" id="phoneNumber" name="phoneNumber"/> 
+                                {formik.errors.phoneNumber && formik.touched.phoneNumber && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.phoneNumber}</div>)}
+                            </div>
+                            <div className='email py-2'>
+                                <label htmlFor="email" className="form-label">Email</label>
+                                <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control rounded-5" id="email" name="email" />
+                                {formik.errors.email && formik.touched.email && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.email}</div>)}
+                            </div>
+                            <div className='password py-2'>
+                                <label htmlFor="password" className="form-label">Password</label>
+                                <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" name="password"/> 
+                                {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+                            </div>
                         </div>
-                        <div className='password py-2'>
-                            <label htmlFor="password" className="form-label">Password</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" name="password"/> 
-                            {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+                        <div className='py-2 haveAccount'>
+                            <span>You have an account? <Link to={'/Login'} className='text-dark'>Sign in</Link></span>
                         </div>
-                    </div>
-                    <div className='py-2 haveAccount'>
-                        <span>You have an account? <Link to={'/Login'} className='text-dark'>Sign in</Link></span>
-                    </div>
-                    <div  className='formBtn'>
-                        <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn rounded-5 col-12 text-white'>Sign Up</button>
-                    </div>
+                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
+                            <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn w-100 py-3 text-white fs-bold'>Sign Up</button>
+                        </div>
                     </form>
                 </div>
             </section>

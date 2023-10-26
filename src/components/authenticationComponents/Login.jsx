@@ -76,8 +76,8 @@ export default function Login() {
                     <div className='my-2 haventAccount'>
                         <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
                     </div>
-                    <div  className='formBtn'>
-                        <button  disabled={!(formik.isValid && formik.dirty)} type="submit" className='btn rounded-5 col-12 text-white'>Login</button>
+                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
+                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Sunbmit</button>
                     </div>
                 </form>           
             </div>

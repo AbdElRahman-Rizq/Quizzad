@@ -12,6 +12,7 @@
 @font-face {
   font-family: 'Century Gothic';
   src: url('./assets/font/Century Gothic/CenturyGothic.ttf') format('truetype');
+  /* src: url('./assets/font/Century Gothic/GOTHICB.ttf') format('truetype'); */
   /* If you have other font formats (OTF, WOFF, WOFF2), add them here too. */
 }
 
