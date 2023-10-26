@@ -27,7 +27,7 @@ export function SideBar() {
               <img className="ZADlogo" src={logo} alt="quizZAD" />
               <span className="mx-3 align-items-center fw-bold fs-4">QuizZAD</span>
             </a>
-            <button className="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler mx-3 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">

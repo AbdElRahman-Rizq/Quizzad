@@ -57,11 +57,19 @@
 }
 
 
+.btn-collapse{
+  /* background-color: #ffffffea !important; */
+  color: #000 !important;
+}
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   /* Hide the sidebar and display the toggle button */
   .sidebar {
     left: -250px;
+  }
+  .mainBar{
+    border-radius: 30px;
+    border: #000 1px solid;
   }
   /* Show the toggle button */
   .sidebar-toggle {
@@ -83,6 +91,7 @@
   .navbar {
     display: block;
   }
+  
 }
 
 /* Additional styling for your specific elements can be added here */

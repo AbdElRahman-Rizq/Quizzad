@@ -10,7 +10,6 @@ import TeacherDashBoard from './pages/TeacherDashBoard'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
 import { QuizView } from './components/adminComponents/Quiz/QuizView'
 import Otp from './components/authenticationComponents/Checkcode'
-import AdminProfile from './components/adminComponents/users/AdminProfile'
 import { SideBar } from './components/layout/SideBar'
 // import Prooo from './components/adminComponents/users/Prooo'
 import MiniDash from './components/layout/MiniDash'
@@ -30,8 +29,6 @@ function App() {
       <Route path='/forgetpassword' element={<ForgetPassword/>}/>
       <Route path='/otp' element={<Otp/>}/>
       {/* <Route path='/pro' element={<Prooo/>}/> */}
-      <Route path='/profile' element={<AdminProfile/>}/>
-      <Route path='/profilee' element={<AdminProfile/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/adminUsers' element={<AdminUsers/>}/>
