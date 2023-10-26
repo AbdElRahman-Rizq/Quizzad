@@ -14,8 +14,8 @@ import AdminProfile from './components/adminComponents/users/AdminProfile'
 import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
 import ProfileForm from './components/adminComponents/users/ProfileForm'
-import AdminUsers from './pages/AdminUsers'
 import DashBoardPage from './components/adminComponents/DashBoard/DashBoardPage'
+import AdminUsers from './components/adminComponents/users/AdminUsers'
 
 function App() {
 
