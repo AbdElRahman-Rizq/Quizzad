@@ -2,6 +2,7 @@ import React from 'react'
 import Profile from '../../../assets/images/profile.png'
 import '../../../assets/css/Proo.css'
 import { Progress, Space } from 'antd';
+import vector from '../../../assets/images/vector.png'
 
 
 
@@ -12,7 +13,7 @@ export default function Prooo() {
         <div className='Form'>
             <section className='profile'>
                 <div className="container">
-                    <form  className="form bg-light rounded-3 px-5 py-4">
+                    <form  className="form  rounded-3 px-5 py-4">
                         <div className='profile-header text-center'>
                             <h1 className='fs-5'>Edit Profile</h1>
                         </div>
@@ -76,7 +77,7 @@ export default function Prooo() {
         <div className='Dash py-5 '>
             <div className="container">
 
-            <div className="dash border rounded-5 w-25 shadow d-flex justify-content-between px-4 ">
+            <div className="dash rounded-4 w-25 shadow d-flex justify-content-between px-4 my-1">
 
                 <div className="icon">
                     <i class="fa-solid fa-person-chalkboard"></i>
@@ -95,6 +96,31 @@ export default function Prooo() {
             </div>
             </div>
         </div>
+
+        <div id='welcome' className='text-white p-5'>
+            <div className="container">
+                <div className="row weclome rounded-5">
+                    <div className="col-md-6 ">
+                        <div className="p-5">
+                            <p>September 4 , 2023</p>
+                            <h2 className='mt-5'>Welcome back , Mohamed</h2>
+                            <p>Always stay update in your student portal</p>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6">
+                        <div className="vector">
+                            <img src={vector} className=''></img>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
         </>
 
     )
