@@ -1,7 +1,7 @@
 import UserNav from '../components/adminComponents/users/UserNav'
 import TeacherTable from '../components/adminComponents/users/TeacherTable'
 import AdminSidebar from '../components/layout/AdminSidebar'
-import "../assets/css/dashboard.css"
+import "../assets/css/AdminDash.css";
 
 export default function TeacherDashBoard() {
     return (

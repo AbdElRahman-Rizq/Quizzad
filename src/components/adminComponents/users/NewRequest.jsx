@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
-
+import "../../../assets/css/Table.css"
+import { Container, Table } from "react-bootstrap";
 export default function NewRequest() {
   const [requests, setRequests] = useState([]);
 
@@ -31,37 +32,42 @@ export default function NewRequest() {
     );
   }
 
+ 
   return (
-    <div className="container m-0">
-      <table className="table table-striped text-center table-hover table-sm my-4 shadow m-0 bg-info bg-opacity-10 border border-0 rounded">
-        <thead style={{ backgroundColor: "#4fa94d", color: "#fff" }}>
+    <Container>
+      <Table hover responsive
+      className="mt-4 userTable"
+      >
+        <thead className="custom-thead">
           <tr>
-            <th className="px-4 py-2">Id</th>
-            <th className="px-4 py-2">Name</th>
-            <th className="px-4 py-2">Role</th>
-            <th className="px-4 py-2">Grade</th>
-            <th className="px-4 py-2">Email</th>
-            <th className="px-4 py-2">Action</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Specific</th>
+            <th>Email</th>
+            <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          {requests.map((request) => (
-            <tr key={request.id}>
-              <td className="px-4 py-2">{request.id}</td>
-              <td className="px-4 py-2">{request.name}</td>
-              <td className="px-4 py-2">{request.address.suite}</td>
-              <td className="px-4 py-2">20</td>
-              <td className="px-4 py-2">{request.email}</td>
-              <td className="px-4 py-2">
-                <div className="cradIcon">
-                  <i className="fa-solid fa-circle-check mx-2 fs-5 text-success"></i>
-                  <i className="fa-solid fa-circle-xmark fs-5 text-danger"></i>
-                </div>
-              </td>
+        <tbody className="userBodyTable">
+          {requests.map((request) => ( request.id<8 ?<tr key={request.id}>
+              <td>{request.id}</td>
+              <td>{request.name}</td>
+              <td>{request.username}</td>
+              <td>{request.phone}</td>
+              <td>{request.email}</td>
+              <td>
+                                <div className="p-0">
+                                    <i className="fa-solid fa-eye mx-2"></i>
+                                    <i className="fa-regular fa-pen-to-square fs-6 mx-2 text-success"></i>
+                                    <i className="fa-regular fa-trash-can fs-6 mx-2 text-danger"></i>
+                                </div>
+                            </td>
             </tr>
+            : null
+            
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </Container>
   );
 }
