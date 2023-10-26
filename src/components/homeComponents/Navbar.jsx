@@ -17,7 +17,7 @@ function SmoothScrollLink({ targetId, children }) {
   };
 
   return (
-    <Link href={targetId} className="text-decoration-none text-dark" onClick={handleClick}>
+    <Link href={targetId} className="text-decoration-none" onClick={handleClick}>
       {children}
     </Link>
   );
@@ -50,7 +50,7 @@ function Navbar() {
             </Nav>
             </Col>
             <Col lg={4} style={{marginLeft:"2.79rem"}} id='signInLink'> {/*SignIn */}
-              <Link to={"/login"} className='text-decoration-none text-dark' >Sign in</Link>
+              <Link to={"/login"} className='text-decoration-none' >Sign in</Link>
             </Col>
           </NavBar.Collapse>
             </Col>

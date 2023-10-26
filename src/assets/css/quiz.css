@@ -1,4 +1,7 @@
 /* ------------------------------- */
+.QuizNav{
+    background-color: #52057B;
+}
 /* ------------- quiz list ------------------ */
 
 .background{
@@ -16,7 +19,6 @@
     background-color: #89288F;
     border: none;
     color:white
-
 }
 
 .filterBtn{
@@ -79,9 +81,6 @@
   /* Add any other styles you want for the active link on hover */
 }
 
-.active{
-    background-color: aqua;
-}
 
 /* Style for non-active links */
 .QuizNavBtn:not(.active) {
@@ -93,3 +92,4 @@
   .QuizNavBtn:not(.active):hover {
     background-color: rgb(255, 255, 255); /* Add any hover effect styles for non-active links here */
   }
+  /*-----------------------------------------------*/

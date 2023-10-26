@@ -6,20 +6,37 @@
     height: 50px;
 }
 
+.barVector{
+    width: 200px;
+    height: 175px;
+    background: none;
+}
 /* AdminSideNav.css */
 
 
 /* Common styles for both sidebar and navbar */
 .sidebar{
-    background-color:#B08EC9 ;
+  background: linear-gradient(to bottom, #B08EC9, #EADFF2);
   color:white;
   padding: 0;
+  max-height: 95vh;
 }
 
 .navbar{
-  background-color:#B08EC9;
-  border-radius: 0px;
   max-width: 100%;
+  background-color:#320155;
+  border-radius: 0px;
+}
+
+.navbar-nav .nav-item:hover,
+.navbar-nav .nav-item.active {
+  background-color: white;
+}
+
+/* Set the text color to black on hover and when active */
+.navbar-nav .nav-item:hover .nav-link,
+.navbar-nav .nav-item.active .nav-link {
+  color: black;
 }
 /* Styles for the sidebar */
 .sidebar {
@@ -39,6 +56,9 @@
     border-radius: 30px;
 }
 
+.textSB{
+  text-align: ;
+}
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {

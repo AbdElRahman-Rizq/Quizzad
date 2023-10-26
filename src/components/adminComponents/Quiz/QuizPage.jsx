@@ -19,7 +19,7 @@ export function QuizPage() {
           <div className="col-lg-9 py-3">
             <QuizNav/>
             <Routes>
-              <Route path='/' element={<PublicQuiz/>}/>
+              <Route path='' element={<PublicQuiz/>}/>
               <Route path='myquiz' element={<MyQuiz/>}/>
               <Route path='newquiz' element={<NewQuiz/>}/>
               <Route path='quizview' element={<QuizView/>}/>
