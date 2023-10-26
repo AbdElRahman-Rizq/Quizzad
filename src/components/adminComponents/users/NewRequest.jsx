@@ -35,10 +35,10 @@ export default function NewRequest() {
  
   return (
     <Container>
-      <Table striped hover responsive
+      <Table hover responsive
       className="mt-4 userTable"
       >
-        <thead className="custom-thead">
+        <thead className="custom-thead mb-5">
           <tr>
             <th>Id</th>
             <th>Name</th>
