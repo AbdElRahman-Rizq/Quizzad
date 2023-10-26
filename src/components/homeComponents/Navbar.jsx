@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import logo from "../../assets/images/logo.png";
 import { Link } from 'react-router-dom';
+import  '../../assets/css/Navbar.css'
 function SmoothScrollLink({ targetId, children }) {
   const handleClick = (e) => {
     e.preventDefault();
@@ -26,22 +27,21 @@ function SmoothScrollLink({ targetId, children }) {
 function Navbar() {
   return (
     <div>
-    <NavBar bg="light" expand="lg" >
+    <NavBar bg="light" expand="lg" id='navForHome'>
         <Container > {/*Container */}
           <Row className='w-100'>
             <Col lg={2} className='d-flex justify-content-between'>  {/*Logo */}
             <NavBar.Brand >
-              <div className='my-2'>
+              <div className='my-2 ms-1'>
                 <img src={logo} alt="logo" width={"60px"}/>
               </div>
             </NavBar.Brand>
             <NavBar.Toggle aria-controls="basic-navbar-nav" style={{border:"none"}}/>
             </Col>
-            <Col
-            className='pt-4'
-            style={{fontSize:"1.2rem" , textAlign:"center"}}>
+            <Col           
+            style={{fontSize:"1.3rem" , textAlign:"center"}}>
             <NavBar.Collapse>
-            <Col lg={8}>
+            <Col lg={8} id='linksForHome'>
             <Nav className="d-flex justify-content-between ps-5">           {/*Links */}
             <SmoothScrollLink className="navLink" targetId="#home">Home</SmoothScrollLink>
             <SmoothScrollLink className="navLink" targetId="#quizzes">Quizzes</SmoothScrollLink>
@@ -49,8 +49,8 @@ function Navbar() {
             <SmoothScrollLink className="navLink" targetId="#contactUs">Contact Us</SmoothScrollLink>
             </Nav>
             </Col>
-            <Col lg={4} style={{height:"40px"}}> {/*SignIn */}
-              <Link to={"/login"} className='text-decoration-none text-dark' id='signinLink'>Sign in</Link>
+            <Col lg={4} style={{marginLeft:"2.79rem"}} id='signInLink'> {/*SignIn */}
+              <Link to={"/login"} className='text-decoration-none text-dark' >Sign in</Link>
             </Col>
           </NavBar.Collapse>
             </Col>

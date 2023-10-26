@@ -19,7 +19,7 @@ function JoinUs() {
                 paddingLeft:"1%",
                 color:"white"
             }}>
-                <Col>
+                <Col lg={6} sm={12}>
                 <h1 style={{paddingBottom:"3%",}}>Your pathway to smarter learning</h1>
                 <h3 style={{paddingBottom:"3%",}}>Engage, learn, and grow with our Quizzes platform</h3>
                 <Col>
@@ -45,12 +45,12 @@ function JoinUs() {
                     </button>
                 </Col>
                 </Col>
-                <Col>
+                <Col lg={6} sm={0}>
                 <img src="../src/assets/images/lap.png" alt="img" style={{
                     position:"absolute",
-                    bottom:"-70px",
-                    right:"10px",
-                    width:"48%"
+                    bottom:"-5rem",
+                    right:"1rem",
+                    width:"45rem"
                 }}/>
                 </Col>
             </Row>

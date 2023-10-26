@@ -14,12 +14,12 @@ function Quizzes() {
         </Row>
         <Row className='justify-content-center align-items-center'>
           
-          <QuizCard/>
-          <QuizCard/>
-          <QuizCard/>
-          <QuizCard/>
-          <QuizCard/>
-          <QuizCard/>
+          <QuizCard imgSrc={"../src/assets/images/cards/card1.jpeg"}/>
+          <QuizCard imgSrc={"../src/assets/images/cards/card2.jpg"}/>
+          <QuizCard imgSrc={"../src/assets/images/cards/card3.jpg"}/>
+          <QuizCard imgSrc={"../src/assets/images/cards/card4.jpg"}/>
+          <QuizCard imgSrc={"../src/assets/images/cards/card5.jpg"}/>
+          <QuizCard imgSrc={"../src/assets/images/cards/card2.jpg"}/>
       
         </Row>
         

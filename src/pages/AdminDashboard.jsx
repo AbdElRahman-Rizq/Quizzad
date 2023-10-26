@@ -4,13 +4,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import Navbar from "../components/adminComponents/users/UserNav";
 import NewRequest from "../components/adminComponents/users/NewRequest";
 import "../assets/css/dashboard.css";
+import { SideBar } from "../components/layout/SideBar";
 
 function AdminDashboard() {
     return (
         <>
             <Row className="m-0">
                 <Col lg={3}>
-                    <AdminSidebar />
+                    <SideBar/>
                 </Col>
                 <Col lg={9} className="col-md-8 pt-4 rightSideAdmin">
                     <Navbar />

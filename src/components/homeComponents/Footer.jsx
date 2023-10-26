@@ -1,8 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
 import logo from "../../assets/images/logo.png";
+
 function Footer() {
   return (
-    <div className="mt-4">
+    <div className="mt-4 text-center">
       <Container>
         <Row>
           <div
@@ -13,13 +14,13 @@ function Footer() {
         <Row>
           <Col
             lg={6}
-            className="d-flex flex-column align-items-center justify-content-between"
+            className="d-flex flex-column align-items-center justify-content-between pt-4"
           >
-            <img src={logo} alt="logo" width={"90px"} height={"80px"} />
-            <h4>FOLLOW OUR SOCIALS</h4>
+            <img src={logo} alt="logo" width={"70rem"} />
+            <h5 className="mt-2">FOLLOW OUR SOCIALS</h5>
             {/* Icons */}
-            <div className="d-flex justify-content-between w-50 ms-5 pe-5">
-            <svg
+            <div className="d-flex justify-content-between w-50 px-4 w-lg-50 w-xl-25 mt-3">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="45"
                 height="50"
@@ -45,7 +46,7 @@ function Footer() {
                   fill="black"
                 />
               </svg>
-              
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="47"
@@ -63,17 +64,17 @@ function Footer() {
           <Col lg={6} className="d-flex flex-column mt-4 align-items-center">
             <h5>COME VISIT US</h5>
             <p
-              style={{ textTransform: "uppercase", width: "55%" }}
+              style={{ textTransform: "uppercase", width: "75%" }}
               className="mx-auto text-center"
             >
-              10700 Academy Rd NE, Albuquerque, New York , UNITED STATES (505)
+              10700 Academy Rd NE, Albuquerque, New York, UNITED STATES (505)
               299-5051
             </p>
             <p
-              style={{ textTransform: "uppercase", width: "55%" }}
+              style={{ textTransform: "uppercase", width: "75%" }}
               className="mx-auto text-center"
             >
-              1481 Front,Windsor Ontario,CANADA (519) 734-6500
+              1481 Front, Windsor Ontario, CANADA (519) 734-6500
             </p>
           </Col>
         </Row>
@@ -83,7 +84,7 @@ function Footer() {
             style={{ height: "1.8px", margin: "1% auto" }}
           ></div>
         </Row>
-        <Row className="text-center w-100 ">
+        <Row className="text-center w-100">
           <div className="mb-4">
             @2023 MOhamed basyoni Inc. All Rights Reserved.
           </div>
