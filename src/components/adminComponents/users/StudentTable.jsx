@@ -61,9 +61,9 @@ export default function StudentTable() {
                     <td>{student.phone}</td>
                     <td>
                         <div className="cradIcon">
-                        <i class="fa-solid fa-eye mx-2"></i>
-                        <i class="fa-regular fa-pen-to-square fs-6 mx-2 text-success "></i>
-                        <i class="fa-regular fa-trash-can fs-6 mx-2 text-danger"></i>
+                        <i className="fa-solid fa-eye mx-2"></i>
+                        <i className="fa-regular fa-pen-to-square fs-6 mx-2 text-success "></i>
+                        <i className="fa-regular fa-trash-can fs-6 mx-2 text-danger"></i>
                         </div>
                     </td>
                 </tr>

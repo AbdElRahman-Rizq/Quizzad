@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../../assets/css/quiz.css';
 import { NavLink } from 'react-bootstrap';
 

@@ -5,6 +5,7 @@ import { PublicQuiz } from './PublicQuiz';
 import { Route, Routes } from 'react-router-dom';
 import { MyQuiz } from './MyQuiz';
 import { NewQuiz } from './NewQuiz';
+import { QuizView } from './QuizView';
 
 export function QuizPage() {
   return (
@@ -18,9 +19,10 @@ export function QuizPage() {
           <div className="col-lg-9 py-3">
             <QuizNav/>
             <Routes>
-              <Route path='/' element={<PublicQuiz/>}/>
+              <Route path='' element={<PublicQuiz/>}/>
               <Route path='myquiz' element={<MyQuiz/>}/>
               <Route path='newquiz' element={<NewQuiz/>}/>
+              <Route path='quizview' element={<QuizView/>}/>
             </Routes>
           </div>
         </div>

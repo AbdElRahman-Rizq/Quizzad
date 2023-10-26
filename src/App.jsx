@@ -10,12 +10,13 @@ import TeacherDashBoard from './pages/TeacherDashBoard'
 import { QuizPage } from './components/adminComponents/Quiz/QuizPage'
 import { QuizView } from './components/adminComponents/Quiz/QuizView'
 import Otp from './components/authenticationComponents/Checkcode'
-import AdminProfile from './components/adminComponents/users/AdminProfile'
+import { SideBar } from './components/layout/SideBar'
+// import Prooo from './components/adminComponents/users/Prooo'
 import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
-import ProfileForm from './components/adminComponents/users/ProfileForm'
-import AdminUsers from './pages/AdminUsers'
+import ProfileForm from './components/adminComponents/profile/ProfileForm'
 import DashBoardPage from './components/adminComponents/DashBoard/DashBoardPage'
+import AdminUsers from './components/adminComponents/users/AdminUsers'
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/forgetpassword' element={<ForgetPassword/>}/>
       <Route path='/otp' element={<Otp/>}/>
-      <Route path='/profilee' element={<AdminProfile/>}/>
+      {/* <Route path='/pro' element={<Prooo/>}/> */}
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<UserNav/>}/>
       <Route path='/adminUsers' element={<AdminUsers/>}/>
@@ -40,6 +41,7 @@ function App() {
       {/* waraki */}
       <Route path='/quiz/*' element={<QuizPage/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
+      <Route path='/sidebar/*' element={<SideBar/>}/>
       <Route path='*' element={<Notfound/>}/>
 
     </Routes>

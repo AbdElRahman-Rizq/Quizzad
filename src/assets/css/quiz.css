@@ -1,4 +1,7 @@
 /* ------------------------------- */
+.QuizNav{
+    background-color: #52057B;
+}
 /* ------------- quiz list ------------------ */
 
 .background{
@@ -16,7 +19,6 @@
     background-color: #89288F;
     border: none;
     color:white
-
 }
 
 .filterBtn{
@@ -27,13 +29,15 @@
     background-color: #89288F;
     width: 100%;
     color: white;
+    border: none;
+        text-decoration: none;
 }
 
-.quizButton:hover{
+.quizButton:hover {
     background-color: #ffffff;
-    border: 2px #89288F  solid;
-    width: 100%;
+    border: 2px solid #89288F ;
     color: #89288F;
+    text-decoration: none;
 }
 .QuizDash{
     background-color: #E9E2EE;
@@ -86,5 +90,6 @@
   
   /* Style for the hover effect on non-active links */
   .QuizNavBtn:not(.active):hover {
-    background-color: lightgray; /* Add any hover effect styles for non-active links here */
+    background-color: rgb(255, 255, 255); /* Add any hover effect styles for non-active links here */
   }
+  /*-----------------------------------------------*/

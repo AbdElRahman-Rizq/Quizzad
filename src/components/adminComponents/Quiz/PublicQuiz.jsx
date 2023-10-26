@@ -119,7 +119,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                        <button className=" p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+                            <button className="p-2 rounded-5 quizButton fs-6">Take Quiz</button>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,8 @@ export function QuizNav() {
               <li className="nav-item mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center"
-                  to="/quiz"
+                  // className={({isActive})=>isActive?"nav-link active" : "nav-link"}
+                  to="/quiz" 
                 >
                   Public Quizzes
                 </NavLink>
