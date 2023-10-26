@@ -1,6 +1,6 @@
 import React from 'react'
 import Profile from '../../../assets/images/profile.png'
-import '../../../assets/css/Proo.css'
+import '../../../assets/css/ProfileForm.css'
 import { Progress, Space } from 'antd';
 import vector from '../../../assets/images/vector.png'
 

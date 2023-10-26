@@ -61,7 +61,7 @@ function Footer() {
               </svg>
             </div>
           </Col>
-          <Col lg={6} className="d-flex flex-column mt-4 align-items-center">
+          <Col lg={6} className="d-flex flex-column mt-4 align-items-center" id="footerContent">
             <h5>COME VISIT US</h5>
             <p
               style={{ textTransform: "uppercase", width: "75%" }}

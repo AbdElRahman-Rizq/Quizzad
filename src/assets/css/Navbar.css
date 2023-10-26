@@ -1,6 +1,6 @@
 #navForAdmin{
     background-color: #420462 !important;
-    border-radius: 30px;
+    border-radius: 3rem;
     width: 100%;
     /* margin-top: 1%; */
 }
@@ -14,15 +14,16 @@
 }
 #navForAdmin a:hover{
     color: #420462;
-    /* border: 10px 20px ; */
-    background-color: #ffffff;
     border-radius: 20px;
 }
 .admin img{
     width: 60px;
     margin: auto;
 }
-/* Hover For Home */
+.btn-collapse{
+    background-color: #ffffffea !important;
+}
+/*----------------------- Hover For Home ---------------- */
 #navForHome #linksForHome a,#signInLink a{
 color: #000;
   }
@@ -31,11 +32,8 @@ color: #000;
      transition:color 0s ease-in-out 0.5s;
   }
 /* ---------------------------------- */
-@media (max-width:1350px){
-    /* Navbar for Home */
 #navForHome #signInLink,#navForHome #linksForHome{
-    padding-top: 1.6rem;
-}
+    padding-top: 1.4rem;
 }
 /* ------ for mobile ---------*/
 @media (max-width:950px){
@@ -45,5 +43,10 @@ color: #000;
 }
 #navForHome #linksForHome a{
     margin: .2rem 0;
+}
+#navForAdmin a{
+color: #988cb2;
+text-align: center;
+padding: 0;
 }
 }
