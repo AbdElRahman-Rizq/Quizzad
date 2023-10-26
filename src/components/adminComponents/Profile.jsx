@@ -1,6 +1,6 @@
 import React from 'react'
-import Profile from '../../../assets/images/profile.png'
-import '../../../assets/css/Proo.css'
+import Profile from '../../../../assets/images/profile.png'
+import '../../../../assets/css/Proo.css'
 
 
 export default function Profile() {

@@ -7,7 +7,7 @@ import { SideBar } from "../components/layout/SideBar";
 import WelcomeSide from "../components/layout/WelcomeSide";
 import MiniDash from "../components/layout/MiniDash";
 
-function AdminDashboard() {
+function AdminUsers() {
     return (
         <>
             <Row className="m-0">
@@ -15,24 +15,12 @@ function AdminDashboard() {
                     <SideBar/>
                 </Col>
                 <Col lg={9} className="col-md-8 pt-4 rightSideAdmin">
-                    <Navbar />
-                    <WelcomeSide></WelcomeSide>
-                    <div className="row">
-                        <div className="col-md-4">
-                            <MiniDash/>
-                        </div>
-                        <div className="col-md-4">
-                            <MiniDash/>
-                        </div>
-                        <div className="col-md-4">
-                            <MiniDash/>
-                        </div>
-                    </div>
-                    {/* <NewRequest /> */}
+                    <Navbar />                    
+                    <NewRequest />
                 </Col>
             </Row>
         </>
     );
 }
 
-export default AdminDashboard;
+export default AdminUsers;

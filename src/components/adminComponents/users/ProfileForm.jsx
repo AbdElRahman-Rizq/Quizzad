@@ -1,6 +1,6 @@
 import React from 'react'
 import Profile from '../../../assets/images/profile.png'
-import '../../../assets/css/Profile.css'
+import '../../../assets/css/ProfileForm.css'
 
 export default function ProfileForm() {
     return (<>

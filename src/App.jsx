@@ -1,7 +1,6 @@
 import Home from './pages/Home'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Notfound from './pages/Notfound'
-import AdminDashboard from './pages/AdminDashboard'
 import Register from './components/authenticationComponents/Register'
 import Login from './components/authenticationComponents/Login'
 import ForgetPassword from './components/authenticationComponents/ForgetPassword'
@@ -15,6 +14,8 @@ import AdminProfile from './components/adminComponents/users/AdminProfile'
 import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
 import ProfileForm from './components/adminComponents/users/ProfileForm'
+import AdminUsers from './pages/AdminUsers'
+import DashBoardPage from './components/adminComponents/DashBoard/DashBoardPage'
 
 function App() {
 
@@ -29,12 +30,13 @@ function App() {
       <Route path='/profilee' element={<AdminProfile/>}/>
       <Route path='/topnav' element={<Topnav/>}/>
       <Route path='/navbar' element={<UserNav/>}/>
-      <Route path='/admin' element={<AdminDashboard/>}/>
+      <Route path='/adminUsers' element={<AdminUsers/>}/>
       <Route path='/teacherDashboard' element={<TeacherDashBoard/>}/>
       {/* waraki */}
       <Route path='/abc' element={<ProfileForm/>}/>
       <Route path='/welcome' element={<WelcomeSide/>}/>
       <Route path='/mini' element={<MiniDash/>}/>
+      <Route path='/admin' element={<DashBoardPage/>}/>
       {/* waraki */}
       <Route path='/quiz/*' element={<QuizPage/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
