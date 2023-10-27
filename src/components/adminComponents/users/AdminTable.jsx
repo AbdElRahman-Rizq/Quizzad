@@ -37,7 +37,7 @@ export default function AdminTable() {
   return (
     <Container>
       <Table hover responsive
-      className="mt-4 userTable"
+      className="mt-2 userTable"
       >
         <thead className="custom-thead">
           <tr>
