@@ -7,20 +7,18 @@ import  UserNav  from "./userNav";
 
 
 
-function AdminUsers() {
+function UserPage() {
     return (
         <>
-            <Row className="m-0">
-                <Col lg={3}>
-                    <SideBar/>
-                </Col>
-                <Col lg={9} className="col-md-8 pt-3 rightSideAdmin">
+       
+              
+                <Col className="pt-3">
                     <UserNav/>                    
                     <AdminTable/>
                 </Col>
-            </Row>
+            
         </>
     );
 }
 
-export default AdminUsers;
+export default UserPage;

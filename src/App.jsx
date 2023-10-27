@@ -12,7 +12,6 @@ import Otp from './components/authenticationComponents/Checkcode'
 import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
 import ProfileForm from './components/adminComponents/profile/ProfileForm'
-import AdminUsers from './components/adminComponents/users/AdminUsers'
 import { AdminView } from './pages/AdminView'
 
 function App() {
@@ -25,9 +24,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/forgetpassword' element={<ForgetPassword/>}/>
       <Route path='/otp' element={<Otp/>}/>
-      {/* <Route path='/pro' element={<Prooo/>}/> */}
       <Route path='/topnav' element={<Topnav/>}/>
-      <Route path='/adminUsers' element={<AdminUsers/>}/>
       {/* waraki */}
       <Route path='/abc' element={<ProfileForm/>}/>
       <Route path='/welcome' element={<WelcomeSide/>}/>

@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { ClassPage } from '../components/adminComponents/class/ClassPage'
 import { QuizPage } from '../components/adminComponents/Quiz/QuizPage'
 import DashBoardPage from '../components/adminComponents/dashboard/DashBoardPage'
+import UserPage from '../components/adminComponents/users/UserPage'
 
 export function AdminView() {
   return (
@@ -19,6 +20,7 @@ export function AdminView() {
               <Route path='' element={<DashBoardPage/>}/>
               <Route path='class/*' element={<ClassPage/>}/>
               <Route path='quiz/*' element={<QuizPage/>}/>
+              <Route path='user/*' element={<UserPage/>}/>
             </Routes>
           </div>
         </div>
