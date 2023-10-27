@@ -13,6 +13,7 @@ import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
 import ProfileForm from './components/adminComponents/profile/ProfileForm'
 import { AdminView } from './pages/AdminView'
+import QuestionForm from './components/teacherComponents/Quiz/QuestionForm'
 
 function App() {
 
@@ -30,10 +31,12 @@ function App() {
       <Route path='/welcome' element={<WelcomeSide/>}/>
       <Route path='/mini' element={<MiniDash/>}/>
       {/* waraki */}
-
       <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
+{/* Rizq's test */}
+      <Route path='/question' element={<QuestionForm/>}/>
+       
 
     </Routes>
     </BrowserRouter>
