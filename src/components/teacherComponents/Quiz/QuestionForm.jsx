@@ -78,41 +78,28 @@ function QuestionForm() {
     <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
   </div>
 </div>
+{/* Correct Answer */}
+<div className="my-3">
+  <label htmlFor="CorrectAnswer" className="form-label px-1">Correct Answer</label>
+  <select className="form-select rounded-5 p-3" name="CorrectAnswer" >
+        <option value="0"></option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="3">Option 4</option>
+    </select>
+</div>
+
 <div className="mb-3">
-  <label htmlFor="exampleInputEmail1" className="form-label px-1">Difficulty level</label>
+  <label htmlFor="Question Degree" className="form-label px-1">Question Degree</label>
   <select className="form-select rounded-5 p-3" name="gender" >
-        <option value="0">Select Difficulty level</option>
-        <option value="1">Easy</option>
-        <option value="2">Intermediate</option>
-        <option value="3">Hard</option>
+        <option value="0">10</option>
+        <option value="1">20</option>
+        <option value="2">30</option>
     </select>
 </div>
-
-<div className="Deadline mb-3">
-  <label htmlFor="exampleInputEmail1" className="form-label px-1">Quiz deadline date</label>
-  <input type="date" className="form-control rounded-5 p-3" id="exampleInputEmail1" aria-describedby="textHelp" />
-</div>
-
-<div className="Privacy mb-3">
-  <label htmlFor="exampleInputEmail1" className="form-label px-1">privacy</label>
-  <select className="form-select rounded-5 p-3" name="gender" >
-        <option value="0">Select Quiz Privacy</option>
-        <option value="1">Public</option>
-        <option value="2">Private class</option>
-    </select>
-</div>
-
-<div className="class mb-3">
-  <label htmlFor="exampleInputEmail1" className="form-label px-1">Select Class</label>
-  <select className="form-select rounded-5 p-3" name="gender" >
-        <option value="0">Select Class</option>
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-    </select>
-</div>
-
 <div className='mb-3 m-auto col-md-6'>
-      <button type="submit" className="btn btn-primary rounded-5 p-2 w-100">Submit</button>
+      <button type="submit" className="btn btn-primary rounded-5 p-2 w-100">Add Question</button>
 </div>
        </Form>
         </div>
