@@ -3,7 +3,7 @@ import Profile from '../../assets/images/profile.png'
 import '../../assets/css/Profile.css'
 
 
-export default function Profile() {
+export default function EditProfile() {
     return (
         <>
         <section className='profile'>

@@ -8,18 +8,18 @@ export default function WelcomeSide() {
         <div>
             <div id='welcome' className='text-white mt-1 '>
             <div className="container">
-                <div className="row weclome rounded-5">
+                <div className="d-flex weclome rounded-5">
                     <div className="col-md-6 ">
-                        <div className="p-5">
+                        <div className="py-4 ps-4">
                             <p>September 4 , 2023</p>
                             <h2 className='mt-5'>Welcome back , Mohamed</h2>
                             <p>Always stay update in your student portal</p>
                         </div>
                     </div>
 
-                    <div className="col-md-6">
-                        <div className="vector">
-                            <img src={vector} className=''></img>
+                    <div className=" py-3 pe-5">
+                        <div className="vector ">
+                            <img src={vector}></img>
                         </div>
                     </div>
                 </div>

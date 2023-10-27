@@ -11,25 +11,22 @@ export default function DashBoardPage() {
                 
                         <Topnav/>
                         <WelcomeSide/>
-                    <div className="row me-0 ">
+                    <div className="d-flex me-0 flex-wrap justify-content-around">
                         <div className="col-md-4">
-                        <MiniDash></MiniDash>
+                        <MiniDash icon={"fa-solid fa-person-chalkboard"} name={"Teacher"}></MiniDash>
                         </div>
                         <div className="col-md-4">
-                        <MiniDash></MiniDash>
+                        <MiniDash icon={"fa-solid fa-person-chalkboard"} name={"Teacher"}></MiniDash>
                         </div>
                         <div className="col-md-4">
-                        <MiniDash></MiniDash>
+                        <MiniDash icon={"fa-solid fa-person-chalkboard"} name={"Teacher"}></MiniDash>
                         </div>
                         <div className="col-md-4">
-                        <MiniDash></MiniDash>
+                        <MiniDash icon={"fa-solid fa-person-chalkboard"} name={"Teacher"}></MiniDash>
                         </div>
                         <div className="col-md-4">
-                        <MiniDash></MiniDash>
-                        </div>
-                        <div className="col-md-4">
-                        <MiniDash></MiniDash>
-                        </div>
+                        <MiniDash icon={"fa-solid fa-person-chalkboard"} name={"Teacher"}></MiniDash>
+                        </div>                       
                     </div>                
             </section>
         </div>
