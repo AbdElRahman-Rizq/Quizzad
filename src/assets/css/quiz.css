@@ -1,6 +1,8 @@
 /* ------------- quiz nav ------------------ */
-.QuizNav{
+.quizNav{
     background-color: #b954f0;
+    border-radius: 10px;
+    margin-top: .7rem;
 }
 /* ------------- quiz list ------------------ */
 
