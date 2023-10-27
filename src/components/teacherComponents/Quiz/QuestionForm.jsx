@@ -6,9 +6,9 @@ function QuestionForm() {
     <div className="QuestionComponent py-5">
        
        <Form className="questionForm col-md-8 m-auto rounded-4 w-50">
-<h2 className="text-center">Questions</h2>
+<h2 className="text-center mb-3">Questions</h2>
 
-
+{/*---- Qusetion Type --- */}
 <div className=' mb-3'>
     <label htmlFor="questionType" className="form-label px-1">Question Type</label>
     <select className="form-select rounded-5 p-3" name="questionType" >
@@ -19,17 +19,19 @@ function QuestionForm() {
         <option value="4">True & False</option>
     </select>
 </div>  
-
+{/*---- Img url --- */}
 <div className=" mb-3">
   <label htmlFor="imgURL" className="form-label px-1">Image URL</label>
   <input type="menu" className="form-control rounded-5 p-3" id="imgURL" aria-describedby="textHelp" />
 </div>
+{/*---- Enter the qusetion --- */}
 <div className=" mb-3">
   <label htmlFor="option" className="form-label px-1">Question</label>
   <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
 </div>
-{/* Options */}
+{/*---- Options --- */}
 <div className="row">
+{/*---- Option 1 --- */}
     <label htmlFor="option1" className="form-label px-3">Option #1</label>
   <div className="col-md-1 pt-2">
     <div className="form-check ms-1">
@@ -40,7 +42,7 @@ function QuestionForm() {
     <input type="menu" className="form-control rounded-5 p-3" name="option1" aria-describedby="textHelp" />
   </div>
 </div>
-
+{/*---- Option 2 --- */}
 <div className="row">
     <label htmlFor="option" className="form-label px-3">Option #2</label>
   <div className="col-md-1 pt-2">
@@ -52,6 +54,7 @@ function QuestionForm() {
     <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
   </div>
 </div>
+{/*---- Option 3 --- */}
 <div className="row">
     <label htmlFor="option" className="form-label px-3">Option #3</label>
   <div className="col-md-1 pt-2">
@@ -63,6 +66,7 @@ function QuestionForm() {
     <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
   </div>
 </div>
+{/*---- Option 4 --- */}
 <div className="row">
     <label htmlFor="option" className="form-label px-3">Option #4</label>
   <div className="col-md-1 pt-2">
@@ -108,7 +112,7 @@ function QuestionForm() {
 </div>
 
 <div className='mb-3 m-auto col-md-6'>
-      <button type="submit" className="btn btn-primary rounded-5 p-3 w-100">Submit</button>
+      <button type="submit" className="btn btn-primary rounded-5 p-2 w-100">Submit</button>
 </div>
        </Form>
         </div>
