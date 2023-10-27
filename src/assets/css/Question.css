@@ -1,0 +1,11 @@
+.QuestionComponent{
+    background-color: #E9E2EE;
+    /* min-height: 100vh; */
+}
+.questionForm{
+   padding: 3rem 5rem;
+}
+.questionForm input,.questionForm select{
+    padding: .6rem !important;
+    border-radius: .6rem !important;
+}

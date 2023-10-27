@@ -1,7 +1,4 @@
-/* ------------------------------- */
-.QuizNav{
-    background-color: #52057B;
-}
+
 /* ------------- quiz list ------------------ */
 
 .background{
@@ -25,17 +22,17 @@
     outline-color: #560283;
 }
 
-.quizButton{
+.quizButton {
     background-color: #89288F;
     width: 100%;
     color: white;
-    border: none;
-        text-decoration: none;
+    border: 2px solid transparent; /* Add a transparent border */
+    text-decoration: none;
 }
 
 .quizButton:hover {
     background-color: #ffffff;
-    border: 2px solid #89288F ;
+    border: 2px solid #89288F;
     color: #89288F;
     text-decoration: none;
 }
@@ -43,9 +40,6 @@
     background-color: #E9E2EE;
 }
 
-.QuizNav{
-    background-color: #52057B;
-}
 
 .quizlist{
     max-width: max-content;
@@ -86,10 +80,19 @@
 .QuizNavBtn:not(.active) {
     /* Reset the background and text color for non-active links */
     background-color: transparent;
+    color:#ffffff;
+    border-radius: 25px;
+
   }
   
   /* Style for the hover effect on non-active links */
   .QuizNavBtn:not(.active):hover {
-    background-color: rgb(255, 255, 255); /* Add any hover effect styles for non-active links here */
-  }
-  /*-----------------------------------------------*/
+    background-color: rgb(255, 255, 255); /* Add any hover effect styles for non-active links here */}
+  /*--------------------- image profile --------------------------*/
+  .profileImage{
+      width: 50px;
+      height: 50px;
+    }
+    
+    /*--------------------- profile --------------------------*/
+    

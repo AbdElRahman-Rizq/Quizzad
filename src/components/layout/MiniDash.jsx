@@ -1,6 +1,6 @@
 import React from 'react'
 import { Progress, Space } from 'antd';
-import '../../assets/css/MiniDash.css'
+import '../../assets/css/Dashboard.css'
 
 // Waraki
 export default function MiniDash() {

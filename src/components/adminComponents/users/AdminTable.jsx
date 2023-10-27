@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
-import "../../../assets/css/Table.css"
+import "../../../assets/css/Users.css"
 import { Container, Table } from "react-bootstrap";
-export default function NewRequest() {
+
+export default function AdminTable() {
   const [requests, setRequests] = useState([]);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function NewRequest() {
   return (
     <Container>
       <Table hover responsive
-      className="mt-4 userTable"
+      className="mt-2 userTable"
       >
         <thead className="custom-thead">
           <tr>

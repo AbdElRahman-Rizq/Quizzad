@@ -1,15 +1,14 @@
-import '../../../assets/css/quiz.css';
-import '../../../assets/css/class.css';
 import { NavLink } from 'react-router-dom';
+import '../../../assets/css/class.css';
 
-export function PublicQuiz() {
+export function AllClasses() {
   return (
     <div className='background'>
       <section className="py-1">
         <div className="container p-0">
           <div className="row mb-2">
             <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
-              <h3 className="fw-bold py-2">Explore Public Quizzes</h3>
+              <h3 className="fw-bold py-2">Explore All Classes</h3>
               <nav className="navbar bg-light py-3 ">
                 <div className="container-fluid">
                     <div className="row w-100">
@@ -67,7 +66,7 @@ export function PublicQuiz() {
             </div>
           </div>
           <div className="quizlist">
-            <div className="container" >
+            <div className="container ">
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 Scroller">
                 {/* Card 1 */}
                 <div className="col-mb-4 p-2">
@@ -76,52 +75,44 @@ export function PublicQuiz() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src="https://images.pexels.com/photos/714699/pexels-photo-714699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
-                        <div className="p-2">
-                        <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">Easy</span>
-                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Car mechanical engine
-                        </h5>
+                        <div className="p-2 text-center">
+                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                            mathematics Class
+                        </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-2">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                MOhamed Basyoni
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                Grade 10
                             </p>
                             </div>
                         </div>
+                        
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -133,52 +124,44 @@ export function PublicQuiz() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/2027045/pexels-photo-2027045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src="https://images.pexels.com/photos/3825573/pexels-photo-3825573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
-                        <div className="p-2">
-                        <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span>
-                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Areodynamic simulator
-                        </h5>
+                        <div className="p-2 text-center">
+                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                            mathematics Class
+                        </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-2">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                MOhamed Basyoni
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                Grade 10
                             </p>
                             </div>
                         </div>
+                        
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -191,52 +174,44 @@ export function PublicQuiz() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/1409999/pexels-photo-1409999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src="https://images.pexels.com/photos/2749165/pexels-photo-2749165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
-                        <div className="p-2">
-                        <span className="badge bg-danger mb-2 b-3 fs-6 rounded-5">Hard</span>
-                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Areodynamic simulator
-                        </h5>
+                        <div className="p-2 text-center">
+                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                            mathematics Class
+                        </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-2">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                MOhamed Basyoni
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                Grade 10
                             </p>
                             </div>
                         </div>
+                        
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -248,52 +223,44 @@ export function PublicQuiz() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/70955/pexels-photo-70955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src="https://images.pexels.com/photos/1409999/pexels-photo-1409999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
-                        <div className="p-2">
-                        <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">Easy</span>
-                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Car mechanical engine
-                        </h5>
+                        <div className="p-2 text-center">
+                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                            mathematics Class
+                        </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-2">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                MOhamed Basyoni
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                Grade 10
                             </p>
                             </div>
                         </div>
+                        
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -305,52 +272,44 @@ export function PublicQuiz() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/3808881/pexels-photo-3808881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src="https://images.pexels.com/photos/820735/pexels-photo-820735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
-                        <div className="p-2">
-                        <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span>
-                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Areodynamic simulator
-                        </h5>
+                        <div className="p-2 text-center">
+                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                            mathematics Class
+                        </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-2">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                MOhamed Basyoni
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                Grade 10
                             </p>
                             </div>
                         </div>
+                        
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -363,52 +322,44 @@ export function PublicQuiz() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/1928067/pexels-photo-1928067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src="https://images.pexels.com/photos/1409999/pexels-photo-1409999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
-                        <div className="p-2">
-                        <span className="badge bg-danger mb-2 b-3 fs-6 rounded-5">Hard</span>
-                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Areodynamic simulator
-                        </h5>
+                        <div className="p-2 text-center">
+                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                            mathematics Class
+                        </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-2">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                MOhamed Basyoni
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-2">
+                        <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                Grade 10
                             </p>
                             </div>
                         </div>
+                        
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info"/>
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -417,7 +368,7 @@ export function PublicQuiz() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
   );
 }
 
