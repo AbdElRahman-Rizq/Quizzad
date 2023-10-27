@@ -15,7 +15,7 @@ export default function DashBoardPage() {
                     </div>
                     <div className="col-md-9">
                         <Topnav/>
-                    <WelcomeSide/>
+                        <WelcomeSide/>
                     <div className="row me-0 ">
                         <div className="col-md-4">
                         <MiniDash></MiniDash>
