@@ -11,7 +11,7 @@ export default function DashBoardPage() {
                 
                         <Topnav/>
                         <WelcomeSide/>
-                    <div className="d-flex me-0 flex-wrap justify-content-around">
+                    <div className="d-flex me-0 flex-wrap justify-content-around px-2">
                         <div className="col-md-4">
                         <MiniDash icon={"fa-solid fa-person-chalkboard"} name={"Teacher"}></MiniDash>
                         </div>
