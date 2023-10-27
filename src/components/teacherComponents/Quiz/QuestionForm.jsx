@@ -5,7 +5,7 @@ function QuestionForm() {
   return (
     <div className="QuestionComponent py-5">
        
-       <Form className="questionForm col-md-8 m-auto rounded-4 w-50">
+       <Form className="questionForm col-md-8 m-auto rounded-4 w-50" enctype="multipart/form-data">
 <h2 className="text-center mb-3">Questions</h2>
 
 {/*---- Qusetion Type --- */}

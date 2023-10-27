@@ -41,7 +41,7 @@
   /* Every Row */
   border-bottom: solid 0.1rem #B08EC9 !important;
   border-top: solid 0.1rem #B08EC9 !important;
-  padding: 0.5rem;
+  padding: 0.7rem 0;
 }
 /* ------------------ Small screens ------------------------- */
 @media (max-width: 995px) {
