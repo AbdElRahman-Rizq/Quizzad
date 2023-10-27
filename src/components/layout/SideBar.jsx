@@ -84,7 +84,7 @@ export function SideBar() {
               <span className='text-light fw-bold fs-4'>QuizZAD</span>
             </div>
           </a>
-          <ul className="navbar-nav text-light py-1 reverse-color-on-hover" id="accordionSidebar">
+          <ul className="navbar-nav text-light pt-4 reverse-color-on-hover" id="accordionSidebar">
             <li className="nav-item my-1 SBphase">
               <NavLink className="nav-link p-2 px-4 " to="/admin/">
                 <i className="fa fa-light fa-house-user fs-4 "/>
