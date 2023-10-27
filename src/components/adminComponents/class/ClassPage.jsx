@@ -5,6 +5,7 @@ import { AllClasses } from './AllClasses'
 import { MyClasses } from './MyClasses'
 import { NewClass } from './NewClass'
 import { QuizView } from '../Quiz/QuizView'
+import { ClassView } from './ClassView'
 
 export  function ClassPage() {
   return (
@@ -16,7 +17,7 @@ export  function ClassPage() {
               <Route path='' element={<AllClasses/>}/>
               <Route path='myclasses' element={<MyClasses/>}/>
               <Route path='newclass' element={<NewClass/>}/>
-              <Route path='quizview' element={<QuizView/>}/>
+              <Route path='classview' element={<ClassView/>}/>
             </Routes>
       </section>
     </div>

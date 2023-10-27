@@ -28,10 +28,13 @@ class dashboard
 }
 
 
+
 /* ----------------class table--------------- */
-th {
-  padding: 10px;
-  background-color: #9e75a0;
-  color: #fff;
+
+.newForm{
+  background-color: #89288F;
 }
 
+label{
+  color: aliceblue;
+}
