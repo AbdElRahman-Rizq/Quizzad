@@ -1,47 +1,37 @@
 /* 
 class dashboard
+
 */
+
+/* CSS for styling the scrollbar and removing arrows */
+.Scroller {
+  height: 400px; /* Set your desired height */
+  overflow-y: scroll;
+}
+
+
+
+/* Mozilla Firefox */
+.Scroller {
+  scrollbar-width: thin; /* This is required for Firefox */
+  scrollbar-color: #4f0381 transparent; /* Set the color of the thumb and track */
+}
+
+/* Remove up and down arrows */
+.Scroller::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Hide up and downrgb(174, 121, 243) in Firefox */
+.Scroller {
+  scrollbar-arrow-color: transparent;
+}
+
+
 /* ----------------class table--------------- */
-
-
-    /* Add padding to the table */
-    .table {
-        padding: 10px;
-    }
-
-    /* Add margin to the table */
-    .table {
-        margin: 10px;
-    }
-
-    /* Add padding to table rows (tr) */
-    .table tr {
-        padding: 10px;
-    }
-
-    /* Add margin to table rows (tr) */
-    .table tr {
-        margin: 10px;
-    }
-
-    /* Add padding to the table header (thead) */
-    .table thead {
-        padding: 10px;
-    }
-
-    /* Add margin to the table header (thead) */
-    .table thead {
-        margin: 10px;
-    }
-
-    /* Add padding to the table body (tbody) */
-    .table tbody {
-        padding: 10px;
-    }
-
-    /* Add margin to the table body (tbody) */
-    .table tbody {
-        margin: 10px;
-    }
-
+th {
+  padding: 10px;
+  background-color: #9e75a0;
+  color: #fff;
+}
 

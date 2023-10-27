@@ -1,14 +1,16 @@
 import '../../../assets/css/quiz.css';
+import '../../../assets/css/class.css';
+import { NavLink } from 'react-router-dom';
 
 export function PublicQuiz() {
   return (
     <div className='background'>
-      <section className="py-3">
+      <section className="py-1">
         <div className="container p-0">
-          <div className="row mb-4">
-            <div className="col-md-10 col-xl-11 text-center m-auto bg-light p-2 rounded-5 mt-3">
-              <h3 className="fw-bold py-2">Explore Quizzes</h3>
-              <nav className="navbar bg-light p-3">
+          <div className="row mb-2">
+            <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
+              <h3 className="fw-bold py-2">Explore Public Quizzes</h3>
+              <nav className="navbar bg-light py-3 ">
                 <div className="container-fluid">
                     <div className="row w-100">
                     <div className="col-md-7">
@@ -65,8 +67,8 @@ export function PublicQuiz() {
             </div>
           </div>
           <div className="quizlist">
-            <div className="container">
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <div className="container" >
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 Scroller">
                 {/* Card 1 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
@@ -76,13 +78,13 @@ export function PublicQuiz() {
                                 className="rounded-5 img-fluid shadow"
                                 src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '250px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
                         <div className="p-2">
                         <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">Easy</span>
-                        <h5 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
                             Car mechanical engine
                         </h5>
                         </div>
@@ -119,7 +121,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                            <button className="p-2 rounded-5 quizButton fs-6">Take Quiz</button>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
                         </div>
                     </div>
                 </div>
@@ -133,13 +135,13 @@ export function PublicQuiz() {
                                 className="rounded-5 img-fluid shadow"
                                 src="https://images.pexels.com/photos/2027045/pexels-photo-2027045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '250px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
                         <div className="p-2">
                         <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span>
-                        <h5 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
                             Areodynamic simulator
                         </h5>
                         </div>
@@ -176,7 +178,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                        <button className="p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
                         </div>
                     </div>
                 </div>
@@ -191,13 +193,13 @@ export function PublicQuiz() {
                                 className="rounded-5 img-fluid shadow"
                                 src="https://images.pexels.com/photos/1409999/pexels-photo-1409999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '250px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
                         <div className="p-2">
                         <span className="badge bg-danger mb-2 b-3 fs-6 rounded-5">Hard</span>
-                        <h5 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
                             Areodynamic simulator
                         </h5>
                         </div>
@@ -234,7 +236,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                        <button className="p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
                         </div>
                     </div>
                 </div>
@@ -248,13 +250,13 @@ export function PublicQuiz() {
                                 className="rounded-5 img-fluid shadow"
                                 src="https://images.pexels.com/photos/70955/pexels-photo-70955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '250px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
                         <div className="p-2">
                         <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">Easy</span>
-                        <h5 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
                             Car mechanical engine
                         </h5>
                         </div>
@@ -291,7 +293,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                        <button className=" p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
                         </div>
                     </div>
                 </div>
@@ -305,13 +307,13 @@ export function PublicQuiz() {
                                 className="rounded-5 img-fluid shadow"
                                 src="https://images.pexels.com/photos/3808881/pexels-photo-3808881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '250px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
                         <div className="p-2">
                         <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span>
-                        <h5 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
                             Areodynamic simulator
                         </h5>
                         </div>
@@ -348,7 +350,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                        <button className="p-2 border-0 rounded-5 quizButton fs-5">Take Quiz</button>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
                         </div>
                     </div>
                 </div>
@@ -363,13 +365,13 @@ export function PublicQuiz() {
                                 className="rounded-5 img-fluid shadow"
                                 src="https://images.pexels.com/photos/1928067/pexels-photo-1928067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Quiz Image"
-                                style={{ width:'100%', height: '250px', objectFit: 'cover' }}
+                                style={{ width:'100%', height: '150px', objectFit: 'cover' }}
                                 />
                             </a>
                         </div>
                         <div className="p-2">
                         <span className="badge bg-danger mb-2 b-3 fs-6 rounded-5">Hard</span>
-                        <h5 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
                             Areodynamic simulator
                         </h5>
                         </div>
@@ -406,7 +408,7 @@ export function PublicQuiz() {
                         </div>
                         </div>
                         <div className="d-flex">
-                        <button className="p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
                         </div>
                     </div>
                 </div>

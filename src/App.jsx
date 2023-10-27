@@ -12,8 +12,8 @@ import Otp from './components/authenticationComponents/Checkcode'
 import MiniDash from './components/layout/MiniDash'
 import WelcomeSide from './components/layout/WelcomeSide'
 import ProfileForm from './components/adminComponents/profile/ProfileForm'
-import DashBoardPage from './components/adminComponents/DashBoard/DashBoardPage'
 import AdminUsers from './components/adminComponents/users/AdminUsers'
+import { AdminView } from './pages/AdminView'
 
 function App() {
 
@@ -32,10 +32,9 @@ function App() {
       <Route path='/abc' element={<ProfileForm/>}/>
       <Route path='/welcome' element={<WelcomeSide/>}/>
       <Route path='/mini' element={<MiniDash/>}/>
-      <Route path='/admin' element={<DashBoardPage/>}/>
       {/* waraki */}
-      <Route path='/quiz/*' element={<QuizPage/>}/>
-      <Route path='/class/*' element={<ClassPage/>}/>
+
+      <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
 

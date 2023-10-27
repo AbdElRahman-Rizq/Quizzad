@@ -2,8 +2,8 @@
 /*------------------------ sideNav -----------------------------*/
 
 .ZADlogo{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 .barVector{
@@ -70,9 +70,7 @@
     left: -250px;
   }
   .mainBar{
-    border-radius: 3rem;
     border: #000 1px solid;
-    margin-top: .9rem;
   }
   /* Show the toggle button */
   .sidebar-toggle {
