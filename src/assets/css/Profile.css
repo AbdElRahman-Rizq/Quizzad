@@ -42,14 +42,6 @@ form{
  */
 
 
-
-
-
-
-
-
-
-
 /*------------------------------ Media Query----------------------------------- */
 @media (min-width:900.99999px) and (max-width:1500px){
     .Form{
@@ -73,3 +65,5 @@ form{
         width: 100%;
     } 
 }
+
+/* Veiw Profile  */

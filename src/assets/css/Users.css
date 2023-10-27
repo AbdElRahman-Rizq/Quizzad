@@ -7,7 +7,7 @@
 }
 .custom-thead tr th {
   /*Thead*/
-  background-color: #b08ec9;
+  background-color: #B08EC9;
   color: #fff;
   padding: 0.9rem 0.9rem;
 }
@@ -22,7 +22,7 @@
   /* first cell in all rows*/
   border-top-left-radius: 3rem;
   border-bottom-left-radius: 3rem;
-  border-left: solid 0.1rem #b08ec9 !important;
+  border-left: solid 0.1rem #B08EC9 !important;
   padding-left: 1rem;
   width: 0 !important;
 }
@@ -31,7 +31,7 @@
   /* last cell in all rows*/
   border-top-right-radius: 3rem;
   border-bottom-right-radius: 3rem;
-  border-right: solid 0.1rem #b08ec9 !important;
+  border-right: solid 0.1rem #B08EC9 !important;
 }
 .userTable tr td:last-child {
     padding: 0.5rem 0;
@@ -39,8 +39,8 @@
 }
 .userBodyTable tr td {
   /* Every Row */
-  border-bottom: solid 0.1rem #b08ec9 !important;
-  border-top: solid 0.1rem #b08ec9 !important;
+  border-bottom: solid 0.1rem #B08EC9 !important;
+  border-top: solid 0.1rem #B08EC9 !important;
   padding: 0.5rem;
 }
 /* ------------------ Small screens ------------------------- */

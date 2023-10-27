@@ -106,32 +106,48 @@ export default function Register() {
                             </div>
 
                             <div className="col-md-6">
-                                <div className='type py-2'>
-                                    <label htmlFor="type" className="form-label">Type</label>
-                                    <select onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.type} className="form-select rounded-5" name="type">
-                                        <option value="0">Select you type</option>
-                                        <option value="1">Teacher</option>
-                                        <option value="2">Student</option>
-                                    </select>
-                                </div>  
+                                    <div className="type py-2">
+                                <label htmlFor="type" className="form-label">Type</label>
+                                <select onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.type}className="form-select rounded-5"name="type" >
+                                    <option value="0">Select your type</option>
+                                    <option value="1">Teacher</option>
+                                    <option value="2">Student</option>
+                                </select>
                             </div>
+                        </div>
+
+                        {formik.values.type === '1' ? ( 
                             <div className="col-md-6">
-                                    <div className='grade py-2'>
-                                        <label htmlFor="grade" className="form-label w-100">Grade Level | Specialization</label>
-                                        <select className="form-select rounded-5" name="grade" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.grade}>
-                                            <option value="0">Select your grade</option>
-                                            <option value="1">Grade 1</option>
-                                            <option value="2">Grade 2</option>
-                                            <option value="2">Grade 3</option>
-                                            <option value="2">Grade 4</option>
-                                            <option value="2">Grade 5</option>
-                                            <option value="2">Grade 6</option>
-                                            <option value="2">Grade 7</option>
-                                            <option value="2">Grade 8</option>
-                                            <option value="2">Grade 9</option>
-                                        </select>
-                                    </div>
+                                <div className="Specialization py-2">
+                                    <label htmlFor="Specialization" className="form-label w-100">Specialization</label>
+                                    <select className="form-select rounded-5" name="Specialization"onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.Specialization}>
+                                        <option value="0">Select your Specialization</option>
+                                        <option value="1">Science</option>
+                                        <option value="2">Arabic</option>
+                                        <option value="3">Math</option>
+                                    </select>
+                                </div>
                             </div>
+                            ) : (
+                            <div className="col-md-6">
+                                <div className="grade py-2">
+                                    <label htmlFor="grade" className="form-label w-100">Grade Level</label>
+                                    <select className="form-select rounded-5" name="grade" onBlur={formik.handleBlur} onChange={formik.handleChange}value={formik.values.grade}>
+                                        <option value="0">Select your grade</option>
+                                        <option value="1">Grade 1</option>
+                                        <option value="2">Grade 2</option>
+                                        <option value="3">Grade 3</option>
+                                        <option value="4">Grade 4</option>
+                                        <option value="5">Grade 5</option>
+                                        <option value="6">Grade 6</option>
+                                        <option value="7">Grade 7</option>
+                                        <option value="8">Grade 8</option>
+                                        <option value="9">Grade 9</option>
+                                    </select>
+                                </div>
+                            </div>
+                        )}
+
                             <div className='phoneNumber py-2'>
                                 <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
                                 <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phoneNumber} type="tel" className="form-control rounded-5" id="phoneNumber" name="phoneNumber"/> 

@@ -22,24 +22,20 @@
   max-height: 95vh;
 }
 
-/* .navbar{
+.navbar{
   max-width: 100%;
   background-color:#320155;
   border-radius: 0px;
-} */
+}
 
 .navbar-nav .nav-item:hover,
 .navbar-nav .nav-item.active {
-  background-color: #89288F;
+  color:#000;
+
   border-radius: 25px;
 
 }
 
-/* Set the text color to black on hover and when active */
-.navbar-nav .nav-item:hover .nav-link,
-.navbar-nav .nav-item.active .nav-link {
-  color: black;
-}
 /* Styles for the sidebar */
 .sidebar {
   height: 100%;
@@ -163,3 +159,26 @@
     color: #fff; /* Reversed color when hovered */
   }
 
+  /*--------------- nav bar -----------*/
+/*------------------ quiz nav------------------*/
+.QuizNavBtn.active,
+.QuizNavBtn:hover {
+  background-color: white;
+  border-radius: 25px;
+  /* Add any other styles you want for the active link on hover */
+}
+
+
+/* Style for non-active links */
+.QuizNavBtn:not(.active) {
+    /* Reset the background and text color for non-active links */
+    background-color: transparent;
+    color:#ffffff;
+    border-radius: 25px;
+
+  }
+  
+  /* Style for the hover effect on non-active links */
+  .QuizNavBtn:not(.active):hover {
+    background-color: rgb(255, 255, 255);
+  }

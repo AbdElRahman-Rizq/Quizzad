@@ -1,0 +1,11 @@
+.adminVector{
+    width: 50px;
+  }
+  .hstack{
+    /* background-color: #dab6ec; */
+    color:black;
+    /* border-radius: 20px; */
+  }
+  .title{
+    font-size: 20px;
+  }

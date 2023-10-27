@@ -21,31 +21,31 @@ export default function Login() {
     
     function loginSubmit(values) {
         fetch('http://localhost:5000/api/v1/users/auth', {
-          method: 'POST',
-          headers: {
+            method: 'POST',
+            headers: {
             'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
+        },
+            body: JSON.stringify(values),
         })
-          .then(() => {
+        .then(() => {
             // Handle the API response data                    
-              console.log('Login successful');
-              navigate('/');
-          })
-          .catch(error => {
+                console.log('Login successful');
+                navigate('/');
+        })
+        .catch(error => {
             // Handle any errors
             console.error('Error:', error);
-          });
-      }
+        });
+    }
 
-      const formik = useFormik({
+    const formik = useFormik({
         initialValues: {
-          email: '',
-          password: '',
+            email: '',
+            password: '',
         },
         validationSchema: validationLoginSchema,
         onSubmit: loginSubmit,
-      });
+    });
 
     return (
         <div>

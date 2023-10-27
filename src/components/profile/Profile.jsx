@@ -1,11 +1,11 @@
 import React from 'react'
-import Profile from '../../../../assets/images/profile.png'
-import '../../../../assets/css/ProfileForm.css'
+import Profile from '../../assets/images/profile.png'
+import '../../assets/css/Profile.css'
 
 
 export default function Profile() {
     return (
-        <div className='Form'>
+        <>
         <section className='profile'>
             <div className="container">
                 <form  className="form  rounded-3 px-5 py-4">
@@ -67,6 +67,6 @@ export default function Profile() {
                 </form>
             </div>
         </section>
-    </div>
+    </>
     )
 }

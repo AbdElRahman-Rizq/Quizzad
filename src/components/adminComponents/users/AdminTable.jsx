@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
 import "../../../assets/css/Users.css"
-import { Container, Table } from "react-bootstrap";
+import { Container, NavLink, Table } from "react-bootstrap";
 
 export default function AdminTable() {
   const [requests, setRequests] = useState([]);
@@ -58,9 +58,9 @@ export default function AdminTable() {
               <td>{request.email}</td>
               <td>
                                 <div className="p-0">
-                                    <i className="fa-solid fa-eye mx-2"></i>
-                                    <i className="fa-regular fa-pen-to-square fs-6 mx-2 text-success"></i>
-                                    <i className="fa-regular fa-trash-can fs-6 mx-2 text-danger"></i>
+                                <NavLink className="fa fa-solid fa-eye mx-3 fs-4 text-warning "/>
+                                <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-4 text-info " />
+                                <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
                                 </div>
                             </td>
             </tr>

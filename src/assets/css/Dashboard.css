@@ -1,13 +1,14 @@
 /* ----- Top Nav ----- */
 .adminVector{
     width: 60px;
-  }
-  .hstack{
+}
+.hstack{
     color:black;
-  }
-  .title{
+}
+.title{
     font-size: 20px;
-  }
+}
+
 /* -------- Welcome Back --------- */
 #welcome{
     position: relative;
@@ -28,19 +29,18 @@
 @media (min-width:700.99999px) and (max-width:900px){
     #welcome .vector img{
         display: none;
-     }
+    }
 }
 @media (min-width:567.99999px) and (max-width:700px){
     #welcome .vector img{
         display: none;
-     }
+    }
 }
 @media (max-width:567px){
     #welcome .vector img{
-       display: none;
+        display: none;
     }
 }
-
 
 /* ------ Mini Dash ------ */
 .dash{
