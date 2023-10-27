@@ -1,8 +1,7 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { SideBar } from "../../layout/SideBar";
+import { Col } from "react-bootstrap";
 import AdminTable from "./AdminTable";
-import  UserNav  from "./userNav";
+import UserNav from "./UserNav";
 
 
 
@@ -10,8 +9,6 @@ import  UserNav  from "./userNav";
 function UserPage() {
     return (
         <>
-       
-              
                 <Col className="pt-3">
                     <UserNav/>                    
                     <AdminTable/>

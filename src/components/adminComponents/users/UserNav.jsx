@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 export default function UserNav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg rounded-4">
         <div className="container">
-          <h1 className="navbar-brand text-light fs-4 px-4 fw-bold">Quizzes</h1>
+          <h1 className="navbar-brand text-light fs-4 px-4 fw-bold">User</h1>
           <button className="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i className="fa fa-bars-staggered text-light"></i>
           </button>
@@ -18,7 +18,7 @@ export default function UserNav() {
                   className="nav-link QuizNavBtn fs-6 text-center "
                   to="/quiz" 
                 >
-                  Public Quizzes
+                  Teacher
                 </NavLink>
               </li>
               <li className="mx-2">
@@ -26,7 +26,7 @@ export default function UserNav() {
                   className="nav-link QuizNavBtn fs-6 text-center "
                   to="/quiz/myquiz"
                 >
-                  My Quizzes
+                  Student
                 </NavLink>
               </li>
               <li className="mx-2">
@@ -34,7 +34,7 @@ export default function UserNav() {
                   className="nav-link QuizNavBtn fs-6 text-center "
                   to="/quiz/newquiz"
                 >
-                  New Quiz
+                  New Request
                 </NavLink>
               </li>
             </ul>

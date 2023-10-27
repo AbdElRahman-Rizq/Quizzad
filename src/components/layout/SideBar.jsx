@@ -2,6 +2,7 @@ import  { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.svg';
 import sideVector from '../../assets/images/settings-bro.png';
 import '../../assets/css/layout.css'; // Import your custom CSS
+
 import { NavLink } from 'react-router-dom';
 
 export function SideBar() {
@@ -22,11 +23,11 @@ export function SideBar() {
     <div>
       {isMobile ? (
         
-        <nav className="navbar navbar-expand-lg navbar-dark mainBar">
+        <nav className="navbar navbar-expand-lg mainBar">
           <div className="container-fluid">
             <a className="navbar-brand mx-3" href="#">
               <img className="ZADlogo" src={logo} alt="quizZAD" />
-              <span className="mx-3 align-items-center fw-bold fs-4">QuizZAD</span>
+              <span className="mx-3 align-items-center fw-bold fs-4 text-light">QuizZAD</span>
             </a> 
             <button className="navbar-toggler mx-3 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i className="fa-solid fa-bars-staggered fs-3"></i>
