@@ -32,9 +32,9 @@ class dashboard
 /* ----------------class table--------------- */
 
 .newForm{
-  background-color: #89288F;
+  background-color: #FCF8FF;
 }
 
 label{
-  color: aliceblue;
+  color: rgb(0, 0, 0);
 }

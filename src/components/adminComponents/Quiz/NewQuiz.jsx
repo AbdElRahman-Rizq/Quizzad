@@ -1,3 +1,4 @@
+import '../../../assets/css/quiz.css'
 
 export function NewQuiz() {
   return (
@@ -98,11 +99,11 @@ export function NewQuiz() {
             </select>
         </div>
 
-        <div className="Duration mb-3">
+        <div className="Duration mb-3 ">
           <label htmlFor="exampleInputEmail1" className="form-label px-3">Quiz duration</label>
-          <div className="input-group mb-3">
+          <div className="input-group mb-3 d-flex">
             <input type="time" className="form-control rounded-5 p-3" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
-            <button className="btn btn-outline-secondary rounded-5 p-3 mx-5" type="submit" id="button-addon2">Submit</button>
+            <button className="quizButton rounded-5 p-3 mx-5" type="submit" id="button-addon2">Submit</button>
           </div>
         </div>
 
@@ -130,7 +131,7 @@ export function NewQuiz() {
         </div>
         
         <div className='mb-3 m-auto col-md-6'>
-              <button type="submit" className="btn btn-primary rounded-5 p-3 w-100">Submit</button>
+              <button type="submit" className="quizButton rounded-5 p-3 w-100">Submit</button>
         </div>
           </form>
 
