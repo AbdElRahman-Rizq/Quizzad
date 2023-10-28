@@ -1,7 +1,13 @@
 import { Form, Row } from "react-bootstrap"
 import "../../../assets/css/Question.css"
+import { useState } from "react";
 
 function QuestionForm() {
+    const [selectedOption, setSelectedOption] = useState('0');
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+      };
+
   return (
     <div className="QuestionComponent py-5">
        
@@ -11,7 +17,7 @@ function QuestionForm() {
 {/*---- Qusetion Type --- */}
 <div className=' mb-3'>
     <label htmlFor="questionType" className="form-label px-1">Question Type</label>
-    <select className="form-select rounded-5 p-3" name="questionType" >
+    <select className="form-select rounded-5 p-3" name="questionType" onChange={handleOptionChange}>
         <option value="0">Select your question</option>
         <option value="1">Multiple Choices</option>
         <option value="2">Multiple Options</option>
@@ -19,12 +25,13 @@ function QuestionForm() {
         <option value="4">True & False</option>
     </select>
 </div>  
-{/*---- Img url --- */}
-<div className=" mb-3">
-  <label htmlFor="imgURL" className="form-label px-1">Image URL</label>
-  <input type="menu" className="form-control rounded-5 p-3" id="imgURL" aria-describedby="textHelp" />
-</div>
-{/*---- Enter the qusetion --- */}
+<div className="mb-3">
+          <label htmlFor="imgURL" className="form-label px-1">Image URL</label>
+          <input type="menu" className="form-control rounded-5 p-3" id="imgURL" aria-describedby="textHelp" />
+        </div>
+{selectedOption === '2' && (
+    <>
+        
 <div className=" mb-3">
   <label htmlFor="option" className="form-label px-1">Question</label>
   <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
@@ -78,6 +85,7 @@ function QuestionForm() {
     <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
   </div>
 </div>
+
 {/* Correct Answer */}
 <div className="my-3">
   <label htmlFor="CorrectAnswer" className="form-label px-1">Correct Answer</label>
@@ -89,7 +97,8 @@ function QuestionForm() {
         <option value="3">Option 4</option>
     </select>
 </div>
-
+</>
+)}
 <div className="mb-3">
   <label htmlFor="Question Degree" className="form-label px-1">Question Degree</label>
   <select className="form-select rounded-5 p-3" name="gender" >
