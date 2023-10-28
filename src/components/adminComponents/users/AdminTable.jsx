@@ -19,10 +19,10 @@ export default function AdminTable() {
 
   if (requests.length === 0) {
     return (
-      <div className="table table-striped table-hover table-sm border rounded-5 shadow">
+      <div id="loading">
         <Circles
           height={500}
-          width={50}
+          width={60}
           color="#4fa94d"
           ariaLabel="circles-loading"
           wrapperStyle={{}}
