@@ -57,7 +57,7 @@ export default function Register() {
     });
 
     return (
-        <div className='Form'>
+        <div className=''>
             <section className='register'>
                 <div className='exam '>
                     <img  src={Exam} className="w-25" alt=''/>  

@@ -38,6 +38,15 @@ form{
 
 
 /*------------------------------ Media Query----------------------------------- */
+@media (min-width:1500px){
+    .register{
+        padding-top:4rem;
+    }
+    .register .form{
+        width: 50%;
+        height: 100vh;
+    }
+}
 @media (min-width:900.99999px) and (max-width:1500px){
     .Form{
         width: 100%;
