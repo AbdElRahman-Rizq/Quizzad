@@ -21,8 +21,8 @@ export default function PendingPage() {
                     <div className="pending-description pb-2">
                         <p>your account is pending , Our admin will<br/>approve your account as soon as possible.<br/>thank you</p>
                     </div>
-                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Logout</button>
+                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Logout</button>
                     </div>
                 </div>
             </div>

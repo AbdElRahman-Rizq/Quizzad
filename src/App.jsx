@@ -34,7 +34,7 @@ function App() {
       <Route path='/mini' element={<MiniDash/>}/>
       <Route path='/profileview' element={<ProfileView/>}/>
       <Route path='/pending' element={<PendingPage/>}/>
-      <Route path='/rest' element={<RestPassword/>}/>
+      <Route path='/reset' element={<RestPassword/>}/>
       {/* waraki */}
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
