@@ -16,6 +16,7 @@ import ProfileView from './components/profile/ProfileView'
 import PendingPage from './components/authenticationComponents/PendingPage'
 import RestPassword from './components/authenticationComponents/RestPAssword'
 import { TeacherView } from './pages/TeacherView'
+import StudentView from './pages/StudentView'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
 {/* Final project */}
       <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/teacher/*' element={<TeacherView/>}/>
+      <Route path='/student/*' element={<StudentView/>}/>
        
 
     </Routes>

@@ -1,11 +1,11 @@
 import  { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.svg';
-import sideVector from '../../assets/images/teacherBar.svg';
+import StudentsideVector from '../../assets/images/studentBar.svg';
 import '../../assets/css/layout.css'; // Import your custom CSS
 
 import { NavLink } from 'react-router-dom';
 
-export function TeacherSideBar() {
+export function StudentSideBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export function TeacherSideBar() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/teacher/" 
+                  to="/student/" 
                 >
                   Dashboard
                 </NavLink>
@@ -45,7 +45,7 @@ export function TeacherSideBar() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/teacher/class"
+                  to="/student/class"
                 >
                   Class
                 </NavLink>
@@ -53,7 +53,7 @@ export function TeacherSideBar() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/teacher/quiz"
+                  to="/student/quiz"
                 >
                   Quiz
                 </NavLink>
@@ -80,26 +80,26 @@ export function TeacherSideBar() {
           </a>
           <ul className="navbar-nav text-light pt-4 reverse-color-on-hover" id="accordionSidebar">
             <li className="nav-item my-1 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/teacher/">
+              <NavLink className="nav-link p-2 px-4 " to="/student/">
                 <i className="fa fa-light fa-house-user fs-4 "/>
                 <span className='fs-6 ps-4 textSB'>Dashboard</span>
               </NavLink>
             </li>
             <li className="nav-item my-2 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/teacher/class">
+              <NavLink className="nav-link p-2 px-4 " to="/student/class">
                 <i className="fa fa-solid fa-landmark fs-4 " />
                 <span className='fs-6 ps-4 textSB'>Class</span>
               </NavLink>
             </li>
             <li className="nav-item my-2 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/teacher/quiz">
+              <NavLink className="nav-link p-2 px-4 " to="/student/quiz">
                 <i className="fa-solid fa-book fs-4 " />
                 <span className='fs-6 ps-4 textSB'>Quiz</span>
               </NavLink>
             </li>
             
               <div className="sidebar-brand-icon m-auto">
-                <img className='TeacherbarVector' src={sideVector} alt="quizZAD" />
+                <img className='studentbarVector' src={StudentsideVector} alt="quizZAD" />
               </div>
             <li className="nav-item my-2 SBphase">
               <a className="nav-link p-2 px-4 " href="login.html">
