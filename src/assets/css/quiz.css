@@ -68,7 +68,6 @@
 
 /*------------------------------------*/
 /*------------------ quiz nav------------------*/
-.QuizNavBtn.active,
 .QuizNavBtn:hover {
   background-color: white;
   border-radius: 25px;
