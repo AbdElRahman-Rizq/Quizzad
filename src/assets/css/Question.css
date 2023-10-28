@@ -1,6 +1,6 @@
 .QuestionComponent{
     background-color: #E9E2EE;
-    /* min-height: 100vh; */
+    min-height: 100vh;
 }
 .questionForm{
    padding: 3rem 5rem;
