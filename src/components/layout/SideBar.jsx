@@ -1,6 +1,6 @@
 import  { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.svg';
-import sideVector from '../../assets/images/settings-bro.png';
+import sideVector from '../../assets/images/settings-bro.svg';
 import '../../assets/css/layout.css'; // Import your custom CSS
 
 import { NavLink } from 'react-router-dom';
