@@ -10,18 +10,19 @@ export default function MiniDash({icon,name,number}) {
         <div>
             <div className='Dash mt-4 '>
                 <div className="container">
-                <div className="dash rounded-4 w-100 shadow d-flex justify-content-between px-4 my-1">
+                <div className="dash rounded-4 w-100 shadow d-flex justify-content-between px-5 my-1">
                     <div className="icon">
-                        <i  class={icon}></i>
+                        <i  className={icon}></i>
                         <h6 className='person'>{name}</h6>
                     </div>
-{/* Progress bar */}
+                    
+                    {/* Progress bar */}
                     <div className=" rate p-2 " >
-                        <div style={{ display: 'flex', flexDirection: 'column', rowGap: 14}}>
+                        <div >
                             <Space wrap>
                             <Progress type="circle" percent={number}  
-                                format={percent => (<span style={{ color: '#A153A5' ,fontFamily: 'Arial', fontSize: '1.9rem'  }}>{percent}</span>)} 
-                                strokeColor={twoColors} strokeWidth={10} width={80} />
+                                format={percent => (<span style={{ color: '#A153A5' ,fontFamily: 'Arial', fontSize: '1.5rem' , fontWeight: 'bold'  }}>{percent}</span>)} 
+                                strokeColor={twoColors} strokeWidth={10} width={50} />
                             </Space>
                         </div>
                     </div>

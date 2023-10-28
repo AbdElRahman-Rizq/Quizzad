@@ -1,7 +1,6 @@
 import { Table } from 'react-bootstrap'
 import '../../../assets/css/class.css'
 import '../../../assets/css/quiz.css'
-import { NavLink } from 'react-router-dom'
 
 export function NewClass() {
   return (
@@ -75,8 +74,7 @@ export function NewClass() {
               <td>Teacher</td>
               <td>
                 <div className="p-0">
-                  <NavLink className="fa fa-solid fa-eye mx-3 fs-4 text-warning "/>
-                  <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-4 text-info " />
+                  
                   <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
                 </div>
             </td>
@@ -109,8 +107,7 @@ export function NewClass() {
               <td>student</td>
               <td>
                 <div className="p-0">
-                  <NavLink className="fa fa-solid fa-eye mx-3 fs-4 text-warning "/>
-                  <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-4 text-info " />
+                  
                   <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
                 </div>
             </td>
@@ -121,8 +118,7 @@ export function NewClass() {
               <td>student</td>
               <td>
                 <div className="p-0">
-                  <NavLink className="fa fa-solid fa-eye mx-3 fs-4 text-warning "/>
-                  <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-4 text-info " />
+                  
                   <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
                 </div>
             </td>
@@ -133,8 +129,7 @@ export function NewClass() {
               <td>student</td>
               <td>
                 <div className="p-0">
-                  <NavLink className="fa fa-solid fa-eye mx-3 fs-4 text-warning "/>
-                  <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-4 text-info " />
+                  
                   <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
                 </div>
             </td>
