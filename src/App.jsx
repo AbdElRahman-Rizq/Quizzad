@@ -13,6 +13,8 @@ import EditProfile from './components/profile/EditProfile'
 import { AdminView } from './pages/AdminView'
 import QuestionForm from './components/teacherComponents/Quiz/QuestionForm'
 import ProfileView from './components/profile/ProfileView'
+import PendingPage from './components/authenticationComponents/PendingPage'
+import RestPassword from './components/authenticationComponents/RestPAssword'
 
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
       <Route path='/welcome' element={<WelcomeSide/>}/>
       <Route path='/mini' element={<MiniDash/>}/>
       <Route path='/profileview' element={<ProfileView/>}/>
+      <Route path='/pending' element={<PendingPage/>}/>
+      <Route path='/rest' element={<RestPassword/>}/>
       {/* waraki */}
       <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>

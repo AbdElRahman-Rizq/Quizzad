@@ -7,12 +7,9 @@ import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 
 
-export default function Login() {
+export default function RestPassword() {
     const navigate = useNavigate();
     let validationLoginSchema=Yup.object({
-        email : Yup.string()
-        .required('Email is required')
-        .email('Enter a valid email address'),
         password :Yup.string()
         .required('Password is required')
         .min(8, 'Password must be at least 2 characters')
@@ -49,7 +46,7 @@ export default function Login() {
 
     return (
         <div>
-        <section className='login pt-5'>
+        <section className='reset-password pt-5'>
             <div className='exam'>
                 <img src={Exam} className="w-25" alt=''/>  
             </div>
@@ -58,26 +55,26 @@ export default function Login() {
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
-                    <div className='formHeader text-center mb-3'>
-                        <h1>Login</h1>
+                    <div className='formHeader text-center pt-2 mb-3'>
+                        <h1>Reset Password</h1>
                     </div>
                     <div className='row'>                        
-                        <div className='email my-2'>
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control rounded-5" id="email" placeholder=""/>
-                            {formik.errors.email && formik.touched.email && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.email}</div>)}
-                        </div>
                         <div className='password my-2'>
-                            <label htmlFor="password" className="form-label">Password</label>
+                            <label htmlFor="password" className="form-label">New password</label>
                             <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" placeholder=""/> 
+                            {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+                        </div>
+                        <div className='Repassword my-2'>
+                            <label htmlFor="Repassword" className="form-label">Confirm Password</label>
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.Repassword} type="password" className="form-control rounded-5" id="Repassword" placeholder=""/> 
                             {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
                         </div>
                     </div>
                     <div className='my-2 haventAccount'>
-                        <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
+                        <span>you don't receive password.! <Link className='text-dark' to={'/dd'}>send again.</Link></span>
                     </div>
                     <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Sunbmit</button>
+                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Reset Password </button>
                     </div>
                 </form>           
             </div>

@@ -16,7 +16,7 @@ OTP
   height: 83vh;
 
 }
-.forgetPassword , .login , .otp , .checkcode{
+.forgetPassword , .login , .otp , .checkcode , .pending , .reset-password{
   background-image: linear-gradient(#C89ACB, #F2E5F3);
   background-repeat: no-repeat;
   position: relative;
@@ -59,15 +59,13 @@ OTP
     margin-left: .5rem;
   }
  /* login */
- .login{
-  padding: 6.5rem 0;
-}
+
   /* //Media Query */
   @media (min-width:900.99999px) and (max-width:1500px){
-
     .form{
       width: 50%;
       padding: 1rem auto;
+
     }
     .forgetPassword{
       padding: 5.9rem 0 ;
@@ -81,6 +79,10 @@ OTP
         text-align: center;
         width: 40px;
         margin: 10px 10px;
+      }
+      /**-------------------- Pending Page */
+      .pending-view{
+        width: 50%;
       }
   }
   @media (min-width:700.99999px) and (max-width:900px){
