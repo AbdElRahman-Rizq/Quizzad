@@ -110,7 +110,7 @@ export function MyClasses() {
                         
                         </div>
                         <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/teacher/class/classview'>View Class</NavLink>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/student/class/classview'>View Class</NavLink>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@ export function MyClasses() {
                         
                         </div>
                         <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/teacher/class/classview'>View Class</NavLink>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/student/class/classview'>View Class</NavLink>
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@ export function MyClasses() {
                         
                         </div>
                         <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/teacher/class/classview'>View Class</NavLink>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/student/class/classview'>View Class</NavLink>
                         </div>
                     </div>
                 </div>
@@ -252,7 +252,7 @@ export function MyClasses() {
                         
                         </div>
                         <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/teacher/class/classview'>View Class</NavLink>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/student/class/classview'>View Class</NavLink>
                         </div>
                     </div>
                 </div>
@@ -299,7 +299,7 @@ export function MyClasses() {
                         
                         </div>
                         <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/teacher/class/classview'>View Class</NavLink>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/student/class/classview'>View Class</NavLink>
                         </div>
                     </div>
                 </div>
@@ -347,7 +347,7 @@ export function MyClasses() {
                         
                         </div>
                         <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/teacher/class/classview'>View Class</NavLink>
+                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/student/class/classview'>View Class</NavLink>
                         </div>
                     </div>
                 </div>

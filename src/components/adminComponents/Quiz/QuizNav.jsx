@@ -12,32 +12,36 @@ export function QuizNav() {
             <i className="fa fa-bars-staggered text-light"></i>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav m-auto ">
-              <li className="mx-2">
-                <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/admin/quiz" 
-                >
-                  Public Quizzes
-                </NavLink>
-              </li>
-              <li className="mx-2">
-                <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/admin/quiz/myquiz"
-                >
-                  My Quizzes
-                </NavLink>
-              </li>
-              <li className="mx-2">
-                <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/admin/quiz/newquiz"
-                >
-                  New Quiz
-                </NavLink>
-              </li>
-            </ul>
+           
+<ul className="navbar-nav m-auto">
+  <li className="mx-2">
+    <NavLink
+      className="nav-link QuizNavBtn fs-6 text-center"
+      activeClassName="active"
+      to="/admin/quiz/"
+    >
+      Public Quizzes
+    </NavLink>
+  </li>
+  <li className="mx-2">
+    <NavLink
+      className="nav-link QuizNavBtn fs-6 text-center"
+      activeClassName="active"
+      to="/admin/quiz/myquiz"
+    >
+      My Quizzes
+    </NavLink>
+  </li>
+  <li className="mx-2">
+    <NavLink
+      className="nav-link QuizNavBtn fs-6 text-center"
+      activeClassName="active"
+      to="/admin/quiz/newquiz"
+    >
+      New Quiz
+    </NavLink>
+  </li>
+</ul>
             <div className="admin text-center">
               <img className='profileImage' src={vector} alt="Admin" />
             </div>
