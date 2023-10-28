@@ -1,7 +1,8 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 import AdminTable from "./AdminTable";
-import UserNav from "./UserNav";
+import UserNav from "./userNav";
+
 
 
 
