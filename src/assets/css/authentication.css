@@ -6,7 +6,17 @@ OTP
 
 */
 /* ----------- shared styles ---------------- */
-.register , .forgetPassword , .login , .otp , .checkcode{
+.register {
+  background-image: linear-gradient(#C89ACB, #F2E5F3);
+  background-repeat: no-repeat;
+  position: relative;
+}
+.register .form{
+  overflow-y: auto;
+  height: 83vh;
+
+}
+.forgetPassword , .login , .otp , .checkcode{
   background-image: linear-gradient(#C89ACB, #F2E5F3);
   background-repeat: no-repeat;
   position: relative;

@@ -8,22 +8,22 @@ export default function ProfileView() {
         <div>
             <section className='profile-view'>
                 <div className="container">
-                    <h1 className='text-center'>View Profile</h1>
-                    <div className="view-card bg-light rounded-2">
+                    <h1 className='text-center fw-bold h4'>View Profile</h1>
+                    <div className="view-card bg-light rounded-5">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-5 py-5">
                                 <div className='profile-img  d-flex justify-content-center align-items-center rounded-circle'>
                                     <img src={Profile} className='' alt=''/>  
                                 </div>
-                                <div className="profile-name">
-                                    <h2 className='h5=4'>Ahmed Mohamed</h2>
+                                <div className="profile-name my-4  text-center">
+                                    <h2 className='h5'>Ahmed Mohamed</h2>
                                 </div>
-                                <div className="formBtn col-4 text-center m-auto mt-3 rounded-5  profile-view-btn">
+                                <div className="formBtn col-4 text-center m-auto rounded-5 w-50 profile-view-btn">
                                     <button type="submit" className='btn  w-100 py-3 text-white fs-bold'>Edit Profile</button>
                                 </div>
                             </div>
-                            <div className="col-md-9">
-                                <p>Bio <br/>“ Passionate educator dedicated to inspiring lifelong learning. <br/>Creating dynamic classroom experiences for students' growth and success. “</p>
+                            <div className="col-md-7 p-5 ">
+                                <p>Bio <br/>“ Passionate educator dedicated to inspiring lifelong<br/>learning. Creating dynamic classroom experiences for<br/>students' growth and success. “</p>
                                 <p>BirthDate : 8th Jan 1999</p>
                                 <p>Specialization (Teacher) : MAthematics</p>
                                 <p>Phone Number : 020 100 123 4567</p>

@@ -63,7 +63,7 @@ export default function Register() {
                     <img  src={Exam} className="w-25" alt=''/>  
                 </div>
                 <div className="container">
-                    <form onSubmit={formik.handleSubmit } className="form  bg-light rounded-5 px-5 py-4">
+                    <form onSubmit={formik.handleSubmit } className=" form  bg-light rounded-5 px-5 py-4">
                         <div className='formLogo'>
                             <img src={Logo} width={"100%"} alt=''/>  
                         </div>

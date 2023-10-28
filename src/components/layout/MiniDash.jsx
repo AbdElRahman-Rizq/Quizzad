@@ -3,7 +3,7 @@ import { Progress, Space } from 'antd';
 import '../../assets/css/Dashboard.css'
 
 // Waraki
-export default function MiniDash({icon,name}) {
+export default function MiniDash({icon,name,number}) {
     const twoColors = { '0%': '#8A288E', '100%': '#fff' };
 
     return (
@@ -16,12 +16,12 @@ export default function MiniDash({icon,name}) {
                         <h6 className='person'>{name}</h6>
                     </div>
 {/* Progress bar */}
-                    <div className=" rate p-2 ">
+                    <div className=" rate p-2 " >
                         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 14}}>
                             <Space wrap>
-                            <Progress type="circle" percent={75}  
+                            <Progress type="circle" percent={number}  
                                 format={percent => (<span style={{ color: '#A153A5' ,fontFamily: 'Arial', fontSize: '1.9rem'  }}>{percent}</span>)} 
-                                strokeColor={twoColors} strokeWidth={10} width={80}/>
+                                strokeColor={twoColors} strokeWidth={10} width={80} />
                             </Space>
                         </div>
                     </div>
