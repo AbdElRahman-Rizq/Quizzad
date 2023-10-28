@@ -4,7 +4,7 @@ import '../../../assets/css/class.css';
 export function AllClasses() {
   return (
     <div className='background'>
-      <section className="py-1">
+      <section className="py-1 Scroller">
         <div className="container p-0">
           <div className="row mb-2">
             <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
@@ -67,7 +67,7 @@ export function AllClasses() {
           </div>
           <div className="quizlist">
             <div className="container ">
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 Scroller">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
                 {/* Card 1 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">

@@ -5,8 +5,9 @@ class dashboard
 
 /* CSS for styling the scrollbar and removing arrows */
 .Scroller {
-  height: 400px; /* Set your desired height */
+  height: 86vh; /* Set your desired height */
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 
@@ -15,6 +16,7 @@ class dashboard
 .Scroller {
   scrollbar-width: thin; /* This is required for Firefox */
   scrollbar-color: #4f0381 transparent; /* Set the color of the thumb and track */
+  
 }
 
 /* Remove up and down arrows */

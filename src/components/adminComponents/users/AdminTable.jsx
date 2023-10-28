@@ -19,7 +19,7 @@ export default function AdminTable() {
 
   if (requests.length === 0) {
     return (
-      <div className="table table-striped table-hover table-sm my-5 border rounded-5 shadow">
+      <div className="table table-striped table-hover table-sm border rounded-5 shadow">
         <Circles
           height={500}
           width={50}
@@ -35,9 +35,9 @@ export default function AdminTable() {
 
  
   return (
-    <Container>
+    <Container >
       <Table hover responsive
-      className="mt-2 userTable"
+      className=" userTable"
       >
         <thead className="custom-thead">
           <tr>

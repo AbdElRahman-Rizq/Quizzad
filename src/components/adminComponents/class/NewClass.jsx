@@ -7,7 +7,7 @@ export function NewClass() {
   return (
     <div className='rounded-4'>
         <div className='background'>
-        <section className="container py-2">
+        <section className="container py-2 Scroller">
 
         <form className='col-md-10 m-auto p-4 rounded-4 newForm'>
             <div className="row mb-3">

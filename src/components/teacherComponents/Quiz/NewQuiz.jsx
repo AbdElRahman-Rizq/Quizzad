@@ -8,7 +8,7 @@ export function NewQuiz() {
         <form className='mx-2 m-auto p-3 rounded-4 '>
           <div className="container p-0">
             <div className="row mb-4">
-              <div className="col-md-4 col-xl-10 text-center m-auto p-2 mt-1 rounded-4">
+              <div className="col-md-4 col-xl-10 text-center m-auto p-2 mt-3 rounded-4">
                 <h3 className="p-2">Create New Quiz</h3>
               </div>
             </div>

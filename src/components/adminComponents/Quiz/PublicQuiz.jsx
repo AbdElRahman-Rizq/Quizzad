@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 export function PublicQuiz() {
   return (
     <div className='background'>
-      <section className="py-1">
+      <section className="py-1 Scroller">
         <div className="container p-0">
           <div className="row mb-2">
             <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
-              <h3 className="fw-bold py-2">Explore Public Quizzes</h3>
+              <h3 className="py-2">Explore Public Quizzes</h3>
               <nav className="navbar bg-light py-3 ">
                 <div className="container-fluid">
                     <div className="row w-100">
@@ -68,7 +68,7 @@ export function PublicQuiz() {
           </div>
           <div className="quizlist">
             <div className="container" >
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 Scroller">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
                 {/* Card 1 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
@@ -120,8 +120,10 @@ export function PublicQuiz() {
                             </div>
                         </div>
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to='/admin/quiz/quizview'/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -177,8 +179,10 @@ export function PublicQuiz() {
                             </div>
                         </div>
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to='/admin/quiz/quizview'/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -235,8 +239,10 @@ export function PublicQuiz() {
                             </div>
                         </div>
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to='/admin/quiz/quizview'/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -292,8 +298,10 @@ export function PublicQuiz() {
                             </div>
                         </div>
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to='/admin/quiz/quizview'/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -349,8 +357,10 @@ export function PublicQuiz() {
                             </div>
                         </div>
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to='/admin/quiz/quizview'/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>
@@ -407,8 +417,10 @@ export function PublicQuiz() {
                             </div>
                         </div>
                         </div>
-                        <div className="d-flex">
-                            <NavLink className="p-2 rounded-5 quizButton fs-5 text-center" to='/admin/quiz/quizview'>View Quiz</NavLink>
+                        <div className="d-flex justify-content-center">
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to='/admin/quiz/quizview'/>
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
+                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ import QuestionForm from './components/teacherComponents/Quiz/QuestionForm'
 import ProfileView from './components/profile/ProfileView'
 import PendingPage from './components/authenticationComponents/PendingPage'
 import RestPassword from './components/authenticationComponents/RestPAssword'
+import { TeacherView } from './pages/TeacherView'
 
 function App() {
 
@@ -35,11 +36,15 @@ function App() {
       <Route path='/pending' element={<PendingPage/>}/>
       <Route path='/rest' element={<RestPassword/>}/>
       {/* waraki */}
-      <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
 {/* Rizq's Test */}
       <Route path='/question' element={<QuestionForm/>}/>
+
+
+{/* Final project */}
+      <Route path='/admin/*' element={<AdminView/>}/>
+      <Route path='/teacher/*' element={<TeacherView/>}/>
        
 
     </Routes>
