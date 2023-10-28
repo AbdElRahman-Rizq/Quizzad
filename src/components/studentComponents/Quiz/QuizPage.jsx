@@ -3,7 +3,6 @@ import { PublicQuiz } from './PublicQuiz';
 import { Route, Routes } from 'react-router-dom';
 import { MyQuiz } from './MyQuiz';
 import { QuizView } from './QuizView';
-import { QuizNav } from './QuizNav';
 
 export function QuizPage() {
   return (
