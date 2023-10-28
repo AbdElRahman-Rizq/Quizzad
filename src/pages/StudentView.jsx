@@ -3,8 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import DashBoardPage from '../components/adminComponents/dashboard/DashBoardPage'
 import { StudentSideBar } from '../components/studentComponents/StudentSideBar'
 import { QuizPage } from '../components/studentComponents/Quiz/QuizPage'
-import { ClassPage } from '../components/teacherComponents/class/ClassPage'
-
+import { ClassPage } from '../components/studentComponents/class/ClassPage'
 export default function StudentView() {
   return (
     <div>
