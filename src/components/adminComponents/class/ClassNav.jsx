@@ -16,7 +16,7 @@ export function ClassNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/admin/class" 
+                  to="/admin/class/" 
                 >
                   All Classes
                 </NavLink>

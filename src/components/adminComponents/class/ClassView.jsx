@@ -105,7 +105,7 @@ export function ClassView() {
                 </Table>
             </div>
             <div className="d-flex">
-            <button className=" mt-3 p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take class</button>
+            <button className=" mt-3 p-2 border-0 rounded-5 quizButton fs-5 fw-bold">View Quizzes</button>
             </div>
         </div>
       </div>
