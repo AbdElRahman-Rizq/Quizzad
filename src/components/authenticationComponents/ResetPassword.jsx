@@ -7,7 +7,7 @@ import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 
 
-export default function RestPassword() {
+export default function ResetPassword() {
     const navigate = useNavigate();
     let validationLoginSchema=Yup.object({
         password :Yup.string()
@@ -46,16 +46,16 @@ export default function RestPassword() {
 
     return (
         <div>
-        <section className='reset-password pt-5'>
+        <section className='reset-password'>
             <div className='exam'>
-                <img src={Exam} className="w-25" alt=''/>  
+                <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
                 <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
-                    <div className='formHeader text-center pt-2 mb-3'>
+                    <div className='formHeader text-center pt-3 mb-3'>
                         <h1>Reset Password</h1>
                     </div>
                     <div className='row'>                        

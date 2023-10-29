@@ -49,16 +49,16 @@ export default function Login() {
 
     return (
         <div>
-        <section className='login pt-5'>
+        <section className='login'>
             <div className='exam'>
-                <img src={Exam} className="w-25" alt=''/>  
+                <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
                 <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
-                    <div className='formHeader text-center mb-3'>
+                    <div className='formHeader text-center  pt-3'>
                         <h1>Login</h1>
                     </div>
                     <div className='row'>                        

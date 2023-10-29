@@ -5,17 +5,17 @@ import Exam from '../../assets/images/Exams-bro.png'
 
 export default function ForgetPassword() {
     return (
-        <div className='Form'>
+        <div className=''>
             <section className='forgetPassword'>
             <div className='exam'>
-                <img src={Exam} className="w-25" alt=''/>  
+                <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
                 <form className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
-                    <div className='formHeader text-center py-3'>
+                    <div className='formHeader text-center pt-3'>
                         <h1 className='h4'>Forget your password</h1>
                     </div>
                     <div className='row'>                        

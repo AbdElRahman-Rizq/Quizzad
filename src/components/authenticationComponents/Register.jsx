@@ -60,14 +60,14 @@ export default function Register() {
         <div className=''>
             <section className='register'>
                 <div className='exam '>
-                    <img  src={Exam} className="w-25" alt=''/>  
+                    <img  src={Exam} className="" alt=''/>  
                 </div>
                 <div className="container">
-                    <form onSubmit={formik.handleSubmit } className=" form  bg-light rounded-5 px-5 py-4">
+                    <form onSubmit={formik.handleSubmit } className=" form bg-light rounded-5 px-5 py-4">
                         <div className='formLogo'>
                             <img src={Logo} width={"100%"} alt=''/>  
                         </div>
-                        <div className='formHeader text-center py-3'>
+                        <div className='formHeader text-center pt-3'>
                             <h1>Sign up Your Account</h1>
                         </div>
                         <div className='row'>

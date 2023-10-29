@@ -3,8 +3,10 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Notfound from './pages/Notfound'
 import Register from './components/authenticationComponents/Register'
 import Login from './components/authenticationComponents/Login'
+import Otp from './components/authenticationComponents/Otp'
 import ForgetPassword from './components/authenticationComponents/ForgetPassword'
-import Otp from './components/authenticationComponents/Checkcode'
+import ResetPassword from './components/authenticationComponents/ResetPassword'
+import PendingPage from './components/authenticationComponents/PendingPage'
 import Topnav from './components/layout/Topnav'
 import { QuizView } from './components/adminComponents/Quiz/QuizView'
 import MiniDash from './components/layout/MiniDash'
@@ -13,8 +15,6 @@ import EditProfile from './components/profile/EditProfile'
 import { AdminView } from './pages/AdminView'
 import QuestionForm from './components/teacherComponents/Quiz/QuestionForm'
 import ProfileView from './components/profile/ProfileView'
-import PendingPage from './components/authenticationComponents/PendingPage'
-import RestPassword from './components/authenticationComponents/RestPAssword'
 import { TeacherView } from './pages/TeacherView'
 import StudentView from './pages/StudentView'
 
@@ -35,7 +35,7 @@ function App() {
       <Route path='/mini' element={<MiniDash/>}/>
       <Route path='/profileview' element={<ProfileView/>}/>
       <Route path='/pending' element={<PendingPage/>}/>
-      <Route path='/reset' element={<RestPassword/>}/>
+      <Route path='/reset' element={<ResetPassword/>}/>
       {/* waraki */}
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>

@@ -1,35 +1,13 @@
-/* 
-register
-forget password
-login page
-OTP
 
-*/
 /* ----------- shared styles ---------------- */
-.register {
-  background-image: linear-gradient(#C89ACB, #F2E5F3);
-  background-repeat: no-repeat;
-  position: relative;
-}
 
-/* .register .form{
-  overflow-y: auto;
-  height: 83vh;
 
-} */
-.forgetPassword , .login , .otp , .checkcode , .pending , .reset-password{
+.forgetPassword ,.register, .login , .otp  , .pending , .reset-password{
   background-image: linear-gradient(#C89ACB, #F2E5F3);
   background-repeat: no-repeat;
   position: relative;
   min-height: 100vh;
 }
-.checkcode {
-  background-image: linear-gradient(#C89ACB, #F2E5F3);
-  background-repeat: no-repeat;
-  height: 100vh;
-  position: relative;
-}
-
 .sec-gap{
   padding: 60px 0 ;
 }
@@ -54,75 +32,71 @@ OTP
   position: fixed;
   bottom: 0;
   right: 0px;
+  width: 35rem;
   }
   .form label{
     font-size: .9rem;
     margin-left: .5rem;
   }
- /* login */
+  /* OTP  */
+.checkbox{
+  margin: auto;
+  justify-content: center;
+}
+.otp .container .form{
+  position: relative;
+  /* top: 150px; */
+}
 
   /* //Media Query */
   @media (min-width:900.99999px) and (max-width:1500px){
+    .forgetPassword ,.otp ,.pending ,.reset-password ,.login{ 
+      padding: 5.9rem 0 ;
+    }
     .form{
       width: 50%;
       padding: 1rem auto;
-
     }
-    .forgetPassword{
-      padding: 5.9rem 0 ;
-    }
- 
       /* ---------------register**----------- */
       .register{
         padding: 52px 0;
       }
+      /* ---------------otp**----------- */
       #otp-input{
         text-align: center;
         width: 40px;
         margin: 10px 10px;
       }
-      /**-------------------- Pending Page */
-      .pending-view{
-        width: 50%;
-      }
   }
   @media (min-width:700.99999px) and (max-width:900px){
+        /* forgetpassword */
+        .forgetPassword ,.otp ,.pending ,.reset-password ,.login{
+          padding: 80px 0 0px 0;
+          height: 100vh;
+        }
       /* ---------------register**----------- */
-
       .register{
         padding: 20px 0 90px 0;
       }
-      /* forgetpassword */
-    .forgetPassword{
-      padding: 80px 0 0px 0;
-      height: 100vh;
-    }
-    .forgetPassword .form{
-      margin: auto;
-      width: 75%;
-    }
     .exam{
       display: none;
     }
+    /* ---------------otp**----------- */
     #otp-input{
-      text-align: center;
-      width: 50px;
-      margin: 10px 10px;
+        text-align: center;
+        width: 50px;
+        margin: 10px 10px;
     }
   }
   @media (min-width:567.99999px) and (max-width:700px)
   {
-      .register{
-        padding: 20px 0;
-      }
-    .forgetPassword{
+    .forgetPassword ,.otp ,.pending ,.reset-password{
       padding: 80px 0 0px 0;
       height: 100vh;
     }
-    .forgetPassword .form{
-      margin: auto;
-      width: 75%;
-    }
+      .register{
+        padding: 20px 0;
+      }
     .exam{
       display: none;
     }
@@ -135,24 +109,18 @@ OTP
 
   @media (max-width:567px)
   {
-    .register{
-      padding: 20px 0;
-    }
-    .forgetPassword{
+    .forgetPassword ,.otp ,.pending ,.reset-password ,.login{
       padding: 80px 0 0px 0;
     }
     .form{
       margin:auto ;
       width: 90%;
     }
-    .forgetPassword .formHeader h1{
-      font-size: 1.2rem;
-  }
     .exam{
       display: none;
     }
-    .login{
-      padding:5rem 0;
+    .register{
+      padding: 20px 0;
     }
     #otp-input{
       text-align: center;
@@ -161,34 +129,4 @@ OTP
     }
   }
   
-  
 
-/* OTP  */
-
-.checkbox{
-  margin: auto;
-  justify-content: center;
-}
-
-.sec-gap{
-  padding: 60px 0 ;
-}
-
-
-.otp .exam img{
-  position: absolute;
-  bottom: 0;
-  right: 0px;
-  }
-
-.btn{
-  color: #fff;    
-}
-.main-img{
-  max-width: 150px;
-  margin: auto;
-}
-.checkcode .container .form{
-  position: relative;
-  /* top: 150px; */
-}

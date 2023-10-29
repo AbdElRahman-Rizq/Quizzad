@@ -6,12 +6,12 @@ import Exam from '../../assets/images/Exams-bro.png'
 export default function PendingPage() {
     return (
         <div>
-        <section className='pending pt-5'>
+        <section className='pending'>
             <div className='exam'>
-                <img src={Exam} className="w-25" alt=''/>  
+                <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
-                <div className="pending-view bg-light text-center rounded-5 py-4">
+                <div className="form bg-light text-center rounded-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
