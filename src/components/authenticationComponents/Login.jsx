@@ -65,19 +65,20 @@ export default function Login() {
                         <div className='email my-2'>
                             <label htmlFor="email" className="form-label">Email</label>
                             <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control rounded-5" id="email" placeholder=""/>
-                            {formik.errors.email && formik.touched.email && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.email}</div>)}
+                            {formik.errors.email && formik.touched.email && (<p className=' mt-2 p-2 text-danger'>{formik.errors.email}</p>)}
                         </div>
                         <div className='password my-2'>
                             <label htmlFor="password" className="form-label">Password</label>
                             <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" placeholder=""/> 
-                            {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+                            {formik.errors.password && formik.touched.password && (<p className=' mt-2 p-2 text-danger'>{formik.errors.password}</p>)}
                         </div>
                     </div>
-                    <div className='my-2 haventAccount'>
+                    <div className='my-2 haventAccount d-flex justify-content-between'>
                         <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
+                        <span><Link className='text-dark' to={"/forgetpassword"}>Forget your password </Link></span>
                     </div>
-                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Sunbmit</button>
+                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Sunbmit</button>
                     </div>
                 </form>           
             </div>

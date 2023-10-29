@@ -13,7 +13,10 @@ export default function EditProfile() {
                         <h1 className='fs-5'>Edit Profile</h1>
                     </div>
                     <div className='profile-img  d-flex justify-content-center align-items-center rounded-circle'>
-                        <img src={Profile} className='' alt=''/>  
+                        <div className="0i">
+                            <img src={Profile} className='' alt=''/>
+                        </div>
+                    
                     </div>
                     <div className='row'>
                         

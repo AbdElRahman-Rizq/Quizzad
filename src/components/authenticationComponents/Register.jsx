@@ -57,7 +57,7 @@ export default function Register() {
     });
 
     return (
-        <div className='Form'>
+        <div className=''>
             <section className='register'>
                 <div className='exam '>
                     <img  src={Exam} className="w-25" alt=''/>  
@@ -75,7 +75,7 @@ export default function Register() {
                                 <div className='firstName py-2'>
                                     <label htmlFor="firstName" className="form-label">First Name</label>
                                     <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.firstName} type="text" className="form-control rounded-5 " id="firstName" name="firstName"/>
-                                    {formik.errors.firstName && formik.touched.firstName && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.firstName}</div>)}               
+                                    {formik.errors.firstName && formik.touched.firstName && (<p className=' mt-2 p-2 text-danger'>{formik.errors.firstName}</p>)}               
                                 </div>
                             </div>
 
@@ -83,7 +83,7 @@ export default function Register() {
                                 <div className='lastName py-2'>
                                     <label htmlFor="lastName" className="form-label">Last Name</label>
                                     <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.lastName} type="text" className="form-control rounded-5" id="lastName" name="lastName"/>
-                                    {formik.errors.lastName && formik.touched.lastName &&(<div className='alert mt-2 p-2 alert-danger'>{formik.errors.lastName}</div>)}                        
+                                    {formik.errors.lastName && formik.touched.lastName &&(<p className=' mt-2 p-2 text-danger'>{formik.errors.lastName}</p>)}                        
                                 </div>
                             </div>
 
@@ -151,24 +151,24 @@ export default function Register() {
                             <div className='phoneNumber py-2'>
                                 <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
                                 <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phoneNumber} type="tel" className="form-control rounded-5" id="phoneNumber" name="phoneNumber"/> 
-                                {formik.errors.phoneNumber && formik.touched.phoneNumber && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.phoneNumber}</div>)}
+                                {formik.errors.phoneNumber && formik.touched.phoneNumber && (<p className='mt-2 p-2 text-danger'>{formik.errors.phoneNumber}</p>)}
                             </div>
                             <div className='email py-2'>
                                 <label htmlFor="email" className="form-label">Email</label>
                                 <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control rounded-5" id="email" name="email" />
-                                {formik.errors.email && formik.touched.email && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.email}</div>)}
+                                {formik.errors.email && formik.touched.email && (<p className='mt-2 p-2 text-danger'>{formik.errors.email}</p>)}
                             </div>
                             <div className='password py-2'>
                                 <label htmlFor="password" className="form-label">Password</label>
                                 <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" name="password"/> 
-                                {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+                                {formik.errors.password && formik.touched.password && (<p className='mt-2 p-2 text-danger'>{formik.errors.password}</p>)}
                             </div>
                         </div>
                         <div className='py-2 haveAccount'>
                             <span>You have an account? <Link to={'/Login'} className='text-dark'>Sign in</Link></span>
                         </div>
-                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn w-100 py-3 text-white fs-bold'>Sign Up</button>
+                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn w-100 py-2 text-white fs-bold'>Sign Up</button>
                         </div>
                     </form>
                 </div>

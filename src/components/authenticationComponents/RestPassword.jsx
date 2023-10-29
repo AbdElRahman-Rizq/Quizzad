@@ -73,8 +73,8 @@ export default function RestPassword() {
                     <div className='my-2 haventAccount'>
                         <span>you don't receive password.! <Link className='text-dark' to={'/dd'}>send again.</Link></span>
                     </div>
-                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Reset Password </button>
+                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Reset Password </button>
                     </div>
                 </form>           
             </div>

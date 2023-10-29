@@ -33,8 +33,8 @@ export default function Otp() {
                                 <span>Didn't receive OTP ? <a className='text-dark'>resend OTP again</a></span>
                             </div>
                         </div>
-                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Sunbmit</button>
+                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Sunbmit</button>
                         </div>
                     </form>           
                 </div>
