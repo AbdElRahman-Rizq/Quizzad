@@ -43,7 +43,7 @@
 .dash{
     border-bottom: 5px solid #8A288E;
     background-color: #fcf8ff;
-    padding: .6rem 0;
+    padding: .2rem 0;
 }
 .dash .icon i{
     margin-top: 1rem;
@@ -58,6 +58,6 @@
 
 /* ------ background image ------ */
 .ImageBack{
-    width: 300px;
+    width: 350px;
     height: auto;
 }
