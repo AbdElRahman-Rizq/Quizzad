@@ -41,14 +41,10 @@ function App() {
       <Route path='*' element={<Notfound/>}/>
 {/* Rizq's Test */}
       <Route path='/question' element={<QuestionForm/>}/>
-
-
 {/* Final project */}
       <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/teacher/*' element={<TeacherView/>}/>
       <Route path='/student/*' element={<StudentView/>}/>
-       
-
     </Routes>
     </BrowserRouter>
   )
