@@ -151,7 +151,7 @@ export class NewQuiz extends Component {
             </div>
               <label htmlFor="exampleInputEmail1" className="form-label fs-5 px-3">Quiz Cover Image</label>
             <div className="input-group mb-2">
-              <input type="file" className="form-control py-3" id="inputGroupFile02" />
+              <input type="file" className="form-control p-3 rounded-4" id="inputGroupFile02" />
             </div>
 
             <div className="title mb-3">

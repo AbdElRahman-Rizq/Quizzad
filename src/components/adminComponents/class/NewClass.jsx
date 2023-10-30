@@ -62,7 +62,7 @@ export class NewClass extends Component {
                     </div>
                     <label htmlFor="exampleInputEmail1" className="form-label fs-6 px-3">Quiz Cover Image</label>
                     <div className="input-group mb-2">
-                      <input type="file" className="form-control py-3" id="inputGroupFile02" />
+                      <input type="file" className="form-control p-3 rounded-4" id="inputGroupFile02" />
                     </div>
                     <div className="gradeLvl mb-3">
                       <label htmlFor="exampleInputEmail1" className="form-label px-3">Grade level</label>
