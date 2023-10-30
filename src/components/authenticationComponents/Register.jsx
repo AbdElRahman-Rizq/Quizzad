@@ -19,10 +19,14 @@ export default function Register() {
             setisloading(false);
             seterror(err.response.data.message)
         })        
-        if (response.data.message === 'success') {
-            setisloading(false);
-            navigate('/login');
+        if (response.data.message === 'Registration done successfully') {
+            setisloading(true);
             console.log(response.data);
+            console.log("Succesful");
+            navigate('/login');
+        }
+        else{
+            console.log("noo");
         }
     }
 
@@ -31,7 +35,7 @@ export default function Register() {
         firstName: Yup.string()
         .required('First Name is required')
         .min(3, 'First Name must be at least 3 characters')
-        .max(10, 'First Name must be at most 10 characters'),
+        .max(13, 'First Name must be at most 10 characters'),
 
         lastName: Yup.string()
         .required('Last Name is required')
@@ -123,13 +127,26 @@ return (<>
                     </div>
 
                     <div className="col-md-6">
-                        <div className='birthdate py-2'>
-                            <label htmlFor="birthdate" className="form-label">Birthdate</label>
-                            <input onBlur={formik.handleBlur} onChange={(e) => {const { name, value } = e.target;
-                            formik.setFieldValue(name, value); }} value={formik.values.birthdate} type="date"
-                            className="form-control rounded-5" id="birthdate" name="birthdate"/>
-                            {formik.errors.birthdate && formik.touched.birthdate && (<p className='mt-2 p-2 text-danger'>{formik.errors.birthdate}</p>)}
-                        </div>
+                    <div className='birthdate py-2'>
+  <label htmlFor="birthdate" className="form-label">Birthdate</label>
+  <input
+    onBlur={(e) => {
+      const { name, value } = e.target;
+      const formattedValue = new Date(value).toISOString();
+      formik.setFieldValue(name, formattedValue);
+      formik.handleBlur(e);
+    }}
+    onChange={formik.handleChange}
+    value={formik.values.birthdate ? new Date(formik.values.birthdate).toISOString().substr(0, 10) : ''}
+    type="date"
+    className="form-control rounded-5"
+    id="birthdate"
+    name="birthdate"
+  />
+  {formik.errors.birthdate && formik.touched.birthdate && (
+    <p className='mt-2 p-2 text-danger'>{formik.errors.birthdate}</p>
+  )}                        
+</div>
                     </div>
 
                     <div className="col-md-6">
@@ -218,7 +235,7 @@ return (<>
                 <div className="formBtn col-4 text-center m-auto mt-3 rounded-4 d-flex">
                     {isloading
                     ?
-                    <button type="submit" className='btn  text-white'><i className='fas fa-spinner fa-spin'></i></button> 
+                    <button className='btn  text-white'><i className='fas fa-spinner fa-spin'></i></button> 
                     :
                     <button  type="submit" className='btn w-100 py-2 text-white fs-bold'>Sign Up</button>
                     } 
