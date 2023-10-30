@@ -24,11 +24,12 @@ export class NewQuiz extends Component {
   }
 
   handleAddQuestionClick = () => {
+    const questionNumber = this.state.questions.length + 1;
     const newQuestion = (
-      <Accordion.Item key={this.state.questions.length} eventKey={this.state.questions.length.toString()} className="my-3 rounded">
-        <Accordion.Header className="accordion-header t">Question</Accordion.Header>
+      <Accordion.Item key={questionNumber} eventKey={questionNumber.toString()} className="my-3 rounded">
+        <Accordion.Header className="accordion-header text-light">Question {questionNumber}</Accordion.Header>
         <Accordion.Body>
-          <div className="question mb-3">
+          <div className="teacher mb-3">
             <QuestionForm />
           </div>
         </Accordion.Body>
@@ -39,6 +40,7 @@ export class NewQuiz extends Component {
       questions: [...prevState.questions, newQuestion],
     }));
   };
+
 
   render() {
     const settings = {
