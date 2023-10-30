@@ -19,7 +19,7 @@ export default function ProfileView() {
                                     <h2 className='h5'>Ahmed Mohamed</h2>
                                 </div>
                                 <div className="formBtn col-4 text-center m-auto rounded-5 w-50 profile-view-btn">
-                                    <button type="submit" className='btn  w-100 py-3 text-white fs-bold'>Edit Profile</button>
+                                    <button type="submit" className='btn  w-100 py-2 text-white fs-bold'>Edit Profile</button>
                                 </div>
                             </div>
                             <div className="col-md-7 p-5 ">

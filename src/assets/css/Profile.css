@@ -10,11 +10,10 @@ form{
     width: 100px;
     height: 100px;
     margin: auto;
-    outline: 10px solid #bfc7cfcb;
     transition: all .5s ease-in-out;
 }
 .profile-img img{
-    width: 90px;
+    width: 100px;
     z-index: 10;
 }
 /* .profile-img:hover{

@@ -12,11 +12,8 @@ export default function EditProfile() {
                     <div className='profile-header text-center'>
                         <h1 className='fs-5'>Edit Profile</h1>
                     </div>
-                    <div className='profile-img  d-flex justify-content-center align-items-center rounded-circle'>
-                        <div className="0i">
-                            <img src={Profile} className='' alt=''/>
-                        </div>
-                    
+                    <div className='profile-img'>
+                        <img src={Profile} className='' alt=''/>
                     </div>
                     <div className='row'>
                         
@@ -65,7 +62,7 @@ export default function EditProfile() {
                         </div>
                     </div>
                     <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                        <button type="submit" className='btn w-100 py-3 text-white fs-bold'>Save Change</button>
+                        <button type="submit" className='btn w-100 py-2 text-white fs-bold'>Save Change</button>
                     </div>
                 </form>
             </div>
