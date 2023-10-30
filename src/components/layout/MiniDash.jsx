@@ -11,13 +11,14 @@ export default function MiniDash({icon,name,number}) {
             <div className='Dash mt-3 '>
                 <div className="container">
                 <div className="dash rounded-4 shadow d-flex justify-content-between px-3 align-iteams-center">
+                
                 <div className="icon d-flex justify-content-center align-items-center">
-                <div className='pb-4'>
-                    <i className={icon} />
-                </div>
-                <div className="d-flex flex-column">
-                    <h6 className="ps-3 text-center person fs-5 f-bold">{name}</h6>
-                </div>
+                    <div className='pb-4'>
+                        <i className={icon} />
+                    </div>
+                    <div className="d-flex flex-column">
+                        <h6 className="ps-3 text-center person fs-5 f-bold">{name}</h6>
+                    </div>
                 </div>
 
                     

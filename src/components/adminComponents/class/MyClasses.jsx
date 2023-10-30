@@ -3,7 +3,7 @@ import '../../../assets/css/class.css';
 
 export function MyClasses() {
   return (
-    <div className='background'>
+    <div className='background rounded-4 m-2'>
       <section className="py-1 Scroller">
         <div className="container p-0">
           <div className="row mb-2">
@@ -26,6 +26,7 @@ export function MyClasses() {
                                 <i className="fa-solid fa-graduation-cap px-1 fs-6" style={{ color: '#89288F' }} /> Grade
                             </button>
                             <ul className="dropdown-menu">
+                                <h1>helllo from heslam mohamed</h1>
                                 <li><button className="dropdown-item" type="button">Action</button></li>
                                 <li><button className="dropdown-item" type="button">Another action</button></li>
                                 <li><button className="dropdown-item" type="button">Something else here</button></li>

@@ -1,11 +1,13 @@
-import '../../assets/css/authentication.css';
-import Logo from '../../assets/images/logo.png';
-import Exam from '../../assets/images/Exams-bro.png';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useState } from 'react';
+import  '../../assets/css/authentication.css'
+import Logo from '../../assets/images/logo.png'
+import Exam from '../../assets/images/Exams-bro.png'
+import {useFormik } from 'formik'
+import * as Yup from 'yup'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios' 
+import { useState } from 'react'
+
+
 
 export default function Register() {
   const navigate = useNavigate();
@@ -233,13 +235,13 @@ export default function Register() {
                             ?
                             <button type="button" className='btn  text-white'>  <i className='fas fa-spinner fa-spin'></i></button> 
                             :
-                            <button  type="submit" className='btn w-100 py-2 text-white fs-bold'>Sign Up</button>
-                            } 
-                        
-            </div>
-          </form>
+                            <button disabled={!formik.isValid && formik.dirty} type="submit" className='btn w-100 py-2 text-white fs-bold'>Sign Up</button>
+                            }
+                            
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
-      </section>
-    </div>
-  );
+    )
 }

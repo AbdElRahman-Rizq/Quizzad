@@ -5,6 +5,8 @@ import { ClassPage } from '../components/adminComponents/class/ClassPage'
 import { QuizPage } from '../components/adminComponents/Quiz/QuizPage'
 import DashBoardPage from '../components/adminComponents/dashboard/DashBoardPage'
 import UserPage from '../components/adminComponents/users/UserPage'
+import ProfileView from '../components/profile/ProfileView'
+
 
 export function AdminView() {
   return (
@@ -14,7 +16,6 @@ export function AdminView() {
           <div className="col-lg-3 g-0"> {/* Hide SideNav on small screens */}
             <SideBar/>
           </div>
-
           <div className="col-lg-9 pt-2">
             <Routes>            
               <Route path='' element={<DashBoardPage/>}/>

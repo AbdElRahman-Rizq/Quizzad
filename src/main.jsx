@@ -7,6 +7,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.js'
 import 'bootstrap-icons/font/bootstrap-icons.json'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'react-router-dom'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

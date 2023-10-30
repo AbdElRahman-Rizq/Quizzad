@@ -12,31 +12,36 @@ class dashboard
 
 
 
-/* Mozilla Firefox */
-.Scroller {
-  scrollbar-width: thin; /* This is required for Firefox */
-  scrollbar-color: #4f0381 transparent; /* Set the color of the thumb and track */
-  
+/* Webkit-based (Google Chrome, Safari) */
+.Scroller::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
 }
 
-/* Remove up and down arrows */
-.Scroller::-webkit-scrollbar-button {
-  display: none;
+.Scroller::-webkit-scrollbar-thumb {
+  background-color: #4f0381; /* Set the color of the thumb */
+  border-radius: 5px; /* Set border radius to make it round */
 }
 
-/* Hide up and downrgb(174, 121, 243) in Firefox */
-.Scroller {
-  scrollbar-arrow-color: transparent;
+.Scroller::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the color of the track */
 }
-
 
 
 /* ----------------class table--------------- */
 
-.newForm{
+/* .newForm{
   background-color: #FCF8FF;
-}
+} */
 
 label{
   color: rgb(0, 0, 0);
+}
+
+/* ----------------class table--------------- */
+
+.accordion-header {
+  padding: 10px;
+  color: #bb2323;
+  cursor: pointer;
+  text-align: left;
 }
