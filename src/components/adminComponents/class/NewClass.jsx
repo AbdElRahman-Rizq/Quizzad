@@ -28,6 +28,7 @@ export class NewClass extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      arrow:false
     };
 
     return (
@@ -72,7 +73,7 @@ export class NewClass extends Component {
                     <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={this.next}>
  
                       Members Settings
-                      <i className="fa-solid fa-arrow-right ms-3" />
+                      <i className="fa-solid fa-arrow-right ms-3"/>
                       </button>
                   </div>
                 </div>
@@ -171,7 +172,7 @@ export class NewClass extends Component {
                   </Accordion>
                   <div className='my-3 m-auto col-md-6'>
                     <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={this.previous}>
-                    <i className="fa-solid fa-arrow-left me-3"  />
+                    <i className="fa-solid fa-arrow-left me-3" />
                       Class Settings</button>
                   </div>
                 </div>
