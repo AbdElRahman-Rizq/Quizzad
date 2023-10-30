@@ -32,7 +32,6 @@ export default function AdminTable() {
       </div>
     );
   }
-
  
   return (
     <Container >

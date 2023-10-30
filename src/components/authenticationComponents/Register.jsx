@@ -11,7 +11,7 @@ import { useState } from 'react'
 
 export default function Register() {
     let navigate =useNavigate()
-    const [error, seterror] = useState(null)
+    const [error] = useState(null)
     const [isloading, setisloading] = useState(false)
 
     async function registerSubmit(values){
