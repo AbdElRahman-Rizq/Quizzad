@@ -72,12 +72,12 @@ export class NewClass extends Component {
                     <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={this.next}>
  
                       Members Settings
-                      <i className="fa-solid fa-arrow-right ms-3" style={{color: "#6b1499;"}}/>
+                      <i className="fa-solid fa-arrow-right ms-3" />
                       </button>
                   </div>
                 </div>
                 <div key={2}>
-                  <Accordion className='' defaultActiveKey="0">
+                  <Accordion defaultActiveKey="null">
                     <Accordion.Item className='my-3 rounded' eventKey="0">
                       <Accordion.Header className="accordion-header text-light">Add Teacher</Accordion.Header>
                       <Accordion.Body>
@@ -171,12 +171,12 @@ export class NewClass extends Component {
                   </Accordion>
                   <div className='my-3 m-auto col-md-6'>
                     <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={this.previous}>
-                    <i className="fa-solid fa-arrow-left me-3" style={{color: "#6b1499;"}} />
+                    <i className="fa-solid fa-arrow-left me-3"  />
                       Class Settings</button>
                   </div>
                 </div>
               </Slider>
-              <div className='my-3 m-auto col-md-6'>
+              <div className=' m-auto col-md-6'>
                 <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5">
                   Create Class
                   </button>
