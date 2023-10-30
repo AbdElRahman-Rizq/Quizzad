@@ -60,6 +60,10 @@ export class NewClass extends Component {
                       <label htmlFor="exampleInputEmail1" className="form-label px-3">Description</label>
                       <input type="text" className="form-control rounded-4 p-3" id="exampleInputEmail1" aria-describedby="textHelp" />
                     </div>
+                    <label htmlFor="exampleInputEmail1" className="form-label fs-6 px-3">Quiz Cover Image</label>
+                    <div className="input-group mb-2">
+                      <input type="file" className="form-control py-3" id="inputGroupFile02" />
+                    </div>
                     <div className="gradeLvl mb-3">
                       <label htmlFor="exampleInputEmail1" className="form-label px-3">Grade level</label>
                       <select className="form-select rounded-4 p-3" name="gender">

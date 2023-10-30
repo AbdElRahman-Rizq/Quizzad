@@ -1,5 +1,7 @@
 import { Form, Row } from "react-bootstrap"
 import "../../../assets/css/Question.css"
+import "../../../assets/css/quiz.css"
+
 import { useState } from "react";
 
 function QuestionForm() {
@@ -230,7 +232,7 @@ function QuestionForm() {
     </select>
 </div>
 <div className='mb-3 m-auto col-md-6'>
-      <button type="submit" className="btn btn-primary rounded-5 p-2 w-100">Add Question</button>
+      <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Question</button>
 </div>
        </Form>
         </div>

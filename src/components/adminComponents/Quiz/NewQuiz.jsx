@@ -29,7 +29,7 @@ export class NewQuiz extends Component {
       <Accordion.Item key={questionNumber} eventKey={questionNumber.toString()} className="my-3 rounded">
         <Accordion.Header className="accordion-header text-light">Question {questionNumber}</Accordion.Header>
         <Accordion.Body>
-          <div className="teacher mb-3">
+          <div className="quiz mb-3">
             <QuestionForm />
           </div>
         </Accordion.Body>
@@ -149,6 +149,11 @@ export class NewQuiz extends Component {
                 Quiz Specification
               </h4>
             </div>
+              <label htmlFor="exampleInputEmail1" className="form-label fs-5 px-3">Quiz Cover Image</label>
+            <div className="input-group mb-2">
+              <input type="file" className="form-control py-3" id="inputGroupFile02" />
+            </div>
+
             <div className="title mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label px-3">Passing Score</label>
               <input type="number" className="form-control rounded-4 p-3" id="exampleInputEmail1" aria-describedby="textHelp" />
