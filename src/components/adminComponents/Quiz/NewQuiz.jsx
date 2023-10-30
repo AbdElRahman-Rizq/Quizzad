@@ -1,6 +1,14 @@
+import { useState } from 'react';
 import '../../../assets/css/quiz.css'
+import QuestionForm from '../../teacherComponents/Quiz/QuestionForm';
 
 export function NewQuiz() {
+  const [showQuestionForm, setShowQuestionForm] = useState(false);
+
+  const handleAddQuestionClick = () => {
+    setShowQuestionForm(true);
+  };
+
   return (
         <div className='background '>
         <section className="py-3 Scroller">
@@ -145,9 +153,17 @@ export function NewQuiz() {
             <div className='col-md-8 m-auto'>
               <hr />
             </div>
-          <div className='m-3 m-auto col-md-6'>
-                <button type="submit" className="quizButton rounded-4 p-3 w-100">Add Question</button>
-          </div>
+            <div className="m-3 m-auto col-md-6">
+        <button
+        type='button'          
+          className="quizButton rounded-4 p-3 w-100"
+          onClick={handleAddQuestionClick}
+        >
+          Add Question
+        </button>
+      </div>
+
+      {showQuestionForm && <QuestionForm />}
             {/*---------------------- seperator--------------------------*/}      
             <div className='col-md-8 m-auto'>
               <hr />
