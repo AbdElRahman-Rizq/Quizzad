@@ -2,7 +2,6 @@ import '../../../assets/css/quiz.css'; // Create a CSS file for styling
 import { PublicQuiz } from './PublicQuiz';
 import { Route, Routes } from 'react-router-dom';
 import { MyQuiz } from './MyQuiz';
-import { QuizNav } from './QuizNav';
 import { QuizView } from './QuizView';
 
 export function QuizPage() {
