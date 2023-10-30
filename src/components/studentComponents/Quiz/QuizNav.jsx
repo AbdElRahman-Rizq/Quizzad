@@ -3,6 +3,7 @@ import vector from '../../../assets/images/teacher.png';
 import { NavLink } from 'react-router-dom';
 
 export function QuizNav() {
+  
   return (
     <div>
       <nav className="navbar navbar-expand-lg rounded-4 m-2">
@@ -16,7 +17,7 @@ export function QuizNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/student/quiz" 
+                  to="/student/quiz/" 
                 >
                   Public Quizzes
                 </NavLink>

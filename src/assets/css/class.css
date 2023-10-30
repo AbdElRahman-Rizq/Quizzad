@@ -40,3 +40,12 @@ class dashboard
 label{
   color: rgb(0, 0, 0);
 }
+
+/* ----------------class table--------------- */
+
+.accordion-header {
+  padding: 10px;
+  color: #bb2323;
+  cursor: pointer;
+  text-align: left;
+}

@@ -1,8 +1,4 @@
-.Form{
-width: 35%; 
-margin: auto;
 
-}
 .profile{
     padding-top: 50px;
 }
@@ -14,11 +10,10 @@ form{
     width: 100px;
     height: 100px;
     margin: auto;
-    outline: 10px solid #bfc7cfcb;
     transition: all .5s ease-in-out;
 }
 .profile-img img{
-    width: 90px;
+    width: 100px;
     z-index: 10;
 }
 /* .profile-img:hover{
@@ -31,18 +26,26 @@ form{
     margin: 0 0 20px 0;
 }
 
-/* .profile  i{
-    position: absolute;
+.upload  i{
+    position: fixed;
     z-index: 20;
-    font-size:16px;
+    font-size:20px;
     color: #64055c;
-    top: 70px;
-    right: 0;
+
 }
- */
+
 
 
 /*------------------------------ Media Query----------------------------------- */
+@media (min-width:1500px){
+    .register{
+        padding-top:4rem;
+    }
+    .register .form{
+        width: 50%;
+        height: 100vh;
+    }
+}
 @media (min-width:900.99999px) and (max-width:1500px){
     .Form{
         width: 100%;

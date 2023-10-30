@@ -7,7 +7,7 @@ import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 
 
-export default function RestPassword() {
+export default function ResetPassword() {
     const navigate = useNavigate();
     let validationLoginSchema=Yup.object({
         password :Yup.string()
@@ -46,16 +46,16 @@ export default function RestPassword() {
 
     return (
         <div>
-        <section className='reset-password pt-5'>
+        <section className='reset-password'>
             <div className='exam'>
-                <img src={Exam} className="w-25" alt=''/>  
+                <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
                 <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
-                    <div className='formHeader text-center pt-2 mb-3'>
+                    <div className='formHeader text-center pt-3 mb-3'>
                         <h1>Reset Password</h1>
                     </div>
                     <div className='row'>                        
@@ -73,8 +73,8 @@ export default function RestPassword() {
                     <div className='my-2 haventAccount'>
                         <span>you don't receive password.! <Link className='text-dark' to={'/dd'}>send again.</Link></span>
                     </div>
-                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Reset Password </button>
+                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Reset Password </button>
                     </div>
                 </form>           
             </div>

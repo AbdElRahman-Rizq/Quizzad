@@ -10,15 +10,15 @@ export default function Otp() {
             <>
             <section className='otp'>
                 <div className='exam'>
-                    <img src={Exam} className="w-25" alt=''/>  
+                    <img src={Exam} className="" alt=''/>  
                 </div>
                 <div className="container d-flex">
-                    <form className="form w-100 bg-light rounded-5 px-5 py-3">
+                    <form className="form bg-light rounded-5 px-5 py-4">
                         <div className='formLogo'>
                             <img src={Logo} className="w-100" alt=''/>  
                         </div>
                         <div className='formHeader text-center py-3'>
-                            <h1 className='h4'>Check yfffour OTP code via email</h1>
+                            <h1 className='h4'>Check your OTP code via email</h1>
                         </div>
                         <div className='row  mx-auto text-center'>                        
                             <div className='checkbox my-4 d-flex col-md-12 mx-auto'>
@@ -33,8 +33,8 @@ export default function Otp() {
                                 <span>Didn't receive OTP ? <a className='text-dark'>resend OTP again</a></span>
                             </div>
                         </div>
-                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-5 '>
-                            <button type="submit"  className='btn w-100 py-3 text-white fs-bold'>Sunbmit</button>
+                        <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Sunbmit</button>
                         </div>
                     </form>           
                 </div>

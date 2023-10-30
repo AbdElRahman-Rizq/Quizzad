@@ -43,7 +43,6 @@
 .navbar-nav .nav-item:hover,
 .navbar-nav .nav-item.active {
   color:#000;
-
   border-radius: 25px;
 
 }
@@ -150,6 +149,12 @@
 
 
   .reverse-color-on-hover li:hover {
+    background-color: #89288F; /* Background color */
+    color: #fff; /* Text color */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect for smooth color change */
+  }
+  
+  .reverse-color-on-hover li:active {
     background-color: #89288F; /* Background color */
     color: #fff; /* Text color */
     transition: background-color 0.3s, color 0.3s; /* Transition effect for smooth color change */
