@@ -38,15 +38,7 @@
     font-size: .9rem;
     margin-left: .5rem;
   }
-  /* OTP  */
-.checkbox{
-  margin: auto;
-  justify-content: center;
-}
-.otp .container .form{
-  position: relative;
-  /* top: 150px; */
-}
+ /* login */
 
   /* //Media Query */
   @media (min-width:900.99999px) and (max-width:1500px){
@@ -83,9 +75,9 @@
     }
     /* ---------------otp**----------- */
     #otp-input{
-        text-align: center;
-        width: 50px;
-        margin: 10px 10px;
+      text-align: center;
+      width: 50px;
+      margin: 10px 10px;
     }
   }
   @media (min-width:567.99999px) and (max-width:700px)
@@ -123,10 +115,9 @@
       padding: 20px 0;
     }
     #otp-input{
-      text-align: center;
-      width: 40px;
-      margin: 10px 10px;
+        text-align: center;
+        width: 40px;
+        margin: 10px 10px;
     }
   }
   
-
