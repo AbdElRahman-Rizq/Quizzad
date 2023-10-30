@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 export function PublicQuiz() {
   return (
-    <div className='background'>
+    <div className='background rounded-4 m-2'>
       <section className="py-1 Scroller">
         <div className="container p-0">
           <div className="row mb-2">

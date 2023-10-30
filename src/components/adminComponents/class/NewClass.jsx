@@ -32,8 +32,8 @@ export class NewClass extends Component {
     };
 
     return (
-      <div className='rounded-4'>
-        <div className='background'>
+      <div >
+        <div className='background rounded-4 m-2'>
           <section className="container py-2 Scroller">
             <form className='col-md-10 m-auto p-4 rounded-4 newForm'>
               <div className="row mb-3">

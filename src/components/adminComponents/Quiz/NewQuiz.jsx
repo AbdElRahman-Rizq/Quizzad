@@ -54,7 +54,7 @@ export class NewQuiz extends Component {
     };
     
     return (
-          <div className='background '>
+          <div className='background rounded-4 m-2'>
           <section className="py-3 Scroller">
 
           <form className='mx-2 m-auto p-3 rounded-4 '>

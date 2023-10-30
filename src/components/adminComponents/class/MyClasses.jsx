@@ -3,7 +3,7 @@ import '../../../assets/css/class.css';
 
 export function MyClasses() {
   return (
-    <div className='background'>
+    <div className='background rounded-4 m-2'>
       <section className="py-1 Scroller">
         <div className="container p-0">
           <div className="row mb-2">
