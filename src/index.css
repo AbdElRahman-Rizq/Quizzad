@@ -35,7 +35,9 @@
   color: #fff;
 }
 .themedButton:hover{
-  background-color: #933f9c;
+  background-color: #ffffff;
+  border: 2px solid #872991 !important;
+  color: #872991;
 }
 
 /* Quiz Card component */
