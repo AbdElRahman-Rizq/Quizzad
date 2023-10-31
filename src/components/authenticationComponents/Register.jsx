@@ -14,24 +14,32 @@ export default function Register() {
 
     //submit function 
     async function registerSubmit(values) {
-        const response = await axios.post(`http://localhost:5000/api/v1/users/`, values)
-        .catch((err)=>{
+        // You can determine which field to send based on the role value
+        let dataToSend = values;
+        if (values.role === 'TEACHER') {
+            delete values.gradeLevel
+            dataToSend = {...values};
+        } else if (values.role === 'STUDENT') {
+            dataToSend = {...values, specialization:null };
+        }
+
+        const response = await axios.post('http://localhost:5000/api/v1/auth/signup', dataToSend).catch((err) => {
             setisloading(false);
-            seterror(err.response.data.message)
-        })        
+            seterror(err.response.data.message);
+        });
         if (response.data.message === 'Registration done successfully') {
             setisloading(true);
             console.log(response.data);
-            console.log("Succesful");
+            console.log('Successful');
             navigate('/login');
+        } else {
+            console.log('Not successfull');
         }
-        else{
-            console.log("noo");
-        }
+        console.log(dataToSend); 
     }
 
     //Yup
-    let validateSchema = Yup.object({
+    let validateSchema = Yup.object().shape({
         firstName: Yup.string()
         .required('First Name is required')
         .min(3, 'First Name must be at least 3 characters')
@@ -42,12 +50,11 @@ export default function Register() {
         .min(3, 'Last Name must be at least 3 characters')
         .max(10, 'Last Name must be at most 10 characters'),
 
-        gender : Yup.string()
-    .required()
+        gender : Yup.string().required()
         .test('is-uppercase', 'First Name must be in uppercase', function(value) {if (value) { return value === value.toUpperCase();  }return true; }),
+        role: Yup.string().required('Role is required'),
         birthdate : Yup.string().required(),
-        grade : Yup.string().required(),
-        role : Yup.string().required(),
+
         phoneNumber: Yup.string()
             .required('Phone Number is required')
             .matches(/^(010|011|015|012)[0-9]{8}$/, 'Enter a valid Egyptian phone number'),
@@ -63,7 +70,9 @@ export default function Register() {
     });
 
     //Formik
-    const formik = useFormik({
+   
+
+    let formik = useFormik({
         initialValues: {
             email: '',
             phoneNumber: '',
@@ -73,8 +82,8 @@ export default function Register() {
             gender: '',
             birthdate: '',
             role: '',
-            grade: '',
-            Specialization: ''
+            gradeLevel:'',
+            specialization:''
         },
         validationSchema: validateSchema,
         onSubmit:registerSubmit
@@ -163,10 +172,10 @@ return (<>
 
                     {formik.values.role === 'TEACHER' ? ( 
                         <div className="col-md-6">
-                            <div className="Specialization py-2">
-                                <label htmlFor="Specialization" className="form-label w-100">Specialization</label>
-                                <select className="form-select rounded-5" name="Specialization"onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.Specialization}>
-                                    <option value="0">Select your Specialization</option>
+                            <div className="specialization py-2">
+                                <label htmlFor="specialization" className="form-label w-100">specialization</label>
+                                <select className="form-select rounded-5" name="specialization"onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.specialization}>
+                                    <option value="">Select your specialization</option>
                                     <option value="ARABIC">Arabic</option>
                                     <option value="ENGLISH">English</option>
                                     <option value="MATHEMATICS">Mathematics</option>
@@ -180,30 +189,30 @@ return (<>
                                     <option value="PHILOSOPHY">Philosophy</option>
                                     <option value="TECHNOLOGY">Technology</option>
                                 </select>
-                                {formik.errors.Specialization && formik.touched.Specialization &&(<p className=' mt-2 p-2 text-danger'>{formik.errors.Specialization}</p>)}                        
+                                {formik.errors.specialization && formik.touched.specialization &&(<p className=' mt-2 p-2 text-danger'>{formik.errors.specialization}</p>)}                        
                             </div>
                         </div>
                     ) : (
                         
                     <div className="col-md-6">
-                        <div className="grade py-2">
-                            <label htmlFor="grade" className="form-label w-100">Grade Level</label>
-                            <select className="form-select rounded-5" name="grade" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.grade}>
-                                <option value="0">Select your grade</option>
+                        <div className="gradeLevel py-2">
+                            <label htmlFor="gradeLevel" className="form-label w-100">Grade Level</label>
+                            <select className="form-select rounded-5" name="gradeLevel" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.gradeLevel}>
+                                <option value="">Select your gradeLevel</option>
                                 <option value="PRIMARY_ONE">Grade 1</option>
                                 <option value="PRIMARY_TWO">Grade 2</option>
                                 <option value="PRIMARY_THREE">Grade 3</option>
                                 <option value="PRIMARY_FOUR">Grade 4</option>
                                 <option value="PRIMARY_FIVE">Grade 5</option>
                                 <option value="PRIMARY_SIX">Grade 6</option>
-                                <option value="PRIMARY_SEVEN">Grade 7</option>
-                                <option value="PRIMARY_EIGHT">Grade 8</option>
-                                <option value="PRIMARY_NINE">Grade 9</option>
-                                <option value="PRIMARY_TEN">Grade 10</option>
-                                <option value="PRIMARY_ELEVEN">Grade 11</option>
-                                <option value="PRIMARY_TWELVE">Grade 12</option>
+                                <option value="PREP_ONE">Grade 7</option>
+                                <option value="PREP_TWO">Grade 8</option>
+                                <option value="PREP_THREE">Grade 9</option>
+                                <option value="SECONDARY_ONE">Grade 10</option>
+                                <option value="SECONDARY_TWO">Grade 11</option>
+                                <option value="SECONDARY_THREE">Grade 12</option>
                             </select>
-                            {formik.errors.grade && formik.touched.grade &&(<p className=' mt-2 p-2 text-danger'>{formik.errors.grade}</p>)}                        
+                            {formik.errors.gradeLevel && formik.touched.gradeLevel &&(<p className=' mt-2 p-2 text-danger'>{formik.errors.gradeLevel}</p>)}                        
                         </div>
                     </div>
                     )}
@@ -245,3 +254,4 @@ return (<>
     </section>
 </>);
 }
+

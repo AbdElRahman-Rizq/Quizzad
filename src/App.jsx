@@ -17,6 +17,7 @@ import QuestionForm from './components/teacherComponents/Quiz/QuestionForm'
 import ProfileView from './components/profile/ProfileView'
 import { TeacherView } from './pages/TeacherView'
 import StudentView from './pages/StudentView'
+import Congratulations from './components/studentComponents/TakingQuiz/Congratulations'
 
 function App() {
 
@@ -40,7 +41,7 @@ function App() {
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>
 {/* Rizq's Test */}
-      <Route path='/question' element={<QuestionForm/>}/>
+      <Route path='/Congratulations' element={<Congratulations/>}/>
 {/* Final project */}
       <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/teacher/*' element={<TeacherView/>}/>
