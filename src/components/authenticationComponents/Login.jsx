@@ -9,6 +9,7 @@ import axios from 'axios'
 import { useState } from 'react'
 
 
+
 export default function Login() {
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
@@ -16,14 +17,13 @@ export default function Login() {
         email : Yup.string()
         .required('Email is required')
         .email('Enter a valid email address'),
-        password :Yup.string()
-        .required('Password is required')
-        .min(8, 'Password must be at least 2 characters')
-        .max(15, 'Password must be at most 8 characters'),
+        // password :Yup.string()
+        // .required('Password is required')
+        // .min(8, 'Password must be at least 2 characters')
+        // .max(15, 'Password must be at most 8 characters'),
     })
-       
-    async function loginSubmit(values) {       
 
+    async function loginSubmit(values) {       
         const response = await axios.post('http://localhost:5000/api/v1/auth/login', values)
         .catch((err) => {
             seterror(err.response.data.message);
@@ -32,12 +32,15 @@ export default function Login() {
         if (response.data.message === 'Login done successfully') {
             console.log(response.data);
             console.log('Successful');
-            navigate('/');
+            console.log(response);
+            
+            navigate('/admin');
         } else {
             console.log('Not successfull');
         }
-        console.log(dataToSend); 
+        console.log(data); 
     }
+    
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -81,7 +84,7 @@ export default function Login() {
                         <span><Link className='text-dark' to={"/forgetpassword"}>Forget your password </Link></span>
                     </div>
                     <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
-                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Sunbmit</button>
+                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Login</button>
                     </div>
                 </form>           
             </div>

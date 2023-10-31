@@ -5,6 +5,8 @@ import Exam from '../../assets/images/Exams-bro.png'
 import { Link,useNavigate } from 'react-router-dom'
 import {  useFormik } from 'formik'
 import * as Yup from 'yup'
+import { parse } from 'cookie';
+
 
 
 export default function ResetPassword() {
@@ -16,23 +18,19 @@ export default function ResetPassword() {
         .max(15, 'Password must be at most 8 characters'),
     })
     
-    function loginSubmit(values) {
-        fetch('http://localhost:5000/api/v1/users/auth', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-        },
-            body: JSON.stringify(values),
-        })
-        .then(() => {
-            // Handle the API response data                    
-                console.log('Login successful');
-                navigate('/');
-        })
-        .catch(error => {
-            // Handle any errors
-            console.error('Error:', error);
+    async function resetPasswordForm(values) {       
+        const response = await axios.get('http://localhost:5000/api/v1/auth/resetPassword/:token', values)
+        .catch((err) => {
+        console.log(err.response.data.message);
         });
+        if (response.data.message === 'Login done successfully') {
+            console.log(response.data);
+            console.log('Successful');
+            navigate('/');
+        } else {
+            console.log('Not successfull');
+        }
+        console.log(dataToSend); 
     }
 
     const formik = useFormik({
@@ -41,7 +39,7 @@ export default function ResetPassword() {
             password: '',
         },
         validationSchema: validationLoginSchema,
-        onSubmit: loginSubmit,
+        onSubmit: resetPasswordForm,
     });
 
     return (
