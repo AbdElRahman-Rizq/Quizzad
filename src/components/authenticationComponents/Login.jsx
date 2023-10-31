@@ -5,10 +5,13 @@ import Exam from '../../assets/images/Exams-bro.png'
 import { Link,useNavigate } from 'react-router-dom'
 import {  useFormik } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
+import { useState } from 'react'
 
 
 export default function Login() {
     const navigate = useNavigate();
+    const [error , seterror]=useState(null)   
     let validationLoginSchema=Yup.object({
         email : Yup.string()
         .required('Email is required')
@@ -18,26 +21,23 @@ export default function Login() {
         .min(8, 'Password must be at least 2 characters')
         .max(15, 'Password must be at most 8 characters'),
     })
-    
-    function loginSubmit(values) {
-        fetch('http://localhost:5000/api/v1/users/auth', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-        },
-            body: JSON.stringify(values),
-        })
-        .then(() => {
-            // Handle the API response data                    
-                console.log('Login successful');
-                navigate('/');
-        })
-        .catch(error => {
-            // Handle any errors
-            console.error('Error:', error);
-        });
-    }
+       
+    async function loginSubmit(values) {       
 
+        const response = await axios.post('http://localhost:5000/api/v1/auth/login', values)
+        .catch((err) => {
+            seterror(err.response.data.message);
+        console.log(err.response.data.message);
+        });
+        if (response.data.message === 'Login done successfully') {
+            console.log(response.data);
+            console.log('Successful');
+            navigate('/');
+        } else {
+            console.log('Not successfull');
+        }
+        console.log(dataToSend); 
+    }
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -59,6 +59,9 @@ export default function Login() {
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
                     <div className='formHeader text-center  pt-3'>
+                    {error && <div className="alert alert-danger">
+                        {error}
+                    </div>}
                         <h1>Login</h1>
                     </div>
                     <div className='row'>                        

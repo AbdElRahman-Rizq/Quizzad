@@ -31,7 +31,7 @@ export default function ForgetPassword() {
     async function forgetPasswordApi(values){
         let {data} = await axios.post(`http://localhost:5000/api/v1/auth/forgotPassword`,values)
         console.log(data);
-        if(date.stateMSg =="success"){
+        if(response.data.message ==="Password reset instructions sent to your email"){
             navigate('/otp')
         }
     }
