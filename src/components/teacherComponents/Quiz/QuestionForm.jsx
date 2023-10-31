@@ -17,7 +17,7 @@ function QuestionForm() {
 
 
 {/*---- Qusetion Type --- */}
-<div className=' mb-3'>
+<div className=''>
     <label htmlFor="questionType" className="form-label px-1">Question Type</label>
     <select className="form-select rounded-5 p-3" name="questionType" onChange={handleOptionChange}>
         <option value="0">Select your question</option>

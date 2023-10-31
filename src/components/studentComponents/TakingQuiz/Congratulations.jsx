@@ -1,11 +1,11 @@
 import React from 'react'
-import QuizNameNav from './QuizNameNav'
+import NavForResult from './NavForResult'
 import QuestionForm from '../../teacherComponents/Quiz/QuestionForm'
 
 function Congratulations() {
   return (
     <div>
-        <QuizNameNav/>
+        <NavForResult/>
         <QuestionForm/>
     </div>
   )
