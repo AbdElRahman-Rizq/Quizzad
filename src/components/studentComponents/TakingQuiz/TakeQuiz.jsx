@@ -2,12 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import NavForQuiz from './NavForQuiz';
 import QuestionForm from '../../teacherComponents/Quiz/QuestionForm';
 import Slider from 'react-slick';
-
+import "../../../assets/css/quiz.css"
 function TakeQuiz() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionPage, setQuestionPage] = useState(0);
   const sliderRef = useRef(null);
-  const [timer, setTimer] = useState(30); 
+  const [timer, setTimer] = useState(90); 
 
   const settings = {
     dots: false,
@@ -38,11 +38,16 @@ function TakeQuiz() {
   const formattedTime = `${Math.floor(timer / 60)
   .toString()
   .padStart(2, '0')}:${(timer % 60).toString().padStart(2, '0')}`;
+  
+  // Calculate the progress percentage
+  const progress = ((timer / 60) * 100).toFixed(2);
+
+  // Next Btn
   const handleNext = () => {
     setQuestionNumber((prevNumber) => prevNumber + 1);
     sliderRef.current.slickNext();
   };
-
+// Prev Btn
   const handlePrevious = () => {
     sliderRef.current.slickPrev();
   };
@@ -50,6 +55,13 @@ function TakeQuiz() {
   return (
     <div>
       <NavForQuiz questionNumber={questionNumber} timer={formattedTime} />
+      <div className="progressBar">
+        <div
+          className="progressBarFill"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+      <div className="progressBar"></div>
       {/* Questions */}
       <Slider ref={sliderRef} {...settings}>
         <div key={1}>
