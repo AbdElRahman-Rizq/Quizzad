@@ -32,6 +32,7 @@
 /* Themed Button component */
 .themedButton{
   background-color: #872991;
+  border: 2px solid #872991 !important;
   color: #fff;
 }
 .themedButton:hover{

@@ -99,14 +99,35 @@
     border-radius: 20rem;
 }
     /* Timer progress bar */
+.progressBar {
+    height: 15px;
+    /* background-color: #ccc; */
+  }
+  
+  .progressBarFill {
+    height: 100%;
+    background-color: #560283;
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 600px) {
     .progressBar {
-        width: 100%;
-        padding: 0 3rem;
-        height: 10px;
-      }
-      
-      .progressBarFill {
-        height: 100%;
-        background-color: #560283;
-      }
-    
+      height: 10px;
+    }
+  }
+  /* Slider */
+  /* Default styles */
+.slider-container {
+    width: 95%;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 100%;
+    }
+  }
+  /* Answers Section */
+  .answersSection{
+    padding-left: 20%;
+  }
