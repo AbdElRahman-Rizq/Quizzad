@@ -3,18 +3,18 @@ import NavForResult from './NavForResult'
 import Result from '../../../assets/images/smart.png'
 
 function Congratulations() {
-  return (
+return (
     <div>
         <NavForResult/>
         <section >
             <div className="container-fulid w-75 m-auto">
-                <div className="result text-center mx-4">
+                <div className="result text-center mx-4 bg-light">
                     <div className="result-header my-3">
                         <h1 className=''>Congratilations</h1>
                     </div>
                     <div className="up bg-white mx-5 rounded-5">
                         <div className="result-img">
-                            <img width={"33%"} src={Result} />
+                            <img className='' src={Result} />
                         </div>
                         <div className="result-degree">
                             <h2 className='h5' style={{color:"#7C2A90"}}>you get +90 of Quiz Degrees</h2>

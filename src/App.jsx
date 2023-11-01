@@ -19,6 +19,9 @@ import { TeacherView } from './pages/TeacherView'
 import StudentView from './pages/StudentView'
 import Congratulations from './components/studentComponents/TakingQuiz/Congratulations'
 import TakeQuiz from './components/studentComponents/TakingQuiz/TakeQuiz'
+import AdminTable from './components/adminComponents/users/AdminTable'
+import TeacherTable from './components/adminComponents/users/TeacherTable'
+import StudentTable from './components/adminComponents/users/StudentTable'
 
 function App() {
 
@@ -38,6 +41,9 @@ function App() {
       <Route path='/profileview' element={<ProfileView/>}/>
       <Route path='/pending' element={<PendingPage/>}/>
       <Route path='/reset' element={<ResetPassword/>}/>
+      <Route path='/a' element={<AdminTable/>}/>
+      <Route path='/ab' element={<TeacherTable/>}/>
+      <Route path='/abc' element={<StudentTable/>}/>
       {/* waraki */}
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>

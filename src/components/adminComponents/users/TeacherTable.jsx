@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
+import "../../../assets/css/Users.css"
+import { Container, NavLink, Table } from "react-bootstrap";
 
 export default function TeacherTable() {
     const [teachers, setTeachers] = useState([]);
@@ -10,18 +12,18 @@ export default function TeacherTable() {
             .then((data) => {
                 setTeachers(data);
             })
-            .catch((error) => {
-                console.error("Error:", error);
+            .catch((err) => {
+                console.log("err:", err);
             });
     }, []);
 
-    if (teachers.length === 0)
+    if (teachers.length === 0) {
         return (
-            <div className="d-flex justify-content-center align-items-center mt-5">
+            <div id="loading">
                 <Circles
-                    height="800"
-                    width="100"
-                    color="#4fa94d"
+                    height={500}
+                    width={60}
+                    color="#89288F"
                     ariaLabel="circles-loading"
                     wrapperStyle={{}}
                     wrapperClass=""
@@ -29,36 +31,42 @@ export default function TeacherTable() {
                 />
             </div>
         );
+    }
+
     return (
-        <div className="container tableContainer">
-            <table className="table table-striped table-hover table-sm my-5 border rounded-5 shadow ms-4">
-                <thead>
+        <Container>
+            <Table hover responsive className="userTable">
+                <thead className="custom-thead">
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
+                        <th>Name</th>
                         <th>Role</th>
-                        <th>Specialization</th>
+                        <th>Specific</th>
                         <th>Email</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="userBodyTable">
                     {teachers.map((teacher) => (
-                        <tr key={teacher.id}>
-                            <td className="pb-2">{teacher.id}</td>
-                            <td className="pb-2">{teacher.name}</td>
-                            <td className="pb-2">{teacher.email}</td>
-                            <td className="pb-2">{teacher.phone}</td>
-                            <td className="pb-2">
-                                <div className="cradIcon">
-                                    <i className="fa-solid fa-eye mx-2"></i>
-                                    <i className="fa-regular fa-pen-to-square fs-6 mx-2 text-success"></i>
-                                    <i className="fa-regular fa-trash-can fs-6 mx-2 text-danger"></i>
-                                </div>
-                            </td>
-                        </tr>
+                        teacher.id < 8 ? (
+                            <tr key={teacher.id}>
+                                <td>{teacher.id}</td>
+                                <td>{teacher.name}</td>
+                                <td>{teacher.username}</td>
+                                <td>{teacher.phone}</td>
+                                <td>{teacher.email}</td>
+                                <td>
+                                    <div className="p-0">
+                                        <NavLink className="fa fa-solid fa-eye mx-3 fs-5 text-warning"/>
+                                        <NavLink className="fa-solid fa-pen-to-square mx-3 fs-5 text-info"/>
+                                        <NavLink className="fa-solid fa-trash-can mx-3 fs-5 text-danger"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        ) : null
                     ))}
                 </tbody>
-            </table>
-        </div>
+            </Table>
+        </Container>
     );
 }
