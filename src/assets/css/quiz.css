@@ -94,6 +94,11 @@
     }
     
     /*--------------------- QUiz view for student --------------------------*/
+/* NavBar for result */
+#navForResult{
+    border-radius: 20rem;
+}
+    /* Timer progress bar */
     .progressBar {
         width: 100%;
         padding: 0 3rem;
