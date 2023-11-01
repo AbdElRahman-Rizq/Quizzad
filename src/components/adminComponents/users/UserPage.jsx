@@ -4,6 +4,7 @@ import AdminTable from "./AdminTable";
 import UserNav from "./userNav";
 import TeacherTable from "./TeacherTable";
 import StudentTable from "./StudentTable";
+import { Route, Routes } from "react-router";
 
 
 
@@ -16,9 +17,9 @@ function UserPage() {
                 <Col>
                     <UserNav/>                    
                     <Routes>
-                        <Route path='/user/newrequest' element={<AdminTable/>}/>
-                        <Route path='/user/teacher' element={<TeacherTable/>}/>
-                        <Route path='/user/student' element={<StudentTable/>}/>
+                        <Route path='/newrequest' element={<AdminTable/>}/>
+                        <Route path='/teacher' element={<TeacherTable/>}/>
+                        <Route path='/student' element={<StudentTable/>}/>
                     </Routes>
                 </Col>
             

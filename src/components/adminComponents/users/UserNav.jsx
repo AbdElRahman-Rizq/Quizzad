@@ -16,7 +16,7 @@ export default function UserNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/user/teacher" 
+                  to="./teacher" 
                 >
                   Teacher
                 </NavLink>
@@ -24,7 +24,7 @@ export default function UserNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/user/student"
+                  to="./student"
                 >
                   Student
                 </NavLink>
@@ -32,7 +32,7 @@ export default function UserNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/user/newrequest"
+                  to="./newrequest"
                 >
                   New Request
                 </NavLink>
