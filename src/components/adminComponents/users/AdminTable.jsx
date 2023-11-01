@@ -23,7 +23,7 @@ export default function AdminTable() {
         <Circles
           height={500}
           width={60}
-          color="#4fa94d"
+          color="#89288F"
           ariaLabel="circles-loading"
           wrapperStyle={{}}
           wrapperClass=""

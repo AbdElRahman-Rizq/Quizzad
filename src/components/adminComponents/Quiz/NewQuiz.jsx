@@ -1,63 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import { Accordion } from 'react-bootstrap';
 import Slider from "react-slick";
 import '../../../assets/css/quiz.css'
-import QuestionForm from '../../teacherComponents/Quiz/QuestionForm';
+import { useQuizLogic } from '../../../controls/QuizLogic';
 
+export function NewQuiz() {
+  const {
+    sliderRef,
+    next,
+    previous,
+    handleAddQuestionClick,
+    questions,
+    settings,
+  } = useQuizLogic();
+  return (
+          <div className='m-2 mt-3'>
+          <section className="rounded-4 py-4 bg-light Scroller">
 
-export class NewQuiz extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      questions: [], // Store the Accordion items
-    };
-  }
-
-  next = (event) => {
-    event.preventDefault();
-    this.slider.slickNext();
-  }
-
-  previous = (event) => {
-    event.preventDefault();
-    this.slider.slickPrev();
-  }
-
-  handleAddQuestionClick = () => {
-    const questionNumber = this.state.questions.length + 1;
-    const newQuestion = (
-      <Accordion.Item key={questionNumber} eventKey={questionNumber.toString()} className="my-3 rounded">
-        <Accordion.Header className="accordion-header text-light">Question {questionNumber}</Accordion.Header>
-        <Accordion.Body>
-          <div className="quiz mb-3">
-            <QuestionForm />
-          </div>
-        </Accordion.Body>
-      </Accordion.Item>
-    );
-
-    this.setState((prevState) => ({
-      questions: [...prevState.questions, newQuestion],
-    }));
-  };
-
-
-  render() {
-    const settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: false, // Replace with your custom previous arrow element or component
-      nextArrow: false, // Replace with your custom next arrow element or component
-    };
-    
-    return (
-          <div className='background rounded-4 m-2'>
-          <section className="py-3 Scroller">
-
-          <form className='mx-2 m-auto p-3 rounded-4 '>
+          <form className='mx-2 m-auto rounded-4 '>
             <div className="container p-0">
               <div className="row mb-4">
                 <div className="col-md-4 col-xl-10 text-center m-auto p-2 mt-1 rounded-4">
@@ -65,10 +25,10 @@ export class NewQuiz extends Component {
                 </div>
               </div>
             </div>
-            <Slider ref={c => (this.slider = c)} {...settings}>
-                  <div key={1}>
-                    
-                  <div className='row '> 
+            <Slider ref={sliderRef} {...settings}>
+            <div key={1}>
+              
+            <div className='row '> 
             {/*---------------------- quiz details--------------------------*/}      
             <div className='col-md-5 mx-auto '>
             <div>
@@ -201,50 +161,46 @@ export class NewQuiz extends Component {
             </div>
             </div>
                     <div className='my-3 m-auto col-md-6'>
-                      <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={this.next}>
+                      <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={next}>
   
                         Questions Settings
                         <i className="fa-solid fa-arrow-right ms-3"/>
                         </button>
                     </div>
                   </div>
-                  <div key={2}>
-                  <div className='col-md-8 m-auto'>
+            <div key={2}>
+              <div className='col-md-8 m-auto'>
                 <hr />
               </div>
-                
-                
-              {/*---------------------- Add question --------------------------*/}      
-
               <div className="m-3 m-auto col-md-6">
                 <button
                   type='button'
                   className="quizButton rounded-4 p-3 w-100"
-                  onClick={this.handleAddQuestionClick}>
-                  Add Question
+                  onClick={handleAddQuestionClick}
+                >
+                  Add A New Question
                 </button>
               </div>
-              
               <Accordion defaultActiveKey="null">
-                {this.state.questions}
-              </Accordion>  
-                <div className='my-3 m-auto col-md-6'>
-                  <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={this.previous}>
+                {questions}
+              </Accordion>
+              <div className='my-3 m-auto col-md-6'>
+                <button type="submit" className="quizButton rounded-4 p-3 w-100" onClick={previous}>
                   <i className="fa-solid fa-arrow-left me-3" />
-                    Class Settings</button>
-                </div>
-              </div>
-            </Slider>
-              {/*---------------------- seperator--------------------------*/}      
-              <div className='col-md-8 m-auto'>
-                <hr />
-              </div>
-            <div className='m-3 m-auto col-md-6'>
-                  <button type="submit" className="quizButton rounded-4 p-3 w-100">Create Quiz</button>
+                  Class Settings
+                </button>
+                      </div>
+                    </div>
+                  </Slider>
+                  <div className='col-md-8 m-auto'>
+                    <hr />
+                  </div>
+                  <div className='m-3 m-auto col-md-6'>
+                    <button type="submit" className="quizButton rounded-4 p-3 w-100">Create Quiz</button>
+                  </div>
+                </form>
+              </section>
             </div>
-          </form>
-          </section>
-        </div>
-    );
-}}
+          );
+        }
 
