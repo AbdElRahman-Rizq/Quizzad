@@ -6,10 +6,13 @@ import { Formik, useFormik } from 'formik'
 import * as Yup from 'yup';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { parse } from 'cookie';
+
 
 
 export default function ForgetPassword() {
     let navigate =useNavigate()
+
     //yup Validation
     let validateSChema = Yup.object({
         email:Yup.string().required().email("Enter Valid Email")
@@ -31,9 +34,9 @@ export default function ForgetPassword() {
     async function forgetPasswordApi(values){
         let {data} = await axios.post(`http://localhost:5000/api/v1/auth/forgotPassword`,values)
         console.log(data);
-        if(response.data.message ==="Password reset instructions sent to your email"){
-            navigate('/otp')
-        }
+        if(data.message ==="Password reset instructions sent to your email"){
+            navigate('/reset')
+        }   
     }
 
     //Form
