@@ -4,6 +4,8 @@ import QuestionForm from '../../teacherComponents/Quiz/QuestionForm';
 import Slider from 'react-slick';
 import "../../../assets/css/quiz.css"
 import QuestionStudentView from './QuestionStudentView';
+import Cookies from 'js-cookie';
+
 function TakeQuiz() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionPage, setQuestionPage] = useState(0);
@@ -21,6 +23,17 @@ function TakeQuiz() {
   };
 
   useEffect(() => {
+    
+    const jwtToken = Cookies.get('jwt');
+
+    if (jwtToken) {
+      console.log('Token retrieved:', jwtToken);
+      // Now you can use jwtToken for authentication or any other purpose
+    } else {
+      console.log('Token not found');
+    }
+
+
     const timerInterval = setInterval(() => {
       setTimer((prevTimer) => prevTimer - 1);
     }, 1000);
@@ -34,7 +47,7 @@ function TakeQuiz() {
     return () => {
       clearInterval(timerInterval);
     };
-  }, [timer]);
+  }, []);
    // Format the remaining time as minutes and seconds (MM:SS)
   const formattedTime = `${Math.floor(timer / 60)
   .toString()
