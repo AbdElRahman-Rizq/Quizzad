@@ -5,7 +5,7 @@ class dashboard
 
 /* CSS for styling the scrollbar and removing arrows */
 .Scroller {
-  height: 86vh; /* Set your desired height */
+  height: 83vh; /* Set your desired height */
   overflow-y: scroll;
   overflow-x: hidden;
 }

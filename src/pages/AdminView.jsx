@@ -5,7 +5,6 @@ import { ClassPage } from '../components/adminComponents/class/ClassPage'
 import { QuizPage } from '../components/adminComponents/Quiz/QuizPage'
 import DashBoardPage from '../components/adminComponents/dashboard/DashBoardPage'
 import UserPage from '../components/adminComponents/users/UserPage'
-import ProfileView from '../components/profile/ProfileView'
 
 
 export function AdminView() {
@@ -17,7 +16,7 @@ export function AdminView() {
             <SideBar/>
           </div>
           <div className="col-lg-9 pt-2">
-            <Routes>            
+            <Routes>
               <Route path='' element={<DashBoardPage/>}/>
               <Route path='class/*' element={<ClassPage/>}/>
               <Route path='quiz/*' element={<QuizPage/>}/>
