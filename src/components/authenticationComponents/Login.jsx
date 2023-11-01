@@ -7,12 +7,14 @@ import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { useState } from 'react'
-
+import Cookies from 'js-cookie';
 
 
 export default function Login() {
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
+    // Token
+// Validation
     let validationLoginSchema=Yup.object({
         email : Yup.string()
         .required('Email is required')
@@ -23,24 +25,49 @@ export default function Login() {
         // .max(15, 'Password must be at most 8 characters'),
     })
 
-    async function loginSubmit(values) {       
-        const response = await axios.post('http://localhost:5000/api/v1/auth/login', values)
-        .catch((err) => {
-            seterror(err.response.data.message);
-        console.log(err.response.data.message);
-        });
-        if (response.data.message === 'Login done successfully') {
-            console.log(response.data);
-            console.log('Successful');
-            console.log(response);
-            
-            navigate('/admin');
-        } else {
-            console.log('Not successfull');
-        }
-        console.log(data); 
+//     async function loginSubmit(values) {      
+//         // axios.defaults.withCredentials = true; 
+//         const response = await axios.post('http://localhost:5000/api/v1/auth/login', values)
+//         .catch((err) => {
+//             seterror(err.response.data.message);
+//         console.log(err.response.data.message);
+//         });
+//         if (response.data.message === 'Login done successfully') {
+//             console.log(response.data);
+//             console.log('Successful');
+//             const token = Cookies.get('token');
+// console.log(token);
+//             navigate('/admin');
+//         } else {
+//             console.log('Not successfull');
+//         }
+//         console.log(data); 
+//     }
+async function loginSubmit(values) {      
+    try {
+      const response = await axios.post('http://localhost:5000/api/v1/auth/login', values);
+      console.log(response.data);
+  
+      if (response.data.message === 'Login done successfully') {
+        console.log(response.data);
+
+        const jwtToken = response.data.user.token; // Assuming the token is returned in the response
+        Cookies.set('jwt', jwtToken, { expires: 7 }); // Set the actual token from the response
+        console.log('JWT Token set:', jwtToken);
+  
+        navigate('/Takequiz');
+      } else {
+        console.log('Not successful');
+        seterror('Login failed. Please check your credentials.');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      seterror('An unexpected error occurred during login.');
     }
-    
+  }
+  
+  
+  
     const formik = useFormik({
         initialValues: {
             email: '',
