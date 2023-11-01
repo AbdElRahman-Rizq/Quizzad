@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/authentication.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
@@ -6,12 +6,13 @@ import { Formik, useFormik } from 'formik'
 import * as Yup from 'yup';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { parse } from 'cookie';
+// import { parse } from 'cookie';
 
 
 
 export default function ForgetPassword() {
     let navigate =useNavigate()
+    let [successMsg , setsuccessMsg]=useState("")
 
     //yup Validation
     let validateSChema = Yup.object({
@@ -35,7 +36,8 @@ export default function ForgetPassword() {
         let {data} = await axios.post(`http://localhost:5000/api/v1/auth/forgotPassword`,values)
         console.log(data);
         if(data.message ==="Password reset instructions sent to your email"){
-            navigate('/reset')
+            // navigate('/reset')
+            setsuccessMsg(data.message);
         }   
     }
 
@@ -57,8 +59,11 @@ export default function ForgetPassword() {
                     <div className='row'>                        
                         <div className='email my-2'>
                             <label type="email" className="form-label">Email</label>
-                            <input onBlur={Form.handleBlur} onChange={Form.handleChange} type="email" className="form-control rounded-5" id="email" placeholder=""/> 
+                            <input  onBlur={Form.handleBlur} onChange={Form.handleChange} type="email" className="form-control rounded-5" id="email" placeholder=""/> 
                             {Form.errors.email && Form.touched.email && (<p className='mt-2 p-2 text-danger'>{Form.errors.email}</p>)}
+                            <div className="success-alert mt-2 ">
+                                {successMsg?(<div className='alert alert-success rounded-5 text-center'>Check You Email</div>):""}
+                            </div>
                         </div>
                     </div>
                     <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
