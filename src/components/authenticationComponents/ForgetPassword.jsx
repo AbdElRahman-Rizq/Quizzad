@@ -6,7 +6,7 @@ import { Formik, useFormik } from 'formik'
 import * as Yup from 'yup';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-// import { parse } from 'cookie';
+
 
 
 
@@ -32,14 +32,29 @@ export default function ForgetPassword() {
     })
 
     //submit function
-    async function forgetPasswordApi(values){
-        let {data} = await axios.post(`http://localhost:5000/api/v1/auth/forgotPassword`,values)
-        console.log(data);
-        if(data.message ==="Password reset instructions sent to your email"){
-            // navigate('/reset')
-            setsuccessMsg(data.message);
-        }   
-    }
+    async function forgetPasswordApi(values) {
+        try {
+            const { data } = await axios.post('http://localhost:5000/api/v1/auth/forgotPassword', values);
+            console.log(data);
+        
+            if (data.message === 'Password reset instructions sent to your email') {
+                setsuccessMsg(data.message);
+                console.log(response.data);
+        
+                const jwtToken = getCookie('jwt');
+                if (jwtToken) {
+                console.log('Token retrieved:', jwtToken);
+        
+                // Now you can use jwtToken for authentication or any other purpose
+                } else {
+                console.log('Token not found');
+                }
+            }
+            } catch (error) {
+            console.error('Error:', error);
+            }
+        }
+
 
     //Form
     return (

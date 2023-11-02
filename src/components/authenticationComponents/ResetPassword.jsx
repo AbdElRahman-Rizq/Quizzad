@@ -1,41 +1,44 @@
-import React from 'react'
-import  '../../assets/css/authentication.css'
-import Logo from '../../assets/images/logo.png'
-import Exam from '../../assets/images/Exams-bro.png'
-import { Link,useNavigate } from 'react-router-dom'
-import {  useFormik } from 'formik'
-import * as Yup from 'yup'
-import { parse } from 'cookie';
-
-
+import React from 'react';
+import '../../assets/css/authentication.css';
+import Logo from '../../assets/images/logo.png';
+import Exam from '../../assets/images/Exams-bro.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export default function ResetPassword() {
     const navigate = useNavigate();
-    let validationLoginSchema=Yup.object({
-        password :Yup.string()
-        .required('Password is required')
-        .min(8, 'Password must be at least 2 characters')
-        .max(15, 'Password must be at most 8 characters'),
-    })
-    
-    async function resetPasswordForm(values) {       
-        const response = await axios.get('http://localhost:5000/api/v1/auth/resetPassword/:token', values)
-        .catch((err) => {
-        console.log(err.response.data.message);
-        });
-        if (response.data.message === 'Login done successfully') {
-            console.log(response.data);
-            console.log('Successful');
-            navigate('/');
-        } else {
-            console.log('Not successfull');
+
+    // Get the token from the URL
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get('token');
+    Cookies.set('jwt-reset', token, { expires: 7 });
+
+    let validationLoginSchema = Yup.object({
+        password: Yup.string()
+            .required('Password is required')
+            .min(8, 'Password must be at least 8 characters')
+            .max(15, 'Password must be at most 15 characters'),
+    });
+
+    async function resetPasswordForm(values) {
+        try {
+            const response = await axios.put(`http://localhost:5000/api/v1/auth/resetPassword/${token}`, values);
+
+            if (response.data.message === 'Password reset successfully') {
+                navigate('/login'); // Navigate to the login page
+            } else {
+                console.log('Not successful');
+            }
+        } catch (error) {
+            console.log('Error:', error);
         }
-        console.log(dataToSend); 
     }
 
     const formik = useFormik({
         initialValues: {
-            email: '',
             password: '',
         },
         validationSchema: validationLoginSchema,
@@ -44,39 +47,53 @@ export default function ResetPassword() {
 
     return (
         <div>
-        <section className='reset-password'>
-            <div className='exam'>
-                <img src={Exam} className="" alt=''/>  
-            </div>
-            <div className="container">
-                <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
-                    <div className='formLogo'>
-                        <img src={Logo} className="w-100" alt=''/>  
-                    </div>
-                    <div className='formHeader text-center pt-3 mb-3'>
-                        <h1>Reset Password</h1>
-                    </div>
-                    <div className='row'>                        
-                        <div className='password my-2'>
-                            <label htmlFor="password" className="form-label">New password</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} type="password" className="form-control rounded-5" id="password" placeholder=""/> 
-                            {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+            <section className="reset-password">
+                <div className="exam">
+                    <img src={Exam} className="" alt="" />
+                </div>
+                <div className="container">
+                    <form onSubmit={formik.handleSubmit} className="form bg-light rounded-5 px-5 py-4">
+                        <div className="formLogo">
+                            <img src={Logo} className="w-100" alt="" />
                         </div>
-                        <div className='Repassword my-2'>
-                            <label htmlFor="Repassword" className="form-label">Confirm Password</label>
-                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.Repassword} type="password" className="form-control rounded-5" id="Repassword" placeholder=""/> 
-                            {formik.errors.password && formik.touched.password && (<div className='alert mt-2 p-2 alert-danger'>{formik.errors.password}</div>)}
+                        <div className="formHeader text-center pt-3 mb-3">
+                            <h1>Reset Password</h1>
                         </div>
-                    </div>
-                    <div className='my-2 haventAccount'>
-                        <span>you don't receive password.! <Link className='text-dark' to={'/dd'}>send again.</Link></span>
-                    </div>
-                    <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
-                            <button type="submit"  className='btn w-100 py-2 text-white fs-bold'>Reset Password </button>
-                    </div>
-                </form>           
-            </div>
-        </section>
-    </div>
-    )
+                        <div className="row">
+                            <div className="password my-2">
+                                <label htmlFor="password" className="form-label">
+                                    New password
+                                </label>
+                                <input
+                                    onBlur={formik.handleBlur}
+                                    onChange={formik.handleChange}
+                                    value={formik.values.password}
+                                    type="password"
+                                    className="form-control rounded-5"
+                                    id="password"
+                                    placeholder=""
+                                />
+                                {formik.errors.password && formik.touched.password && (
+                                    <div className="alert mt-2 p-2 alert-danger">{formik.errors.password}</div>
+                                )}
+                            </div>
+                        </div>
+                        <div className="my-2 haventAccount">
+                            <span>
+                                If you don't receive a password reset email,{' '}
+                                <Link className="text-dark" to={'/dd'}>
+                                    click here
+                                </Link>
+                            </span>
+                        </div>
+                        <div className="formBtn col-4 text-center m-auto mt-3 rounded-4">
+                            <button type="submit" className="btn w-100 py-2 text-white fs-bold">
+                                Reset Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    );
 }

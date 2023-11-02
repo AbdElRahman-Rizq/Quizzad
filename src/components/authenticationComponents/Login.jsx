@@ -1,4 +1,3 @@
-import React from 'react'
 import  '../../assets/css/authentication.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
@@ -13,7 +12,6 @@ import Cookies from 'js-cookie';
 export default function Login() {
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
-    const [Token , setToken]= useState("")
     // Token
 // Validation
     let validationLoginSchema=Yup.object({
@@ -47,7 +45,6 @@ export default function Login() {
 async function loginSubmit(values) {      
     try {
         const response = await axios.post('http://localhost:5000/api/v1/auth/login', values);
-        console.log(response.data);
     
         if (response.data.message === 'Login done successfully') {
             console.log(response.data);
@@ -59,7 +56,7 @@ async function loginSubmit(values) {
             const token = localStorage.getItem('logintoken');
             console.log(token);
 
-            navigate('/admin');
+            navigate('/Takequiz');
         } else {
             console.log('Not successful');
             seterror('Login failed. Please check your credentials.');
@@ -108,7 +105,7 @@ async function loginSubmit(values) {
                         </div>
                     </div>
                     <div className='my-2 haventAccount d-flex justify-content-between'>
-                        <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
+                        <span>You do not have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
                         <span><Link className='text-dark' to={"/forgetpassword"}>Forget your password </Link></span>
                     </div>
                     <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>
