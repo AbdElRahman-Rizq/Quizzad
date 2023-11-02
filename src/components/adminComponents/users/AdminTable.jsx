@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
 import { Container, NavLink, Table } from "react-bootstrap";
-import Cookies from 'js-cookie';
 import axios from 'axios';
 import { useNavigate } from "react-router";
 

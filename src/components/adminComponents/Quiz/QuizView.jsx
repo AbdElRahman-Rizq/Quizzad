@@ -1,20 +1,52 @@
-import vector from '../../../assets/images/admin.png';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Circles } from 'react-loader-spinner';
 
 export function QuizView() {
-  return (
-    <div>
-      {/* <nav className="navbar navbar-expand-lg rounded-5">
-        <div className="container my-2">
-          <h1 className="navbar-brand text-light fs-4 px-2 fw-bold">QuizView</h1>
-            
-            <div className="admin text-center">
-              <img src={vector} alt="Admin" />
-          </div>
+    const baseUrl = 'http://localhost:5000/api/v1/quizzes'
+    const [myQuiz, setMyQuiz] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${baseUrl}/1`, {
+          withCredentials: true,
+        });
+        setMyQuiz(response.data.quiz);
+        setLoading(false);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+    
+    useEffect(() => {
+        fetchData();
+    }, []);
+    
+    if (loading) {
+      return (
+        <div id="loading">
+          <Circles
+            height={500}
+            width={60}
+            color="#89288F"
+            ariaLabel="circles-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
         </div>
-      </nav> */}
+      );
+    }
+    return (
+    <div>
       <div className='row '>
 {/*----------------- quiz image and details --------------------*/}
-      <div className='col-md-7 text-light pt-3 '>
+      {myQuiz.map((quiz) => {
+        <div className="col-mb-12 p-2" key={quiz.id}>
+
+      <div className='col-md-7 text-light pt-3 ' >
         <div className="bg-light border p-2 rounded-5">
                         <div className="text-center">
                             <a href="#">
@@ -27,26 +59,26 @@ export function QuizView() {
                             </a>
                         </div>
                         <div className="col-md-3 my-2">
-                            <span className="badge bg-warning p-2 mx-3 b-3 fs-6 rounded-5 w-100">Intermediate</span>
+                            <span className="badge bg-warning p-2 mx-3 b-3 fs-6 rounded-5 w-100">{quiz.difficultyLevel}</span>
                         </div>
 
                         <div className="p-2">
                         {/* <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span> */}
                         <h4 className="mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                            Areodynamic simulator CFD Analysis quiz
+                            {quiz.title}
                         </h4>
                         </div>
 
                         <div className='row'>
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
-                                Teacher : MOhamed
+                                Teacher : {quiz.creatorTeacher.id}
                             </h6>
                         </div>
 
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                                Category : AeroDynamics
+                                Subject : {quiz.subject}
                             </h6>
                         </div>
                         </div>
@@ -54,13 +86,13 @@ export function QuizView() {
                         <div className='row'>
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                                Class Name : Engineering
+                                Class Name : {quiz.classes.className}
                             </h6>
                         </div>
 
                         <div className="col-md-6">
                         <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                                Grade Level : 10th
+                                Grade Level : {quiz.gradeLevel}
                         </h6>
                         </div>
                         </div>                    
@@ -73,7 +105,7 @@ export function QuizView() {
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                Term : First 
+                                Term : {quiz.term} 
                             </p>
                             </div>
                         </div>
@@ -83,7 +115,7 @@ export function QuizView() {
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                Unit : 4
+                                Unit : {quiz.unit} 
                             </p>
                             </div>
                         </div>
@@ -96,7 +128,7 @@ export function QuizView() {
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                Lesson : 1
+                                Lesson : {quiz.lesson} 
                             </p>
                             </div>
                         </div>
@@ -107,7 +139,7 @@ export function QuizView() {
                             </div>
                             <div>
                                 <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                    Chapter : 1
+                                    Chapter : {quiz.chapter} 
                                 </p>
                             </div>
                         </div>
@@ -126,7 +158,7 @@ export function QuizView() {
                 Description :
             </h4>
             <p className="pt-2 mx-3 text-dark">
-                this quiz measure the knowledge you have in thermodynamics as well as Heat transfer.
+            {quiz.description} 
             </p>
             </div>
 
@@ -138,12 +170,11 @@ export function QuizView() {
             </div>
 
            <ol className="list-group list-group-numbered rounded-5">
-                <li className="list-group-item">Quiz timer : 1 hour</li>
-                <li className="list-group-item">Quiz Questions : 30 question</li>
-                <li className="list-group-item">Passing Score : 70% </li>
-                <li className="list-group-item">Allowed attempts : 3 times </li>
-                <li className="list-group-item">Quiz deadline : 31-12-2023 </li>
-                <li className="list-group-item">Privacy: Public </li>
+                <li className="list-group-item">Quiz timer : {quiz.duration}</li>
+                <li className="list-group-item">Passing Score : {quiz.passingScore} </li>
+                <li className="list-group-item">Allowed attempts : {quiz.numOfAllowedAttempts} </li>
+                <li className="list-group-item">Quiz deadline : {quiz.deadlineDate} </li>
+                <li className="list-group-item">Privacy: {quiz.isPublic?'Public':'Private'} </li>
             </ol>
 
 
@@ -153,6 +184,9 @@ export function QuizView() {
             </div>
         </div>
       </div>
+      </div>
+
+      })}
       </div>
     </div>
   )
