@@ -9,12 +9,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'react-router-dom'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import TokenContexProvider from './Contex/TokenContex.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <TokenContexProvider>
       <App />
-    </TokenContexProvider>
   // </React.StrictMode>
 )

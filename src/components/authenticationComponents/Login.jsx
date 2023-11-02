@@ -13,8 +13,16 @@ export default function Login() {
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
     // Token
-// Validation
-    let validationLoginSchema=Yup.object({
+        const token = Cookies.get('jwt');
+        if (token) {
+        // You have the token, and you can use it as needed
+        console.log('Token:',token);
+        } else {
+        console.log('Token not found in the cookie.');
+        }
+    // Validation
+    
+let validationLoginSchema=Yup.object({
         email : Yup.string()
         .required('Email is required')
         .email('Enter a valid email address'),
@@ -27,14 +35,13 @@ export default function Login() {
 
 async function loginSubmit(values) {      
     try {
-        const response = await axios.post('http://localhost:5000/api/v1/auth/login', values);
-    
+        const response = await axios.post('http://localhost:5000/api/v1/auth/login', {
+            withCredentials: true,
+          } ,values);
+        const userData = response.data.user
         if (response.data.message === 'Login done successfully') {
             console.log(response.data);
-
-            const jwtToken = response.data.user.token; // Assuming the token is returned in the response
-            Cookies.set('jwt', jwtToken, { expires: 7 }); // Set the actual token from the response
-
+            console.log(userData);
             navigate('/admin');
         } else {
             console.log('Not successful');

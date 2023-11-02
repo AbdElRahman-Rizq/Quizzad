@@ -1,54 +1,39 @@
-import { createContext, useEffect, useState } from "react";
-import Cookies from 'js-cookie';
-import { jwtDecode } from "jwt-decode";
+// import { createContext, useEffect, useState } from "react";
+// import { jwtDecode } from "jwt-decode";
 
-export const TokenContext = createContext();
+// export const TokenContext = createContext();
 
-export default function TokenContextProvider(props) {
-  const [token, setToken] = useState(null);
-
-  useEffect(() => {
-    // Retrieve the JWT token from cookies
-    const jwtToken = Cookies.get('jwt');
+// export default function TokenContextProvider(props) {
+//   const [token, setToken] = useState(null);
   
-    if (jwtToken) {
-      // Token found in cookies
-      setToken(jwtToken);
-    } else {
-      // Token not found in cookies
-      // Handle the case where the token is not available
-      console.log('JWT token not found in cookies');
-    }
-  }, [Cookies]);
-  
-  useEffect(() => {
-    if (token) {
-      // Decode the JWT
-      const decodedToken = jwtDecode(token);
+//   useEffect(() => {
+//     if (token) {
+//       // Decode the JWT
+//       const decodedToken = jwtDecode(token);
 
-      // Access the data in the payload
-      const userId = decodedToken.userId;
-      const iat = decodedToken.iat;
-      const exp = decodedToken.exp;
+//       // Access the data in the payload
+//       const userId = decodedToken.userId;
+//       const iat = decodedToken.iat;
+//       const exp = decodedToken.exp;
 
-      console.log(decodedToken);
-      console.log("User ID:", userId);
-      console.log("Issued At:", iat);
-      console.log("Expiration Time:", exp);
-    } else {
-      console.log('No JWT token available.');
-    }
-  }, [token]); 
+//       console.log(decodedToken);
+//       console.log("User ID:", userId);
+//       console.log("Issued At:", iat);
+//       console.log("Expiration Time:", exp);
+//     } else {
+//       console.log('No JWT token available.');
+//     }
+//   }, [token]); 
 
 
-  const TokenData = {
-    token,
-    setToken,
-  };
+//   const TokenData = {
+//     token,
+//     setToken,
+//   };
 
-  return (
-    <TokenContext.Provider value={TokenData}>
-      {props.children}
-    </TokenContext.Provider>
-  );
-}
+//   return (
+//     <TokenContext.Provider value={TokenData}>
+//       {props.children}
+//     </TokenContext.Provider>
+//   );
+// }
