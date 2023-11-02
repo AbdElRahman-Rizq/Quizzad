@@ -12,9 +12,9 @@ import "slick-carousel/slick/slick-theme.css";
 import TokenContexProvider from './Contex/TokenContex.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <TokenContexProvider>
       <App />
     </TokenContexProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>
 )
