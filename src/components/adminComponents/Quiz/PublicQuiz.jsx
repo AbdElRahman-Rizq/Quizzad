@@ -1,30 +1,50 @@
 import '../../../assets/css/quiz.css';
 import '../../../assets/css/class.css';
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import { TokenContext } from '../../../Contex/TokenContex';
-import { useEffect } from 'react';
-import { jwtDecode } from 'jwt-decode';
+import { Circles } from 'react-loader-spinner';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 export function PublicQuiz() {
-    const { token } = useContext(TokenContext);
-    useEffect(() => {
-        if (token) {
-          // Decode the JWT
-          const decodedToken = jwtDecode(token);
+    const [quiz, setQuiz] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+  //   const jwtToken = Cookies.get('jwt');
     
-          // Access the data in the payload
-          const userId = decodedToken.userId;
-          const iat = decodedToken.iat;
-          const exp = decodedToken.exp;
     
-          console.log(decodedToken);
-          console.log("User ID:", userId);
-          console.log("Issued At:", iat);
-          console.log("Expiration Time:", exp);
-        } else {
-          console.log('No JWT token available.');
+  useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get("http://localhost:5000/api/v1/quizzes/", {    
+            withCredentials: true, 
+          });
+          setQuiz(response.data);
+          setLoading(false);
+        } catch (error) {
+          console.log("err:", error);
+          setLoading(false);
         }
-      }, [token]); 
+      };
+  
+      fetchData();
+    }, []);
+  
+    
+  
+    if (loading) {
+      return (
+        <div id="loading">
+          <Circles
+            height={500}
+            width={60}
+            color="#89288F"
+            ariaLabel="circles-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      );
+    }
   return (
     <div className='background rounded-4 m-2'>
       <section className="py-1 Scroller">
@@ -32,7 +52,7 @@ export function PublicQuiz() {
           <div className="row mb-2">
             <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
               <h3 className="py-2">Explore Public Quizzes</h3>
-              <h3 className="py-2">{token}</h3>
+             
               <nav className="navbar bg-light py-3 ">
                 <div className="container-fluid">
                     <div className="row w-100">
@@ -92,7 +112,9 @@ export function PublicQuiz() {
           <div className="quizlist">
             <div className="container" >
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
-                {/* Card 1 */}
+                {quiz.map((card) => {
+                    
+                    {/* Card 1 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
@@ -106,9 +128,9 @@ export function PublicQuiz() {
                             </a>
                         </div>
                         <div className="p-2">
-                        <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">Easy</span>
+                        <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">{card.difficultyLevel}</span>
                         <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            Car mechanical engine
+                            {card.title}
                         </h5>
                         </div>
                         <div className="d-flex spec d-wrap">
@@ -118,7 +140,7 @@ export function PublicQuiz() {
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                CFD
+                                {card.subject}
                             </p>
                             </div>
                         </div>
@@ -128,7 +150,7 @@ export function PublicQuiz() {
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 12
+                                {card.gradeLevel}
                             </p>
                             </div>
                         </div>
@@ -138,7 +160,7 @@ export function PublicQuiz() {
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Private
+                                {card.isPublic?'Public':'Private'}
                             </p>
                             </div>
                         </div>
@@ -150,9 +172,9 @@ export function PublicQuiz() {
                         </div>
                     </div>
                 </div>
+                })}
 
-                {/* Card 2 */}
-                <div className="col-mb-4 p-2">
+                {/* <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
                             <a href="#">
@@ -210,8 +232,6 @@ export function PublicQuiz() {
                     </div>
                 </div>
 
-
-                {/* Card 3 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
@@ -270,7 +290,6 @@ export function PublicQuiz() {
                     </div>
                 </div>
                 
-                {/* Card 4 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
@@ -329,7 +348,6 @@ export function PublicQuiz() {
                     </div>
                 </div>
 
-                {/* Card 5 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
@@ -388,8 +406,6 @@ export function PublicQuiz() {
                     </div>
                 </div>
 
-
-                {/* Card 6 */}
                 <div className="col-mb-4 p-2">
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
@@ -446,7 +462,7 @@ export function PublicQuiz() {
                             <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
