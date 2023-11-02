@@ -44,8 +44,15 @@ let validationLoginSchema=Yup.object({
           );
       
           if (response.data.message === 'Login done successfully') {
-            console.log(response.data.user);
-            navigate('/admin');
+            const userStatus = response.data.user.status;
+      
+            if (userStatus === 'ACTIVE') {
+              console.log(response.data.user);
+              navigate('/admin');
+            } else {
+              console.log('User is not active');
+              navigate('/pending');
+            }
           } else {
             console.log('Not successful');
             seterror('Login failed. Please check your credentials.');
@@ -55,6 +62,7 @@ let validationLoginSchema=Yup.object({
           seterror('An unexpected error occurred during login.');
         }
       }
+      
       
     const formik = useFormik({
         initialValues: {
