@@ -59,7 +59,7 @@ async function loginSubmit(values) {
             const token = localStorage.getItem('logintoken');
             console.log(token);
 
-            navigate('/Takequiz');
+            navigate('/admin');
         } else {
             console.log('Not successful');
             seterror('Login failed. Please check your credentials.');
