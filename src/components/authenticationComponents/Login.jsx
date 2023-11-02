@@ -13,7 +13,6 @@ import Cookies from 'js-cookie';
 export default function Login() {
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
-    const [Token , setToken]= useState("")
     // Token
 // Validation
     let validationLoginSchema=Yup.object({
@@ -47,18 +46,13 @@ export default function Login() {
 async function loginSubmit(values) {      
     try {
         const response = await axios.post('http://localhost:5000/api/v1/auth/login', values);
-        console.log(response.data);
     
         if (response.data.message === 'Login done successfully') {
             console.log(response.data);
 
             const jwtToken = response.data.user.token; // Assuming the token is returned in the response
             Cookies.set('jwt', jwtToken, { expires: 7 }); // Set the actual token from the response
-            setToken('JWT Token set:', jwtToken);
-            localStorage.setItem("logintoken" , Token)
-            const token = localStorage.getItem('logintoken');
-            console.log(token);
-
+            console.log(jwtToken);
             navigate('/Takequiz');
         } else {
             console.log('Not successful');
