@@ -6,15 +6,25 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 
 export default function ResetPassword() {
     const navigate = useNavigate();
 
     // Get the token from the URL
-    // const url = new URL(window.location.href);
-    // const token = url.searchParams.get('token');
-
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get('token');
+// Token
+const resetToken = Cookies.get('jwt-reset');
+console.log('Token:', token);
+console.log('All Cookies:', Cookies.get());
+if (resetToken) {
+// You have the resetToken, and you can use it as needed
+// console.log('resetToken:',resetToken);
+} else {
+console.log('resetToken not found in the cookie.');
+}
 
 
     let validationLoginSchema = Yup.object({
@@ -25,22 +35,25 @@ export default function ResetPassword() {
     });
    
     async function resetPasswordForm(values) {
-        return axios.put(`http://localhost:5000/api/v1/auth/resetpassword/${resetToken}`,
-        {
-          withCredentials: true,
-        } ,values)
-            .then(response => {
-                if (response.data.message === 'Password reset successfully') {
-                    navigate('/login'); // Navigate to the login page
-                } else {
-                    console.log('Not successful');
-                }
-            })
-            .catch(error => {
-                console.log('Error:', error);
-            });
-    }
-    
+        try {
+          const response = await axios.put(
+            `http://localhost:5000/api/v1/auth/resetpassword/${token}`,
+            values,
+            {
+              withCredentials: true,
+            }
+          );
+      console.log(values);
+          if (response.data.message === 'Password reset successfully') {
+            navigate('/login'); // Navigate to the login page
+          } else {
+            console.log('Not successful');
+          }
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      }
+      
     const formik = useFormik({
         initialValues: {
             password: '',

@@ -15,13 +15,13 @@ import Cookies from 'js-cookie';
 export default function ForgetPassword() {
     let navigate =useNavigate()
     let [successMsg , setsuccessMsg]=useState("")
-    // Token
-    const resetToken = Cookies.get('jwt-reset');
+    const resetToken = Cookies.get('jwt');
+    console.log('All Cookies:', Cookies.get());
     if (resetToken) {
-    // You have the token, and you can use it as needed
-    console.log('Token:', resetToken);
+    // You have the resetToken, and you can use it as needed
+    console.log('resetToken:',resetToken);
     } else {
-    console.log('Token not found in the cookie.');
+    console.log('resetToken not found in the cookie.');
     }
     //yup Validation
     let validateSChema = Yup.object({
@@ -59,17 +59,6 @@ export default function ForgetPassword() {
             // Handle error
           }
         }
-// when email sent
-async function getResetPasswordForm(resetToken) {
-    try {
-      const response = await axios.get(
-        `http://localhost:5000/api/v1/auth/resetpassword/${resetToken}`
-      );
-           
-    } catch (error) {
-      console.log('Error:', error);
-    }
-  }
 
     //Form
     return (
