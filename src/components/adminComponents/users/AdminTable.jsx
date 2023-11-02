@@ -3,27 +3,32 @@ import { Circles } from "react-loader-spinner";
 import "../../../assets/css/Users.css";
 import { Container, NavLink, Table } from "react-bootstrap";
 import Cookies from 'js-cookie';
+import axios from "axios";
 
 export default function AdminTable() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const jwtToken = Cookies.get('jwt');
+//   const jwtToken = Cookies.get('jwt');
   
-  fetch("http://localhost:5000/api/v1/users/", {
-    headers: {
-      Authorization: `Bearer ${jwtToken}`,
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      setUsers(data.data);
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.log("err:", err);
-      setLoading(false);
-    });
+  
+useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/v1/users/", {    
+          withCredentials: true, 
+        });
+        setUsers(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log("err:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   
 
   if (loading) {
