@@ -2,23 +2,29 @@ import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
 import "../../../assets/css/Users.css";
 import { Container, NavLink, Table } from "react-bootstrap";
+import Cookies from 'js-cookie';
 
 export default function AdminTable() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/v1/users/")
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log("err:", err);
-        setLoading(false);
-      });
-  }, []);
+  const jwtToken = Cookies.get('jwt');
+  
+  fetch("http://localhost:5000/api/v1/users/", {
+    headers: {
+      Authorization: `Bearer ${jwtToken}`,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      setUsers(data.data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.log("err:", err);
+      setLoading(false);
+    });
+  
 
   if (loading) {
     return (

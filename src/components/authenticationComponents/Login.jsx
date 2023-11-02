@@ -51,12 +51,8 @@ async function loginSubmit(values) {
 
             const jwtToken = response.data.user.token; // Assuming the token is returned in the response
             Cookies.set('jwt', jwtToken, { expires: 7 }); // Set the actual token from the response
-            setToken('JWT Token set:', jwtToken);
-            localStorage.setItem("logintoken" , Token)
-            const token = localStorage.getItem('logintoken');
-            console.log(token);
 
-            navigate('/Takequiz');
+            navigate('/admin');
         } else {
             console.log('Not successful');
             seterror('Login failed. Please check your credentials.');
