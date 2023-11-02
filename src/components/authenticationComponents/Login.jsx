@@ -33,25 +33,29 @@ let validationLoginSchema=Yup.object({
     })
 
 
-async function loginSubmit(values) {      
-    try {
-        const response = await axios.post('http://localhost:5000/api/v1/auth/login', {
-            withCredentials: true,
-          } ,values);
-        const userData = response.data.user
-        if (response.data.message === 'Login done successfully') {
-            console.log(response.data);
-            console.log(userData);
+    async function loginSubmit(values) {
+        try {
+          const response = await axios.post(
+            'http://localhost:5000/api/v1/auth/login',
+            values,
+            {
+              withCredentials: true,
+            }
+          );
+      
+          if (response.data.message === 'Login done successfully') {
+            console.log(response.data.user);
             navigate('/admin');
-        } else {
+          } else {
             console.log('Not successful');
             seterror('Login failed. Please check your credentials.');
-        }
+          }
         } catch (error) {
-        console.error('Error during login:', error);
-        seterror('An unexpected error occurred during login.');
-    }   
-}
+          console.error('Error during login:', error);
+          seterror('An unexpected error occurred during login.');
+        }
+      }
+      
     const formik = useFormik({
         initialValues: {
             email: '',
