@@ -1,4 +1,3 @@
-import React from 'react'
 import  '../../assets/css/authentication.css'
 import Logo from '../../assets/images/logo.png'
 import Exam from '../../assets/images/Exams-bro.png'
@@ -52,7 +51,11 @@ async function loginSubmit(values) {
 
             const jwtToken = response.data.user.token; // Assuming the token is returned in the response
             Cookies.set('jwt', jwtToken, { expires: 7 }); // Set the actual token from the response
-            console.log(jwtToken);
+            setToken('JWT Token set:', jwtToken);
+            localStorage.setItem("logintoken" , Token)
+            const token = localStorage.getItem('logintoken');
+            console.log(token);
+
             navigate('/Takequiz');
         } else {
             console.log('Not successful');
@@ -102,7 +105,7 @@ async function loginSubmit(values) {
                         </div>
                     </div>
                     <div className='my-2 haventAccount d-flex justify-content-between'>
-                        <span>You don't have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
+                        <span>You do not have an account? <Link className='text-dark' to={"/register"}>Sign up</Link></span>
                         <span><Link className='text-dark' to={"/forgetpassword"}>Forget your password </Link></span>
                     </div>
                     <div  className='formBtn col-4 text-center m-auto mt-3 rounded-4 '>

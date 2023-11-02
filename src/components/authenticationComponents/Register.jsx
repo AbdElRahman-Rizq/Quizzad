@@ -31,7 +31,7 @@ export default function Register() {
             setisloading(true);
             console.log(response.data);
             console.log('Successful');
-            navigate('/pending');
+            navigate('/pendind');
         } else {
             console.log('Not successfull');
         }
