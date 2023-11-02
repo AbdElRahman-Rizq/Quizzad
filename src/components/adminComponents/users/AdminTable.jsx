@@ -1,35 +1,67 @@
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
-import "../../../assets/css/Users.css";
 import { Container, NavLink, Table } from "react-bootstrap";
 import Cookies from 'js-cookie';
-import axios from "axios";
+import axios from 'axios';
+import { useNavigate } from "react-router";
 
-export default function AdminTable() {
+const AdminTable = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-//   const jwtToken = Cookies.get('jwt');
-  
-  
-useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/api/v1/users/", {    
-          withCredentials: true, 
-        });
-        setUsers(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.log("err:", error);
-        setLoading(false);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/v1/users/", {
+        withCredentials: true,
+      });
+      setUsers(response.data);
+      setLoading(false);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
 
-    fetchData();
+  useEffect(() => {
+    fetchData(); // Fetch data on component mount
   }, []);
 
-  
+  const handleApproveUser = async (userId) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:5000/api/v1/users/${userId}`,
+        { "status": 'ACTIVE' },
+        {
+          withCredentials: true,
+        }
+      );
+      // Navigate to the same path
+      navigate('./');
+      // Fetch updated data after navigation
+      fetchData();
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error approving user:", error);
+      // Handle error
+    }
+  };
+//  Delet user
+const cancleUser = async (userId) => {
+    try {
+     
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/users/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      fetchData();
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error approving user:", error);
+    }
+  };
 
   if (loading) {
     return (
@@ -49,7 +81,7 @@ useEffect(() => {
 
   return (
     <Container>
-      <Table hover responsive className=" userTable">
+      <Table hover responsive className="userTable">
         <thead className="custom-thead">
           <tr>
             <th>Id</th>
@@ -70,8 +102,15 @@ useEffect(() => {
               <td>{user.role}</td>
               <td>
                 <div className="p-0">
-                  <NavLink className="fa-solid fa-check mx-3 fs-3 text-success" />
-                  <NavLink className="fa-solid fa-xmark mx-3 fs-3 text-danger" />
+                  <NavLink
+                    className="fa-solid fa-check mx-3 fs-3 text-success"
+                    onClick={() => handleApproveUser(user.id)}
+                    />
+                  <NavLink
+                    className="fa-solid fa-xmark mx-3 fs-3 text-danger"
+                    onClick={() => cancleUser(user.id)}
+                    // Add an onClick handler for the reject action if needed
+                  />
                 </div>
               </td>
             </tr>
@@ -80,4 +119,6 @@ useEffect(() => {
       </Table>
     </Container>
   );
-}
+};
+
+export default AdminTable;
