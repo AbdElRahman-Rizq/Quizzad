@@ -52,7 +52,7 @@ export function PublicQuiz() {
           <div className="row mb-2">
             <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
               <h3 className="py-2">Explore Public Quizzes</h3>
-             
+              <h3 className="py-2">{token}</h3>
               <nav className="navbar bg-light py-3 ">
                 <div className="container-fluid">
                     <div className="row w-100">

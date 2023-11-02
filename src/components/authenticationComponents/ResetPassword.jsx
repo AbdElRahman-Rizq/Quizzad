@@ -17,13 +17,6 @@ export default function ResetPassword() {
     // const token = url.searchParams.get('token');
 
 
-    const resetToken = Cookies.get('jwt-reset');
-    if (resetToken) {
-    // You have the token, and you can use it as needed
-    console.log('Token:', resetToken);
-    } else {
-    console.log('Token not found in the cookie.');
-    }
 
     let validationLoginSchema = Yup.object({
         password: Yup.string()
@@ -31,9 +24,12 @@ export default function ResetPassword() {
             .min(8, 'Password must be at least 8 characters')
             .max(15, 'Password must be at most 15 characters'),
     });
-
+   
     async function resetPasswordForm(values) {
-        return axios.put(`http://localhost:5000/api/v1/auth/resetpassword/${resetToken}`, values)
+        return axios.put(`http://localhost:5000/api/v1/auth/resetpassword/${resetToken}`,
+        {
+          withCredentials: true,
+        } ,values)
             .then(response => {
                 if (response.data.message === 'Password reset successfully') {
                     navigate('/login'); // Navigate to the login page

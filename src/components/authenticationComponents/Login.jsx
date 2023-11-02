@@ -24,24 +24,7 @@ export default function Login() {
         // .max(15, 'Password must be at most 8 characters'),
     })
 
-//     async function loginSubmit(values) {      
-//         // axios.defaults.withCredentials = true; 
-//         const response = await axios.post('http://localhost:5000/api/v1/auth/login', values)
-//         .catch((err) => {
-//             seterror(err.response.data.message);
-//         console.log(err.response.data.message);
-//         });
-//         if (response.data.message === 'Login done successfully') {
-//             console.log(response.data);
-//             console.log('Successful');
-//             const token = Cookies.get('token');
-// console.log(token);
-//             navigate('/admin');
-//         } else {
-//             console.log('Not successfull');
-//         }
-//         console.log(data); 
-//     }
+
 async function loginSubmit(values) {      
     try {
         const response = await axios.post('http://localhost:5000/api/v1/auth/login', values);

@@ -15,7 +15,14 @@ import Cookies from 'js-cookie';
 export default function ForgetPassword() {
     let navigate =useNavigate()
     let [successMsg , setsuccessMsg]=useState("")
-
+    // Token
+    const resetToken = Cookies.get('jwt-reset');
+    if (resetToken) {
+    // You have the token, and you can use it as needed
+    console.log('Token:', resetToken);
+    } else {
+    console.log('Token not found in the cookie.');
+    }
     //yup Validation
     let validateSChema = Yup.object({
         email:Yup.string().required().email("Enter Valid Email")
@@ -35,32 +42,34 @@ export default function ForgetPassword() {
 
     //submit function
     async function forgetPasswordApi(values) {
+        console.log(values);
         try {
-            const { data } = await axios.post('http://localhost:5000/api/v1/auth/forgotPassword', values);
-            // console.log(data.message);
-
-        
-            if (data.message === 'Password reset instructions sent to your email') {
-
-                setsuccessMsg(data.message);
-                console.log(data.message);
-                Cookies.set('jwt-reset', data.token, { expires: 70 });
-                console.log(data.token);
-        
-                // const jwtToken = getCookie('jwt');
-                // if (jwtToken) {
-                // console.log('Token retrieved:', jwtToken);
-        
-                // // Now you can use jwtToken for authentication or any other purpose
-                // } else {
-                // console.log('Token not found');
-                // }
-            }
-            } catch (error) {
-            console.error('Error:', error);
-            }
+            const response = await axios.post(
+              `http://localhost:5000/api/v1/auth/forgotPassword`,
+              values,
+              {
+                withCredentials: true,
+              }
+            );
+          setsuccessMsg(response.data.message)
+            console.log(response);
+            getResetPasswordForm();
+          } catch (error) {
+            console.error("Error approving user:", error);
+            // Handle error
+          }
         }
-
+// when email sent
+async function getResetPasswordForm(resetToken) {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/api/v1/auth/resetpassword/${resetToken}`
+      );
+           
+    } catch (error) {
+      console.log('Error:', error);
+    }
+  }
 
     //Form
     return (

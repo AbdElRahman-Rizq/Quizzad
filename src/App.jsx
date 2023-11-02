@@ -41,9 +41,6 @@ function App() {
       <Route path='/profileview' element={<ProfileView/>}/>
       <Route path='/pending' element={<PendingPage/>}/>
       <Route path='/reset' element={<ResetPassword/>}/>
-      <Route path='/a' element={<AdminTable/>}/>
-      <Route path='/ab' element={<TeacherTable/>}/>
-      <Route path='/abc' element={<StudentTable/>}/>
       {/* waraki */}
       <Route path='/quizview/*' element={<QuizView/>}/>
       <Route path='*' element={<Notfound/>}/>

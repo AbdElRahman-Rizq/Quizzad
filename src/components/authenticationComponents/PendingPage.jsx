@@ -16,7 +16,7 @@ export default function PendingPage() {
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
                     <div className="pending-header my-5">
-                        <h1 className='h4'>Successfully account registration </h1>
+                        <h1 className='h4'>Successfull account registration </h1>
                     </div>
                     <div className="pending-description pb-2">
                         <p>your account is pending , Our admin will<br/>approve your account as soon as possible.<br/>thank you</p>
