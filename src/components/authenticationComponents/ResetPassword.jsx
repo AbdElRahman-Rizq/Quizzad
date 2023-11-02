@@ -8,13 +8,22 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
+
 export default function ResetPassword() {
     const navigate = useNavigate();
 
     // Get the token from the URL
-    const url = new URL(window.location.href);
-    const token = url.searchParams.get('token');
-    Cookies.set('jwt-reset', token, { expires: 7 });
+    // const url = new URL(window.location.href);
+    // const token = url.searchParams.get('token');
+
+
+    const resetToken = Cookies.get('jwt-reset');
+    if (resetToken) {
+    // You have the token, and you can use it as needed
+    console.log('Token:', resetToken);
+    } else {
+    console.log('Token not found in the cookie.');
+    }
 
     let validationLoginSchema = Yup.object({
         password: Yup.string()
@@ -24,19 +33,19 @@ export default function ResetPassword() {
     });
 
     async function resetPasswordForm(values) {
-        try {
-            const response = await axios.put(`http://localhost:5000/api/v1/auth/resetPassword/${token}`, values);
-
-            if (response.data.message === 'Password reset successfully') {
-                navigate('/login'); // Navigate to the login page
-            } else {
-                console.log('Not successful');
-            }
-        } catch (error) {
-            console.log('Error:', error);
-        }
+        return axios.put(`http://localhost:5000/api/v1/auth/resetpassword/${resetToken}`, values)
+            .then(response => {
+                if (response.data.message === 'Password reset successfully') {
+                    navigate('/login'); // Navigate to the login page
+                } else {
+                    console.log('Not successful');
+                }
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            });
     }
-
+    
     const formik = useFormik({
         initialValues: {
             password: '',
