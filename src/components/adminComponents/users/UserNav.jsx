@@ -32,7 +32,7 @@ export default function UserNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="./newrequest"
+                  to="./"
                 >
                   New Request
                 </NavLink>

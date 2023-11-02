@@ -17,7 +17,7 @@ function UserPage() {
                 <Col>
                     <UserNav/>                    
                     <Routes>
-                        <Route path='/newrequest' element={<AdminTable/>}/>
+                        <Route path='/' element={<AdminTable/>}/>
                         <Route path='/teacher' element={<TeacherTable/>}/>
                         <Route path='/student' element={<StudentTable/>}/>
                     </Routes>
