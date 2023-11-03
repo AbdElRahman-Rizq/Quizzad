@@ -3,9 +3,9 @@ import { Accordion, Table } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useClassLogic } from '../../../controls/ClassLogic'
 export function NewClass() {
-
+  const { sliderRef , next , previous  , settings} = useClassLogic();
   const [myClass, setMyClass ] = useState({})
   const navigate = useNavigate();
 
@@ -24,7 +24,9 @@ export function NewClass() {
     if(id != 0){
       let fetchData = async () => {
         try {
-          const responce = await axios.get(`http://localhost:5000/api/v1/classes/${ id }`)
+          const responce = await axios.get(`http://localhost:5000/api/v1/classes/${ id }`,{
+            withCredentials: true,
+          });
           setMyClass(responce.data)
           setFormValue(responce.data)
           console.log(myClass);
@@ -34,7 +36,7 @@ export function NewClass() {
       }
       fetchData()
     }
-  },[id]);
+  },[ id ]);
 
   const getInputValue = (e) => {
     setFormValue({
@@ -47,15 +49,19 @@ export function NewClass() {
     e.preventDefault();
     if (id !== 0) {
       // If in edit mode, call editProduct
-      axios.put(`http://localhost:5000/api/v1/classes/${ id }`, formValue)
+      axios.put(`http://localhost:5000/api/v1/classes/${ id }`, formValue,{
+        withCredentials: true,
+      })
       .then(()=>{
-      navigate(`/${id}`);
+      navigate(`/admin/class/${id}`);
       })
     } else {
       // If in add mode, call addNewProduct
-      axios.post(`http://localhost:5000/api/v1/classes`, formValue )
+      axios.post(`http://localhost:5000/api/v1/classes`, formValue ,{
+        withCredentials: true,
+      })
       .then(() =>{
-        navigate('/${id}')
+        navigate('/admin/class/')
       })
     }
   };
@@ -69,7 +75,7 @@ export function NewClass() {
                 <h3 className="p-2">{ id !== 0 ? 'Edit Class': 'Create New Class'}</h3>
               </div>
             </div>
-            <Slider >
+            <Slider ref={sliderRef} {...settings}>
               <div key={1}>
                 <div className='col-md-10 m-auto'>
                 <div className="title mb-3">
@@ -121,7 +127,7 @@ export function NewClass() {
                   </div>
                 </div>
                 <div className='my-3 m-auto col-md-6'>
-                  <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" >
+                  <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={next}>
                     Members 
                     <i className="fa-solid fa-arrow-right ms-3" />
                   </button>
@@ -221,9 +227,9 @@ export function NewClass() {
                   </Accordion.Item>
                 </Accordion>
                 <div className='my-3 m-auto col-md-6'>
-                  <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5">
+                  <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={previous}>
                     <i className="fa-solid fa-arrow-left me-3" />
-                    Class 
+                    Class Settings
                   </button>
                 </div>
               </div>

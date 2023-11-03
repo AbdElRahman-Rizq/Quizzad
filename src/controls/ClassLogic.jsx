@@ -1,6 +1,6 @@
 import  { useRef } from "react";
 
-export function useSlider() {
+export function useClassLogic() {
 
 
   const sliderRef = useRef(null);
