@@ -1,35 +1,38 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {useEffect, useState } from "react";
+import { UserContext } from "./UserContext";
+// import { useParams } from "react-router-dom";
 
-export const UserContext = createContext();
 
 export function UserContextProvider(props) {
-  const { id } = useParams();
+
+  // const { id } = useParams();
   const [myUser, setMyUser] = useState([]);
 
   async function fetchUserData() {
     try {
-      const response = await axios.get(`http://localhost:5000/api/v1/users/${id}`, {
+      const response = await axios.get(`http://localhost:5000/api/v1/auth/login`,{
         withCredentials: true,
       });
 
-      if (response.data.message === 'User data fetched successfully') {
+      if (response.data.message === 'Login done successfully') {
         setMyUser(response.data.user);
+        console.log("myUser");
       }
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
   }
 
-  useEffect(() => {
-    fetchUserData();
-  }, [id]);
+  // useEffect(() => {
+  //   fetchUserData();
+  // }, []);
+  
+  // const userData = { myUser };
 
-  const userData = { myUser };
 
   return (
-    <UserContext.Provider value={userData}>
+    <UserContext.Provider value={{myUser , setMyUser}}>
       {props.children}
     </UserContext.Provider>
   );

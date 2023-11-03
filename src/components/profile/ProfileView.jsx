@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import '../../assets/css/Profile.css'
 import Profile from '../../assets/images/profile.png'
+import { UserContext } from '../../Contex/UserContext'
 
 
 export default function ProfileView() {
+
+    const {myUser} = useContext(UserContext)
+    useEffect(()=>{
+        console.log("ahmed", myUser);
+        
+    }, [myUser])
+
     return (
         <div>
+            <h1>{myUser.email}</h1>
             <section className='profile-view'>
                 <div className="container">
                     <h1 className='text-center fw-bold h4'>View Profile</h1>

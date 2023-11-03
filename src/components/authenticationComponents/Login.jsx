@@ -5,11 +5,15 @@ import { Link,useNavigate } from 'react-router-dom'
 import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Cookies from 'js-cookie';
+import { UserContext } from '../../Contex/UserContext'
 
 
 export default function Login() {
+
+  let {myUser , setMyUser} =useContext(UserContext)
+
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
     // Token
@@ -45,9 +49,12 @@ let validationLoginSchema=Yup.object({
       
           if (response.data.message === 'Login done successfully') {
             const userStatus = response.data.user.status;
-      
+            console.log(response.data.user);
+            setMyUser(response)
+
             if (userStatus === 'ACTIVE') {
               console.log(response.data.user);
+              
               navigate('/admin');
             } else {
               console.log('User is not active');
