@@ -32,7 +32,7 @@ export function ClassNav() {
               <li className="mx-2">
                 <NavLink
                   className="nav-link QuizNavBtn fs-6 text-center "
-                  to="/admin/class/newclass"
+                  to="/admin/class/0/edit"
                 >
                   New Class
                 </NavLink>

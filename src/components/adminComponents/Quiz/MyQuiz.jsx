@@ -10,7 +10,7 @@ export function MyQuiz  () {
       
         const fetchData = async () => {
           try {
-            const response = await axios.get("http://localhost:5000/api/v1/quizzes?filter=class", {
+            const response = await axios.get(`http://localhost:5000/api/v1/quizzes?filter=class`, {
               withCredentials: true,
             });
             console.log(response.data);
@@ -21,12 +21,11 @@ export function MyQuiz  () {
             setLoading(false);
           }
         };
-      
+        
         useEffect(() => {
-          fetchData();
+            fetchData();
         }, []);
-      
-      
+        
         if (loading) {
           return (
             <div id="loading">
@@ -42,6 +41,7 @@ export function MyQuiz  () {
             </div>
           );
         }
+        
       
         return (
             <div className='background rounded-4 m-2'>
@@ -118,43 +118,43 @@ export function MyQuiz  () {
                                             className="rounded-5 img-fluid shadow"
                                             src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                             alt="card Image"
-                                            style={{ width: '100%', height: '150px', objectFit: 'cover' }}
+                                            style={{ width: '500px', height: '140px', objectFit: 'cover' }}
                                         />
                                     </a>
                                 </div>
                                 <div className="p-2">
-                                    <span className="badge bg-success mb-2 b-3 fs-6 rounded-5">{card.difficultyLevel}</span>
-                                    <h5 className=" pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                                    <span className="badge bg-warning fs-6 rounded-5">{card.difficultyLevel}</span>
+                                    <h5 className=" pt-2 " style={{ maxWidth: '100%' }}>
                                         {card.title}
                                     </h5>
                                 </div>
-                                <div className="d-flex spec d-wrap">
-                                    <div className="d-flex p-2">
+                                    <div className="d-flex ">
                                         <div>
                                             <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
                                         </div>
                                         <div>
-                                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
+                                            <p className="" style={{ maxWidth: '100%' }}>
                                                 {card.subject}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="d-flex p-2">
+                                <div className="d-flex spec d-wrap">
+                                    <div className="d-flex me-3">
                                         <div>
                                             <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
                                         </div>
                                         <div>
-                                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
+                                            <p className="" style={{ maxWidth: '100%' }}>
                                                 {card.gradeLevel}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="d-flex p-2">
+                                    <div className="d-flex ">
                                         <div>
                                             <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
                                         </div>
                                         <div>
-                                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
+                                            <p className="" style={{ maxWidth: '100%' }}>
                                                 {card.isPublic ? 'Public' : 'Private'}
                                             </p>
                                         </div>

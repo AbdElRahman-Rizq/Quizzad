@@ -1,14 +1,55 @@
 import { NavLink } from 'react-router-dom';
 import '../../../assets/css/class.css';
+import {  useEffect, useState } from 'react';
+import { Circles } from 'react-loader-spinner';
+import axios from 'axios';
 
 export function MyClasses() {
-  return (
+    
+    const [myClass, setMyClass] = useState([]);
+        const [loading, setLoading] = useState(true);
+      
+        const fetchData = async () => {
+          try {
+            const response = await axios.get(`http://localhost:5000/api/v1/classes/`, {
+              withCredentials: true,
+            });
+            console.log(response.data);
+            setMyClass(response.data);
+            setLoading(false);
+          } catch (error) {
+            console.log("Error fetching data:", error);
+            setLoading(false);
+          }
+        };
+        
+        useEffect(() => {
+            fetchData();
+        }, []);
+        
+        if (loading) {
+          return (
+            <div id="loading">
+              <Circles
+                height={500}
+                width={60}
+                color="#89288F"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            </div>
+          );
+        }
+  
+    return (
     <div className='background rounded-4 m-2'>
       <section className="py-1 Scroller">
         <div className="container p-0">
           <div className="row mb-2">
             <div className="col-md-11 text-center m-auto bg-light px-3 rounded-4 mt-2">
-              <h3 className=" py-2">Explore My Classes</h3>
+              <h3 className="py-2">Explore All Classes</h3>
               <nav className="navbar bg-light py-3 ">
                 <div className="container-fluid">
                     <div className="row w-100">
@@ -26,7 +67,6 @@ export function MyClasses() {
                                 <i className="fa-solid fa-graduation-cap px-1 fs-6" style={{ color: '#89288F' }} /> Grade
                             </button>
                             <ul className="dropdown-menu">
-                                <h1>helllo from heslam mohamed</h1>
                                 <li><button className="dropdown-item" type="button">Action</button></li>
                                 <li><button className="dropdown-item" type="button">Another action</button></li>
                                 <li><button className="dropdown-item" type="button">Something else here</button></li>
@@ -69,8 +109,8 @@ export function MyClasses() {
           <div className="quizlist">
             <div className="container ">
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
-                {/* Card 1 */}
-                <div className="col-mb-4 p-2">
+                {myClass.map((clx) => (
+                    <div className="col-mb-4 p-2" key={clx.id}>
                     <div className="bg-light border p-4 rounded-5">
                         <div className="text-center">
                             <a href="#">
@@ -84,7 +124,7 @@ export function MyClasses() {
                         </div>
                         <div className="p-2 text-center">
                         <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            mathematics Class
+                            {clx.className}
                         </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
@@ -94,7 +134,7 @@ export function MyClasses() {
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                MOhamed Basyoni
+                                 teachers
                             </p>
                             </div>
                         </div>
@@ -104,266 +144,22 @@ export function MyClasses() {
                             </div>
                             <div>
                             <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 10
+                                {clx.gradeLevel}
                             </p>
                             </div>
                         </div>
                         
                         </div>
                         <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to={`/admin/class/${clx.id}`} />
                             <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
                             <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                         </div>
                     </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="col-mb-4 p-2">
-                    <div className="bg-light border p-4 rounded-5">
-                        <div className="text-center">
-                            <a href="#">
-                            <img
-                                className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/3825573/pexels-photo-3825573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Quiz Image"
-                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
-                                />
-                            </a>
-                        </div>
-                        <div className="p-2 text-center">
-                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            mathematics Class
-                        </h4>
-                        </div>
-                        <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                MOhamed Basyoni
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 10
-                            </p>
-                            </div>
-                        </div>
-                        
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
-                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
-                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
-                        </div>
                     </div>
-                </div>
-
-
-                {/* Card 3 */}
-                <div className="col-mb-4 p-2">
-                    <div className="bg-light border p-4 rounded-5">
-                        <div className="text-center">
-                            <a href="#">
-                            <img
-                                className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/2749165/pexels-photo-2749165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Quiz Image"
-                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
-                                />
-                            </a>
-                        </div>
-                        <div className="p-2 text-center">
-                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            mathematics Class
-                        </h4>
-                        </div>
-                        <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                MOhamed Basyoni
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 10
-                            </p>
-                            </div>
-                        </div>
-                        
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
-                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
-                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
-                        </div>
-                    </div>
-                </div>
+                    ))}
                 
-                {/* Card 4 */}
-                <div className="col-mb-4 p-2">
-                    <div className="bg-light border p-4 rounded-5">
-                        <div className="text-center">
-                            <a href="#">
-                            <img
-                                className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/1409999/pexels-photo-1409999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Quiz Image"
-                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
-                                />
-                            </a>
-                        </div>
-                        <div className="p-2 text-center">
-                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            mathematics Class
-                        </h4>
-                        </div>
-                        <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                MOhamed Basyoni
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 10
-                            </p>
-                            </div>
-                        </div>
-                        
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
-                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
-                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
-                        </div>
-                    </div>
-                </div>
 
-                {/* Card 5 */}
-                <div className="col-mb-4 p-2">
-                    <div className="bg-light border p-4 rounded-5">
-                        <div className="text-center">
-                            <a href="#">
-                            <img
-                                className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/820735/pexels-photo-820735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Quiz Image"
-                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
-                                />
-                            </a>
-                        </div>
-                        <div className="p-2 text-center">
-                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            mathematics Class
-                        </h4>
-                        </div>
-                        <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                MOhamed Basyoni
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 10
-                            </p>
-                            </div>
-                        </div>
-                        
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
-                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " />
-                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
-                        </div>
-                    </div>
-                </div>
-
-
-                {/* Card 6 */}
-                <div className="col-mb-4 p-2">
-                    <div className="bg-light border p-4 rounded-5">
-                        <div className="text-center">
-                            <a href="#">
-                            <img
-                                className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/1409999/pexels-photo-1409999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Quiz Image"
-                                style={{ width:'100%', height: '175px', objectFit: 'cover' }}
-                                />
-                            </a>
-                        </div>
-                        <div className="p-2 text-center">
-                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
-                            mathematics Class
-                        </h4>
-                        </div>
-                        <div className="d-flex spec d-wrap">
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                MOhamed Basyoni
-                            </p>
-                            </div>
-                        </div>
-                        <div className="d-flex p-1">
-                            <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
-                            </div>
-                            <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                Grade 10
-                            </p>
-                            </div>
-                        </div>
-                        
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning "/>
-                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info"/>
-                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
-                        </div>
-                    </div>
-                </div>
               </div>
             </div>
           </div>

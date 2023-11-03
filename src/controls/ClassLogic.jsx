@@ -1,6 +1,8 @@
 import  { useRef } from "react";
 
 export function useSlider() {
+
+
   const sliderRef = useRef(null);
 
   const next = () => {
@@ -23,8 +25,10 @@ export function useSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrow: false,
+    prevArrow: null,
+    nextArrow: null
   };
 
+  {/*============== form operation */}
   return { sliderRef, next, previous, settings };
 }

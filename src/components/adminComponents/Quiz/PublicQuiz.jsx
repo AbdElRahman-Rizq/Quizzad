@@ -123,8 +123,8 @@ export function PublicQuiz  () {
                                     </a>
                                 </div>
                                 <div className="p-2">
-                                    <span className="badge bg-success b-3 fs-6 rounded-5">{card.difficultyLevel}</span>
-                                    <h5 className=" pt-1 " style={{ maxWidth: '100%' }}>
+                                    <span className="badge bg-warning fs-6 rounded-5">{card.difficultyLevel}</span>
+                                    <h5 className=" pt-2 " style={{ maxWidth: '100%' }}>
                                         {card.title}
                                     </h5>
                                 </div>
