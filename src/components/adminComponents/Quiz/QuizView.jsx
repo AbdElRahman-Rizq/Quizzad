@@ -1,28 +1,33 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Circles } from 'react-loader-spinner';
+import { useParams } from 'react-router-dom';
+import '../../../assets/css/quiz.css'
 
 export function QuizView() {
-    const baseUrl = 'http://localhost:5000/api/v1/quizzes'
-    const [myQuiz, setMyQuiz] = useState([]);
-    const [loading, setLoading] = useState(true);
-  
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}/1`, {
-          withCredentials: true,
-        });
-        setMyQuiz(response.data.quiz);
-        setLoading(false);
-      } catch (error) {
-        console.log("Error fetching data:", error);
-        setLoading(false);
-      }
-    };
-    
-    useEffect(() => {
-        fetchData();
-    }, []);
+  const { id } = useParams();
+  const [quiz, setQuiz] = useState({
+    title: '',
+    description: '',
+  });
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/v1/quizzes/${id}`, {
+        withCredentials: true,
+      });
+      setQuiz(response.data.quiz);
+      setLoading(false);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [id]);
     
     if (loading) {
       return (
@@ -43,10 +48,7 @@ export function QuizView() {
     <div>
       <div className='row '>
 {/*----------------- quiz image and details --------------------*/}
-      {myQuiz.map((quiz) => {
-        <div className="col-mb-12 p-2" key={quiz.id}>
-
-      <div className='col-md-7 text-light pt-3 ' >
+      <div className='col-md-7 text-light pt-3 '>
         <div className="bg-light border p-2 rounded-5">
                         <div className="text-center">
                             <a href="#">
@@ -65,14 +67,14 @@ export function QuizView() {
                         <div className="p-2">
                         {/* <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span> */}
                         <h4 className="mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                            {quiz.title}
+                        {quiz.title}
                         </h4>
                         </div>
 
                         <div className='row'>
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
-                                Teacher : {quiz.creatorTeacher.id}
+                                Teacher : 
                             </h6>
                         </div>
 
@@ -86,7 +88,7 @@ export function QuizView() {
                         <div className='row'>
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                                Class Name : {quiz.classes.className}
+                                Class Name : 
                             </h6>
                         </div>
 
@@ -115,7 +117,7 @@ export function QuizView() {
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                Unit : {quiz.unit} 
+                                 {quiz.unit}
                             </p>
                             </div>
                         </div>
@@ -128,7 +130,7 @@ export function QuizView() {
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                Lesson : {quiz.lesson} 
+                                {quiz.lesson}
                             </p>
                             </div>
                         </div>
@@ -139,7 +141,7 @@ export function QuizView() {
                             </div>
                             <div>
                                 <p className="text-dark" style={{ maxWidth: '100%' }}>
-                                    Chapter : {quiz.chapter} 
+                                    {quiz.chapter}
                                 </p>
                             </div>
                         </div>
@@ -158,7 +160,7 @@ export function QuizView() {
                 Description :
             </h4>
             <p className="pt-2 mx-3 text-dark">
-            {quiz.description} 
+                {quiz.description}
             </p>
             </div>
 
@@ -180,13 +182,10 @@ export function QuizView() {
 
 
             <div className="d-flex">
-            <button className=" mt-3 p-2 border-0 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+            <button className=" mt-3 p-2 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
             </div>
         </div>
       </div>
-      </div>
-
-      })}
       </div>
     </div>
   )

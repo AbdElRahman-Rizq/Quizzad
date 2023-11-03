@@ -161,7 +161,7 @@ export function MyQuiz  () {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-center">
-                                    <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning" to='/admin/quiz/quizview' />
+                                    <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning" to={`/admin/quiz/${card.id}`} />
                                     <NavLink className="fa-solid fa-pen-to-square mx-3 fs-2 text-info" />
                                     <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
                                 </div>

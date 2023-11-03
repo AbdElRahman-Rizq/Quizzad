@@ -36,7 +36,7 @@ export function SideBar() {
             <ul className="navbar-nav m-auto ">
               <li className="mx-2">
                 <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
+                  className="nav-link rounded-5 QuizNavBtn fs-6 text-center "
                   to="/admin/" 
                 >
                   Dashboard
@@ -44,7 +44,7 @@ export function SideBar() {
               </li>
               <li className="mx-2">
                 <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
+                  className="nav-link rounded-5 QuizNavBtn fs-6 text-center "
                   to="/admin/class"
                 >
                   Class
@@ -52,7 +52,7 @@ export function SideBar() {
               </li>
               <li className="mx-2">
                 <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
+                  className="nav-link rounded-5 QuizNavBtn fs-6 text-center "
                   to="/admin/quiz"
                 >
                   Quiz
@@ -60,7 +60,7 @@ export function SideBar() {
               </li>
               <li className="mx-2">
                 <NavLink
-                  className="nav-link QuizNavBtn fs-6 text-center "
+                  className="nav-link rounded-5 QuizNavBtn fs-6 text-center "
                   to="/admin/user"
                 >
                   User
@@ -87,25 +87,25 @@ export function SideBar() {
           </a>
           <ul className="navbar-nav text-light pt-4 reverse-color-on-hover" id="accordionSidebar">
             <li className="nav-item my-1 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/admin/">
+              <NavLink className="nav-link rounded-5 p-2 px-4 " to="/admin/">
                 <i className="fa fa-light fa-house-user fs-4 "/>
                 <span className='fs-6 ps-4 textSB'>Dashboard</span>
               </NavLink>
             </li>
             <li className="nav-item my-2 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/admin/class">
+              <NavLink className="nav-link rounded-5 p-2 px-4 " to="/admin/class">
                 <i className="fa fa-solid fa-landmark fs-4 " />
                 <span className='fs-6 ps-4 textSB'>Class</span>
               </NavLink>
             </li>
             <li className="nav-item my-2 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/admin/quiz">
+              <NavLink className="nav-link rounded-5 p-2 px-4 " to="/admin/quiz">
                 <i className="fa-solid fa-book fs-4 " />
                 <span className='fs-6 ps-4 textSB'>Quiz</span>
               </NavLink>
             </li>
             <li className="nav-item my-2 SBphase">
-              <NavLink className="nav-link p-2 px-4 " to="/admin/user">
+              <NavLink className="nav-link rounded-5 p-2 px-4 " to="/admin/user">
                 <i className="fa fa-solid fa-user fs-4 "/>
                 <span className='fs-6 ps-4 textSB'>User</span>
               </NavLink>
@@ -114,7 +114,7 @@ export function SideBar() {
                 <img className='barVector' src={sideVector} alt="quizZAD" />
               </div>
             <li className="nav-item my-2 SBphase">
-              <a className="nav-link p-2 px-4 " href="login.html">
+              <a className="nav-link rounded-5 p-2 px-4 " href="login.html">
                 <i className="fa-solid fa-door-open fs-4 " />
                 <span className='fs-6 ps-4 textSB'>Log out</span>
               </a>

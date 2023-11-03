@@ -31,7 +31,7 @@ function QuestionForm() {
           <label htmlFor="imgURL" className="form-label px-1">Image URL</label>
           <div className="input-group mb-2">
               <input type="file" className="form-control p-3 rounded-4" id="inputGroupFile02" />
-            </div>        
+            </div>
           </div>
         {/*------------------- Multiple Choices ----------------*/}
 {selectedOption === '1' && (
