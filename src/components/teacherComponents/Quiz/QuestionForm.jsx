@@ -3,44 +3,145 @@ import "../../../assets/css/Question.css"
 import "../../../assets/css/quiz.css"
 
 import { useState } from "react";
+import axios from "axios";
+import { useFormik } from "formik";
 
 function QuestionForm() {
     const [selectedOption, setSelectedOption] = useState('0');
     const handleOptionChange = (event) => {
-        setSelectedOption(event.target.value);
-      };
+      setSelectedOption(event.target.value);
+    };
+    
+// Functions
+const handleQuestionForm = async (values,event) => {
+    event.preventDefault()
+    try {
+      // Assuming you have the quizId available
+      const formData = new FormData();
+
+      for (const key in values) {
+        // Remove this condition
+        if (key !== "image") {
+          formData.append(key, values[key]);
+        }
+      }
+      
+
+      const quizId = 1; // Replace with the actual quizId
+      // Send a request to create a question
+      const response = await axios.post(
+        `http://localhost:5000/api/v1/quizzes/${quizId}/questions`,
+        formData,
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log(response.data); // Handle the response as needed
+    } catch (error) {
+      console.error("Error creating question:", error);
+    }
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      questionType: selectedOption,
+      questionText: '',
+      gradePoints: '0',
+      timeLimit: '0',
+      difficultyLevel: 'EASY',
+      image: null,
+    },
+    onSubmit: handleQuestionForm,
+  });
 
   return (
     <div className="QuestionComponent py-5">
-       
-       <Form className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none" enctype="multipart/form-data">
+      <form
+        onSubmit={formik.handleSubmit}
+        onChange={(e) => {
+            e.preventDefault()
+            // تحقق هنا من وجود أي كود يستمع إلى تغييرات النموذج داخل Accordion.Body
+            console.log("Form changed");
+          }}
+        className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none"
+        encType="multipart/form-data"
+      >
+        {/* Your form fields... */}
 
+        <div className=' mb-3'>
+          <label htmlFor="questionType" className="form-label px-1">Question Type</label>
+          <select
+            className="form-select rounded-5 p-3"
+            name="questionType"
+            onChange={(e) => {
+              handleOptionChange(e);
+              formik.handleChange(e);
+            }}
+            value={selectedOption}
+          >
+            <option value="0">Select your question</option>
+            <option value="MULTIPLE_CHOICES">Multiple Choices</option>
+            <option value="MULTIPLE_OPTIONS">Multiple Options</option>
+            <option value="SHORT_ANSWER">Short Answer</option>
+            <option value="TRUE_FALSE">True & False</option>
+          </select>
+        </div>
 
-{/*---- Qusetion Type --- */}
-<div className=' mb-3'>
-    <label htmlFor="questionType" className="form-label px-1">Question Type</label>
-    <select className="form-select rounded-5 p-3" name="questionType" onChange={handleOptionChange}>
-        <option value="0">Select your question</option>
-        <option value="1">Multiple Choices</option>
-        <option value="2">Multiple Options</option>
-        <option value="3">Short Answer</option>
-        <option value="4">True & False</option>
-    </select>
-</div>  
-<div className="mb-3">
-          <label htmlFor="imgURL" className="form-label px-1">Image URL</label>
-          <div className="input-group mb-2">
-              <input type="file" className="form-control p-3 rounded-4" id="inputGroupFile02" />
-            </div>
-          </div>
+        <div className="mb-3">
+          <label htmlFor="image" className="form-label px-1">Image</label>
+          <input
+            type="file"
+            className="form-control p-3 rounded-4"
+            name="image"
+            onChange={(e) => {
+              formik.setFieldValue("image", e.target.files[0]);
+            }}
+          />
+        </div>
+
+        <div className=" mb-3">
+          <label htmlFor="option" className="form-label px-1">Question</label>
+          <input
+            type="menu"
+            className="form-control rounded-5 p-3"
+            name="questionText"
+            aria-describedby="textHelp"
+            value={formik.values.questionText}
+            onChange={formik.handleChange}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="QuestionDegree" className="form-label px-1">Question Degree</label>
+          <select
+            className="form-select rounded-5 p-3"
+            name="gradePoints"
+            value={formik.values.gradePoints}
+            onChange={formik.handleChange}
+          >
+            <option value="0">5</option>
+            <option value="1">10</option>
+            <option value="2">20</option>
+            <option value="3">30</option>
+          </select>
+        </div>
+
+        <div className='mb-3 m-auto col-md-6'>
+          <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Question</button>
+        </div>
+      </form>
+       {/* Answers form */}
+       <form className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none">
+    
         {/*------------------- Multiple Choices ----------------*/}
 {selectedOption === '1' && (
     <>
         
-<div className=" mb-3">
-  <label htmlFor="option" className="form-label px-1">Question</label>
-  <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
-</div>
+
 <label className="mb-4"> You can choose one or more</label>
 {/*---- Options --- */}
 <div className="row">
@@ -109,10 +210,7 @@ function QuestionForm() {
           {selectedOption === '2' && (
               <>
                   
-          <div className=" mb-3">
-            <label htmlFor="option" className="form-label px-1">Question</label>
-            <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
-          </div>
+          
           <div className="row">
             {/*---- Option 1 --- */}
             <label htmlFor="option1" className="form-label px-3">Option #1</label>
@@ -177,20 +275,13 @@ function QuestionForm() {
           {/* --------------------------- Short Answer ---------------------------- */}
           {selectedOption === '3' && (
               <>
-          <div className=" mb-3">
-            <label htmlFor="option" className="form-label px-1">Question</label>
-            <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
-          </div>
+        
               </>
           )}
           {/* --------------------------- True OR False ----------------------------- */}
           {selectedOption === '4' && (
               <>
-                  
-          <div className=" mb-3">
-            <label htmlFor="option" className="form-label px-1">Question</label>
-            <input type="menu" className="form-control rounded-5 p-3" aria-describedby="textHelp" />
-          </div>
+        
           <div className="row">
             {/*---- Option 1 --- */}
 
@@ -224,20 +315,11 @@ function QuestionForm() {
           </div>
           </>
           )}
-          <div className="mb-3">
-            <label htmlFor="QuestionDegree" className="form-label px-1">Question Degree</label>
-            <select className="form-select rounded-5 p-3" name="QuestionDegree" >
-                  <option value="0">5</option>
-                  <option value="1">10</option>
-                  <option value="2">20</option>
-                  <option value="3">30</option>
-              </select>
-          </div>
           <div className='mb-3 m-auto col-md-6'>
-                <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Question</button>
+                <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Answers</button>
           </div>
-       </Form>
-        </div>
+   </form>
+   </div> //End of component
   )
 }
 
