@@ -10,7 +10,9 @@ import Cookies from 'js-cookie';
 
 
 export default function Login() {
-    const [myUser, setMyUser] = useState([]);
+
+  let {myUser , setMyUser} =useContext(UserContext)
+
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
     // Token
