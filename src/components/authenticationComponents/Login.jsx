@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 
 export default function Login() {
 
-  let {myUser , setMyUser} =useContext(UserContext)
+//   let {myUser , setMyUser} =useContext(UserContext)
 
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
@@ -50,7 +50,7 @@ let validationLoginSchema=Yup.object({
             console.log(response.data.user);
             setMyUser(response)
             
-            console.log(myUser);
+           
             if (userStatus === 'ACTIVE') {
               console.log(response.data.user);
               
