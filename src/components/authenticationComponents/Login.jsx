@@ -11,18 +11,10 @@ import Cookies from 'js-cookie';
 
 export default function Login() {
 
-//   let {myUser , setMyUser} =useContext(UserContext)
 
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
-    // Token
-        const token = Cookies.get('jwt');
-        if (token) {
-        // You have the token, and you can use it as needed
-        console.log('Token:',token);
-        } else {
-        console.log('Token not found in the cookie.');
-        }
+  
     // Validation
     
 let validationLoginSchema=Yup.object({
@@ -48,7 +40,7 @@ let validationLoginSchema=Yup.object({
           if (response.data.message === 'Login done successfully') {
             const userStatus = response.data.user.status;
             console.log(response.data.user);
-            setMyUser(response)
+           
             
            
             if (userStatus === 'ACTIVE') {
