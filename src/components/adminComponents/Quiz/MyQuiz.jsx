@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Circles } from 'react-loader-spinner';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { gradeLevelMap } from '../../../controls/gradeLevel';
 export function MyQuiz  () {
         const [quiz, setQuiz] = useState([]);
         const [loading, setLoading] = useState(true);
@@ -141,11 +142,11 @@ export function MyQuiz  () {
                                 <div className="d-flex spec d-wrap">
                                     <div className="d-flex me-3">
                                         <div>
-                                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
+                                            <i className="fa fa-solid fa-user-graduate fs-5 me-3" style={{ color: '#591c50' }} />
                                         </div>
                                         <div>
                                             <p className="" style={{ maxWidth: '100%' }}>
-                                                {card.gradeLevel}
+                                            {gradeLevelMap[card.gradeLevel]}
                                             </p>
                                         </div>
                                     </div>

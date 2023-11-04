@@ -6,7 +6,6 @@ export const UserContext = createContext();
 
 export function UserContextProvider(props) {
 
-  // const { id } = useParams();
   const [myUser, setMyUser] = useState([]);
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export function UserContextProvider(props) {
         );
 
         if (response.data.message === 'User profile retrieved successfully') {
-          setUser(response.data.user);
+          setMyUser(response.data.user);
         }
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -28,11 +27,10 @@ export function UserContextProvider(props) {
       }
     };
 
-  // useEffect(() => {
-  //   fetchUserData();
-  // }, []);
+    fetchUserProfile();
+  }, []);
   
-  // const userData = { myUser };
+  const userData = { myUser };
 
 
   return (

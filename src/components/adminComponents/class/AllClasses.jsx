@@ -3,6 +3,7 @@ import '../../../assets/css/class.css';
 import { useEffect, useState } from 'react';
 import { Circles } from 'react-loader-spinner';
 import axios from 'axios';
+import { gradeLevelMap } from '../../../controls/gradeLevel';
 
 export function AllClasses() {
     const [myClass, setMyClass] = useState([]);
@@ -41,7 +42,7 @@ export function AllClasses() {
             </div>
           );
         }
-  
+
     return (
     <div className='background rounded-4 m-2'>
       <section className="py-1 Scroller">
@@ -122,37 +123,37 @@ export function AllClasses() {
                             </a>
                         </div>
                         <div className="p-2 text-center">
-                        <h4 className="fw-bold pt-2 text-truncate" style={{ maxWidth: '100%' }}>
+                        <h4 className=" pt-2 " style={{ maxWidth: '100%' }}>
                             {clx.className}
                         </h4>
                         </div>
                         <div className="d-flex spec d-wrap">
                         <div className="d-flex p-1">
                             <div>
-                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa fa-light fa-chalkboard-user fs-5 me-2" style={{ color: '#89288F' }} />
                             </div>
                             <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                 teachers
+                            <p className="" style={{ maxWidth: '100%' }}>
+                            teachers : {clx.teachers.length} 
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-1">
+                        <div className="d-flex p-1 ms-auto">
                             <div>
-                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
+                            <i className="fa fa-solid fa-user-graduate fs-5 me-1" style={{ color: '#89288F' }} />
                             </div>
                             <div>
-                            <p className="text-truncate" style={{ maxWidth: '100%' }}>
-                                {clx.gradeLevel}
+                            <p className="ms-1" style={{ maxWidth: '100%' }}>
+                                {gradeLevelMap[clx.gradeLevel]}
                             </p>
                             </div>
                         </div>
                         
                         </div>
                         <div className="d-flex justify-content-center">
-                            <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning " to={`/admin/class/${clx.id}`} />
-                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-2 text-info " to={`/admin/class/${clx.id}/edit`} />
-                            <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
+                            <NavLink className="fa fa-solid fa-eye mx-3 fs-3 text-warning " to={`/admin/class/${clx.id}`} />
+                            <NavLink className=" fa-solid fa-pen-to-square mx-3 fs-3 text-info " to={`/admin/class/${clx.id}/edit`} />
+                            <i className="fa-solid fa-trash-can mx-3 fs-3 text-danger" />
                         </div>
                     </div>
                     </div>
