@@ -16,7 +16,11 @@ export function ClassView() {
       try {
         const response = await axios.get(`http://localhost:5000/api/v1/classes/${id}`, {
           withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
         });
+
         console.log(response.data);
         setMyClass(response.data);
         setLoading(false);
@@ -28,6 +32,9 @@ export function ClassView() {
   
     useEffect(() => {
       fetchData();
+      const url = URL.createObjectURL(myClass);
+      const image = new Image();
+      image.src = url;
     }, [id]);
       
       if (loading) {
@@ -44,11 +51,8 @@ export function ClassView() {
             />
           </div>
         );
-      }
-
-      
+      }   
     return (
-     
     <div className='row '>
 {/*----------------- class image and details --------------------*/}
         <div className='col-md-6 text-light pt-3 '>
@@ -57,7 +61,7 @@ export function ClassView() {
                                     <a href="#">
                                     <img
                                         className="rounded-5 img-fluid shadow mt-2"
-                                        src="https://images.pexels.com/photos/4117968/pexels-photo-4117968.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        src={myClass.coverImage}
                                         alt="myClass Image"
                                         style={{ width:'95%', height: '250px', objectFit: 'cover' }}
                                         />

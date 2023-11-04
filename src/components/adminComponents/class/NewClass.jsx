@@ -18,6 +18,7 @@ export function NewClass() {
     className: '', 
     description: '', 
     gradeLevel: '', 
+    quizImage: null
   });
 
   useEffect(() => {
@@ -39,30 +40,57 @@ export function NewClass() {
   },[ id ]);
 
   const getInputValue = (e) => {
-    setFormValue({
-      ...formValue,
-      [e.target.name] : e.target.value
-    });
-  }
-
+    if (e.target.name === 'coverImage') {
+      setFormValue({
+        ...formValue,
+        [e.target.name]: e.target.files[0], // Update the file property
+      });
+    } else {
+      setFormValue({
+        ...formValue,
+        [e.target.name]: e.target.value,
+      });
+    }
+  };
+  
   const formOperation = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+
+    // Append form values to the formData object
+    formData.append('className', formValue.className);
+    formData.append('description', formValue.description);
+    formData.append('gradeLevel', formValue.gradeLevel);
+    formData.append('coverImage', formValue.coverImage);
+
     if (id !== 0) {
-      // If in edit mode, call editProduct
-      axios.put(`http://localhost:5000/api/v1/classes/${ id }`, formValue,{
-        withCredentials: true,
-      })
-      .then(()=>{
-      navigate(`/admin/class/${id}`);
-      })
+      axios
+        .put(`http://localhost:5000/api/v1/classes/${id}`, formData, {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then(() => {
+          navigate(`/admin/class/${id}`);
+        })
+        .catch((error) => {
+          console.error('Error updating class:', error);
+        });
     } else {
-      // If in add mode, call addNewProduct
-      axios.post(`http://localhost:5000/api/v1/classes`, formValue ,{
-        withCredentials: true,
-      })
-      .then(() =>{
-        navigate('/admin/class/')
-      })
+      axios
+        .post('http://localhost:5000/api/v1/classes', formData, {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then(() => {
+          navigate('/admin/class/');
+        })
+        .catch((error) => {
+          console.error('Error creating class:', error);
+        });
     }
   };
   return (
@@ -102,7 +130,9 @@ export function NewClass() {
                   <div className="input-group mb-2">
                     <input  type="file"
                             className="form-control p-3 rounded-4"
-                             name='coverImage'
+                            name='coverImage'
+                            accept="image/*"
+                            onChange={getInputValue}
                              />
                   </div>
                   <div className="gradeLvl mb-3">

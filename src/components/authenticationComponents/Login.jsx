@@ -6,14 +6,11 @@ import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { useState } from 'react'
-import Cookies from 'js-cookie';
-import { useContext } from 'react'
-import { UserContext } from '../../Contex/UserContext'
 
 
 export default function Login() {
 
-//   let {myUser , setMyUser} =useContext(UserContext)
+  // let {myUser , setMyUser} =useContext(UserContext)
 
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
