@@ -15,9 +15,9 @@ export function NewClass() {
   {/*=============== Form Operation =================*/}
 
   const [formValue, setFormValue] = useState({
-    className: '', // Provide a default value here
-    description: '', // Provide a default value here
-    gradeLevel: '', // Provide a default value here
+    className: '', 
+    description: '', 
+    gradeLevel: '', 
   });
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export function NewClass() {
     <div>
       <div className='bg-light rounded-4 mt-3 m-2'>
         <section className="container py-4 Scroller">
-          <form onSubmit={formOperation} className='col-md-10 m-auto p-4 rounded-4 newForm'>
+          <form onSubmit={formOperation} className='col-md-10 m-auto p-4 rounded-4 newForm' encType="multipart/form-data">
             <div className="row mb-3">
               <div className="col-md-4 col-xl-10 text-center m-auto p-2 mt-2 rounded-4">
                 <h3 className="p-2">{ id !== 0 ? 'Edit Class': 'Create New Class'}</h3>
@@ -102,6 +102,7 @@ export function NewClass() {
                   <div className="input-group mb-2">
                     <input  type="file"
                             className="form-control p-3 rounded-4"
+                             name='coverImage'
                              />
                   </div>
                   <div className="gradeLvl mb-3">

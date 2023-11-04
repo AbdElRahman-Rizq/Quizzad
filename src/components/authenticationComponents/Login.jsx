@@ -7,11 +7,13 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { useState } from 'react'
 import Cookies from 'js-cookie';
+import { useContext } from 'react'
+import { UserContext } from '../../Contex/UserContext'
 
 
 export default function Login() {
 
-//   let {myUser , setMyUser} =useContext(UserContext)
+  let {myUser , setMyUser} =useContext(UserContext)
 
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
@@ -86,7 +88,7 @@ let validationLoginSchema=Yup.object({
                 <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
-                <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
+                <form onSubmit={formik.handleSubmit} className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>
