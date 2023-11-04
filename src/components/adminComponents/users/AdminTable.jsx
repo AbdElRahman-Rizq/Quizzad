@@ -3,6 +3,7 @@ import { Circles } from "react-loader-spinner";
 import { Container, NavLink, Table } from "react-bootstrap";
 import axios from 'axios';
 import { useNavigate } from "react-router";
+import '../../../assets/css/class.css'
 
 const AdminTable = () => {
   const [users, setUsers] = useState([]);
@@ -79,7 +80,7 @@ const cancleUser = async (userId) => {
   }
 
   return (
-    <Container>
+    <Container >
       <Table hover responsive className="userTable">
         <thead className="custom-thead">
           <tr>
@@ -91,7 +92,7 @@ const cancleUser = async (userId) => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody className="userBodyTable">
+        <tbody className="userBodyTable Scroller">
           {users.slice(0, 8).map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>

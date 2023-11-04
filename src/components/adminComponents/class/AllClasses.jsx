@@ -6,23 +6,34 @@ import axios from 'axios';
 import { gradeLevelMap } from '../../../controls/gradeLevel';
 
 export function AllClasses() {
+    const [imageURL, setImageURL] = useState([]);
     const [myClass, setMyClass] = useState([]);
-        const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
       
         const fetchData = async () => {
           try {
-            const response = await axios.get(`http://localhost:5000/api/v1/classes/`, {
+            const response = await axios.get(`http://localhost:5000/api/v1/classes`, {
               withCredentials: true,
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
             });
             console.log(response.data);
             setMyClass(response.data);
+            
+            const imageName = response.data.map((image)=>
+            image.coverImage = `http://localhost:5000/static/${image.coverImage}`
+            
+            )
+            setImageURL(imageName);
+            
             setLoading(false);
           } catch (error) {
             console.log("Error fetching data:", error);
             setLoading(false);
           }
         };
-        
+ 
         useEffect(() => {
             fetchData();
         }, []);
@@ -116,9 +127,11 @@ export function AllClasses() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow"
-                                src="https://images.pexels.com/photos/714699/pexels-photo-714699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src={clx.coverImage}
+                                name='coverImage'
                                 alt="Quiz Image"
                                 style={{ width:'100%', height: '175px', objectFit: 'cover' }}
+                                // crossOrigin="anonymous"
                                 />
                             </a>
                         </div>

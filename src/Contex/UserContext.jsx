@@ -32,7 +32,6 @@ export function UserContextProvider(props) {
   
   const userData = { myUser };
 
-
   return (
     <UserContext.Provider value={userData}>
       {props.children}

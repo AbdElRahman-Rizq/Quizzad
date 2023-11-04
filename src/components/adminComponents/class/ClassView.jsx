@@ -11,7 +11,8 @@ export function ClassView() {
     const { id } = useParams();
     const [myClass, setMyClass] = useState({});
     const [loading, setLoading] = useState(true);
-  
+    const [imageURL, setImageURL] = useState('');
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/v1/classes/${id}`, {
@@ -20,9 +21,14 @@ export function ClassView() {
             'Content-Type': 'multipart/form-data',
           },
         });
-
         console.log(response.data);
         setMyClass(response.data);
+        
+        const imageName = response.data.coverImage;
+        const imageUrl =`http://localhost:5000/static/${imageName}`
+        setImageURL(imageUrl);
+
+
         setLoading(false);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -32,9 +38,6 @@ export function ClassView() {
   
     useEffect(() => {
       fetchData();
-      const url = URL.createObjectURL(myClass);
-      const image = new Image();
-      image.src = url;
     }, [id]);
       
       if (loading) {
@@ -52,6 +55,9 @@ export function ClassView() {
           </div>
         );
       }   
+
+      console.log(imageURL);
+
     return (
     <div className='row '>
 {/*----------------- class image and details --------------------*/}
@@ -61,9 +67,10 @@ export function ClassView() {
                                     <a href="#">
                                     <img
                                         className="rounded-5 img-fluid shadow mt-2"
-                                        src={myClass.coverImage}
+                                        src={imageURL}
                                         alt="myClass Image"
                                         style={{ width:'95%', height: '250px', objectFit: 'cover' }}
+                                        // crossOrigin="anonymous"
                                         />
                                     </a>
                                 </div>
