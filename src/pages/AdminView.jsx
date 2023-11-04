@@ -1,5 +1,5 @@
 import React from 'react'
-import { SideBar } from '../components/layout/SideBar'
+import  SideBar  from '../components/layout/SideBar'
 import { Route, Routes } from 'react-router-dom'
 import { ClassPage } from '../components/adminComponents/class/ClassPage'
 import { QuizPage } from '../components/adminComponents/Quiz/QuizPage'
