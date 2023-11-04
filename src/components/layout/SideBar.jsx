@@ -5,7 +5,7 @@ import '../../assets/css/layout.css'; // Import your custom CSS
 
 import { NavLink } from 'react-router-dom';
 
-export function SideBar() {
+export default function SideBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
   useEffect(() => {

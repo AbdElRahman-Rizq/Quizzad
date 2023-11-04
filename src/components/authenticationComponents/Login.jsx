@@ -43,8 +43,7 @@ let validationLoginSchema=Yup.object({
            
             
            
-            if (userStatus === 'ACTIVE') {
-              console.log(response.data.user);
+            if (userStatus === 'ACTIVE') {              
               
               navigate('/admin');
             } else {
