@@ -7,7 +7,6 @@ import { UserContext } from "./UserContext";
 export function UserContextProvider(props) {
 
   // const { id } = useParams();
-  const [myUser, setMyUser] = useState([]);
 
   async function fetchUserData() {
     try {
@@ -23,12 +22,6 @@ export function UserContextProvider(props) {
       console.error('Error fetching user data:', error);
     }
   }
-
-  // useEffect(() => {
-  //   fetchUserData();
-  // }, []);
-  
-  // const userData = { myUser };
 
 
   return (
