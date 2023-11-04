@@ -20,45 +20,37 @@ function TakeQuiz() {
     prevArrow: false,
     nextArrow: false,
   };
-
-  
   useEffect(() => {
-    // const jwtToken = Cookies.get('jwt');
-  
-    // if (!jwtToken) {
-    //   // Redirect to login or show an error message
-    //   window.location.href = '/login';
-    // }
-  
-    // Fetch questions from the API using Axios
-    axios.get('http://localhost:5000/api/v1/quizzes/1/questions', {
-      withCredentials: true,
-      
-  })
-      .then((response) => {
-        setQuestions(response.data.questions);
-      })
-      .catch((error) => {
-        console.error('Error fetching questions:', error);
-        // Handle error (show a message, redirect, etc.)
-      });
-  
+      // Fetch questions from the API using Axios
+      const fetchQuestions = () => {
+        axios.get('http://localhost:5000/api/v1/quizzes/1/questions', {
+          withCredentials: true,
+        })
+        .then((response) => {
+          setQuestions(response.data.questions);
+        })
+        .catch((error) => {
+          console.error('Error fetching questions:', error);
+          // Handle error (show a message, redirect, etc.)
+        });
+      };
+      fetchQuestions(); // Fetch questions initially
+    },[])
+  useEffect(() => {  
     const timerInterval = setInterval(() => {
       setTimer((prevTimer) => prevTimer - 1);
-  
-      // Provide feedback to the user (change color, display warning, etc.)
     }, 1000);
-  
+
     if (timer === 0) {
       clearInterval(timerInterval);
-      // Redirect to a specific location when the timer runs out
+      // Navigate to the desired location when the timer runs out
       window.location.href = '/';
     }
-  
-    return () => {
+     return () => {
       clearInterval(timerInterval);
     };
-  }, [timer]);
+  }, [timer]); // Include timer in the dependency array to re-run the effect when it changes
+  
   
 
   const formattedTime = `${Math.floor(timer / 60)
@@ -92,7 +84,7 @@ function TakeQuiz() {
           <Slider ref={sliderRef} {...settings}>
             {questions.map((q) => (
               <div key={q.id}>
-                <QuestionStudentView questionTitle={q.questionText} />
+                <QuestionStudentView questionTitle={q.questionText} questionImage={`http://localhost:5000/static/${q.questionImage}`}/>
                 <div className="col-md-12 d-flex">
                   <div className='my-3 m-auto col-md-3'>
                     <button
