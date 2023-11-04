@@ -11,6 +11,8 @@ import Cookies from 'js-cookie';
 
 export default function Login() {
 
+  let {myUser , setMyUser} =useContext(UserContext)
+
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
     // Token
@@ -33,7 +35,6 @@ let validationLoginSchema=Yup.object({
         // .max(15, 'Password must be at most 8 characters'),
     })
 
-
     async function loginSubmit(values) {
         try {
           const response = await axios.post(
@@ -48,7 +49,8 @@ let validationLoginSchema=Yup.object({
             const userStatus = response.data.user.status;
             console.log(response.data.user);
             setMyUser(response)
-
+            
+            console.log(myUser);
             if (userStatus === 'ACTIVE') {
               console.log(response.data.user);
               
