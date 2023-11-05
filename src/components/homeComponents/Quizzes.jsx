@@ -3,6 +3,8 @@ import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import QuizCard from './QuizCard'
+import '../../assets/css/Home.css'
+
 
 function Quizzes() {
   return (
@@ -14,12 +16,12 @@ function Quizzes() {
         </Row>
         <Row className='justify-content-center align-items-center'>
           
-          <QuizCard imgSrc={"../src/assets/images/cards/card1.jpeg"}/>
-          <QuizCard imgSrc={"../src/assets/images/cards/card2.jpg"}/>
-          <QuizCard imgSrc={"../src/assets/images/cards/card3.jpg"}/>
-          <QuizCard imgSrc={"../src/assets/images/cards/card4.jpg"}/>
-          <QuizCard imgSrc={"../src/assets/images/cards/card5.jpg"}/>
-          <QuizCard imgSrc={"../src/assets/images/cards/card2.jpg"}/>
+          <QuizCard imgSrc={"../src/assets/images/OnlineTest.svg"}/>
+          <QuizCard imgSrc={"../src/assets/images/studentBar.svg"}/>
+          <QuizCard imgSrc={"../src/assets/images/teacherBar.svg"}/>
+          <QuizCard imgSrc={"../src/assets/images/Progress indicator-pana.svg"}/>
+          <QuizCard imgSrc={"../src/assets/images/Exams-bro.svg"}/>
+          <QuizCard imgSrc={"../src/assets/images/Business support-amico.svg"}/>
       
         </Row>
         
