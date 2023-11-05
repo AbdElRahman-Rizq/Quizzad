@@ -11,8 +11,8 @@ export default function WelcomeSide() {
                 <div className="d-flex weclome rounded-5">
                     <div className="col-md-6">
                         <div className="py-3 ps-4">
-                            <h3 className='mt-5'>Welcome back , Mohamed</h3>
-                            <p>Always stay update in your student portal</p>
+                            <h3 className='mb-1'>Welcome back , Mohamed</h3>
+                            <p className=''>Always stay update in your student portal</p>
                         </div>
                             </div>
                         <div className="py-3 ms-5">
