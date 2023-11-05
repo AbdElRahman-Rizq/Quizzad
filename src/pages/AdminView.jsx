@@ -7,7 +7,6 @@ import DashBoardPage from '../components/adminComponents/dashboard/DashBoardPage
 import UserPage from '../components/adminComponents/users/UserPage'
 import ProfileView from '../components/profile/ProfileView'
 
-
 export function AdminView() {
   return (
     <div>

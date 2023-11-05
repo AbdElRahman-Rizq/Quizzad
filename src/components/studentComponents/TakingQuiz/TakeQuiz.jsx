@@ -40,7 +40,7 @@ quizId=1;
           withCredentials: true,
         })
         .then((response) => {
-          console.log(response.data);
+          console.log(response.data.attemptId);
         })
         .catch((error) => {
           console.error('Error start quiz', error);
@@ -83,7 +83,38 @@ quizId=1;
     setQuestionNumber((prevNumber) => prevNumber - 1);
     sliderRef.current.slickPrev();
   };
+// store Answer
+const [selectedAnswers, setSelectedAnswers] = useState({}); // State to store selected answers
 
+// ... other code ...
+
+const handleAnswerSelect = (answerId) => {
+  setSelectedAnswers((prevSelectedAnswers) => ({
+    ...prevSelectedAnswers,
+    [questionNumber]: answerId,
+  }));
+};
+
+const submitQuiz = () => {
+  const requestBody = {
+    attemptId:1 ,
+    quizId,
+    answers: selectedAnswers,
+    passingScore: 50,
+  };
+
+  axios.post('http://localhost:5000/api/v1/quiz-attempts/update-quiz-attempt', requestBody, {
+    withCredentials: true,
+  })
+  .then((response) => {
+    console.log(response.data);
+    // Handle success (show a message, redirect, etc.)
+  })
+  .catch((error) => {
+    console.error('Error updating quiz attempt', error);
+    // Handle error (show a message, redirect, etc.)
+  });
+};
   return (
     <div>
       <NavForQuiz questionNumber={questionNumber} timer={formattedTime} />
@@ -127,7 +158,17 @@ quizId=1;
               </div>
             ))}
           </Slider>
-        </div>
+      <div className="text-center w-50 mx-auto mb-3">
+        <button
+          type="button"
+          className="quizButton rounded-4 p-3 fs-5"
+          onClick={submitQuiz}
+        >
+          Submit Quiz
+        </button>
+      </div>
+      </div>
+
       </div>
     </div>
   );
