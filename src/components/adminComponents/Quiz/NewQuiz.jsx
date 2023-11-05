@@ -105,7 +105,7 @@ export function NewQuiz() {
         },
       })
       .then(() => {
-        navigate('/admin/quiz/');
+        navigate(`/admin/quiz/`);
       })
       .catch((error) => {
         console.log(formData);
@@ -125,8 +125,6 @@ export function NewQuiz() {
                 </div>
               </div>
             </div>
-            <Slider ref={sliderRef} {...settings}>
-            <div key={1}>
               
             <div className='row '> 
             {/*---------------------- quiz details--------------------------*/}      
@@ -333,38 +331,7 @@ export function NewQuiz() {
 
             </div>
             </div>
-                    <div className='my-3 m-auto col-md-6'>
-                      <button type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" onClick={next}>
-  
-                        Questions Settings
-                        <i className="fa-solid fa-arrow-right ms-3"/>
-                        </button>
-                    </div>
-                  </div>
-            <div key={2}>
-              <div className='col-md-8 m-auto'>
-                <hr />
-              </div>
-              <div className="m-3 m-auto col-md-6">
-                <button
-                  type='button'
-                  className="quizButton rounded-4 p-3 w-100"
-                  onClick={handleAddQuestionClick}
-                >
-                  Add A New Question
-                </button>
-              </div>
-              <Accordion defaultActiveKey="null">
-                {questions}
-              </Accordion>
-              <div className='my-3 m-auto col-md-6'>
-                <button type="submit" className="quizButton rounded-4 p-3 w-100" onClick={previous}>
-                  <i className="fa-solid fa-arrow-left me-3" />
-                  Class Settings
-                </button>
-                      </div>
-                    </div>
-                  </Slider>
+                  
                   <div className='col-md-8 m-auto'>
                     <hr />
                   </div>

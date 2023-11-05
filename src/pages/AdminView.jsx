@@ -5,6 +5,7 @@ import { ClassPage } from '../components/adminComponents/class/ClassPage'
 import { QuizPage } from '../components/adminComponents/Quiz/QuizPage'
 import DashBoardPage from '../components/adminComponents/dashboard/DashBoardPage'
 import UserPage from '../components/adminComponents/users/UserPage'
+import ProfileView from '../components/profile/ProfileView'
 
 
 export function AdminView() {
@@ -21,6 +22,7 @@ export function AdminView() {
               <Route path='class/*' element={<ClassPage/>}/>
               <Route path='quiz/*' element={<QuizPage/>}/>
               <Route path='user/*' element={<UserPage/>}/>
+              <Route path='profile/*' element={<ProfileView/>}/>
             </Routes>
           </div>
         </div>
