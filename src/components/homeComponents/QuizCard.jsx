@@ -3,7 +3,7 @@ import ThemedButton from "../layout/ThemedButton";
 import '../../assets/css/Home.css'
 
 
-function QuizCard({imgSrc}) {
+function QuizCard({imgSrc , info}) {
   return (
 
   <>
@@ -14,8 +14,8 @@ function QuizCard({imgSrc}) {
                     </div>
                     <div class=" card-body bg-light  my-3 d-flex justify-content-between b">
                         <div class="port-info">
-                            <h4>Lorem impsum dolor</h4>
-                            <h5><span>Web Design </span>/ 18 Sep. 2018</h5>
+                            <h4>{info}</h4>
+                            <h5><span>QuizZAD </span>/ 5 Sep. 2023</h5>
                         </div>
                         <div class="port-icon border rounded-circle mx-2 d-flex justify-content-center align-items-center">
                             <i class="fas fa-plus"></i>                        
