@@ -6,17 +6,18 @@ export function useQuizLogic() {
   const [questions, setQuestions] = useState([]);
   const sliderRef = useRef(null);
 
-  const next = () => {
+  const next = (event) => {
     event.preventDefault();
     sliderRef.current.slickNext();
   };
 
-  const previous = () => {
+  const previous = (event) => {
     event.preventDefault();
     sliderRef.current.slickPrev();
   };
 
-  const handleAddQuestionClick = () => {
+  const handleAddQuestionClick = (event) => {
+    event.preventDefault();
     const questionNumber = questions.length + 1;
     const newQuestion = (
       <Accordion.Item key={questionNumber} eventKey={questionNumber.toString()} className="my-3 rounded">

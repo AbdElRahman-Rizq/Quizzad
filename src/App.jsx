@@ -47,6 +47,7 @@ function App() {
 {/* Rizq's Test */}
       <Route path='/Result' element={<Congratulations/>}/>
       <Route path='/Takequiz' element={<TakeQuiz/>}/>
+      <Route path='/question' element={<QuestionForm/>}/>
 {/* Final project */}
       <Route path='/admin/*' element={<AdminView/>}/>
       <Route path='/teacher/*' element={<TeacherView/>}/>

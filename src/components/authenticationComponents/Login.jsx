@@ -6,21 +6,15 @@ import {  useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { useState } from 'react'
-import Cookies from 'js-cookie';
 
 
 export default function Login() {
 
+  // let {myUser , setMyUser} =useContext(UserContext)
+
     const navigate = useNavigate();
     const [error , seterror]=useState(null)   
-    // Token
-        const token = Cookies.get('jwt');
-        if (token) {
-        // You have the token, and you can use it as needed
-        console.log('Token:',token);
-        } else {
-        console.log('Token not found in the cookie.');
-        }
+  
     // Validation
     
 let validationLoginSchema=Yup.object({
@@ -32,7 +26,6 @@ let validationLoginSchema=Yup.object({
         // .min(8, 'Password must be at least 2 characters')
         // .max(15, 'Password must be at most 8 characters'),
     })
-
 
     async function loginSubmit(values) {
         try {
@@ -47,10 +40,10 @@ let validationLoginSchema=Yup.object({
           if (response.data.message === 'Login done successfully') {
             const userStatus = response.data.user.status;
             console.log(response.data.user);
-            setMyUser(response)
-
-            if (userStatus === 'ACTIVE') {
-              console.log(response.data.user);
+           
+            
+           
+            if (userStatus === 'ACTIVE') {              
               
               navigate('/admin');
             } else {
@@ -84,7 +77,7 @@ let validationLoginSchema=Yup.object({
                 <img src={Exam} className="" alt=''/>  
             </div>
             <div className="container">
-                <form onSubmit={formik.handleSubmit } className="form bg-light rounded-5 px-5 py-4">
+                <form onSubmit={formik.handleSubmit} className="form bg-light rounded-5 px-5 py-4">
                     <div className='formLogo'>
                         <img src={Logo} className="w-100" alt=''/>  
                     </div>

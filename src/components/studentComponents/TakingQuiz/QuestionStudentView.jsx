@@ -1,12 +1,15 @@
 import { Col, Row } from 'react-bootstrap'
 import Teacher from '../../../assets/images/questionImg.png'
 import ThemedButton from '../../layout/ThemedButton'
+import { useState } from 'react';
 
 
-function QuestionStudentView({questionTitle,questionNumber,optionsNumber}) {
+function QuestionStudentView({questionTitle,questionNumber,optionsNumber,questionImage}) {
+  console.log('Question Image:', questionImage);
+
   return (
     <div className='mt-2'>
-        <img src={Teacher} alt="Question1" width={"25%"} className='m-auto'/>
+        <img src={questionImage} alt="Question" width={"25%"} className='m-auto'/>
         <h4 className='text-center my-3'>Question {questionNumber}:{questionTitle}</h4>
         <Row className='answersSection w-100'>
             {

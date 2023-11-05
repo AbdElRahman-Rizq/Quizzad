@@ -3,9 +3,12 @@ import axios from 'axios';
 import { Circles } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
 import '../../../assets/css/quiz.css'
+import { gradeLevelMap } from '../../../controls/gradeLevel';
 
 export function QuizView() {
   const { id } = useParams();
+  const [imageURL, setImageURL] = useState('');
+
   const [quiz, setQuiz] = useState({
     title: '',
     description: '',
@@ -16,8 +19,16 @@ export function QuizView() {
     try {
       const response = await axios.get(`http://localhost:5000/api/v1/quizzes/${id}`, {
         withCredentials: true,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
       setQuiz(response.data.quiz);
+      
+      const imageName = response.data.quiz.quizImage;
+      const imageUrl =`http://localhost:5000/static/${imageName}`
+      setImageURL(imageUrl);
+
       setLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error);
@@ -44,6 +55,7 @@ export function QuizView() {
         </div>
       );
     }
+    console.log(imageURL);
     return (
     <div>
       <div className='row '>
@@ -54,9 +66,11 @@ export function QuizView() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow mt-2"
-                                src="https://images.pexels.com/photos/4117968/pexels-photo-4117968.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src={imageURL}
                                 alt="Quiz Image"
                                 style={{ width:'95%', height: '250px', objectFit: 'cover' }}
+                                                                        // crossOrigin="anonymous"
+
                                 />
                             </a>
                         </div>
@@ -65,8 +79,8 @@ export function QuizView() {
                         </div>
 
                         <div className="p-2">
-                        {/* <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span> */}
                         <h4 className="mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
+                        <i className="fa fa-duotone fa-microscope fs-2 me-2" style={{ color: '#89288F' }} />
                         {quiz.title}
                         </h4>
                         </div>
@@ -74,12 +88,15 @@ export function QuizView() {
                         <div className='row'>
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
-                                Teacher : 
+                            <i className="fa fa-light fa-chalkboard-user fs-5 me-2" style={{color: "#89288F"}}/>
+                                Teacher : {quiz.adminId? quiz.creatorAdmin.profile.firstName:quiz.creatorTeacher.profile.firstName} {quiz.adminId? quiz.creatorAdmin.profile.lastName:quiz.creatorTeacher.profile.lastName }  
                             </h6>
                         </div>
 
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
+                            <i className="fa fa-brands fa-artstation fs-5 me-2" style={{ color: '#89288F' }} />
+
                                 Subject : {quiz.subject}
                             </h6>
                         </div>
@@ -88,22 +105,24 @@ export function QuizView() {
                         <div className='row'>
                         <div className="col-md-6">
                             <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
+                                <i className="fa fa-solid fa-landmark fs-5 me-2" style={{color: "#89288F"}}/>
                                 Class Name : 
                             </h6>
                         </div>
 
                         <div className="col-md-6">
                         <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
-                                Grade Level : {quiz.gradeLevel}
+                                <i className="fa fa-solid fa-user-graduate fs-5 me-2" style={{ color: '#89288F' }} />
+                                Grade Level : {gradeLevelMap[quiz.gradeLevel]}
                         </h6>
                         </div>
                         </div>                    
                     
                     <div className="d-flex spec d-wrap mx-2 pb-2">
                         <div className="d-flex col-md-6">
-                        <div className="d-flex p-1">
+                        <div className="d-flex p-2 ms-2 ">
                             <div>
-                            <i className="fa-solid fs-5 p-1 fa-book text-align px-2" style={{ color: '#591c50' }} />
+                            <i className="fa fa-light fa-pen fs-5 me-2" style={{color: "#89288F"}}/>
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
@@ -111,9 +130,9 @@ export function QuizView() {
                             </p>
                             </div>
                         </div>
-                        <div className="d-flex p-1">
+                        <div className="d-flex p-2 ms-2">
                             <div>
-                            <i className="fa-solid fs-5 p-1 fa-person px-2" style={{ color: '#591c50' }} />
+                            <i className="fa fa-regular fa-clipboard fs-5 me-2" style={{color: "#89288F"}}/>
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
@@ -124,9 +143,9 @@ export function QuizView() {
                         </div>
 
                         <div className="d-flex col-md-6">
-                        <div className="d-flex p-1">
+                        <div className="d-flex p-2 ">
                             <div>
-                            <i className="fa-solid fs-5 fa-layer-group px-2 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa fa-solid fa-book-open-reader fs-5 me-2" style={{color: "#89288F"}}/>
                             </div>
                             <div>
                             <p className="text-dark" style={{ maxWidth: '100%' }}>
@@ -135,9 +154,9 @@ export function QuizView() {
                             </div>
                         </div>
 
-                        <div className="d-flex p-1">
+                        <div className="d-flex p-2 ms-4">
                             <div>
-                                <i className="fa-solid fs-5 fa-layer-group px-2 fa-person" style={{ color: '#591c50' }} />
+                            <i className="fa fa-solid fa-swatchbook fs-5 me-2 " style={{color: "#89288F"}}/>
                             </div>
                             <div>
                                 <p className="text-dark" style={{ maxWidth: '100%' }}>
@@ -175,7 +194,7 @@ export function QuizView() {
                 <li className="list-group-item">Quiz timer : {quiz.duration}</li>
                 <li className="list-group-item">Passing Score : {quiz.passingScore} </li>
                 <li className="list-group-item">Allowed attempts : {quiz.numOfAllowedAttempts} </li>
-                <li className="list-group-item">Quiz deadline : {quiz.deadlineDate} </li>
+                <li className="list-group-item">Quiz deadline : {(new Date(quiz.deadlineDate)).toLocaleDateString('en-GB')} </li>
                 <li className="list-group-item">Privacy: {quiz.isPublic?'Public':'Private'} </li>
             </ol>
 

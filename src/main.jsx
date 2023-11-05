@@ -10,13 +10,17 @@ import 'react-router-dom'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { UserContextProvider } from './Contex/UserContext.jsx'
+import { StudentUsersContexProvider } from './Contex/StudentUsersContex.jsx'
+import { TeacherUsersContexProvider } from './Contex/TeacherUsersContex.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  <UserContextProvider>
-    <App />
-  </UserContextProvider>
-  // </React.StrictMode>
+  <TeacherUsersContexProvider>
+    <UserContextProvider>
+      <StudentUsersContexProvider>
+        <App />
+      </StudentUsersContexProvider>
+    </UserContextProvider>
+  </TeacherUsersContexProvider>
 )

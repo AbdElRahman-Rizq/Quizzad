@@ -4,17 +4,28 @@ import { NavLink } from 'react-router-dom';
 import { Circles } from 'react-loader-spinner';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { gradeLevelMap } from '../../../controls/gradeLevel';
 export function PublicQuiz  () {
         const [quiz, setQuiz] = useState([]);
         const [loading, setLoading] = useState(true);
-      
+        const [imageURL, setImageURL] = useState([]);
+
         const fetchData = async () => {
           try {
             const response = await axios.get(`http://localhost:5000/api/v1/quizzes/`, {
-              withCredentials: true,
-            });
+                withCredentials: true,
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              });
             console.log(response.data);
             setQuiz(response.data.quizzes);
+
+            const imageName = response.data.quizzes.map((image)=>
+            image.quizImage = `http://localhost:5000/static/${image.quizImage}`
+            
+            )
+            setImageURL(imageName);
             setLoading(false);
           } catch (error) {
             console.log("Error fetching data:", error);
@@ -42,7 +53,7 @@ export function PublicQuiz  () {
           );
         }
         
-      
+        
         return (
             <div className='background rounded-4 m-2'>
               <section className="py-1 Scroller">
@@ -116,42 +127,41 @@ export function PublicQuiz  () {
                                     <a href="#">
                                         <img
                                             className="rounded-5 img-fluid shadow"
-                                            src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            src={card.quizImage}
                                             alt="card Image"
                                             style={{ width: '100%', height: '140px', objectFit: 'cover' }}
                                         />
                                     </a>
                                 </div>
                                 <div className="p-2">
-                                    <span className="badge bg-warning fs-6 rounded-5">{card.difficultyLevel}</span>
-                                    <h5 className=" pt-2 " style={{ maxWidth: '100%' }}>
+                                    <span className="badge bg-warning fw-normal fs-6 rounded-5">{card.difficultyLevel}</span>
+                                    <h4 className="pt-2" style={{ maxWidth: '100%' }}>
                                         {card.title}
-                                    </h5>
+                                    </h4>
                                 </div>
                                     <div className="d-flex ">
                                         <div>
-                                            <i className="fa-solid p-1 fa-book text-align" style={{ color: '#591c50' }} />
+                                            <i className="fa fa-brands fa-artstation fs-5 me-2" style={{ color: '#89288F' }} />
                                         </div>
                                         <div>
-                                            <p className="" style={{ maxWidth: '100%' }}>
-                                                {card.subject}
+                                            <p style={{ maxWidth: '100%' }}>
+                                            {card.subject}
                                             </p>
                                         </div>
                                     </div>
                                 <div className="d-flex spec d-wrap">
                                     <div className="d-flex me-3">
                                         <div>
-                                            <i className="fa-solid p-1 fa-person" style={{ color: '#591c50' }} />
-                                        </div>
+                                        <i className="fa fa-solid fa-user-graduate fs-5 me-2" style={{ color: '#89288F' }} />                                        </div>
                                         <div>
                                             <p className="" style={{ maxWidth: '100%' }}>
-                                                {card.gradeLevel}
+                                            {gradeLevelMap[card.gradeLevel]}
                                             </p>
                                         </div>
                                     </div>
                                     <div className="d-flex ">
                                         <div>
-                                            <i className="fa-solid fa-layer-group p-1 fa-person" style={{ color: '#591c50' }} />
+                                            <i className="fa-solid fa-layer-group fs-5 me-2" style={{ color: '#89288F' }} />
                                         </div>
                                         <div>
                                             <p className="" style={{ maxWidth: '100%' }}>
@@ -161,14 +171,13 @@ export function PublicQuiz  () {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-center">
-                                    <NavLink className="fa fa-solid fa-eye mx-3 fs-2 text-warning" to={`/admin/quiz/${card.id}`} />
-                                    <NavLink className="fa-solid fa-pen-to-square mx-3 fs-2 text-info" />
-                                    <i className="fa-solid fa-trash-can mx-3 fs-2 text-danger" />
+                                    <NavLink className="fa fa-solid fa-eye mx-3 fs-3 text-warning" to={`/admin/quiz/${card.id}`} />
+                                    <NavLink className="fa-solid fa-pen-to-square mx-3 fs-3 text-info"/>
+                                    <i className="fa-solid fa-trash-can mx-3 fs-3 text-danger"/>
                                 </div>
                             </div>
                         </div>
                     ))}
-        
                       </div>
                     </div>
                   </div>

@@ -3,19 +3,32 @@ import { useEffect, useState } from 'react';
 import {  Table } from 'react-bootstrap';
 import { Circles } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
+import '../../../assets/css/class.css';
+import { gradeLevelMap } from '../../../controls/gradeLevel';
+
 
 export function ClassView() {
     const { id } = useParams();
     const [myClass, setMyClass] = useState({});
     const [loading, setLoading] = useState(true);
-  
+    const [imageURL, setImageURL] = useState('');
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/v1/classes/${id}`, {
           withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
         });
         console.log(response.data);
         setMyClass(response.data);
+        
+        const imageName = response.data.coverImage;
+        const imageUrl =`http://localhost:5000/static/${imageName}`
+        setImageURL(imageUrl);
+
+
         setLoading(false);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -41,9 +54,11 @@ export function ClassView() {
             />
           </div>
         );
-      }
+      }   
+
+      console.log(imageURL);
+
     return (
-     
     <div className='row '>
 {/*----------------- class image and details --------------------*/}
         <div className='col-md-6 text-light pt-3 '>
@@ -52,9 +67,10 @@ export function ClassView() {
                                     <a href="#">
                                     <img
                                         className="rounded-5 img-fluid shadow mt-2"
-                                        src="https://images.pexels.com/photos/4117968/pexels-photo-4117968.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        src={imageURL}
                                         alt="myClass Image"
                                         style={{ width:'95%', height: '250px', objectFit: 'cover' }}
+                                        // crossOrigin="anonymous"
                                         />
                                     </a>
                                 </div>
@@ -63,8 +79,8 @@ export function ClassView() {
                                 </div>
 
                                 <div className="p-2">
-                                {/* <span className="badge bg-warning mb-2 b-3 fs-6 rounded-5">Intermediate</span> */}
                                 <h4 className="mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
+                                <i className="fa fa-solid fa-landmark fs-3 me-3" style={{color: "#89288F"}}/>
                                 {myClass.className}
                                 </h4>
                                 </div>
@@ -75,28 +91,37 @@ export function ClassView() {
                                 Description :  {myClass.description}
                                 </h6>
                                 </div>
-
                                 <div className='row'>
                                 <div className="col-md-6">
                                     <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
+                                    <i className="fa fa-solid fa-user-graduate fs-5 me-3" style={{color: "#89288F"}}/>
+                                     {gradeLevelMap[myClass.gradeLevel]}
+                                    </h6>
+                                </div>
+                                <div className="col-md-6">
+                                    <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
+                                    <i className="fa fa-brands fa-artstation fs-5 me-3" style={{color: "#89288F"}}/>
+                                    No. Quizzes : {myClass.classQuizzes.length}
+                                    </h6>
+                                </div>
+                                </div>    
+                                <div className='row'>
+                                <div className="col-md-6">
+                                    <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
+                                    <i className="fa fa-light fa-chalkboard-user fs-6 me-3" style={{color: "#89288F"}}/>
                                         No. teachers : {myClass.teachers.length}
                                     </h6>
                                 </div>
 
                                 <div className="col-md-6">
                                     <h6 className="p-2 mx-3 text-truncate text-dark" style={{ maxWidth: '100%' }}>
+                                    <i className="fa fa-light fa-graduation-cap fs-6 me-3" style={{color: "#89288F"}}/>
                                         No. students : {myClass.students.length}
                                     </h6>
                                 </div>
                                 </div>
 
-                                <div className='row'>
-                                <div className="col-md-8">
-                                    <h6 className="p-2 mx-3 text-dark" style={{ maxWidth: '100%' }}>
-                                    grade Level : {myClass.gradeLevel}
-                                    </h6>
-                                </div>
-                                </div>                    
+                                                
                 </div>
         </div>
                 

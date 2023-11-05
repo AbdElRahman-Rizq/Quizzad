@@ -5,7 +5,8 @@ import axios from 'axios';
 export const UserContext = createContext();
 
 export function UserContextProvider(props) {
-  const [myUser, setUser] = useState(null);
+
+  const [myUser, setMyUser] = useState([]);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -18,7 +19,7 @@ export function UserContextProvider(props) {
         );
 
         if (response.data.message === 'User profile retrieved successfully') {
-          setUser(response.data.user);
+          setMyUser(response.data.user);
         }
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -28,7 +29,7 @@ export function UserContextProvider(props) {
 
     fetchUserProfile();
   }, []);
-
+  
   const userData = { myUser };
 
   return (

@@ -17,7 +17,7 @@ export function QuizNav() {
   <li className="mx-2">
     <NavLink
       className="nav-link QuizNavBtn fs-6 text-center"
-      activeClassName="active"
+      activeclassname="active"
       to="/admin/quiz/"
     >
       Public Quizzes
@@ -26,7 +26,7 @@ export function QuizNav() {
   <li className="mx-2">
     <NavLink
       className="nav-link QuizNavBtn fs-6 text-center"
-      activeClassName="active"
+      activeclassname="active"
       to="/admin/quiz/myquiz"
     >
       My Quizzes
@@ -35,8 +35,8 @@ export function QuizNav() {
   <li className="mx-2">
     <NavLink
       className="nav-link QuizNavBtn fs-6 text-center"
-      activeClassName="active"
-      to="/admin/quiz/newquiz"
+      activeclassname="active"
+      to="/admin/quiz/0/edit"
     >
       New Quiz
     </NavLink>

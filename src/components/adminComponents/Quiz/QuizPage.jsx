@@ -14,7 +14,7 @@ export function QuizPage() {
             <Routes>
               <Route path='' element={<PublicQuiz/>}/>
               <Route path='myquiz' element={<MyQuiz/>}/>
-              <Route path='newquiz' element={<NewQuiz/>}/>
+              <Route path=':id/edit' element={<NewQuiz/>}/>
               <Route path='/:id' element={<QuizView/>}/>
             </Routes>
       </section>
