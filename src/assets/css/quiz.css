@@ -23,7 +23,7 @@
 }
 
 .quizButton {
-    background-color: #89288F;
+    background-color: #560283;
     width: 100%;
     color: white;
     border: 2px solid transparent; /* Add a transparent border */
@@ -32,8 +32,8 @@
 
 .quizButton:hover {
     background-color: #ffffff;
-    border: 2px solid #89288F;
-    color: #89288F;
+    border: 2px solid #560283;
+    color: #560283;
     text-decoration: none;
 }
 .QuizDash{
