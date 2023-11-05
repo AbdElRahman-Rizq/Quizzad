@@ -1,9 +1,11 @@
 import { Accordion } from 'react-bootstrap';
 import '../../../assets/css/quiz.css'
 import { useQuizLogic } from '../../../controls/QuizLogic';
+import { useNavigate } from 'react-router-dom';
 
 export function AssignedQuestion() {
   const {  handleAddQuestionClick, questions,id } = useQuizLogic();
+  const navigate = useNavigate();
 
     return (
           <div className='m-2 mt-3'>
@@ -37,7 +39,7 @@ export function AssignedQuestion() {
                     <hr />
                   </div>
                   <div className='m-3 m-auto col-md-6'>
-                    <button type="submit" className="quizButton rounded-4 fs-4 p-3 w-100">
+                    <button type="submit" className="quizButton rounded-4 fs-4 p-3 w-100" onClick={()=>navigate("/admin")}>
                     {id == 0 ? 'Create New Quiz' : 'Save Changes'}</button>
                   </div>
               </section>
