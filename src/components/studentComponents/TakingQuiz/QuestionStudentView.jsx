@@ -1,10 +1,7 @@
 import { Col, Row } from 'react-bootstrap'
-import Teacher from '../../../assets/images/questionImg.png'
-import ThemedButton from '../../layout/ThemedButton'
-import { useState } from 'react';
 
 
-function QuestionStudentView({questionTitle,questionNumber,optionsNumber,questionImage}) {
+function QuestionStudentView({questionTitle,questionNumber,optionsNumber,questionImage,answers}) {
   console.log('Question Image:', questionImage);
 
   return (
@@ -12,32 +9,19 @@ function QuestionStudentView({questionTitle,questionNumber,optionsNumber,questio
         <img src={questionImage} alt="Question" width={"25%"} className='m-auto'/>
         <h4 className='text-center my-3'>Question {questionNumber}:{questionTitle}</h4>
         <Row className='answersSection w-100'>
-            {
-                optionsNumber>=4?
-<>
-
+        {answers.map((answer) => (
             <Col lg={5} sm={10} className='my-4'>
-            <ThemedButton content={"1- MOhamed Al-Shafiy"} propPadding={".7rem"} propWidth={"80%"}/>
+              <div key={answer.id}>
+            <button
+                      type='button'
+                      className='quizButton rounded-4 p-3 fs-5'
+                    >
+                      {answer.answerText}                     
+                    </button>
+        
+            </div>
             </Col>
-            <Col lg={5}  sm={10} className='my-4'>
-            <ThemedButton content={"2- MOhamed Al-Shafiy"} propPadding={".7rem"} propWidth={"80%"}/>
-            </Col>
-            <Col lg={5}  sm={10} className='my-4'>
-            <ThemedButton content={"3- MOhamed Al-Shafiy"} propPadding={".7rem"} propWidth={"80%"}/>
-            </Col>
-            <Col lg={5}  sm={10} className='my-4'>
-            <ThemedButton content={"4- MOhamed Al-Shafiy"} propPadding={".7rem"} propWidth={"80%"}/>
-            </Col>
-            </>
-            :
-            <>
-            <Col lg={5} sm={10} className='my-4'>
-            <ThemedButton content={"True"} propPadding={".7rem"} propWidth={"80%"}/>
-            </Col>
-            <Col lg={5}  sm={10} className='my-4'>
-            <ThemedButton content={"False"} propPadding={".7rem"} propWidth={"80%"}/>
-            </Col>
-            </>
+            ))
 }
         </Row>
         

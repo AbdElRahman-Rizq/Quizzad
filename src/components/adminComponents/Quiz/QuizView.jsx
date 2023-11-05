@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Circles } from 'react-loader-spinner';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import '../../../assets/css/quiz.css'
 import { gradeLevelMap } from '../../../controls/gradeLevel';
 
@@ -198,10 +198,9 @@ export function QuizView() {
                 <li className="list-group-item">Privacy: {quiz.isPublic?'Public':'Private'} </li>
             </ol>
 
-
-
-            <div className="d-flex">
-            <button className=" mt-3 p-2 rounded-5 quizButton fs-5 fw-bold">Take Quiz</button>
+            <div className="d-flex col">
+            <NavLink className=" m-3 p-2 rounded-5 text-center quizButton fs-5 fw-bold" to=''>Take Quiz</NavLink>
+            <NavLink className=" m-3 p-2 rounded-5 text-center quizButton fs-5 fw-bold" to='questions'>Questions</NavLink>
             </div>
         </div>
       </div>

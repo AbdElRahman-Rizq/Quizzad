@@ -6,23 +6,24 @@ import { useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 
-function QuestionForm() {
+function QuestionForm(props) {
+    const { quizId } = props
     const [selectedOption, setSelectedOption] = useState('0');    
 const [buttonState, setButtonState] = useState({});
 const [isTrueChecked, setIsTrueChecked] = useState(false);
 const [isFalseChecked, setIsFalseChecked] = useState(false);
 
-const handleTrueSubmit = (e) => {
-    e.preventDefault();
-    answerFormik.values.answerText = "true";
-    answerFormik.handleSubmit(e);
-};
+// const handleTrueSubmit = (e) => {
+//     e.preventDefault();
+//     answerFormik.values.answerText = "true";
+//     answerFormik.handleSubmit(e);
+// };
 
-const handleFalseSubmit = (e) => {
-    e.preventDefault();
-    answerFormik.values.answerText = "false";
-    answerFormik.handleSubmit(e);
-};
+// const handleFalseSubmit = (e) => {
+//     e.preventDefault();
+//     answerFormik.values.answerText = "false";
+//     answerFormik.handleSubmit(e);
+// };
 
 const handleButtonClick = (buttonName) => {//handleButtonClick for Add answer
     setButtonState((prevState) => ({
@@ -46,7 +47,6 @@ const handleButtonClick = (buttonName) => {//handleButtonClick for Add answer
                
             }
     
-            const quizId = 1; // Replace with the actual quizId
             const response = await axios.post(
                 `http://localhost:5000/api/v1/quizzes/${quizId}/questions`,
                 formData,
@@ -114,14 +114,14 @@ const handleAnswerForm = async (values) => {
     });
 
     return (
-        <div className="QuestionComponent py-5">
+        <div className="QuestionComponent py-5 bg-light">
             <form
                 onSubmit={formik.handleSubmit}
                 onChange={(e) => {
                     e.preventDefault()
                     console.log("Form changed");
                 }}
-                className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none"
+                className="questionForm col-md-8 m-auto rounded-4 w-100 "
                 encType="multipart/form-data"
             >
                 {/* Your form fields... */}
@@ -184,10 +184,10 @@ const handleAnswerForm = async (values) => {
                 </div>
 
                 <div className='mb-3 m-auto col-md-6'>
-                    <button type="submit" className="quizButton rounded-5 p-2 w-100" 
-                    onClick={(e) => e.preventDefault()}>Add Question</button>
+                    <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Question</button>
                 </div>
             </form>
+            <h3 className="text-center">Choose the correct Answer</h3>
             {/*-------------------------------------------------------------------- Answers form --------------------------------------------*/}
             <div className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none">
                 {/*------------------- Multiple Choices ----------------*/}
@@ -309,7 +309,7 @@ const handleAnswerForm = async (values) => {
     <div className='mb-3 m-auto col-md-6'>
         <button
             type="submit"
-            className="quizButton rounded-5 p-2 w-100"
+            className="quizButton rounded-5 p-2 w-100 mt-4"
             onClick={() => handleButtonClick('True')}
         >
             {buttonState['True'] || 'Add'}
@@ -349,7 +349,7 @@ const handleAnswerForm = async (values) => {
             />
         </div>
     </div>
-    <div className='mb-3 m-auto col-md-6'>
+    <div className='my-3 m-auto col-md-6'>
         <button
             type="submit"
             className="quizButton rounded-5 p-2 w-100"
