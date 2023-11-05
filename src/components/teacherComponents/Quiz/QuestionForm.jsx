@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap"
+
 import "../../../assets/css/Question.css"
 import "../../../assets/css/quiz.css"
 
@@ -7,11 +7,32 @@ import axios from "axios";
 import { useFormik } from "formik";
 
 function QuestionForm() {
-    const [selectedOption, setSelectedOption] = useState('0');
-    const handleOptionChange = (event) => {
-        event.preventDefault();
-        setSelectedOption(event.target.value);
-        console.log(selectedOption);
+    const [selectedOption, setSelectedOption] = useState('0');    
+const [buttonState, setButtonState] = useState({});
+const [isTrueChecked, setIsTrueChecked] = useState(false);
+const [isFalseChecked, setIsFalseChecked] = useState(false);
+
+const handleTrueSubmit = (e) => {
+    e.preventDefault();
+    answerFormik.values.answerText = "true";
+    answerFormik.handleSubmit(e);
+};
+
+const handleFalseSubmit = (e) => {
+    e.preventDefault();
+    answerFormik.values.answerText = "false";
+    answerFormik.handleSubmit(e);
+};
+
+const handleButtonClick = (buttonName) => {//handleButtonClick for Add answer
+    setButtonState((prevState) => ({
+        ...prevState,
+        [buttonName]: 'Added',
+    }));
+};
+    const handleOptionChange = (event) => { //handleOptionChange for questions type
+      setSelectedOption(event.target.value);
+      console.log(selectedOption);
     };
     
     // Functions
@@ -42,28 +63,36 @@ function QuestionForm() {
             console.error("Error creating question:", error);
         }
     };
+        
     
 //   answer form handler
 const handleAnswerForm = async (values) => {
-    try {
-      const { questionId, isCorrect, answerText } = values;
+    const formData = new FormData();
 
-      const response = await axios.post(
-        `http://localhost:5000/api/v1/questions/${questionId}/answers`,
-        {
-          isCorrect: isCorrect.toLowerCase() === 'true',
-          answerText,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-
-      console.log(response.data); // Handle the response as needed
-    } catch (error) {
-      console.error("Error creating answer:", error);
+    for (const key in values) {
+        console.log(values[key]);
+        formData.append(key, values[key]);
     }
-  };
+
+    try {
+        const response = await axios.post(
+            `http://localhost:5000/api/v1/questions/2/answers`,
+            // `http://localhost:5000/api/v1/questions/${questionId}/answers`,
+            formData, // Pass formData directly
+            {
+                withCredentials: true,
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Add this header for FormData
+                },
+            }
+        );
+
+        console.log(response.data); // Handle the response as needed
+    } catch (error) {
+        console.error('Error creating answer:', error);
+    }
+};
+
 
     const formik = useFormik({
         initialValues: {
@@ -73,6 +102,15 @@ const handleAnswerForm = async (values) => {
             questionImage: null,
         },
         onSubmit: handleQuestionForm,
+    });
+    const answerFormik = useFormik({
+        initialValues: {
+            isCorrect: "false",
+            answerText: "",
+            image:null,
+            correctAnswerExplanation:"No explaniation"
+        },
+        onSubmit: handleAnswerForm,
     });
 
     return (
@@ -151,7 +189,7 @@ const handleAnswerForm = async (values) => {
                 </div>
             </form>
             {/*-------------------------------------------------------------------- Answers form --------------------------------------------*/}
-            <form className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none">
+            <div className="questionForm col-md-8 m-auto rounded-4 w-100 bg-none">
                 {/*------------------- Multiple Choices ----------------*/}
                 {selectedOption === 'MULTIPLE_CHOICES' && (
                     <>
@@ -236,34 +274,97 @@ const handleAnswerForm = async (values) => {
                 {/* --------------------------- True OR False ----------------------------- */}
                 {selectedOption === 'TRUE_FALSE' && (
                     <>
-                        <div className="row">
-                            {/*---- Option 1 --- */}
-                            <div className="col-md-1 pt-2">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="option" id="True" />
-                                </div>
-                            </div>
-                            <div className="col-md-11">
-                                <input type="menu" className="form-control rounded-5 p-3" name="True" aria-describedby="textHelp" value={"True"} />
-                            </div>
-                        </div>
-                        {/*---- Option 2 --- */}
-                        <div className="row mt-4">
-                            <div className="col-md-1 pt-2">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="option" id="False" />
-                                </div>
-                            </div>
-                            <div className="col-md-11">
-                                <input type="menu" className="form-control rounded-5 p-3" name="False" aria-describedby="textHelp" value={"False"} />
-                            </div>
-                        </div>                       
+                         <form onSubmit={(e) => {
+    e.preventDefault();
+    answerFormik.values.answerText="true"
+    answerFormik.handleSubmit(e);
+}}>
+    <div className="row mt-4">
+        <div className="col-md-1 pt-2">
+            <div className="form-check">
+                <input
+                    className="form-check-input"
+                    type="radio"
+                    name="option"                                     
+                    checked={isTrueChecked}
+                    onChange={() => {
+                        answerFormik.setFieldValue("isCorrect", true);
+                        setIsTrueChecked(true);
+                        setIsFalseChecked(false); // Uncheck the other radio button
+                    }}
+                />
+            </div>
+        </div>
+        <div className="col-md-11">
+            <input
+                type="text"
+                className="form-control rounded-5 p-3"
+                name="True"
+                aria-describedby="textHelp"
+                value={"True"}
+                readOnly
+            />
+        </div>
+    </div>
+    <div className='mb-3 m-auto col-md-6'>
+        <button
+            type="submit"
+            className="quizButton rounded-5 p-2 w-100"
+            onClick={() => handleButtonClick('True')}
+        >
+            {buttonState['True'] || 'Add'}
+        </button>
+    </div>
+</form>
+                        {/*---- false --- */}
+                        <form onSubmit={(e) => {
+    e.preventDefault();
+    answerFormik.values.answerText="false"
+    answerFormik.handleSubmit(e);
+}}>
+    <div className="row mt-4">
+        <div className="col-md-1 pt-2">
+            <div className="form-check">
+                <input
+                    className="form-check-input"
+                    type="radio"
+                    name="option"                                   
+                    checked={isFalseChecked}
+                    onChange={() => {
+                        answerFormik.setFieldValue("isCorrect", false);
+                        setIsTrueChecked(false); // Uncheck the other radio button
+                        setIsFalseChecked(true);
+                    }}
+                />
+            </div>
+        </div>
+        <div className="col-md-11">
+            <input
+                type="text"
+                className="form-control rounded-5 p-3"
+                name="False"
+                aria-describedby="textHelp"
+                value={"False"}
+                readOnly
+            />
+        </div>
+    </div>
+    <div className='mb-3 m-auto col-md-6'>
+        <button
+            type="submit"
+            className="quizButton rounded-5 p-2 w-100"
+            onClick={() => handleButtonClick('False')}
+        >
+            {buttonState['False'] || 'Add'}
+        </button>
+    </div>
+</form>
+                    
                     </>
-                )}
-                <div className='mb-3 m-auto col-md-6'>
-                    <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Answers</button>
-                </div>
-            </form>
+                )}               
+            </div>
+                        
+         
         </div> //End of component
     )
 }
