@@ -10,7 +10,6 @@ import '../../../assets/css/class.css'
 export default function TeacherTable() {
     const { StudentUsers } = useContext( StudentUsersContex )
   
-
     if (StudentUsers.length === 0) {
         return (
             <div id="loading">
@@ -42,7 +41,7 @@ export default function TeacherTable() {
                 </thead>
                 <tbody className="userBodyTable Scroller">
                     {StudentUsers.map((student) => (
-                        student.id < 15? (
+
                             <tr key={student.id}>
                                 <td>{student.id} </td>
                                 <td>{student.profile.firstName} {student.profile.lastName}</td>
@@ -57,7 +56,7 @@ export default function TeacherTable() {
                                     </div>
                                 </td>
                             </tr>
-                        ) : null
+
                     ))}
                 </tbody>
             </Table>

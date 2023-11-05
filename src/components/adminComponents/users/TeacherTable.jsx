@@ -41,12 +41,12 @@ export default function TeacherTable() {
                 </thead>
                 <tbody className="userBodyTable">
                     {TeacherUsers.map((teacher) => (
-                        teacher.id < 8 ? (
+
                             <tr key={teacher.id}>
                                 <td>{teacher.id} </td>
                                 <td>{teacher.profile.firstName} {teacher.profile.lastName}</td>
                                 <td>teacher</td>
-                                <td>{gradeLevelMap[teacher.profile.gradeLevel]}</td>
+                                <td>{teacher.profile.specialization}</td>
                                 <td>{teacher.profile.email}</td>
                                 <td>
                                     <div className="p-0">
@@ -56,7 +56,7 @@ export default function TeacherTable() {
                                     </div>
                                 </td>
                             </tr>
-                        ) : null
+
                     ))}
                 </tbody>
             </Table>
