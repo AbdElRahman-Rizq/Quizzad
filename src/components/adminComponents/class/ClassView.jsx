@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {  Table } from 'react-bootstrap';
 import { Circles } from 'react-loader-spinner';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import '../../../assets/css/class.css';
 import { gradeLevelMap } from '../../../controls/gradeLevel';
 
@@ -181,8 +181,8 @@ export function ClassView() {
                     </Table>
                 </div>
                 <div className="d-flex">
-                <button className=" m-3 p-2  rounded-5 quizButton fs-5 ">Add members</button>
-                <button className=" m-3 p-2  rounded-5 quizButton fs-5 ">View Quizzes</button>
+                <NavLink className=" m-3 p-2 text-center rounded-5 quizButton fs-5 " to='members'>Add members</NavLink>
+                <NavLink className=" m-3 p-2 text-center rounded-5 quizButton fs-5 "text-center to='quizzes'>View Quizzes</NavLink>
                 </div>
             </div>
             </div>

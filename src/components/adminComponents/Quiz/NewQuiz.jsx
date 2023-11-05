@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Accordion } from 'react-bootstrap';
 import Slider from "react-slick";
 import '../../../assets/css/quiz.css'
-import { useQuizLogic } from '../../../controls/QuizLogic';
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import moment from "moment/moment";
 
 export function NewQuiz() {
-  const { sliderRef, next, previous, handleAddQuestionClick, questions, settings } = useQuizLogic();
   const [myQuiz, setMyQuiz] = useState({});
   const navigate = useNavigate();
   let { id } = useParams();
@@ -331,7 +329,6 @@ export function NewQuiz() {
 
             </div>
             </div>
-                  
                   <div className='col-md-8 m-auto'>
                     <hr />
                   </div>
