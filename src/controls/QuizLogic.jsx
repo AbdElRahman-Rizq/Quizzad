@@ -1,11 +1,14 @@
 import  { useState, useRef } from "react";
 import { Accordion } from 'react-bootstrap';
 import QuestionForm from '../components/teacherComponents/Quiz/QuestionForm';
+import { useParams } from "react-router-dom";
 
 export function useQuizLogic() {
   const [questions, setQuestions] = useState([]);
   const sliderRef = useRef(null);
-
+  let { id } = useParams();
+  id = parseInt(id) || 0;
+console.log(id);
   const next = (event) => {
     event.preventDefault();
     sliderRef.current.slickNext();
@@ -24,7 +27,7 @@ export function useQuizLogic() {
         <Accordion.Header className="accordion-header text-light">Question {questionNumber}</Accordion.Header>
         <Accordion.Body>
           <div className="quiz mb-3">
-            <QuestionForm />
+            <QuestionForm quizId={id}/>
           </div>
         </Accordion.Body>
       </Accordion.Item>
@@ -43,5 +46,5 @@ export function useQuizLogic() {
     nextArrow: false,
   };
 
-  return { sliderRef, next, previous, handleAddQuestionClick, questions, settings };
+  return { sliderRef,id, next, previous, handleAddQuestionClick, questions, settings };
 }

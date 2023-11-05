@@ -6,7 +6,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 
-function QuestionForm() {
+function QuestionForm(props) {
+    const { quizId } = props
     const [selectedOption, setSelectedOption] = useState('0');    
 const [buttonState, setButtonState] = useState({});
 const [isTrueChecked, setIsTrueChecked] = useState(false);
@@ -46,7 +47,6 @@ const handleButtonClick = (buttonName) => {//handleButtonClick for Add answer
                
             }
     
-            const quizId = 1; // Replace with the actual quizId
             const response = await axios.post(
                 `http://localhost:5000/api/v1/quizzes/${quizId}/questions`,
                 formData,

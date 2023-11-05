@@ -172,7 +172,7 @@ export function PublicQuiz  () {
                                 </div>
                                 <div className="d-flex justify-content-center">
                                     <NavLink className="fa fa-solid fa-eye mx-3 fs-3 text-warning" to={`/admin/quiz/${card.id}`} />
-                                    <NavLink className="fa-solid fa-pen-to-square mx-3 fs-3 text-info"/>
+                                    <NavLink className="fa-solid fa-pen-to-square mx-3 fs-3 text-info" to={`/admin/quiz/${card.id}/edit`}/>
                                     <i className="fa-solid fa-trash-can mx-3 fs-3 text-danger"/>
                                 </div>
                             </div>

@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { MyQuiz } from './MyQuiz';
 import { NewQuiz } from './NewQuiz';
 import { QuizView } from './QuizView';
+import { AssignedQuestion } from './AssignedQuestion';
 
 export function QuizPage() {
   return (
@@ -16,6 +17,7 @@ export function QuizPage() {
               <Route path='myquiz' element={<MyQuiz/>}/>
               <Route path=':id/edit' element={<NewQuiz/>}/>
               <Route path='/:id' element={<QuizView/>}/>
+              <Route path='/:id/questions' element={<AssignedQuestion/>}/>
             </Routes>
       </section>
     </div>
