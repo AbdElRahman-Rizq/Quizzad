@@ -15,10 +15,10 @@ function About() {
             md={12}
             className='d-flex flex-column justify-content-center align-items-center h-100' // Added align-items-center class
           >
-            <h1 className='pb-4' style={{ fontSize: '2.9rem' }}>
+            <h1 className='pb-4 text-white' style={{ fontSize: '2.9rem' }}>
             About Us
             </h1>
-            <p className='pb-4' style={{ fontSize: '1.25rem', width: '85%' }}>
+            <p className='pb-4 text-white' style={{ fontSize: '1.25rem', width: '85%' }}>
              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, commodi dolor libero ratione qui quasi repellendus tempore maxime quis amet iusto in ut itaque consequatur aspernatur eligendi rem ipsa illum.
             </p>
           </Col>

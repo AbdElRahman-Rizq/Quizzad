@@ -16,12 +16,12 @@ function Quizzes() {
         </Row>
         <Row className='justify-content-center align-items-center'>
           
-          <QuizCard imgSrc={"../src/assets/images/OnlineTest.svg"}/>
-          <QuizCard imgSrc={"../src/assets/images/studentBar.svg"}/>
-          <QuizCard imgSrc={"../src/assets/images/teacherBar.svg"}/>
-          <QuizCard imgSrc={"../src/assets/images/Progress indicator-pana.svg"}/>
-          <QuizCard imgSrc={"../src/assets/images/Exams-bro.svg"}/>
-          <QuizCard imgSrc={"../src/assets/images/Business support-amico.svg"}/>
+          <QuizCard imgSrc={"../src/assets/images/OnlineTest.svg"} info={"TRAKE GRADES"}/>
+          <QuizCard imgSrc={"../src/assets/images/studentBar.svg"} info={"MINI EXAM"}/>
+          <QuizCard imgSrc={"../src/assets/images/teacherBar.svg"} info={"CREATE QUIZZES"}/>
+          <QuizCard imgSrc={"../src/assets/images/Progress indicator-pana.svg"} info={"ASSIG QUIZ AT CLASS"}/>
+          <QuizCard imgSrc={"../src/assets/images/Exams-bro.svg"} info={"TAKE CLASS QUIZ "}/>
+          <QuizCard imgSrc={"../src/assets/images/Business support-amico.svg"} info={"TRACK STUDENT PROGRESS"}/>
       
         </Row>
         

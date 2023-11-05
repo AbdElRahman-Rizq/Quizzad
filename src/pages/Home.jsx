@@ -13,13 +13,13 @@ function Home() {
   
   return (
     <div className='main-home' style={{background: "#E9E2EE"}}>
-    <Navbar/>
-    <Hero/>
-    <Quizzes/>
-    <About/>
-    <LeaveAMessage/>
-    <JoinUs/>
-    <Footer/>
+      <Navbar/>
+      <Hero/>
+      <Quizzes/>
+      <About/>
+      <LeaveAMessage/>
+      <JoinUs/>
+      <Footer/>
     </div>
   )
 }
