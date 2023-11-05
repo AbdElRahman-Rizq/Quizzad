@@ -2,21 +2,13 @@ import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
+import '../../assets/css/Home.css'
+
 
 function About() {
   return (
-    <div
-      style={{
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '100% 100%',
-        backgroundImage:
-          "linear-gradient(180deg, rgba(0, 0, 0, .76) 0%, rgba(0, 0, 0, 0.10) 100%),url('../src/assets/images/about.jpg')",
-        color: 'white',
-        height: '500px',
-      }}
-      id='aboutUs'
-    >
-      <Container className='h-100 pt-5'>
+  <section className='about'> 
+    <Container className='h-100 pt-5'>
         <Row className='h-100 w-100 flex-column text-center align-items-center '>
           <Col
             lg={8}
@@ -33,7 +25,9 @@ function About() {
           <Col lg={4} md={0}></Col>
         </Row>
       </Container>
-    </div>
+  </section>
+  
+  
   );
 }
 
