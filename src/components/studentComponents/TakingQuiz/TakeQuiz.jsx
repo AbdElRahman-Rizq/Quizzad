@@ -2,10 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import NavForQuiz from './NavForQuiz';
 import QuestionStudentView from './QuestionStudentView';
-import Cookies from 'js-cookie';
 import axios from 'axios';
 
-function TakeQuiz() {
+function TakeQuiz({quizId}) {
   const [questionNumber, setQuestionNumber] = useState(0);
   const sliderRef = useRef(null);
   const [timer, setTimer] = useState(900);
@@ -21,9 +20,10 @@ function TakeQuiz() {
     nextArrow: false,
   };
   useEffect(() => {
+quizId=1;
       // Fetch questions from the API using Axios
       const fetchQuestions = () => {
-        axios.get('http://localhost:5000/api/v1/quizzes/1/questions', {
+        axios.get(`http://localhost:5000/api/v1/quizzes/${quizId}/questions`, {
           withCredentials: true,
         })
         .then((response) => {
@@ -34,8 +34,23 @@ function TakeQuiz() {
           // Handle error (show a message, redirect, etc.)
         });
       };
+      // Start quiz
+      const startQuiz = () => {
+        axios.post('http://localhost:5000/api/v1/quiz-attempts/start-quiz-attempt',{quizId}, {
+          withCredentials: true,
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error('Error start quiz', error);
+          // Handle error (show a message, redirect, etc.)
+        });
+      };
       fetchQuestions(); // Fetch questions initially
-    },[])
+      startQuiz(); // Fetch questions initially
+      console.log(questions);
+    },[quizId])
   useEffect(() => {  
     const timerInterval = setInterval(() => {
       setTimer((prevTimer) => prevTimer - 1);
@@ -84,8 +99,8 @@ function TakeQuiz() {
           <Slider ref={sliderRef} {...settings}>
             {questions.map((q) => (
               <div key={q.id}>
-                <QuestionStudentView questionTitle={q.questionText} questionImage={`http://localhost:5000/static/${q.questionImage}`}/>
-                <div className="col-md-12 d-flex">
+                 <QuestionStudentView questionTitle={q.questionText} answers={q.answers} questionImage={`http://localhost:5000/static/${q.questionImage}`}/>
+                <div className="col-md-12 d-flex mt-5">
                   <div className='my-3 m-auto col-md-3'>
                     <button
                       type='submit'
