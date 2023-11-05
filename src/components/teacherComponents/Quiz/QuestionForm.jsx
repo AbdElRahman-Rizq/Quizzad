@@ -9,8 +9,9 @@ import { useFormik } from "formik";
 function QuestionForm() {
     const [selectedOption, setSelectedOption] = useState('0');
     const handleOptionChange = (event) => {
-      setSelectedOption(event.target.value);
-      console.log(selectedOption);
+        event.preventDefault();
+        setSelectedOption(event.target.value);
+        console.log(selectedOption);
     };
     
     // Functions
@@ -145,7 +146,8 @@ const handleAnswerForm = async (values) => {
                 </div>
 
                 <div className='mb-3 m-auto col-md-6'>
-                    <button type="submit" className="quizButton rounded-5 p-2 w-100">Add Question</button>
+                    <button type="submit" className="quizButton rounded-5 p-2 w-100" 
+                    onClick={(e) => e.preventDefault()}>Add Question</button>
                 </div>
             </form>
             {/*-------------------------------------------------------------------- Answers form --------------------------------------------*/}

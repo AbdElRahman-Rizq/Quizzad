@@ -8,14 +8,24 @@ import { gradeLevelMap } from '../../../controls/gradeLevel';
 export function PublicQuiz  () {
         const [quiz, setQuiz] = useState([]);
         const [loading, setLoading] = useState(true);
-      
+        const [imageURL, setImageURL] = useState([]);
+
         const fetchData = async () => {
           try {
             const response = await axios.get(`http://localhost:5000/api/v1/quizzes/`, {
-              withCredentials: true,
-            });
+                withCredentials: true,
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              });
             console.log(response.data);
             setQuiz(response.data.quizzes);
+
+            const imageName = response.data.quizzes.map((image)=>
+            image.quizImage = `http://localhost:5000/static/${image.quizImage}`
+            
+            )
+            setImageURL(imageName);
             setLoading(false);
           } catch (error) {
             console.log("Error fetching data:", error);
@@ -117,7 +127,7 @@ export function PublicQuiz  () {
                                     <a href="#">
                                         <img
                                             className="rounded-5 img-fluid shadow"
-                                            src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            src={card.quizImage}
                                             alt="card Image"
                                             style={{ width: '100%', height: '140px', objectFit: 'cover' }}
                                         />

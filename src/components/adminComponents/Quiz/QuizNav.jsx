@@ -36,7 +36,7 @@ export function QuizNav() {
     <NavLink
       className="nav-link QuizNavBtn fs-6 text-center"
       activeclassname="active"
-      to="/admin/quiz/newquiz"
+      to="/admin/quiz/0/edit"
     >
       New Quiz
     </NavLink>

@@ -32,6 +32,9 @@ export function NewClass() {
         try {
           const responce = await axios.get(`http://localhost:5000/api/v1/classes/${ id }`,{
             withCredentials: true,
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
           });
           setMyClass(responce.data)
           setFormValue(responce.data)

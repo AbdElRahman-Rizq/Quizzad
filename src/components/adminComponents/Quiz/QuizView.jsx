@@ -7,6 +7,8 @@ import { gradeLevelMap } from '../../../controls/gradeLevel';
 
 export function QuizView() {
   const { id } = useParams();
+  const [imageURL, setImageURL] = useState('');
+
   const [quiz, setQuiz] = useState({
     title: '',
     description: '',
@@ -17,8 +19,16 @@ export function QuizView() {
     try {
       const response = await axios.get(`http://localhost:5000/api/v1/quizzes/${id}`, {
         withCredentials: true,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
       setQuiz(response.data.quiz);
+      
+      const imageName = response.data.quiz.quizImage;
+      const imageUrl =`http://localhost:5000/static/${imageName}`
+      setImageURL(imageUrl);
+
       setLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error);
@@ -45,6 +55,7 @@ export function QuizView() {
         </div>
       );
     }
+    console.log(imageURL);
     return (
     <div>
       <div className='row '>
@@ -55,9 +66,11 @@ export function QuizView() {
                             <a href="#">
                             <img
                                 className="rounded-5 img-fluid shadow mt-2"
-                                src="https://images.pexels.com/photos/4117968/pexels-photo-4117968.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                src={imageURL}
                                 alt="Quiz Image"
                                 style={{ width:'95%', height: '250px', objectFit: 'cover' }}
+                                                                        // crossOrigin="anonymous"
+
                                 />
                             </a>
                         </div>
