@@ -117,6 +117,7 @@ export default function SideBar() {
               <a className="nav-link rounded-5 p-2 px-4 " href="login.html">
                 <i className="fa-solid fa-door-open fs-4 " />
                 <span className='fs-6 ps-4 textSB'>Log out</span>
+                
               </a>
             </li>
             
