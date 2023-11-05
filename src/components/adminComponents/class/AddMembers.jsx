@@ -7,9 +7,13 @@ export function AddMembers() {
   
   console.log(TeacherUsers);  
   return (
-    <div>
-                <Accordion defaultActiveKey="null">
-                  <Accordion.Item className='my-3 rounded' eventKey="0">
+<div className='m-2 mt-3'>
+          <section className="rounded-4 py-4 bg-light Scroller" >                
+          <div>
+            <h1 className='text-center my-4'>Add members</h1>
+          </div>
+          <Accordion defaultActiveKey="null" className='col-md-10 m-auto'>
+                  <Accordion.Item className='my-3 rounded ' eventKey="0">
                     <Accordion.Header className="accordion-header text-light">Add Teacher</Accordion.Header>
                     <Accordion.Body>
                       <div className="teacher">
@@ -82,11 +86,10 @@ export function AddMembers() {
                   <Accordion.Item className='my-3 rounded' eventKey="1">
                     <Accordion.Header>Add Student</Accordion.Header>
                     <Accordion.Body>
-                      <div className="student mb-3">
-                        <div className="input-group mb-3 row">
-                          <input type="search" className="form-control rounded-4 ms-2 p-3 col-md-8" placeholder="Insert a student name" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                          <button className="quizButton rounded-4 p-3 ms-2 col-md-4" type="submit" id="button-addon2">Add Student</button>
-                        </div>
+                      <div className="teacher">
+                        <div className="input-group row">
+                        <label htmlFor="className" className="form-label px-3 text-center fs-3">All Students</label>
+                      </div>
                       </div>
                       <div>
                         <Table hover responsive className="mt-2 userTable">
@@ -136,11 +139,12 @@ export function AddMembers() {
                   </Accordion.Item>
                 </Accordion>
                 <div className='my-3 m-auto col-md-6'>
-                  <NavLink type="submit" className="quizButton rounded-4 p-3 w-100 fs-5" to='..'>
+                  <NavLink type="submit" className="quizButton text-center rounded-4 p-3 w-100 fs-5" to='..'>
                     <i className="fa-solid fa-arrow-left me-3" />
                     Save Changes
                   </NavLink>
                 </div>
+                </section>
               </div>
   )
 }

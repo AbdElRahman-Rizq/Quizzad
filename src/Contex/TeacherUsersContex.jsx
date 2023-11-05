@@ -29,25 +29,25 @@ export function TeacherUsersContexProvider (props) {
     }, []);
 
     // assign teacher to class 
-    const teacherClass = async (teacherId) => {
-      try {
-        const response = await axios.put(
-          `http://localhost:5000/api/v1/classes/3/${teacherId}`,
-          { "status": 'ACTIVE' },
-          {
-            withCredentials: true,
-          }
-        );
-        // Navigate to the same path
-        navigate('./');
-        // Fetch updated data after navigation
-        fetchData();
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error approving user:", error);
-        // Handle error
-      }
-    };
+    // const teacherClass = async (teacherId) => {
+    //   try {
+    //     const response = await axios.put(
+    //       `http://localhost:5000/api/v1/classes/3/${teacherId}`,
+    //       { "status": 'ACTIVE' },
+    //       {
+    //         withCredentials: true,
+    //       }
+    //     );
+    //     // Navigate to the same path
+    //     Navigate('./');
+    //     // Fetch updated data after navigation
+    //     teacherClass();
+    //     console.log(response.data);
+    //   } catch (error) {
+    //     console.error("Error approving user:", error);
+    //     // Handle error
+    //   }
+    // };
     
   const TeacherData = { TeacherUsers , setTeacherUsers};
 
