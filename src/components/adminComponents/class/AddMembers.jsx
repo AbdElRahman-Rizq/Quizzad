@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import { Accordion, Table } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { TeacherUsersContex } from '../../../Contex/TeacherUsersContex'
+import { StudentUsersContex } from '../../../Contex/StudentUsersContex';
+import { gradeLevelMap } from '../../../controls/gradeLevel';
 export function AddMembers() {
   const { TeacherUsers } = useContext(TeacherUsersContex);
-  
+  const { StudentUsers } = useContext(StudentUsersContex)
   console.log(TeacherUsers);  
   return (
 <div className='m-2 mt-3'>
@@ -86,7 +88,7 @@ export function AddMembers() {
                   <Accordion.Item className='my-3 rounded' eventKey="1">
                     <Accordion.Header>Add Student</Accordion.Header>
                     <Accordion.Body>
-                      <div className="teacher">
+                      <div className="student">
                         <div className="input-group row">
                         <label htmlFor="className" className="form-label px-3 text-center fs-3">All Students</label>
                       </div>
@@ -97,41 +99,56 @@ export function AddMembers() {
                             <tr>
                               <th>Id</th>
                               <th>Name</th>
-                              <th>Role</th>
+                              <th>grade level</th>
                               <th>Actions</th>
                             </tr>
                           </thead>
                           <tbody className="userBodyTable">
-                            <tr>
-                              <td>1</td>
-                              <td>mohamed basyoni</td>
-                              <td>student</td>
-                              <td>
-                                <div className="p-0">
-                                  <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
-                                </div>
-                              </td>
+                            {StudentUsers.map((student) => (
+                            <tr key={student.id}>
+                                <td>{student.id} </td>
+                                <td>{student.profile.firstName} {student.profile.lastName}</td>
+                                <td>{gradeLevelMap[student.profile.gradeLevel]}</td>
+                                <td>
+                                    <div className="p-0 pt-1">
+                                        <NavLink className="fa-solid fa-plus mx-3 fs-5 text-success"/>
+                                    </div>
+                                </td>
                             </tr>
+
+                            ))}
+                          </tbody>
+                        </Table>
+                      </div>
+                      <div className="student">
+                        <div className="input-group row">
+                        <label htmlFor="className" className="form-label px-3 text-center fs-3">Class Students</label>
+                      </div>
+                      </div>
+                      <div>
+                        <Table hover responsive className="mt-2 userTable">
+                          <thead className="custom-thead">
                             <tr>
-                              <td>2</td>
-                              <td>mohamed basyoni</td>
-                              <td>student</td>
-                              <td>
-                                <div className="p-0">
-                                  <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
-                                </div>
-                              </td>
+                              <th>Id</th>
+                              <th>Name</th>
+                              <th>grade level</th>
+                              <th>Actions</th>
                             </tr>
-                            <tr>
-                              <td>3</td>
-                              <td>mohamed basyoni</td>
-                              <td>student</td>
-                              <td>
-                                <div className="p-0">
-                                  <i className="fa-solid fa-trash-can mx-3 fs-4 text-danger" />
-                                </div>
-                              </td>
+                          </thead>
+                          <tbody className="userBodyTable">
+                            {StudentUsers.map((student) => (
+                            <tr key={student.id}>
+                                <td>{student.id} </td>
+                                <td>{student.profile.firstName} {student.profile.lastName}</td>
+                                <td>{gradeLevelMap[student.profile.gradeLevel]}</td>
+                                <td>
+                                    <div className="p-0 pt-1">
+                                        <NavLink className="fa-solid fa-trash-can mx-3 fs-5 text-danger"/>
+                                    </div>
+                                </td>
                             </tr>
+
+                            ))}
                           </tbody>
                         </Table>
                       </div>
