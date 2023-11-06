@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { UserContextProvider } from './Contex/UserContext.jsx'
 import { TeacherUsersContexProvider } from './Contex/TeacherUsersContex.jsx'
 import { StudentUsersContexProvider } from './Contex/StudentUsersContex.jsx'
+import { TakingQuizProvider } from './Contex/TakingQuizContext.jsx'
 
 
 
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <UserContextProvider>
                 <TeacherUsersContexProvider>
         <StudentUsersContexProvider>
+        <TakingQuizProvider>
                          <App />
+                         </TakingQuizProvider>
         </StudentUsersContexProvider>
                 </TeacherUsersContexProvider>
         </UserContextProvider>

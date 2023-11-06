@@ -3,14 +3,16 @@ import Slider from 'react-slick';
 import NavForQuiz from './NavForQuiz';
 import QuestionStudentView from './QuestionStudentView';
 import axios from 'axios';
+import { useTakingQuiz } from '../../../Contex/TakingQuizContext';
 
-function TakeQuiz({quizId}) {
-  const [questionNumber, setQuestionNumber] = useState(0);
+function TakeQuiz() {
+  const quizId = 1;
+  const [questionNumber, setQuestionNumber] = useState(1);
   const sliderRef = useRef(null);
   const [timer, setTimer] = useState(900);
   const [questions, setQuestions] = useState([]);
-
-  const settings = {
+  const { handleAnswerSelect, settingQuizAttemptId, submitQuiz,settingQuizId } = useTakingQuiz(); // Use the useTakingQuiz hook
+  const settings = { // For Slider
     dots: false,
     infinite: true,
     speed: 500,
@@ -19,13 +21,14 @@ function TakeQuiz({quizId}) {
     prevArrow: false,
     nextArrow: false,
   };
+
   useEffect(() => {
-quizId=1;
-      // Fetch questions from the API using Axios
-      const fetchQuestions = () => {
-        axios.get(`http://localhost:5000/api/v1/quizzes/${quizId}/questions`, {
-          withCredentials: true,
-        })
+   settingQuizId(quizId)
+    // Fetch questions from the API using Axios
+    const fetchQuestions = () => {
+      axios.get(`http://localhost:5000/api/v1/quizzes/${quizId}/questions`, {
+        withCredentials: true,
+      })
         .then((response) => {
           setQuestions(response.data.questions);
         })
@@ -33,46 +36,24 @@ quizId=1;
           console.error('Error fetching questions:', error);
           // Handle error (show a message, redirect, etc.)
         });
-      };
-      // Start quiz
-      const startQuiz = () => {
-        axios.post('http://localhost:5000/api/v1/quiz-attempts/start-quiz-attempt',{quizId}, {
-          withCredentials: true,
-        })
+    };
+    // Start quiz
+    const startQuiz = () => {
+      axios.post('http://localhost:5000/api/v1/quiz-attempts/start-quiz-attempt', { quizId }, {
+        withCredentials: true,
+      })
         .then((response) => {
-          console.log(response.data.attemptId);
+          settingQuizAttemptId(response.data.id);
         })
         .catch((error) => {
           console.error('Error start quiz', error);
           // Handle error (show a message, redirect, etc.)
         });
-      };
-      fetchQuestions(); // Fetch questions initially
-      startQuiz(); // Fetch questions initially
-      console.log(questions);
-    },[quizId])
-  useEffect(() => {  
-    const timerInterval = setInterval(() => {
-      setTimer((prevTimer) => prevTimer - 1);
-    }, 1000);
-
-    if (timer === 0) {
-      clearInterval(timerInterval);
-      // Navigate to the desired location when the timer runs out
-      window.location.href = '/';
-    }
-     return () => {
-      clearInterval(timerInterval);
     };
-  }, [timer]); // Include timer in the dependency array to re-run the effect when it changes
-  
-  
+    fetchQuestions(); // Fetch questions initially
+    startQuiz(); // Fetch questions initially
+  }, [quizId]);
 
-  const formattedTime = `${Math.floor(timer / 60)
-    .toString()
-    .padStart(2, '0')}:${(timer % 60).toString().padStart(2, '0')}`;
-
-  const progress = ((timer / 90) * 100).toFixed(2);
 
   const handleNext = () => {
     setQuestionNumber((prevNumber) => prevNumber + 1);
@@ -83,41 +64,36 @@ quizId=1;
     setQuestionNumber((prevNumber) => prevNumber - 1);
     sliderRef.current.slickPrev();
   };
-// store Answer
-const [selectedAnswers, setSelectedAnswers] = useState({}); // State to store selected answers
 
-// ... other code ...
+useEffect(() => {  
+  const timerInterval = setInterval(() => {
+    setTimer((prevTimer) => prevTimer - 1);
+  }, 1000);
 
-const handleAnswerSelect = (answerId) => {
-  setSelectedAnswers((prevSelectedAnswers) => ({
-    ...prevSelectedAnswers,
-    [questionNumber]: answerId,
-  }));
-};
-
-const submitQuiz = () => {
-  const requestBody = {
-    attemptId:1 ,
-    quizId,
-    answers: selectedAnswers,
-    passingScore: 50,
+  if (timer === 0) {
+    clearInterval(timerInterval);
+    // Navigate to the desired location when the timer runs out
+    window.location.href = '/';
+  }
+   return () => {
+    clearInterval(timerInterval);
   };
+}, [timer]); // Include timer in the dependency array to re-run the effect when it changes
 
-  axios.post('http://localhost:5000/api/v1/quiz-attempts/update-quiz-attempt', requestBody, {
-    withCredentials: true,
-  })
-  .then((response) => {
-    console.log(response.data);
-    // Handle success (show a message, redirect, etc.)
-  })
-  .catch((error) => {
-    console.error('Error updating quiz attempt', error);
-    // Handle error (show a message, redirect, etc.)
-  });
-};
+
+const formattedTime = `${Math.floor(timer / 60)
+.toString()
+.padStart(2, '0')}:${(timer % 60).toString().padStart(2, '0')}`;
+
+const progress = ((timer / 90) * 100).toFixed(2);
+
   return (
-    <div>
-      <NavForQuiz questionNumber={questionNumber} timer={formattedTime} />
+    
+    <div className="slider-container m-auto">
+    <Slider ref={sliderRef} {...settings}>
+{questions.map((q) => (
+   <div key={q.id}>
+      <NavForQuiz questionNumber={q.id} timer={formattedTime} />
       <div className="w-100">
         <div className="progressBar ms-5" style={{ width: "90%" }}>
           <div
@@ -126,11 +102,15 @@ const submitQuiz = () => {
           ></div>
         </div>
 
-        <div className="slider-container m-auto">
-          <Slider ref={sliderRef} {...settings}>
-            {questions.map((q) => (
-              <div key={q.id}>
-                 <QuestionStudentView questionTitle={q.questionText} answers={q.answers} questionImage={`http://localhost:5000/static/${q.questionImage}`}/>
+            
+              
+                <QuestionStudentView               
+                  questionTitle={q.questionText}
+                  answers={q.answers}
+                  questionImage={`http://localhost:5000/static/${q.questionImage}`}
+                  questionId={q.id} // Pass questionNumber to QuestionStudentView
+                  quizIdProp={quizId}
+                />
                 <div className="col-md-12 d-flex mt-5">
                   <div className='my-3 m-auto col-md-3'>
                     <button
@@ -155,9 +135,9 @@ const submitQuiz = () => {
                     </button>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+             
+          
+        
       <div className="text-center w-50 mx-auto mb-3">
         <button
           type="button"
@@ -169,8 +149,11 @@ const submitQuiz = () => {
       </div>
       </div>
 
-      </div>
+      
     </div>
+      ))}
+    </Slider>
+</div>
   );
 }
 
