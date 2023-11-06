@@ -199,8 +199,7 @@ export function QuizView() {
             </ol>
 
             <div className="d-flex col">
-            <NavLink className=" m-3 p-2 rounded-5 text-center quizButton fs-5 fw-bold" to=''>Take Quiz</NavLink>
-            <NavLink className=" m-3 p-2 rounded-5 text-center quizButton fs-5 fw-bold" to='questions'>Questions</NavLink>
+            <NavLink className=" m-3 p-2 rounded-5 text-center quizButton fs-5 fw-bold" to='questions'>Add questions</NavLink>
             </div>
         </div>
       </div>

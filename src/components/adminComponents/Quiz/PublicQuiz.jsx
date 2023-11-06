@@ -129,7 +129,7 @@ export function PublicQuiz  () {
                                             className="rounded-5 img-fluid shadow"
                                             src={card.quizImage}
                                             alt="card Image"
-                                            style={{ width: '100%', height: '140px', objectFit: 'cover' }}
+                                            style={{ width: '500px', height: '140px', objectFit: 'cover' }}
                                         />
                                     </a>
                                 </div>
