@@ -3,9 +3,9 @@
    background-image: url("../images/herooooo.jpg");
    background-position: center center;
    background-size: cover;
-height: 70vh;
+height: 100vh;
    object-fit: cover;
-
+padding-top: 10rem;
 }
 /* .main-home{
     background-image: url("../images/cdfd.jpg");
