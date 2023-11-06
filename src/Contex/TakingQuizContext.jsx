@@ -7,7 +7,7 @@ export const TakingQuizProvider = ({ children }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([ ]);
   const [quizAttemptId, setQuizAttemptId] = useState(null);
   const [quizId, setQuizId] = useState(null);
-
+  
   const handleAnswerSelect = (answerText, questionNumber) => {
     setSelectedAnswers((prevSelectedAnswers) => [
       ...prevSelectedAnswers,
@@ -32,8 +32,7 @@ export const TakingQuizProvider = ({ children }) => {
         quizId,
         passingScore: 50,
       };
-
-      console.log(requestBody);
+      
       const response = await axios.put(
         'http://localhost:5000/api/v1/quiz-attempts/update-quiz-attempt',
         requestBody,
@@ -44,6 +43,7 @@ export const TakingQuizProvider = ({ children }) => {
       );
 
       console.log(response.data);
+      
       // Handle success (show a message, redirect, etc.)
     } catch (error) {
       console.error('Error updating quiz attempt', error);

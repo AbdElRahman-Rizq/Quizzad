@@ -4,6 +4,7 @@ import NavForQuiz from './NavForQuiz';
 import QuestionStudentView from './QuestionStudentView';
 import axios from 'axios';
 import { useTakingQuiz } from '../../../Contex/TakingQuizContext';
+import { useNavigate } from 'react-router-dom';
 
 function TakeQuiz() {
   const quizId = 1;
@@ -11,7 +12,8 @@ function TakeQuiz() {
   const sliderRef = useRef(null);
   const [timer, setTimer] = useState(900);
   const [questions, setQuestions] = useState([]);
-  const { handleAnswerSelect, settingQuizAttemptId, submitQuiz,settingQuizId } = useTakingQuiz(); // Use the useTakingQuiz hook
+  const { settingQuizAttemptId, submitQuiz,settingQuizId } = useTakingQuiz(); //  useTakingQuiz hook in TakingQuizContextFile
+  const navigate = useNavigate();
   const settings = { // For Slider
     dots: false,
     infinite: true,
@@ -142,7 +144,10 @@ const progress = ((timer / 90) * 100).toFixed(2);
         <button
           type="button"
           className="quizButton rounded-4 p-3 fs-5"
-          onClick={submitQuiz}
+          onClick={()=>{
+            submitQuiz();
+            navigate("/")
+          }}
         >
           Submit Quiz
         </button>
